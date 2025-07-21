@@ -1,24 +1,33 @@
+<!-- /quiz-app/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: HTML, CSS, JavaScript</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Quiz Hub - Home</title>
+    <!-- Link to the base and home-specific stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p>Choose a topic to start:</p>
-    <ul>
-      <li><a href="html-quiz.html">HTML Quiz</a></li>
-      <li><a href="css-quiz.html">CSS Quiz</a></li>
-      <li><a href="js-quiz.html">JavaScript Quiz</a></li>
-    </ul>
-  </div>
-  
-  <script src="script.js"></script> 
+    <div class="home-container">
+        <header class="home-header">
+            <h1 class="main-title">Dev Quiz Hub</h1>
+            <p class="subtitle">Test your knowledge in modern web development.</p>
+        </header>
+
+        <main class="topic-selection">
+            <h2>Choose a Topic</h2>
+            <div id="topic-grid" class="topic-grid">
+                <p>Loading topics...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- The JS path should be updated if you put it in a js/ folder -->
+    <script src="js/home.js" type="module"></script>
 </body>
 </html>
-
-

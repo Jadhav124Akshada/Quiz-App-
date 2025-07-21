@@ -1,0 +1,129 @@
+/* /quiz-app/css/quiz.css */
+
+.quiz-container {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.quiz-header {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    text-decoration: none;
+    color: var(--light-text-color);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: var(--primary-color);
+}
+
+#quiz-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out;
+}
+
+.question-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.options-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    background-color: var(--surface-color);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.option:hover {
+    border-color: var(--primary-color);
+}
+
+.option.correct {
+    background-color: #e9f7ef;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.option.incorrect {
+    background-color: #fdeded;
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.option.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* --- End Screen Styles --- */
+.final-score {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary-color);
+}
+
+.trophy {
+    font-size: 6rem;
+    text-align: center;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+/* --- Quiz Page Responsive --- */
+@media (max-width: 600px) {
+    .quiz-container { 
+        padding: 20px; 
+    }
+    .question-text { 
+        font-size: 1.2rem; 
+    }
+}

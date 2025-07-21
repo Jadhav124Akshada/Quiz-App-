@@ -1,0 +1,46 @@
+<!-- /quiz-app/quiz.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Quiz</title>
+    <!-- Link to the base and quiz-specific stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="quiz-container">
+        <!-- Quiz interface -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <a href="index.html" class="back-btn">← Back to Topics</a>
+                <h2 id="quiz-title">Loading Quiz...</h2>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+            <div id="question-container" class="question-container">
+                <p id="question-text" class="question-text"></p>
+                <ul id="options-container" class="options-container"></ul>
+            </div>
+            <button id="next-btn" class="btn next-btn hidden">Next Question</button>
+        </section>
+
+        <!-- End screen -->
+        <section id="end-screen" class="screen hidden">
+            <h1 id="end-title" class="main-title">Quiz Complete!</h1>
+            <p class="subtitle">Your final score is:</p>
+            <p id="final-score" class="final-score">0 / 0</p>
+            <div class="trophy">🏆</div>
+            <button id="restart-btn" class="btn">Take Another Quiz</button>
+        </section>
+    </main>
+
+    <!-- The JS path should be updated if you put it in a js/ folder -->
+    <script src="js/quiz.js" type="module"></script>
+</body>
+</html>

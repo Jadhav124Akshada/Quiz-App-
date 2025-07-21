@@ -1,0 +1,114 @@
+/* /quiz-app/css/home.css */
+
+.home-container {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+/* NEW: Animate the topic section after the header appears */
+.topic-selection {
+    opacity: 0;
+    animation: fadeInUp 0.8s 0.8s ease-out forwards;
+}
+
+.topic-selection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* --- MODIFIED: Card Styling for Cleaner Animation --- */
+.topic-card {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius); /* The border-radius is set here */
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+    
+    position: relative; /* Needed for the pseudo-element */
+    z-index: 1;
+}
+
+/* NEW: The pseudo-element will now BE the animated border */
+.topic-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -2px; left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    
+    /* The border-radius MUST match the card's border-radius */
+    border-radius: var(--border-radius); 
+    
+    /* The animated background gradient */
+    background: linear-gradient(
+        90deg, 
+        var(--primary-color), 
+        var(--primary-light), 
+        var(--primary-color)
+    );
+    background-size: 200% 100%; /* Make the gradient wider than the element */
+    
+    /* The animation itself */
+    animation: flow-blue-border 2s linear infinite;
+
+    /* Initially hidden, will appear on hover */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* MODIFIED: Hover effect to reveal the animation */
+.topic-card:hover {
+    transform: translateY(-5px);
+}
+
+.topic-card:hover::before {
+    opacity: 1; /* Reveal the spinning border on hover */
+}
+
+.topic-card .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.topic-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.topic-card p {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+/* --- NEW: Keyframes for the blue border animation --- */
+@keyframes flow-blue-border {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: -200% 0%;
+    }
+}
+
+/* --- Home Page Responsive --- */
+@media (max-width: 600px) {
+    .home-container { 
+        padding: 20px; 
+    }
+}

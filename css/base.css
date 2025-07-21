@@ -1,0 +1,135 @@
+/* /quiz-app/css/base.css */
+
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --primary-light: #80c7ff; /* NEW: A lighter blue for the gradient */
+    --secondary-color: #28a745;
+    --danger-color: #dc3545;
+    --bg-color: #f4f7f9;
+    --surface-color: #ffffff;
+    --text-color: #2d3748;
+    --light-text-color: #718096;
+    --border-color: #e2e8f0;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- MODIFIED: Shared Typography & Elements for Animation --- */
+.main-title {
+    font-size: 2.8rem; /* Slightly larger for more impact */
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    /* NEW: Gradient text effect */
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* NEW: Animation setup */
+    opacity: 0;
+    animation: fadeInDown 0.8s 0.2s ease-out forwards;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+    margin-bottom: 40px;
+
+    /* NEW: Animation setup */
+    opacity: 0;
+    animation: fadeInUp 0.8s 0.5s ease-out forwards;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn.hidden {
+    display: none;
+}
+
+/* --- MODIFIED: Shared Animations --- */
+.screen {
+    display: block;
+}
+
+.screen.hidden {
+    display: none;
+}
+
+/* Renamed for clarity */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* NEW: Keyframes for Header Text Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Shared Responsive Styles --- */
+@media (max-width: 600px) {
+    body { 
+        padding: 15px; 
+    }
+    .main-title { 
+        font-size: 2.2rem; 
+    }
+}
