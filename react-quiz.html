@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-</head> 
+</head>
 <body>
   <div class="quiz-container">
-    <div class="quiz-section">
-      <h2>React Quiz</h2>
-      <div id="react-questions"></div>
+    <div class="header">
+      <h1>React Quiz</h1>
+      <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
     </div>
-    
-    <div id="result"></div>
-    <a href="index.html" >Back to Home</a>
-    
+    <div class="quiz-section" id="react-questions"></div>
   </div>
   <script src="script.js"></script>
 </body>

@@ -1,164 +1,42 @@
-// HTML Questions
 const htmlQuestions = [
-  { question: "What does HTML stand for?",
-     options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
-     answer: "HyperText Markup Language" 
-     },
-  
-  { 
-    question: "What attribute is used to define the destination of a link in HTML?", 
-    options: ["href", "src", "action", "destination"], 
-    answer: "href" 
-  },
-  {
-    question: "What is the purpose of the <head> element in an HTML document?",
-    options: ["To define the main content of the page.","To provide metadata and links to external resources.","To display headings on the page.","To create the body of the page."],
-    answer: "To provide metadata and links to external resources."
-  },
-  {
-    question: "Which attribute is used to specify an alternate text for an image if the image cannot be displayed?",
-    options: ["title", "src", "alt", "description"],
-    answer: "alt"
-  },
-  {
-    question: "Which attribute specifies that an input field must be filled out before submitting?",
-    options: ["required", "placeholder", "value", "mandatory"],
-    answer: "required"
-  },
-  { 
-    question: "What is the purpose of the alt attribute in an image tag?", 
-    options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"], 
-    answer: "Provides a textual description of the image" },
-  { 
-    question: "What does the <head> element in HTML contain?", 
-    options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"], 
-    answer: "Metadata about the page"
-   },
-  { 
-    question: "Which HTML element is used to define a paragraph?",
-     options: ["p", "text", "div", "span"],
-      answer: "p"
-     },
-  { 
-    question: "What is the correct HTML for inserting an audio file?", 
-    options: ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"], 
-    answer: "<audio src='audio.mp3'></audio>" 
-  },
-  { 
-    question: "Which HTML element is used to define an ordered list?", 
-    options: ["ul", "li", "ol", "ol-list"], 
-    answer: "ol"
-   },
+  { question: "What does HTML stand for?", options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"], answer: "HyperText Markup Language" },
+  { question: "What attribute is used to define the destination of a link in HTML?", options: ["href", "src", "action", "destination"], answer: "href" },
+  { question: "What is the purpose of the <head> element in an HTML document?", options: ["To define the main content of the page.", "To provide metadata and links to external resources.", "To display headings on the page.", "To create the body of the page."], answer: "To provide metadata and links to external resources." },
+  { question: "Which attribute is used to specify an alternate text for an image if the image cannot be displayed?", options: ["title", "src", "alt", "description"], answer: "alt" },
+  { question: "Which attribute specifies that an input field must be filled out before submitting?", options: ["required", "placeholder", "value", "mandatory"], answer: "required" },
+  { question: "What is the purpose of the alt attribute in an image tag?", options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"], answer: "Provides a textual description of the image" },
+  { question: "What does the <head> element in HTML contain?", options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"], answer: "Metadata about the page" },
+  { question: "What does the 'download' attribute in the <a> tag do?", options: ["Opens a file in a new tab", "Forces the browser to download the linked file", "Uploads a file", "Links to an external site"], answer: "Forces the browser to download the linked file" },  
+  { question: "Which HTML element is used to define an ordered list?", options: ["ul", "li", "ol", "ol-list"], answer: "ol" },
+  { question: "What is the difference between relative and absolute URLs in HTML?", options: ["Relative URLs point to external sites, absolute URLs are local", "Relative URLs depend on the current page location, absolute URLs include the full path", "Relative URLs are always shorter", "There is no difference"], answer: "Relative URLs depend on the current page location, absolute URLs include the full path" }
 ];
 
-// CSS Questions
 const cssQuestions = [
-  { 
-    question: "Which of the following is the correct CSS syntax for selecting an element with the class name 'example'?", 
-    options: [".example { color: red; }", "example { color: red; }", "#example { color: red; }", "*example { color: red; }"], 
-    answer: ".example { color: red; }" 
-  },
-  { 
-    question: "What does the CSS display property control?", 
-    options: ["The visibility of an element", "The layout behavior of an element", "The background color of an element", "The size of an element"], 
-    answer: "The layout behavior of an element" 
-  },
-  { 
-    question: "Which CSS property is used to change the background color of an element?", 
-    options: ["color", "bgcolor", "background-color", "background"], 
-    answer: "background-color" 
-  },
-  {
-     question: "Which CSS property is used to change the font size of an element?", 
-     options: ["font-style", "font-size", "text-size", "size"], 
-     answer: "font-size"
-  },
-  { 
-    question: "How do you apply a background image in CSS?", 
-    options: ["background: url('image.jpg');", "background-image: 'image.jpg';", "background-image: url('image.jpg');", "image-background: url('image.jpg');"], 
-    answer: "background-image: url('image.jpg');" 
-  },
-  { 
-    question: "Which CSS property controls the space between words?", 
-    options: ["letter-spacing", "word-spacing", "text-spacing", "line-height"], 
-    answer: "word-spacing"
-   },
-  { 
-    question: "Which property is used to change the color of text in CSS?", 
-    options: ["color", "text-color", "font-color", "background-color"], 
-    answer: "color" 
-  },
-  { 
-    question: "How do you select an element with the id 'header' in CSS?", 
-    options: ["#header", ".header", "header", "[id='header']"], 
-    answer: "#header"
-   },
-  { 
-    question: "What is the default value of the position property in CSS?", 
-    options: ["static", "relative", "absolute", "fixed"], 
-    answer: "static" 
-  },
-  {
-     question: "Which CSS property is used to add space between an element's border and its content?", 
-     options: ["padding", "margin", "border-spacing", "gap"], 
-     answer: "padding" 
-    }
+  { question: "Which of the following is the correct CSS syntax for selecting an element with the class name 'example'?", options: [".example { color: red; }", "example { color: red; }", "#example { color: red; }", "*example { color: red; }"], answer: ".example { color: red; }" },
+  { question: "What does the CSS display property control?", options: ["The visibility of an element", "The layout behavior of an element", "The background color of an element", "The size of an element"], answer: "The layout behavior of an element" },
+  { question: "Which CSS property is used to change the background color of an element?", options: ["color", "bgcolor", "background-color", "background"], answer: "background-color" },
+  { question: "Which CSS property is used to change the font size of an element?", options: ["font-style", "font-size", "text-size", "size"], answer: "font-size" },
+  { question: "How do you apply a background image in CSS?", options: ["background: url('image.jpg');", "background-image: 'image.jpg';", "background-image: url('image.jpg');", "image-background: url('image.jpg');"], answer: "background-image: url('image.jpg');" },
+  { question: "Which CSS property controls the space between words?", options: ["letter-spacing", "word-spacing", "text-spacing", "line-height"], answer: "word-spacing" },
+  { question: "Which property is used to change the color of text in CSS?", options: ["color", "text-color", "font-color", "background-color"], answer: "color" },
+  { question: "How do you select an element with the id 'header' in CSS?", options: ["#header", ".header", "header", "[id='header']"], answer: "#header" },
+  { question: "What is the default value of the position property in CSS?", options: ["static", "relative", "absolute", "fixed"], answer: "static" },
+  { question: "Which CSS property is used to add space between an element's border and its content?", options: ["padding", "margin", "border-spacing", "gap"], answer: "padding" }
 ];
 
-// JavaScript Questions
 const jsQuestions = [
-  { question: "Which of the following is the correct way to define a function in JavaScript?", 
-    options: ["function myFunction() { }", "def myFunction() { }", "function: myFunction() { }", "func myFunction() { }"], 
-    answer: "function myFunction() { }" 
-  },
-  {
-     question: "How do you declare a variable in JavaScript?", 
-     options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"], 
-     answer: "All of the above" 
-    },
-  {
-     question: "Which of the following is used to add an item to the end of an array in JavaScript?", 
-     options: ["array.push(item);", "array.add(item);", "array.append(item);", "array.insert(item);"], 
-     answer: "array.push(item);" 
-    },
-  { 
-    question: "Which method is used to convert a string to lowercase in JavaScript?", 
-    options: ["toLowerCase()", "lowercase()", "toLower()", "convertLower()"], 
-    answer: "toLowerCase()" 
-  },
-  { 
-    question: "Which operator is used to assign a value to a variable in JavaScript?", 
-    options: ["=", "==", "===", ":="], answer: "=" 
-  },
-  { question: "What is the output of 5 + '5' in JavaScript?", 
-    options: ["55", "10", "error", "undefined"], 
-    answer: "55"
-   },
-  { 
-    question: "Which method is used to remove the last element from an array in JavaScript?",
-     options: ["pop()", "remove()", "shift()", "slice()"], 
-     answer: "pop()" 
-    },
-  { 
-    question: "Which statement is used to stop a loop in JavaScript?", 
-    options: ["break", "exit", "stop", "return"], 
-    answer: "break"
-   },
-  { 
-    question: "How do you create an object in JavaScript?", 
-    options: ["let obj = {};","let obj = [];","let obj = new Object();","Both A and C"], 
-    answer: "Both A and C"
-   },
-  {
-     question: "What does the 'this' keyword refer to in JavaScript?", 
-     options: ["The current function", "The global object", "The object it belongs to", "The previous variable"], 
-     answer: "The object it belongs to" 
-    }
+  { question: "Which of the following is the correct way to define a function in JavaScript?", options: ["function myFunction() { }", "def myFunction() { }", "function: myFunction() { }", "func myFunction() { }"], answer: "function myFunction() { }" },
+  { question: "How do you declare a variable in JavaScript?", options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"], answer: "All of the above" },
+  { question: "Which of the following is used to add an item to the end of an array in JavaScript?", options: ["array.push(item);", "array.add(item);", "array.append(item);", "array.insert(item);"], answer: "array.push(item);" },
+  { question: "Which method is used to convert a string to lowercase in JavaScript?", options: ["toLowerCase()", "lowercase()", "toLower()", "convertLower()"], answer: "toLowerCase()" },
+  { question: "Which operator is used to assign a value to a variable in JavaScript?", options: ["=", "==", "===", ":="], answer: "=" },
+  { question: "What is the output of 5 + '5' in JavaScript?", options: ["55", "10", "error", "undefined"], answer: "55" },
+  { question: "Which method is used to remove the last element from an array in JavaScript?", options: ["pop()", "remove()", "shift()", "slice()"], answer: "pop()" },
+  { question: "Which statement is used to stop a loop in JavaScript?", options: ["break", "exit", "stop", "return"], answer: "break" },
+  { question: "How do you create an object in JavaScript?", options: ["let obj = {};", "let obj = [];", "let obj = new Object();", "Both A and C"], answer: "Both A and C" },
+  { question: "What does the 'this' keyword refer to in JavaScript?", options: ["The current function", "The global object", "The object it belongs to", "The previous variable"], answer: "The object it belongs to" }
 ];
 
-// --- NEW QUESTION SETS ADDED BELOW ---
-
-// React Questions
 const reactQuestions = [
   { question: "What is JSX?", options: ["JavaScript XML", "JavaScript Extension", "Java Syntax Extension", "JSON Syntax"], answer: "JavaScript XML" },
   { question: "What is the purpose of the `useState` hook in React?", options: ["To fetch data", "To add state to functional components", "To perform side effects", "To create context"], answer: "To add state to functional components" },
@@ -172,7 +50,6 @@ const reactQuestions = [
   { question: "What tool is commonly used to create a new React app?", options: ["npm init", "react-start", "Create React App", "react-new"], answer: "Create React App" }
 ];
 
-// Next.js Questions
 const nextjsQuestions = [
   { question: "How is routing primarily handled in Next.js?", options: ["Using a routing library like React Router", "Through a configuration file", "Based on the file system in the `pages` directory", "Manually in the server file"], answer: "Based on the file system in the `pages` directory" },
   { question: "Which rendering method pre-renders a page at build time?", options: ["Server-Side Rendering (SSR)", "Client-Side Rendering (CSR)", "Static Site Generation (SSG)", "Incremental Static Regeneration (ISR)"], answer: "Static Site Generation (SSG)" },
@@ -186,7 +63,6 @@ const nextjsQuestions = [
   { question: "What command do you use to build a Next.js application for production?", options: ["npm start", "next dev", "npm run build", "next produce"], answer: "npm run build" }
 ];
 
-// Git & GitHub Questions
 const gitQuestions = [
   { question: "What command initializes a new Git repository?", options: ["git start", "git new", "git init", "git create"], answer: "git init" },
   { question: "Which command stages a file for the next commit?", options: ["git stage", "git add", "git commit", "git track"], answer: "git add" },
@@ -200,7 +76,6 @@ const gitQuestions = [
   { question: "What is the purpose of the `.gitignore` file?", options: ["To list all files in the repository", "To specify intentionally untracked files that Git should ignore", "To store your Git credentials", "To define Git commands"], answer: "To specify intentionally untracked files that Git should ignore" }
 ];
 
-// Python Questions
 const pythonQuestions = [
   { question: "Which keyword is used to define a function in Python?", options: ["function", "def", "func", "define"], answer: "def" },
   { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"], answer: "# This is a comment" },
@@ -214,7 +89,6 @@ const pythonQuestions = [
   { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
 ];
 
-// SQL Questions
 const sqlQuestions = [
   { question: "Which SQL statement is used to extract data from a database?", options: ["GET", "OPEN", "EXTRACT", "SELECT"], answer: "SELECT" },
   { question: "Which SQL clause is used to filter records?", options: ["FILTER BY", "WHERE", "SEARCH", "FROM"], answer: "WHERE" },
@@ -228,7 +102,6 @@ const sqlQuestions = [
   { question: "Which SQL statement is used to create a new table?", options: ["CREATE TABLE", "NEW TABLE", "MAKE TABLE", "BUILD TABLE"], answer: "CREATE TABLE" }
 ];
 
-// Django Questions
 const djangoQuestions = [
   { question: "What is the architectural pattern that Django follows?", options: ["Model-View-Controller (MVC)", "Model-View-Presenter (MVP)", "Model-View-Template (MVT)", "Model-View-Adapter (MVA)"], answer: "Model-View-Template (MVT)" },
   { question: "Which file in a Django app is used to define the data models (database schema)?", options: ["views.py", "models.py", "urls.py", "admin.py"], answer: "models.py" },
@@ -242,11 +115,14 @@ const djangoQuestions = [
   { question: "In a Django template, how do you correctly output the value of a variable `my_variable`?", options: ["{{ my_variable }}", "{% my_variable %}", "[[ my_variable ]]", "(( my_variable ))"], answer: "{{ my_variable }}" }
 ];
 
+const quizTimeLimit = 600; // 10 minutes in seconds
 
-// Function to render a single question
+let userAnswers = [];
+let timerInterval;
+let timeLeft = quizTimeLimit;
+
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
-
   if (!sectionContainer) return;
 
   const questionElem = document.createElement("div");
@@ -254,17 +130,13 @@ const renderQuestion = (question, index, sectionId) => {
   questionElem.innerHTML = `
     <p>${index + 1}. ${question.question}</p>
     <ul class="option-container">
-      ${question.options
-        .map(
-          (option) => `
+      ${question.options.map((option) => `
         <li>
           <label>
-            <input type="radio" name="question-${index}" value="${option}"> ${option}
+            <input type="radio" name="question-${index}" value="${option}" data-index="${index}"> ${option}
           </label>
         </li>
-      `
-        )
-        .join("")}
+      `).join("")}
     </ul>
     <button class="check-answer-btn" data-index="${index}">Check Answer</button>
     <div class="result" id="result-${index}"></div>
@@ -272,28 +144,38 @@ const renderQuestion = (question, index, sectionId) => {
   sectionContainer.appendChild(questionElem);
 };
 
-// Function to render all questions
 const renderQuestions = (questions, sectionId) => {
-  // Ensure we don't try to render if the section doesn't exist.
   if (!document.getElementById(sectionId)) return;
 
   questions.forEach((q, index) => renderQuestion(q, index, sectionId));
-  // Add a final score container at the end
   const sectionContainer = document.getElementById(sectionId);
   const scoreElem = document.createElement("div");
   scoreElem.classList.add("score-container");
   scoreElem.innerHTML = `
-    <button id="calculate-score-btn">Calculate Total Score</button>
+    <button id="submit-quiz-btn">Submit Quiz</button>
     <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
   `;
   sectionContainer.appendChild(scoreElem);
 };
 
-// Function to check the answer for a specific question
+const startTimer = () => {
+  const timerDisplay = document.getElementById("timer");
+  if (!timerDisplay) return;
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerDisplay.textContent = `Time Left: ${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      submitQuiz();
+    }
+  }, 1000);
+};
+
 const checkAnswer = (questions, index) => {
-  const selectedOption = document.querySelector(
-    `input[name="question-${index}"]:checked`
-  );
+  const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
   const resultContainer = document.getElementById(`result-${index}`);
 
   if (!selectedOption) {
@@ -302,6 +184,7 @@ const checkAnswer = (questions, index) => {
     return false;
   }
 
+  userAnswers[index] = selectedOption.value;
   if (selectedOption.value === questions[index].answer) {
     resultContainer.textContent = "Correct!";
     resultContainer.style.color = "green";
@@ -313,74 +196,128 @@ const checkAnswer = (questions, index) => {
   }
 };
 
-// Function to calculate the total score
 const calculateTotalScore = (questions) => {
   let score = 0;
-  questions.forEach((q, index) => {
-    const selectedOption = document.querySelector(
-      `input[name="question-${index}"]:checked`
-    );
-    if (selectedOption && selectedOption.value === q.answer) {
+  userAnswers.forEach((answer, index) => {
+    if (answer && answer === questions[index].answer) {
       score++;
     }
   });
-
-  // Display the total score
-  const totalScoreContainer = document.getElementById("total-score");
-  totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
-  totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
+  return score;
 };
 
-// Dynamically render questions based on the page
+const submitQuiz = () => {
+  clearInterval(timerInterval);
+  const quizType = getQuizType();
+  const questions = getQuestionsByType(quizType);
+  const score = calculateTotalScore(questions);
+  
+  localStorage.setItem("quizResults", JSON.stringify({
+    quizType,
+    userAnswers,
+    score,
+    total: questions.length
+  }));
+  window.location.href = "summary.html";
+};
+
+const getQuizType = () => {
+  if (document.getElementById("html-questions")) return "html";
+  if (document.getElementById("css-questions")) return "css";
+  if (document.getElementById("js-questions")) return "js";
+  if (document.getElementById("react-questions")) return "react";
+  if (document.getElementById("nextjs-questions")) return "nextjs";
+  if (document.getElementById("git-questions")) return "git";
+  if (document.getElementById("python-questions")) return "python";
+  if (document.getElementById("sql-questions")) return "sql";
+  if (document.getElementById("django-questions")) return "django";
+  return "";
+};
+
+const getQuestionsByType = (quizType) => {
+  switch (quizType) {
+    case "html": return htmlQuestions;
+    case "css": return cssQuestions;
+    case "js": return jsQuestions;
+    case "react": return reactQuestions;
+    case "nextjs": return nextjsQuestions;
+    case "git": return gitQuestions;
+    case "python": return pythonQuestions;
+    case "sql": return sqlQuestions;
+    case "django": return djangoQuestions;
+    default: return [];
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   let questions = [];
   let sectionId = "";
+  const quizType = getQuizType();
 
-  // Determine the quiz type based on the section ID
-  if (document.getElementById("html-questions")) {
-    questions = htmlQuestions;
-    sectionId = "html-questions";
-  } else if (document.getElementById("css-questions")) {
-    questions = cssQuestions;
-    sectionId = "css-questions";
-  } else if (document.getElementById("js-questions")) {
-    questions = jsQuestions;
-    sectionId = "js-questions";
-  } else if (document.getElementById("react-questions")) {
-    questions = reactQuestions;
-    sectionId = "react-questions";
-  } else if (document.getElementById("nextjs-questions")) {
-    questions = nextjsQuestions;
-    sectionId = "nextjs-questions";
-  } else if (document.getElementById("git-questions")) {
-    questions = gitQuestions;
-    sectionId = "git-questions";
-  } else if (document.getElementById("python-questions")) {
-    questions = pythonQuestions;
-    sectionId = "python-questions";
-  } else if (document.getElementById("sql-questions")) {
-    questions = sqlQuestions;
-    sectionId = "sql-questions";
-  } else if (document.getElementById("django-questions")) {
-    questions = djangoQuestions;
-    sectionId = "django-questions";
+  if (quizType) {
+    questions = getQuestionsByType(quizType);
+    sectionId = `${quizType}-questions`;
   }
 
-  // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
-    renderQuestions(questions, sectionId);
+    const sectionContainer = document.getElementById(sectionId);
+    if (sectionContainer) {
+      const timerDiv = document.createElement("div");
+      timerDiv.id = "timer";
+      timerDiv.className = "timer";
+      timerDiv.textContent = `Time Left: 10:00`;
+      sectionContainer.insertBefore(timerDiv, sectionContainer.firstChild);
+      renderQuestions(questions, sectionId);
+      startTimer();
 
-    // Attach event listeners to "Check Answer" buttons
-    document.querySelectorAll(".check-answer-btn").forEach((button) => {
-      button.addEventListener("click", (event) => {
-        const index = parseInt(event.target.getAttribute("data-index"));
-        checkAnswer(questions, index);
+      document.querySelectorAll(".check-answer-btn").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const index = parseInt(event.target.getAttribute("data-index"));
+          checkAnswer(questions, index);
+        });
       });
+
+      document.getElementById("submit-quiz-btn").addEventListener("click", submitQuiz);
+    }
+  }
+
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
     });
 
-    // Attach event listener to "Calculate Total Score" button
-    document
-      .getElementById("calculate-score-btn")
-      .addEventListener("click", () => calculateTotalScore(questions));
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  }
+
+  if (document.getElementById("summary")) {
+    const results = JSON.parse(localStorage.getItem("quizResults"));
+    if (results) {
+      const { quizType, userAnswers, score, total } = results;
+      const questions = getQuestionsByType(quizType);
+      const summaryContainer = document.getElementById("summary");
+      summaryContainer.innerHTML = `
+        <h2>${quizType.toUpperCase()} Quiz Summary</h2>
+        <p>Your Score: ${score} out of ${total} (${Math.round((score / total) * 100)}%)</p>
+        ${questions.map((q, i) => `
+          <div class="summary-item ${userAnswers[i] === q.answer ? "correct" : "incorrect"}">
+            <p><strong>${i + 1}. ${q.question}</strong></p>
+            <p>Your Answer: ${userAnswers[i] || "Not answered"}</p>
+            <p>Correct Answer: ${q.answer}</p>
+          </div>
+        `).join("")}
+        <button id="restart-quiz-btn">Restart Quiz</button>
+        <a href="index.html" class="button">Back to Home</a>
+      `;
+
+      document.getElementById("restart-quiz-btn").addEventListener("click", () => {
+        localStorage.removeItem("quizResults");
+        window.location.href = `${quizType}-quiz.html`;
+      });
+    }
   }
 });

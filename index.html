@@ -3,28 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: HTML, CSS, JavaScript</title>
+  <title>Quiz: Web Development</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="quiz-container">
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p>Choose a topic to start:</p>
-    <ul>
-      <li><a href="html-quiz.html">HTML Quiz</a></li>
-      <li><a href="css-quiz.html">CSS Quiz</a></li>
-      <li><a href="js-quiz.html">JavaScript Quiz</a></li>
-      <li><a href="react-quiz.html">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html">Python Quiz</a></li>
-      <li><a href="sql-quiz.html">SQL Quiz</a></li>
-      <li><a href="django-quiz.html">Django Quiz</a></li>
-    </ul>
+    <div class="header">
+      <h1 class="hero-title">Master Web Development Quizzes</h1>
+      <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+    <p class="hero-subtitle">Test your skills in various web development topics!</p>
+    <div class="quiz-grid">
+      <a href="html-quiz.html" class="quiz-card">
+        <h3>HTML Quiz</h3>
+        <p>Test your knowledge of HTML fundamentals.</p>
+      </a>
+      <a href="css-quiz.html" class="quiz-card">
+        <h3>CSS Quiz</h3>
+        <p>Challenge your CSS styling skills.</p>
+      </a>
+      <a href="js-quiz.html" class="quiz-card">
+        <h3>JavaScript Quiz</h3>
+        <p>Dive into JavaScript programming.</p>
+      </a>
+      <a href="react-quiz.html" class="quiz-card">
+        <h3>React Quiz</h3>
+        <p>Master React components and hooks.</p>
+      </a>
+      <a href="nextjs-quiz.html" class="quiz-card">
+        <h3>Next.js Quiz</h3>
+        <p>Explore Next.js features and routing.</p>
+      </a>
+      <a href="git-quiz.html" class="quiz-card">
+        <h3>Git & GitHub Quiz</h3>
+        <p>Test your version control knowledge.</p>
+      </a>
+      <a href="python-quiz.html" class="quiz-card">
+        <h3>Python Quiz</h3>
+        <p>Challenge your Python programming skills.</p>
+      </a>
+      <a href="sql-quiz.html" class="quiz-card">
+        <h3>SQL Quiz</h3>
+        <p>Master database queries with SQL.</p>
+      </a>
+      <a href="django-quiz.html" class="quiz-card">
+        <h3>Django Quiz</h3>
+        <p>Test your Django framework expertise.</p>
+      </a>
+    </div>
   </div>
-  
-  <script src="script.js"></script> 
+  <script src="script.js"></script>
 </body>
 </html>
-
-

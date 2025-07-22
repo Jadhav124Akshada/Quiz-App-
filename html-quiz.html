@@ -4,33 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<style>
-  .quiz-container a {
-    display: block; /* Ensures proper layout behavior */
-    text-align: right; /* Aligns text content, such as the link, to the right */
-    margin-right: 0; /* Optional if extra spacing is needed on the right */
-    float: right; /* Ensures button stays visually aligned correctly */
-  }
-
-.question-container {
-      margin-bottom: 20px;
-    }
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-  </style>
 <body>
   <div class="quiz-container">
-    <div class="quiz-section">
-      <h2>HTML Quiz</h2>
-      <div id="html-questions"></div>
+    <div class="header">
+      <h1>HTML Quiz</h1>
+      <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
     </div>
-    
-    <div id="result"></div>
-    <a href="index.html">Back to Home</a>
+    <div class="quiz-section" id="html-questions"></div>
   </div>
   <script src="script.js"></script>
 </body>
