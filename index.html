@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: HTML, CSS, JavaScript</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevQuiz Hub - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p>Choose a topic to start:</p>
-    <ul>
-      <li><a href="html-quiz.html">HTML Quiz</a></li>
-      <li><a href="css-quiz.html">CSS Quiz</a></li>
-      <li><a href="js-quiz.html">JavaScript Quiz</a></li>
-    </ul>
-  </div>
-  
-  <script src="script.js"></script> 
+    <div class="container">
+        <!-- Header Section -->
+        <header class="main-header">
+            <h1>Welcome to the DevQuiz Hub</h1>
+            <p class="subtitle">Test your knowledge of the web's core technologies.</p>
+        </header>
+
+        <!-- Technology Descriptions and Quizzes Section -->
+        <section class="tech-grid">
+            <div class="tech-card">
+                <div class="card-header">
+                    <h2>HTML</h2>
+                    <a href="quiz.html?q=html" class="quiz-button">Take Quiz</a>
+                </div>
+                <p>HyperText Markup Language is the backbone of the web. It provides the fundamental structure for web pages, defining elements like headings, paragraphs, images, and links. Mastering HTML is the first step to creating any website.</p>
+            </div>
+            <div class="tech-card">
+                <div class="card-header">
+                    <h2>CSS</h2>
+                    <a href="quiz.html?q=css" class="quiz-button">Take Quiz</a>
+                </div>
+                <p>Cascading Style Sheets is the language for styling the web. It controls everything from colors, fonts, and spacing to complex layouts and responsive animations. CSS brings your HTML structure to life with design and visual appeal.</p>
+            </div>
+            <div class="tech-card">
+                <div class="card-header">
+                    <h2>JavaScript</h2>
+                    <a href="quiz.html?q=javascript" class="quiz-button">Take Quiz</a>
+                </div>
+                <p>JavaScript is a powerful and versatile programming language that makes websites interactive and dynamic. It handles everything from simple form validations and animations to complex single-page applications.</p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
-
-

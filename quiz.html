@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevQuiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Quiz Header -->
+        <header class="quiz-header">
+            <h1 id="quiz-title">Loading Quiz...</h1>
+            <div class="quiz-settings">
+                <span>Show answers:</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="answer-mode-toggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <span id="answer-mode-label">Instantly</span>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="progress-text" id="progress-text">Question 1/10</div>
+
+        <!-- Questions Slider -->
+        <div class="questions-wrapper">
+            <div class="questions-slider" id="questions-slider">
+                <!-- Questions will be injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="quiz-navigation">
+            <button id="prev-btn" class="nav-btn" disabled>Previous</button>
+            <button id="next-btn" class="nav-btn">Next</button>
+            <button id="finish-btn" class="nav-btn finish-btn" style="display: none;">Finish</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="report-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Quiz Report</h2>
+            <div id="report-summary"></div>
+            <div id="report-details"></div>
+            <a href="index.html" class="nav-btn home-btn">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
