@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- adding navbar dynamically -->
+    <div id="navbar-container"></div>
+
+    <script>
+      fetch("navbar.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("navbar-container").innerHTML = data;
+        });
+    </script>
+
+
+
   <div class="quiz-container">
     <h1>Welcome to the Web Development Quiz</h1>
     <p>Choose a topic to start:</p>
@@ -23,6 +37,53 @@
     </ul>
   </div>
   
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>📚 QuizApp</h3>
+        <p>Your go-to platform for fun, fast, and focused quizzes on tech topics!</p>
+      </div>
+
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h4>Contact</h4>
+        <p>Email: support@quizapp.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+
+      <div class="footer-section social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-icon name="logo-github"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 QuizApp. All rights reserved.
+    </div>
+  </footer>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   <script src="script.js"></script> 
 </body>
 </html>

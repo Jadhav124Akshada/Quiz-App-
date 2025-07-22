@@ -7,6 +7,19 @@
   <link rel="stylesheet" href="styles.css">
 </head> 
 <body>
+
+   <!-- addoing navbar dynamically -->
+<div id="navbar-container"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+    });
+</script>
+
+
   <div class="quiz-container">
     <div class="quiz-section">
       <h2>Next.js Quiz</h2>

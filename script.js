@@ -384,3 +384,44 @@ document.addEventListener("DOMContentLoaded", () => {
       .addEventListener("click", () => calculateTotalScore(questions));
   }
 });
+
+function filterQuizzes() {
+  const searchInput = document.getElementById("quiz-search");
+  if (!searchInput) return;
+  const filter = searchInput.value.toLowerCase();
+
+  document.querySelectorAll(".question-container").forEach((container) => {
+    const questionText = container.querySelector("p")?.textContent?.toLowerCase() || "";
+    if (questionText.includes(filter)) {
+      container.style.display = "";
+    } else {
+      container.style.display = "none";
+    }
+  });
+}
+
+// If the search input exists, attach the oninput event
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("quiz-search");
+  if (searchInput) {
+    searchInput.oninput = filterQuizzes;
+  }
+});
+
+
+
+// Account Dropdown Functionality
+
+const accountIcon = document.getElementById("account-icon");
+const accountDropdown = document.getElementById("account-dropdown");
+
+accountIcon.addEventListener("click", () => {
+  accountDropdown.style.display =
+    accountDropdown.style.display === "block" ? "none" : "block";
+});
+
+window.addEventListener("click", (e) => {
+  if (!accountIcon.contains(e.target) && !accountDropdown.contains(e.target)) {
+    accountDropdown.style.display = "none";
+  }
+});
