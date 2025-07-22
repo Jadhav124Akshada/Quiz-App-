@@ -6,9 +6,71 @@
   <title>Next.js Quiz</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ✅ Back button alignment */
+    .quiz-container a {
+      display: block;
+      text-align: right;
+      float: right;
+      margin-right: 0;
+    }
+
+    .back-button-icon {
+      width: 32px;
+      height: 32px;
+      margin: 10px 10px 0 0;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .back-button-icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* ✅ Quiz structure */
+    .question-container {
+      margin-bottom: 20px;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* ✅ Optional timer style */
+    #quiz-timer {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    /* ✅ Responsive improvement */
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      #quiz-timer {
+        text-align: center;
+        margin-top: 5px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="quiz-container">
+    
+    <!-- ✅ Back to Home -->
+    <a href="index.html" class="back-button-icon" aria-label="Back to Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+
+    <!-- ✅ Header with theme toggle -->
     <div class="header">
       <h1>Next.js Quiz</h1>
       <div class="theme-toggle-wrapper">
@@ -17,8 +79,21 @@
         </button>
       </div>
     </div>
-    <div class="quiz-section" id="nextjs-questions"></div>
+
+    <!-- ✅ Optional Timer (only if you want it later) -->
+    <!-- <div id="quiz-timer">Time Left: 05:00</div> -->
+
+    <!-- ✅ Quiz Section -->
+    <div class="quiz-section">
+      <h2>Test your Next.js knowledge</h2>
+      <div id="nextjs-questions"></div>
+    </div>
+
+    <!-- ✅ Result Section -->
+    <div id="result"></div>
   </div>
+
+  <!-- ✅ Script to handle quiz rendering + dark mode toggle -->
   <script src="script.js"></script>
 </body>
 </html>

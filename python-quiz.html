@@ -6,9 +6,22 @@
   <title>Python Quiz</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .quiz-container a { display: block; text-align: right; float: right; margin-right: 0; }
+    .back-button-icon { width: 32px; height: 32px; margin: 10px 10px 0 0; }
+    .question-container { margin-bottom: 20px; }
+    .result { margin-top: 10px; font-weight: bold; }
+  </style>
 </head>
 <body>
   <div class="quiz-container">
+    <a href="index.html" class="back-button-icon" aria-label="Back to Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+
     <div class="header">
       <h1>Python Quiz</h1>
       <div class="theme-toggle-wrapper">
@@ -17,7 +30,13 @@
         </button>
       </div>
     </div>
-    <div class="quiz-section" id="python-questions"></div>
+
+    <div class="quiz-section">
+      <h2>Test your Python knowledge</h2>
+      <div id="python-questions"></div>
+    </div>
+
+    <div id="result"></div>
   </div>
   <script src="script.js"></script>
 </body>
