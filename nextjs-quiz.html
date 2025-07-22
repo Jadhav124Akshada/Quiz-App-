@@ -20,6 +20,19 @@
   }
 </style>
 <body>
+
+   <!-- addoing navbar dynamically -->
+<div id="navbar-container"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+    });
+</script>
+
+
   <div class="quiz-container">
     <a href="index.html" class="back-button-icon" aria-label="Back to Home">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

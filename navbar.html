@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+
+      <div class="nav-left">
+        <a href="index.html"class="logo">📚 QuizApp</a>
+      </div>
+
+      <div class="nav-mid">
+        <input type="text" class="search-bar" id="quiz-search" placeholder="Search quizzes..." oninput="filterQuizzes()">
+      </div>
+
+
+      <div class="nav-right">
+
+        <ion-icon id="theme-toggle" name="sunny-outline" class="icon"></ion-icon>
+        
+        <div class="dropdown">
+          <select id="page-dropdown" onchange="location = this.value;">
+            <option value="" disabled selected>Select a Quiz Topic</option>
+            <option value="html-quiz.html">HTML</option>
+            <option value="css-quiz.html">CSS</option>
+            <option value="js-quiz.html">JavaScript</option>
+            <option value="react-quiz.html">React</option>
+            <option value="nextjs-quiz.html">Next.js</option>
+            <option value="git-quiz.html">Git & GitHub</option>
+            <option value="python-quiz.html">Python</option>
+            <option value="sql-quiz.html">SQL</option>
+            <option value="django-quiz.html">Django</option>
+          </select>
+        </div>
+
+        <!-- <ion-icon class="icon" name="person-circle-outline"></ion-icon> -->
+        <div class="account-menu">
+        <ion-icon class="icon" name="person-circle-outline" id="account-icon"></ion-icon>
+        <div class="dropdown-content" id="account-dropdown">
+            <a href="#">My Account</a>
+            <a href="#">Edit Account</a>
+            <a href="#">Settings</a>
+            <a href="#">Help</a>
+            <a href="#">Logout</a>
+        </div>
+        </div>
+
+      </div>
+
+  </nav>
+    
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script src="script.js"></script> 
+</body>
+</html>

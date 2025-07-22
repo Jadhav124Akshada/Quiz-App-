@@ -393,107 +393,114 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
   }
+// ---------------- QUIZ SEARCH FUNCTIONALITY ----------------
+function filterQuizzes() {
+  const searchInput = document.getElementById("quiz-search");
+  if (!searchInput) return;
+  const filter = searchInput.value.toLowerCase();
 
+  document.querySelectorAll(".question-container").forEach((container) => {
+    const questionText = container.querySelector("p")?.textContent?.toLowerCase() || "";
+    container.style.display = questionText.includes(filter) ? "" : "none";
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("quiz-search");
+  if (searchInput) {
+    searchInput.oninput = filterQuizzes;
+  }
+
+  // ---------------- ACCOUNT DROPDOWN ----------------
+  const accountIcon = document.getElementById("account-icon");
+  const accountDropdown = document.getElementById("account-dropdown");
+
+  if (accountIcon && accountDropdown) {
+    accountIcon.addEventListener("click", () => {
+      accountDropdown.style.display = accountDropdown.style.display === "block" ? "none" : "block";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (!accountIcon.contains(e.target) && !accountDropdown.contains(e.target)) {
+        accountDropdown.style.display = "none";
+      }
+    });
+  }
+
+  // ---------------- CONTACT FORM LOGIC ----------------
+  const reasonSelect = document.getElementById("reason");
+  const feedbackSection = document.getElementById("feedback-Section");
+  const issueSection = document.getElementById("issue-Section");
+  const contactForm = document.getElementById("contact-Form");
+  const contactResponseMessage = document.getElementById("responseMessage");
+
+  function toggleFormSections() {
+    if (!reasonSelect) return;
+
+    const selectedReason = reasonSelect.value;
+
+    feedbackSection.style.display = 'none';
+    issueSection.style.display = 'none';
+    setRequired(feedbackSection, false);
+    setRequired(issueSection, false);
+
+    if (selectedReason === 'feedback') {
+      feedbackSection.style.display = 'block';
+      setRequired(feedbackSection, true);
+    } else if (selectedReason === 'issue') {
+      issueSection.style.display = 'block';
+      setRequired(issueSection, true);
+    }
+  }
+
+  function setRequired(sectionElement, isRequired) {
+    const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select');
+    inputs.forEach(input => {
+      input.required = isRequired;
+    });
+  }
+
+  if (contactForm) {
+    toggleFormSections();
+    reasonSelect.addEventListener("change", toggleFormSections);
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactResponseMessage.textContent = 'Please fill out all required fields.';
+        contactResponseMessage.style.color = 'red';
+        return;
+      }
+
+      const selectedReason = reasonSelect.value;
+      let successMessage = "Form submitted successfully!";
+      if (selectedReason === "feedback") {
+        successMessage = "Thank you for your feedback! We appreciate it.";
+      } else if (selectedReason === "issue") {
+        successMessage = "Your issue has been reported. Thank you!";
+      }
+
+      const formData = new FormData(contactForm);
+      const data = {};
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      console.log("Form Data Submitted:", data);
+      sessionStorage.setItem('formSubmissionSuccess', successMessage);
+      window.location.href = 'index.html';
+    });
+  }
+
+  const submissionMessageDiv = document.getElementById("submission-message");
+  if (submissionMessageDiv) {
+    const message = sessionStorage.getItem('formSubmissionSuccess');
+    if (message) {
+      submissionMessageDiv.textContent = message;
+      submissionMessageDiv.style.color = "green";
+      submissionMessageDiv.style.fontWeight = "bold";
+      submissionMessageDiv.style.margin = "15px 0";
+      sessionStorage.removeItem('formSubmissionSuccess');
+    }
+  }
 });
-// Function to toggle Feedback and Issue sections based on selected reason
-document.addEventListener("DOMContentLoaded", function () {
-    const reasonSelect = document.getElementById("reason");
-    const feedbackSection = document.getElementById("feedback-Section");
-    const issueSection = document.getElementById("issue-Section");
-    const contactForm = document.getElementById("contact-Form");
-    const contactResponseMessage = document.getElementById("responseMessage"); // For messages on the contact form page
 
-    // --- Function to show/hide sections and manage 'required' attributes ---
-    function toggleFormSections() {
-        if (!reasonSelect) return; // Exit if not on the contact form page
-
-        const selectedReason = reasonSelect.value;
-
-        // Hide both sections initially
-        feedbackSection.style.display = 'none';
-        issueSection.style.display = 'none';
-
-        // Set 'required' for elements within each section based on selection
-        setRequired(feedbackSection, false); // Unset all required first
-        setRequired(issueSection, false); // Unset all required first
-
-        if (selectedReason === 'feedback') {
-            feedbackSection.style.display = 'block';
-            setRequired(feedbackSection, true);
-        } else if (selectedReason === 'issue') {
-            issueSection.style.display = 'block';
-            setRequired(issueSection, true);
-        }
-    }
-
-    // Helper function to set/unset 'required' attribute for inputs within a section
-    function setRequired(sectionElement, isRequired) {
-        // Select all relevant form elements within the given section
-        const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select');
-        inputs.forEach(input => {
-            // Set or remove the 'required' attribute
-            input.required = isRequired;
-        });
-    }
-
-    // --- Logic for the Contact Form Page (contact-us.html) ---
-    if (contactForm) { // Check if the contact form elements exist on the current page
-        // Initial call to set the correct section visibility on page load
-        toggleFormSections();
-
-        // Event listener for changes in the 'Reason for Contact' select box
-        reasonSelect.addEventListener("change", toggleFormSections);
-
-        // Handle form submission
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent default form submission
-
-            // Use the browser's built-in validation
-            if (!contactForm.checkValidity()) {
-                contactResponseMessage.textContent = 'Please fill out all required fields.';
-                contactResponseMessage.style.color = 'red';
-                return;
-            }
-
-            // At this point, the form is valid based on HTML5 'required' attributes
-
-            const selectedReason = reasonSelect.value;
-            let successMessage = "";
-
-            if (selectedReason === "feedback") {
-                successMessage = "Thank you for your feedback! We appreciate it.";
-            } else if (selectedReason === "issue") {
-                successMessage = "Your issue has been reported. Thank you!";
-            } else {
-                successMessage = "Form submitted successfully!"; // Fallback for no specific reason selected (though 'required' should prevent this)
-            }
-
-            // Simulate form data collection (for real scenario, you'd send this to a server)
-            const formData = new FormData(contactForm);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            console.log("Form Data Submitted:", data);
-
-            // Store the success message in session storage
-            sessionStorage.setItem('formSubmissionSuccess', successMessage);
-
-            // Redirect to index.html
-            window.location.href = 'index.html';
-        });
-    }
-
-    // --- Logic for the Index Page (index.html) ---
-    const submissionMessageDiv = document.getElementById("submission-message");
-    if (submissionMessageDiv) { // Check if the submission message div exists on the current page
-        const message = sessionStorage.getItem('formSubmissionSuccess');
-        if (message) {
-            submissionMessageDiv.textContent = message;
-            submissionMessageDiv.style.color = "green";
-            submissionMessageDiv.style.fontWeight = "bold";
-            submissionMessageDiv.style.margin = "15px 0"; // Apply styling
-            sessionStorage.removeItem('formSubmissionSuccess'); // Clear the message after displaying
-        }
-    }
-});
