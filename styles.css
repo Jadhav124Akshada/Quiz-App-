@@ -14,6 +14,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
+
+
+
+
   .quiz-section {
     margin-bottom: 20px;
   }
@@ -76,3 +80,62 @@ body {
     background-color: #45a049;
   }
   
+  /* === Total Score Page Styles === */
+
+.score-summary {
+  margin: 20px 0;
+}
+
+.score-card {
+  padding: 15px;
+  background-color: #f0f8ff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.perfect {
+  color: green;
+  font-weight: bold;
+}
+
+.partial {
+  color: blue;
+}
+
+.back-link,
+.clear-btn {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-link:hover,
+.clear-btn:hover {
+  background-color: #45a049;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: #4CAF50;
+  width: 0;
+  transition: width 0.5s ease;
+}

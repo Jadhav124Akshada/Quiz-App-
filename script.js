@@ -155,6 +155,13 @@ const jsQuestions = [
      answer: "The current object" 
     }
 ];
+// 👇 Save score to localStorage
+function saveScoreToLocalStorage(quizType, score, total) {
+  const existing = JSON.parse(localStorage.getItem("quizScores")) || {};
+  existing[quizType] = { score, total };
+  localStorage.setItem("quizScores", JSON.stringify(existing));
+}
+
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
@@ -185,9 +192,8 @@ const renderQuestion = (question, index, sectionId) => {
 };
 
 // Function to render all questions
-const renderQuestions = (questions, sectionId) => {
+const renderQuestions = (questions, sectionId, quizType) => {
   questions.forEach((q, index) => renderQuestion(q, index, sectionId));
-  // Add a final score container at the end
   const sectionContainer = document.getElementById(sectionId);
   const scoreElem = document.createElement("div");
   scoreElem.classList.add("score-container");
@@ -196,7 +202,15 @@ const renderQuestions = (questions, sectionId) => {
     <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
   `;
   sectionContainer.appendChild(scoreElem);
+
+  // 👇 Hook after rendering
+  setTimeout(() => {
+    document
+      .getElementById("calculate-score-btn")
+      .addEventListener("click", () => calculateTotalScore(questions, quizType));
+  }, 0);
 };
+
 
 // Function to check the answer for a specific question
 const checkAnswer = (questions, index) => {
@@ -223,7 +237,7 @@ const checkAnswer = (questions, index) => {
 };
 
 // Function to calculate the total score
-const calculateTotalScore = (questions) => {
+const calculateTotalScore = (questions, quizType) => {
   let score = 0;
   questions.forEach((q, index) => {
     const selectedOption = document.querySelector(
@@ -234,31 +248,42 @@ const calculateTotalScore = (questions) => {
     }
   });
 
-  // Display the total score
   const totalScoreContainer = document.getElementById("total-score");
-  totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
-  totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
+ // totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
+  //totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
+
+  // 👇 NEW LINE to save it
+// Save score to localStorage
+saveScoreToLocalStorage(quizType, score, questions.length);
+
+// Redirect to total-score.html after short delay (optional)
+setTimeout(() => {
+  window.location.href = "total-score.html";
+}, 1000); // 1 second delay so user can briefly see their score
 };
 
 // Dynamically render questions based on the page
 document.addEventListener("DOMContentLoaded", () => {
   let questions = [];
   let sectionId = "";
+  let quizType = ""; // 👈 NEW
 
-  // Determine the quiz type based on the section ID
   if (document.getElementById("html-questions")) {
     questions = htmlQuestions;
     sectionId = "html-questions";
+    quizType = "HTML";
   } else if (document.getElementById("css-questions")) {
     questions = cssQuestions;
     sectionId = "css-questions";
+    quizType = "CSS";
   } else if (document.getElementById("js-questions")) {
     questions = jsQuestions;
     sectionId = "js-questions";
+    quizType = "JS";
   }
 
-  // Render questions
-  renderQuestions(questions, sectionId);
+  renderQuestions(questions, sectionId, quizType);
+
 
   // Attach event listeners to "Check Answer" buttons
   document.querySelectorAll(".check-answer-btn").forEach((button) => {
@@ -273,3 +298,42 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("calculate-score-btn")
     .addEventListener("click", () => calculateTotalScore(questions));
 });
+
+
+// Total Score Page Script
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("scoreOutput")) {
+    const scores = JSON.parse(localStorage.getItem("quizScores"));
+    const scoreOutput = document.getElementById("scoreOutput");
+
+    if (!scores) {
+      scoreOutput.innerHTML = "<p>No quiz scores found yet.</p>";
+      return;
+    }
+
+    const topics = ["HTML", "CSS", "JS"];
+    topics.forEach((topic) => {
+      if (scores[topic]) {
+        const { score, total } = scores[topic];
+        const percent = ((score / total) * 100).toFixed(0);
+        const div = document.createElement("div");
+        div.classList.add("score-card");
+
+        div.innerHTML = `
+  <strong>${topic} Quiz:</strong> ${score} out of ${total} (${percent}%)
+  <div class="progress-bar">
+    <div class="fill" style="width: ${percent}%"></div>
+  </div>
+`;
+
+        scoreOutput.appendChild(div);
+      }
+    });
+  }
+});
+
+function clearScores() {
+  localStorage.removeItem("quizScores");
+  location.reload();
+}
+
