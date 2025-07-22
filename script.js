@@ -41,8 +41,8 @@ const htmlQuestions = [
      },
   { 
     question: "What is the correct HTML for inserting an audio file?", 
-    options: ["audio src='audio.mp3'", "audio file='audio.mp3'", "audio url='audio.mp3'", "music src='audio.mp3'"], 
-    answer: "audio src='audio.mp3'" 
+    options: ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"], 
+    answer: "<audio src='audio.mp3'></audio>" 
   },
   { 
     question: "Which HTML element is used to define an ordered list?", 
@@ -113,8 +113,8 @@ const jsQuestions = [
   },
   {
      question: "How do you declare a variable in JavaScript?", 
-     options: ["var myVariable;", "int myVariable;", "declare myVariable;", "variable myVariable;"], 
-     answer: "var myVariable;" 
+     options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"], 
+     answer: "All of the above" 
     },
   {
      question: "Which of the following is used to add an item to the end of an array in JavaScript?", 
@@ -146,15 +146,16 @@ const jsQuestions = [
    },
   { 
     question: "How do you create an object in JavaScript?", 
-    options: ["let obj = {};","let obj = [];","let obj = new Object();","let obj = ({});"], 
-    answer: "let obj = {};"
+    options: ["let obj = {};","let obj = [];","let obj = new Object();","Both A and C"], 
+    answer: "Both A and C"
    },
   {
      question: "What does the 'this' keyword refer to in JavaScript?", 
-     options: ["The current function", "The global object", "The current object", "The previous variable"], 
-     answer: "The current object" 
+     options: ["The current function", "The global object", "The object it belongs to", "The previous variable"], 
+     answer: "The object it belongs to" 
     }
 ];
+
 // 👇 Save score to localStorage
 function saveScoreToLocalStorage(quizType, score, total) {
   const existing = JSON.parse(localStorage.getItem("quizScores")) || {};
@@ -162,10 +163,122 @@ function saveScoreToLocalStorage(quizType, score, total) {
   localStorage.setItem("quizScores", JSON.stringify(existing));
 }
 
-// Function to render a single question
+
+// --- NEW QUESTION SETS ADDED BELOW ---
+
+// React Questions
+const reactQuestions = [
+  { question: "What is JSX?", options: ["JavaScript XML", "JavaScript Extension", "Java Syntax Extension", "JSON Syntax"], answer: "JavaScript XML" },
+  { question: "What is the purpose of the `useState` hook in React?", options: ["To fetch data", "To add state to functional components", "To perform side effects", "To create context"], answer: "To add state to functional components" },
+  { question: "How do you pass data from a parent component to a child component?", options: ["Using state", "Using props", "Using context", "Using Redux"], answer: "Using props" },
+  { question: "In React, what is used to render a list of elements?", options: ["The for loop", "The forEach() method", "The map() method", "The render() method"], answer: "The map() method" },
+  { question: "What does `ReactDOM.render()` do?", options: ["It renders a React element to the DOM", "It compiles React code", "It creates a new React component", "It updates the virtual DOM"], answer: "It renders a React element to the DOM" },
+  { question: "What is the purpose of the `useEffect` hook?", options: ["To manage component state", "To handle user events", "To perform side effects in functional components", "To optimize rendering"], answer: "To perform side effects in functional components" },
+  { question: "Which of the following is NOT a core concept of React?", options: ["Components", "Virtual DOM", "Templates", "State and Props"], answer: "Templates" },
+  { question: "How do you create a React functional component?", options: ["class MyComponent extends React.Component", "function MyComponent() { ... }", "new React.Component()", "create.component()"], answer: "function MyComponent() { ... }" },
+  { question: "What is the purpose of 'keys' when rendering a list?", options: ["To style list items", "To identify which items have changed, are added, or are removed", "To handle click events", "To define the list order"], answer: "To identify which items have changed, are added, or are removed" },
+  { question: "What tool is commonly used to create a new React app?", options: ["npm init", "react-start", "Create React App", "react-new"], answer: "Create React App" }
+];
+
+// Next.js Questions
+const nextjsQuestions = [
+  { question: "How is routing primarily handled in Next.js?", options: ["Using a routing library like React Router", "Through a configuration file", "Based on the file system in the `pages` directory", "Manually in the server file"], answer: "Based on the file system in the `pages` directory" },
+  { question: "Which rendering method pre-renders a page at build time?", options: ["Server-Side Rendering (SSR)", "Client-Side Rendering (CSR)", "Static Site Generation (SSG)", "Incremental Static Regeneration (ISR)"], answer: "Static Site Generation (SSG)" },
+  { question: "What is the purpose of the `/pages/api` directory in Next.js?", options: ["To store static assets", "To create serverless API endpoints", "To define page routes", "To manage global styles"], answer: "To create serverless API endpoints" },
+  { question: "Which component is used for optimized, client-side navigation between pages?", options: ["<a>", "<Route>", "<Navigate>", "<Link>"], answer: "<Link>" },
+  { question: "What is `getStaticProps` used for?", options: ["To fetch data for client-side rendering", "To fetch data at build time for pre-rendering", "To handle API requests", "To define dynamic routes"], answer: "To fetch data at build time for pre-rendering" },
+  { question: "How do you create a dynamic route in Next.js, for example for a blog post?", options: ["/pages/blog/[id].js", "/pages/blog/{id}.js", "/pages/blog/dynamic.js", "/pages/blog?id=[id].js"], answer: "/pages/blog/[id].js" },
+  { question: "What is Server-Side Rendering (SSR)?", options: ["The page is rendered by the browser", "The page is rendered on the server for each request", "The page is rendered at build time", "The page is not rendered at all"], answer: "The page is rendered on the server for each request" },
+  { question: "Which function is used to fetch data on every request for SSR?", options: ["getStaticProps", "getServerSideProps", "getInitialProps", "useEffect"], answer: "getServerSideProps" },
+  { question: "What is the main benefit of Image Optimization in Next.js?", options: ["It automatically converts images to CSS backgrounds", "It serves images in modern formats like WebP and resizes them", "It applies Instagram-like filters", "It stores images in a database"], answer: "It serves images in modern formats like WebP and resizes them" },
+  { question: "What command do you use to build a Next.js application for production?", options: ["npm start", "next dev", "npm run build", "next produce"], answer: "npm run build" }
+];
+
+// Git & GitHub Questions
+const gitQuestions = [
+  { question: "What command initializes a new Git repository?", options: ["git start", "git new", "git init", "git create"], answer: "git init" },
+  { question: "Which command stages a file for the next commit?", options: ["git stage", "git add", "git commit", "git track"], answer: "git add" },
+  { question: "How do you check the status of your working directory and staging area?", options: ["git check", "git log", "git status", "git diff"], answer: "git status" },
+  { question: "What command is used to record the staged changes to the repository?", options: ["git push", "git save", "git commit", "git record"], answer: "git commit" },
+  { question: "How do you send your committed changes to a remote repository like GitHub?", options: ["git send", "git upload", "git remote", "git push"], answer: "git push" },
+  { question: "What does the `git clone` command do?", options: ["Creates a new branch", "Creates a copy of a remote repository on your local machine", "Merges two repositories", "Deletes a repository"], answer: "Creates a copy of a remote repository on your local machine" },
+  { question: "How do you create a new branch and switch to it in one command?", options: ["git branch -c <branch-name>", "git switch -n <branch-name>", "git checkout -b <branch-name>", "git new-branch <branch-name>"], answer: "git checkout -b <branch-name>" },
+  { question: "What is a 'pull request' on GitHub?", options: ["A request to pull code from someone's computer", "A notification that you have new commits", "A way to propose changes to a repository for review", "A command to download the latest changes"], answer: "A way to propose changes to a repository for review" },
+  { question: "Which command is used to merge another branch into your current branch?", options: ["git combine <branch-name>", "git join <branch-name>", "git merge <branch-name>", "git attach <branch-name>"], answer: "git merge <branch-name>" },
+  { question: "What is the purpose of the `.gitignore` file?", options: ["To list all files in the repository", "To specify intentionally untracked files that Git should ignore", "To store your Git credentials", "To define Git commands"], answer: "To specify intentionally untracked files that Git should ignore" }
+];
+
+// Python Questions
+const pythonQuestions = [
+  { question: "Which keyword is used to define a function in Python?", options: ["function", "def", "func", "define"], answer: "def" },
+  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"], answer: "# This is a comment" },
+  { question: "Which data type is used to store a sequence of items, is changeable, and allows duplicate values?", options: ["tuple", "dictionary", "set", "list"], answer: "list" },
+  { question: "What is the correct way to get the length of a list named `my_list`?", options: ["len(my_list)", "my_list.length()", "size(my_list)", "length(my_list)"], answer: "len(my_list)" },
+  { question: "In Python, how is a block of code (like in a loop or function) indicated?", options: ["Using curly braces {}", "Using parentheses ()", "Using indentation", "Using the `begin` and `end` keywords"], answer: "Using indentation" },
+  { question: "Which operator is used for exponentiation (e.g., 5 to the power of 2)?", options: ["^", "*", "**", "pow"], answer: "**" },
+  { question: "What will `print(type('Hello'))` output?", options: ["<class 'string'>", "<class 'str'>", "<type 'string'>", "<type 'str'>"], answer: "<class 'str'>" },
+  { question: "Which method is used to add an item to the end of a list?", options: [".add()", ".push()", ".insert()", ".append()"], answer: ".append()" },
+  { question: "How do you access the value associated with the key 'name' in a dictionary `d`?", options: ["d.name", "d('name')", "d.get('name')", "d['name']"], answer: "d['name']" },
+  { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
+];
+
+// SQL Questions
+const sqlQuestions = [
+  { question: "Which SQL statement is used to extract data from a database?", options: ["GET", "OPEN", "EXTRACT", "SELECT"], answer: "SELECT" },
+  { question: "Which SQL clause is used to filter records?", options: ["FILTER BY", "WHERE", "SEARCH", "FROM"], answer: "WHERE" },
+  { question: "Which SQL statement is used to update data in a database?", options: ["MODIFY", "UPDATE", "SAVE", "CHANGE"], answer: "UPDATE" },
+  { question: "Which SQL statement is used to insert new data into a database?", options: ["ADD NEW", "INSERT INTO", "ADD RECORD", "INSERT NEW"], answer: "INSERT INTO" },
+  { question: "Which SQL keyword is used to sort the result-set?", options: ["SORT BY", "ORDER BY", "ARRANGE BY", "SORT"], answer: "ORDER BY" },
+  { question: "Which type of JOIN returns records that have matching values in both tables?", options: ["OUTER JOIN", "FULL JOIN", "LEFT JOIN", "INNER JOIN"], answer: "INNER JOIN" },
+  { question: "What does the `COUNT()` function in SQL do?", options: ["Counts the number of columns", "Counts the total value of a numeric column", "Returns the number of rows that matches a specified criterion", "Counts the number of tables"], answer: "Returns the number of rows that matches a specified criterion" },
+  { question: "Which SQL statement is used to delete data from a database?", options: ["DELETE", "REMOVE", "COLLAPSE", "ERASE"], answer: "DELETE" },
+  { question: "What does the `AS` keyword do in a query?", options: ["It is used to compare two values", "It is a wildcard character", "It creates an alias for a column or table name", "It is used for aggregation"], answer: "It creates an alias for a column or table name" },
+  { question: "Which SQL statement is used to create a new table?", options: ["CREATE TABLE", "NEW TABLE", "MAKE TABLE", "BUILD TABLE"], answer: "CREATE TABLE" }
+];
+
+// Django Questions
+const djangoQuestions = [
+  { question: "What is the architectural pattern that Django follows?", options: ["Model-View-Controller (MVC)", "Model-View-Presenter (MVP)", "Model-View-Template (MVT)", "Model-View-Adapter (MVA)"], answer: "Model-View-Template (MVT)" },
+  { question: "Which file in a Django app is used to define the data models (database schema)?", options: ["views.py", "models.py", "urls.py", "admin.py"], answer: "models.py" },
+  { question: "What is the primary role of `views.py` in a Django application?", options: ["To define the database structure", "To handle requests and return responses", "To map URLs to functions", "To render HTML templates"], answer: "To handle requests and return responses" },
+  { question: "Which command is used to start the Django development server?", options: ["django start", "python manage.py startserver", "django run", "python manage.py runserver"], answer: "python manage.py runserver" },
+  { question: "What is the purpose of the Django ORM?", options: ["To handle URL routing", "To manage static files", "To provide an object-oriented way to interact with the database", "To create user interfaces"], answer: "To provide an object-oriented way to interact with the database" },
+  { question: "Which file is used to map URLs to specific views in a Django project?", options: ["views.py", "settings.py", "urls.py", "models.py"], answer: "urls.py" },
+  { question: "What command creates the database tables for the models defined in your apps?", options: ["python manage.py makemigrations", "python manage.py migrate", "python manage.py create_db", "python manage.py syncdb"], answer: "python manage.py migrate" },
+  { question: "In which project file do you register a new application?", options: ["urls.py", "wsgi.py", "manage.py", "settings.py"], answer: "settings.py" },
+  { question: "What feature provides a ready-to-use interface for administrators to manage site content?", options: ["The Django Shell", "The Django Template Engine", "The Django Admin", "The Django Forms Library"], answer: "The Django Admin" },
+  { question: "In a Django template, how do you correctly output the value of a variable `my_variable`?", options: ["{{ my_variable }}", "{% my_variable %}", "[[ my_variable ]]", "(( my_variable ))"], answer: "{{ my_variable }}" }
+];
+
+
+// --------------------------------------
+// Questions for each topic
+// --------------------------------------
+
+const htmlQuestions = [/*...*/]; // truncated for brevity
+const cssQuestions = [/*...*/];
+const jsQuestions = [/*...*/];
+const reactQuestions = [/*...*/];
+const nextjsQuestions = [/*...*/];
+const gitQuestions = [/*...*/];
+const pythonQuestions = [/*...*/];
+const sqlQuestions = [/*...*/];
+const djangoQuestions = [/*...*/];
+
+// --------------------------------------
+// Utility to save quiz score to localStorage
+// --------------------------------------
+function saveScoreToLocalStorage(quizType, score, total) {
+  const existing = JSON.parse(localStorage.getItem("quizScores")) || {};
+  existing[quizType] = { score, total };
+  localStorage.setItem("quizScores", JSON.stringify(existing));
+}
+
+// --------------------------------------
+// Render a single question
+// --------------------------------------
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
-
   if (!sectionContainer) return;
 
   const questionElem = document.createElement("div");
@@ -191,9 +304,12 @@ const renderQuestion = (question, index, sectionId) => {
   sectionContainer.appendChild(questionElem);
 };
 
-// Function to render all questions
+// --------------------------------------
+// Render all questions and attach listeners
+// --------------------------------------
 const renderQuestions = (questions, sectionId, quizType) => {
   questions.forEach((q, index) => renderQuestion(q, index, sectionId));
+
   const sectionContainer = document.getElementById(sectionId);
   const scoreElem = document.createElement("div");
   scoreElem.classList.add("score-container");
@@ -203,7 +319,6 @@ const renderQuestions = (questions, sectionId, quizType) => {
   `;
   sectionContainer.appendChild(scoreElem);
 
-  // 👇 Hook after rendering
   setTimeout(() => {
     document
       .getElementById("calculate-score-btn")
@@ -211,8 +326,9 @@ const renderQuestions = (questions, sectionId, quizType) => {
   }, 0);
 };
 
-
-// Function to check the answer for a specific question
+// --------------------------------------
+// Answer Checking Logic
+// --------------------------------------
 const checkAnswer = (questions, index) => {
   const selectedOption = document.querySelector(
     `input[name="question-${index}"]:checked`
@@ -236,7 +352,9 @@ const checkAnswer = (questions, index) => {
   }
 };
 
-// Function to calculate the total score
+// --------------------------------------
+// Total Score Calculation Logic
+// --------------------------------------
 const calculateTotalScore = (questions, quizType) => {
   let score = 0;
   questions.forEach((q, index) => {
@@ -248,25 +366,22 @@ const calculateTotalScore = (questions, quizType) => {
     }
   });
 
-  const totalScoreContainer = document.getElementById("total-score");
- // totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
-  //totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
+  // Save to localStorage
+  saveScoreToLocalStorage(quizType, score, questions.length);
 
-  // 👇 NEW LINE to save it
-// Save score to localStorage
-saveScoreToLocalStorage(quizType, score, questions.length);
-
-// Redirect to total-score.html after short delay (optional)
-setTimeout(() => {
-  window.location.href = "total-score.html";
-}, 1000); // 1 second delay so user can briefly see their score
+  // Redirect to score page
+  setTimeout(() => {
+    window.location.href = "total-score.html";
+  }, 1000);
 };
 
-// Dynamically render questions based on the page
+// --------------------------------------
+// Page Initialization
+// --------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   let questions = [];
   let sectionId = "";
-  let quizType = ""; // 👈 NEW
+  let quizType = "";
 
   if (document.getElementById("html-questions")) {
     questions = htmlQuestions;
@@ -280,27 +395,41 @@ document.addEventListener("DOMContentLoaded", () => {
     questions = jsQuestions;
     sectionId = "js-questions";
     quizType = "JS";
+  } else if (document.getElementById("react-questions")) {
+    questions = reactQuestions;
+    sectionId = "react-questions";
+  } else if (document.getElementById("nextjs-questions")) {
+    questions = nextjsQuestions;
+    sectionId = "nextjs-questions";
+  } else if (document.getElementById("git-questions")) {
+    questions = gitQuestions;
+    sectionId = "git-questions";
+  } else if (document.getElementById("python-questions")) {
+    questions = pythonQuestions;
+    sectionId = "python-questions";
+  } else if (document.getElementById("sql-questions")) {
+    questions = sqlQuestions;
+    sectionId = "sql-questions";
+  } else if (document.getElementById("django-questions")) {
+    questions = djangoQuestions;
+    sectionId = "django-questions";
   }
 
-  renderQuestions(questions, sectionId, quizType);
+  if (sectionId) {
+    renderQuestions(questions, sectionId, quizType);
 
-
-  // Attach event listeners to "Check Answer" buttons
-  document.querySelectorAll(".check-answer-btn").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const index = parseInt(event.target.getAttribute("data-index"));
-      checkAnswer(questions, index);
+    document.querySelectorAll(".check-answer-btn").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const index = parseInt(event.target.getAttribute("data-index"));
+        checkAnswer(questions, index);
+      });
     });
-  });
-
-  // Attach event listener to "Calculate Total Score" button
-  document
-    .getElementById("calculate-score-btn")
-    .addEventListener("click", () => calculateTotalScore(questions));
+  }
 });
 
-
-// Total Score Page Script
+// --------------------------------------
+// Total Score Page Logic
+// --------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("scoreOutput")) {
     const scores = JSON.parse(localStorage.getItem("quizScores"));
@@ -320,20 +449,23 @@ document.addEventListener("DOMContentLoaded", () => {
         div.classList.add("score-card");
 
         div.innerHTML = `
-  <strong>${topic} Quiz:</strong> ${score} out of ${total} (${percent}%)
-  <div class="progress-bar">
-    <div class="fill" style="width: ${percent}%"></div>
-  </div>
-`;
-
+          <strong>${topic} Quiz:</strong> ${score} out of ${total} (${percent}%)
+          <div class="progress-bar">
+            <div class="fill" style="width: ${percent}%"></div>
+          </div>
+        `;
         scoreOutput.appendChild(div);
       }
     });
   }
 });
 
+// Optional: Clear scores function
 function clearScores() {
   localStorage.removeItem("quizScores");
   location.reload();
 }
 
+
+
+// Function to render a single question
