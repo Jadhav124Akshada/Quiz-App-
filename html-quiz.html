@@ -4,34 +4,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Quiz</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-  .quiz-container a {
-    display: block; /* Ensures proper layout behavior */
-    text-align: right; /* Aligns text content, such as the link, to the right */
-    margin-right: 0; /* Optional if extra spacing is needed on the right */
-    float: right; /* Ensures button stays visually aligned correctly */
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.question-container {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .background-blur {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 30% 30%, #ff6ec4 0%, transparent 40%), 
+                  radial-gradient(circle at 70% 70%, #7873f5 0%, transparent 40%);
+      filter: blur(100px);
+      z-index: 1;
+    }
+
+    .quiz-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      z-index: 2;
+      max-width: 700px;
+      width: 100%;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .question-container {
       margin-bottom: 20px;
     }
+
     .result {
-      margin-top: 10px;
+      margin-top: 15px;
       font-weight: bold;
+      color: #ffcc00;
+      text-align: center;
+    }
+
+    .quiz-container a {
+      display: inline-block;
+      margin-top: 30px;
+      text-align: right;
+      color: #fff;
+      text-decoration: none;
+      background: #ff6ec4;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      float: right;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-container a:hover {
+      background: #ff4fb0;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #ff6ec4;
+    }
+    .buttons{
+      border-radius: var(#0f2027);
+      background-color: #ff6ec4;
+      text-align: center;
+      text-decoration-color: #0f2027;
+    text-shadow: #203a43;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-container {
+        padding: 1.5rem 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .quiz-container a {
+        float: none;
+        display: block;
+        width: fit-content;
+        margin: 1rem auto 0;
+      }
+      .buttons{
+        background-color: #ff6ec4;
+        text-decoration-color: #0f2027;
+        border-radius: var(#0f2027);
+      }
     }
   </style>
+</head>
 <body>
+  <div class="background-blur"></div>
+
   <div class="quiz-container">
     <div class="quiz-section">
       <h2>HTML Quiz</h2>
-      <div id="html-questions"></div>
+      <div id="html-questions" class="question-container"></div>
     </div>
     
-    <div id="result"></div>
-    <a href="index.html">Back to Home</a>
+    <div id="result" class="result"></div>
+    <a href="index.html">⬅ Back to Home</a>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+
+
