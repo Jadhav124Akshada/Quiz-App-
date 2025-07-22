@@ -1,11 +1,12 @@
+/* Base Styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
-  }
-  
-  .quiz-container {
+}
+
+.quiz-container {
   height: 90vh;
   max-width: 800px;
   margin: 0 auto;
@@ -13,52 +14,82 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .quiz-section {
+}
+
+.quiz-section {
   margin-bottom: 20px;
-  }
-  
-  h2 {
+}
+
+h2 {
   color: #333;
   font-size: 24px;
-  }
-  
-  .question-container {
+}
+
+.description {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+.quiz-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.quiz-list li {
+  margin-bottom: 1rem;
+}
+
+.quiz-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.quiz-link:hover {
+  background-color: #0056b3;
+}
+
+.question-container {
   margin-bottom: 15px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
-  }
-  
-  .question-container p {
+}
+
+.question-container p {
   font-weight: bold;
   margin-bottom: 10px;
-  }
-  
-  .option-container {
+}
+
+.option-container {
   margin-top: 10px;
   padding-left: 0;
   list-style-type: none;
   display: block;
   margin-bottom: 20px;
-  }
-  
-  .option-container li {
+}
+
+.option-container li {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  }
-  
-  input[type="radio"] {
+}
+
+input[type="radio"] {
   margin-right: 10px;
   cursor: pointer;
-  }
-  
-  input[type="radio"] {
-  margin-right: 30px;
-  }
-  
-  button {
+}
+
+button {
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -69,17 +100,56 @@ body {
   margin-top: 20px;
   display: block;
   width: 30%;
-  }
-  
-  button:hover {
+}
+
+button:hover {
   background-color: #45a049;
-  }
-  
-.icon{
+}
+
+.icon {
   font-size: x-large;
 }
 
-/* navbar */
+/* ----------------- Responsive Styling ----------------- */
+
+/* Mobile First */
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .quiz-link {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .quiz-container {
+    width: 80%;
+  }
+
+  button {
+    width: 50%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .quiz-container {
+    width: 50%;
+  }
+}
+
+/* ----------------- Navbar ----------------- */
 
 .navbar {
   margin-bottom: 1rem;
@@ -97,14 +167,14 @@ body {
   justify-content: space-between;
   border: 1px solid black;
   border-radius: 10px;
-  }
+}
 
-  .navbar a{ 
+.navbar a {
   color: rgb(8, 241, 8);
   text-decoration: none;
-  }
+}
 
-  .search-bar {
+.search-bar {
   border-radius: 5px;
   border: 2px solid #ccc;
   font-size: 13px;
@@ -115,20 +185,21 @@ body {
   background-color: #fff;
   color: #333;
   margin-right: 1vw;
-  }
+}
 
-  .search-bar:focus {
+.search-bar:focus {
   border-color: #4CAF50;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
-  }
-.nav-left{
+}
+
+.nav-left {
   display: flex;
   align-items: center;
   font-weight: 900;
   font-size: 1.5vw;
   color: #23e329;
   letter-spacing: 2px;
-  text-shadow: 1px 1px 4px rgba(76,175,80,0.15);
+  text-shadow: 1px 1px 4px rgba(76, 175, 80, 0.15);
   gap: 0.5vw;
   padding-left: 1vw;
 }
@@ -138,7 +209,7 @@ body {
   transition: transform 0.3s;
 }
 
-.nav-right{
+.nav-right {
   display: flex;
   align-items: center;
   gap: 2vw;
@@ -208,8 +279,6 @@ option {
   background-color: #f2f2f2;
 }
 
-
-
 /* Responsive Navbar */
 @media screen and (max-width: 768px) {
   .navbar {
@@ -226,26 +295,13 @@ option {
     text-align: center;
   }
 
-  .nav-left {
-    justify-content: center;
-  }
-
-  .nav-mid {
-    display: flex;
-    justify-content: center;
-  }
-
   .nav-right {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
   }
 
-  .search-bar {
-    width: 80%;
-    font-size: 14px;
-  }
-
+  .search-bar,
   select {
     width: 80%;
     font-size: 14px;
@@ -272,10 +328,7 @@ option {
   }
 }
 
-
-
-/* footer */
-
+/* ----------------- Footer ----------------- */
 .footer {
   margin-top: 1rem;
   position: relative;
@@ -335,14 +388,64 @@ option {
   font-size: 14px;
   border-top: 1px solid #ccc;
 }
+
 .footer-bottom p {
   margin: 0;
   color: #777;
 }
+
 .footer-bottom a {
   color: #007bff;
   text-decoration: none;
 }
+
 .footer-bottom a:hover {
   text-decoration: underline;
+}
+
+/* ----------------- Contact Form ----------------- */
+#contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-Form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#contact-Form input,
+#contact-Form select,
+#contact-Form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#contact-Form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+#responseMessage {
+  margin-top: 20px;
+  color: green;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  font-weight: 500;
 }

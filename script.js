@@ -282,10 +282,14 @@ const renderQuestions = (questions, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
   const scoreElem = document.createElement("div");
   scoreElem.classList.add("score-container");
-  scoreElem.innerHTML = `
-    <button id="calculate-score-btn">Calculate Total Score</button>
-    <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
-  `;
+ scoreElem.innerHTML = `
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <button id="calculate-score-btn" style="width: 180px; padding: 10px; font-size: 16px;">Calculate Total Score</button>
+    <button id="feedback-btn" style="width: 180px; padding: 10px; font-size: 16px;">Feedback / Report</button>
+  </div>
+  <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
+`;
+
   sectionContainer.appendChild(scoreElem);
 };
 
@@ -378,13 +382,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Attach event listener to "Calculate Total Score" button
-    document
-      .getElementById("calculate-score-btn")
-      .addEventListener("click", () => calculateTotalScore(questions));
-  }
-});
+    // ✅ Attach both event listeners right after injecting HTML
+  document.getElementById("calculate-score-btn")
+  .addEventListener("click", () => calculateTotalScore(questions));
 
+  document.getElementById("feedback-btn")
+  .addEventListener("click", () => {
+    window.location.href = "contact-us.html";
+  });
+
+      
+  }
+// ---------------- QUIZ SEARCH FUNCTIONALITY ----------------
 function filterQuizzes() {
   const searchInput = document.getElementById("quiz-search");
   if (!searchInput) return;
@@ -392,36 +401,106 @@ function filterQuizzes() {
 
   document.querySelectorAll(".question-container").forEach((container) => {
     const questionText = container.querySelector("p")?.textContent?.toLowerCase() || "";
-    if (questionText.includes(filter)) {
-      container.style.display = "";
-    } else {
-      container.style.display = "none";
-    }
+    container.style.display = questionText.includes(filter) ? "" : "none";
   });
 }
 
-// If the search input exists, attach the oninput event
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("quiz-search");
   if (searchInput) {
     searchInput.oninput = filterQuizzes;
   }
-});
 
+  // ---------------- ACCOUNT DROPDOWN ----------------
+  const accountIcon = document.getElementById("account-icon");
+  const accountDropdown = document.getElementById("account-dropdown");
 
+  if (accountIcon && accountDropdown) {
+    accountIcon.addEventListener("click", () => {
+      accountDropdown.style.display = accountDropdown.style.display === "block" ? "none" : "block";
+    });
 
-// Account Dropdown Functionality
+    window.addEventListener("click", (e) => {
+      if (!accountIcon.contains(e.target) && !accountDropdown.contains(e.target)) {
+        accountDropdown.style.display = "none";
+      }
+    });
+  }
 
-const accountIcon = document.getElementById("account-icon");
-const accountDropdown = document.getElementById("account-dropdown");
+  // ---------------- CONTACT FORM LOGIC ----------------
+  const reasonSelect = document.getElementById("reason");
+  const feedbackSection = document.getElementById("feedback-Section");
+  const issueSection = document.getElementById("issue-Section");
+  const contactForm = document.getElementById("contact-Form");
+  const contactResponseMessage = document.getElementById("responseMessage");
 
-accountIcon.addEventListener("click", () => {
-  accountDropdown.style.display =
-    accountDropdown.style.display === "block" ? "none" : "block";
-});
+  function toggleFormSections() {
+    if (!reasonSelect) return;
 
-window.addEventListener("click", (e) => {
-  if (!accountIcon.contains(e.target) && !accountDropdown.contains(e.target)) {
-    accountDropdown.style.display = "none";
+    const selectedReason = reasonSelect.value;
+
+    feedbackSection.style.display = 'none';
+    issueSection.style.display = 'none';
+    setRequired(feedbackSection, false);
+    setRequired(issueSection, false);
+
+    if (selectedReason === 'feedback') {
+      feedbackSection.style.display = 'block';
+      setRequired(feedbackSection, true);
+    } else if (selectedReason === 'issue') {
+      issueSection.style.display = 'block';
+      setRequired(issueSection, true);
+    }
+  }
+
+  function setRequired(sectionElement, isRequired) {
+    const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select');
+    inputs.forEach(input => {
+      input.required = isRequired;
+    });
+  }
+
+  if (contactForm) {
+    toggleFormSections();
+    reasonSelect.addEventListener("change", toggleFormSections);
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactResponseMessage.textContent = 'Please fill out all required fields.';
+        contactResponseMessage.style.color = 'red';
+        return;
+      }
+
+      const selectedReason = reasonSelect.value;
+      let successMessage = "Form submitted successfully!";
+      if (selectedReason === "feedback") {
+        successMessage = "Thank you for your feedback! We appreciate it.";
+      } else if (selectedReason === "issue") {
+        successMessage = "Your issue has been reported. Thank you!";
+      }
+
+      const formData = new FormData(contactForm);
+      const data = {};
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      console.log("Form Data Submitted:", data);
+      sessionStorage.setItem('formSubmissionSuccess', successMessage);
+      window.location.href = 'index.html';
+    });
+  }
+
+  const submissionMessageDiv = document.getElementById("submission-message");
+  if (submissionMessageDiv) {
+    const message = sessionStorage.getItem('formSubmissionSuccess');
+    if (message) {
+      submissionMessageDiv.textContent = message;
+      submissionMessageDiv.style.color = "green";
+      submissionMessageDiv.style.fontWeight = "bold";
+      submissionMessageDiv.style.margin = "15px 0";
+      sessionStorage.removeItem('formSubmissionSuccess');
+    }
   }
 });
+
