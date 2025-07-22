@@ -3,24 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: HTML, CSS, JavaScript</title>
+  <title>Quiz</title>
   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p>Choose a topic to start:</p>
-    <ul>
-      <li><a href="html-quiz.html">HTML Quiz</a></li>
-      <li><a href="css-quiz.html">CSS Quiz</a></li>
-      <li><a href="js-quiz.html">JavaScript Quiz</a></li>
-      <li><a href="react-quiz.html">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html">Python Quiz</a></li>
-      <li><a href="sql-quiz.html">SQL Quiz</a></li>
-      <li><a href="django-quiz.html">Django Quiz</a></li>
-    </ul>
+   <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>Web Development Quiz</h1>
+        <p class="subtitle">Test your skills across the entire web development stack. Choose a topic and challenge yourself with our carefully crafted quizzes!</p>
+      </div>
+      <div class="particles" id="particles"></div>
+    </header>
+    
+    <div class="quiz-grid">
+      <!-- HTML Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fab fa-html5"></i>
+        </div>
+        <div class="card-content">
+          <h3>HTML Quiz</h3>
+          <p>Test your knowledge of HTML5 tags, semantic elements, forms, and accessibility features.</p>
+          <a href="html-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- CSS Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fab fa-css3-alt"></i>
+        </div>
+        <div class="card-content">
+          <h3>CSS Quiz</h3>
+          <p>Master Flexbox, Grid, animations, and responsive design principles.</p>
+          <a href="css-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- JavaScript Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fab fa-js"></i>
+        </div>
+        <div class="card-content">
+          <h3>JavaScript Quiz</h3>
+          <p>Challenge yourself with ES6+ features, DOM manipulation, and asynchronous programming.</p>
+          <a href="js-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- React Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fab fa-react"></i>
+        </div>
+        <div class="card-content">
+          <h3>React Quiz</h3>
+          <p>Test your React knowledge: components, hooks, state management, and performance.</p>
+          <a href="react-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- Next.js Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fas fa-server"></i>
+        </div>
+        <div class="card-content">
+          <h3>Next.js Quiz</h3>
+          <p>SSR, SSG, API routes, and the latest Next.js features.</p>
+          <a href="nextjs-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- Git & GitHub Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fab fa-github"></i>
+        </div>
+        <div class="card-content">
+          <h3>Git & GitHub</h3>
+          <p>Version control, branching strategies, workflows, and collaboration.</p>
+          <a href="git-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- Python Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fab fa-python"></i>
+        </div>
+        <div class="card-content">
+          <h3>Python Quiz</h3>
+          <p>Core Python concepts, data structures, OOP, and popular libraries.</p>
+          <a href="python-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- SQL Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fas fa-database"></i>
+        </div>
+        <div class="card-content">
+          <h3>SQL Quiz</h3>
+          <p>Database design, queries, joins, transactions, and optimization.</p>
+          <a href="sql-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- Django Quiz -->
+      <div class="quiz-card">
+        <div class="icon-container">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <div class="card-content">
+          <h3>Django Quiz</h3>
+          <p>Models, views, templates, authentication, and REST framework.</p>
+          <a href="django-quiz.html" class="btn">Start Quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  
+  
+    <footer>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+      </div>
+      <p>© 2025 Web Development Quiz. All rights reserved.</p>
+      <p>Designed with ❤️ for developers</p>
+    </footer>
   </div>
   
   <script src="script.js"></script> 

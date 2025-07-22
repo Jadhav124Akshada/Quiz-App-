@@ -4,32 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
 </head> 
-<style>
-.quiz-container a {
-  display: block; /* Ensures proper layout behavior */
-  text-align: right; /* Aligns text content, such as the link, to the right */
-  margin-right: 0; /* Optional if extra spacing is needed on the right */
-  float: right; /* Ensures button stays visually aligned correctly */
-}
-.question-container {
-      margin-bottom: 20px;
-    }
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-</style>
 <body>
   <div class="quiz-container">
     <div class="quiz-section">
       <h2>CSS Quiz</h2>
       <div id="css-questions"></div>
     </div>
-    
-    <div id="result"></div>
-    <a href="index.html" >Back to Home</a>
+  
+       <div id="result"></div>
+    <a href="index.html" style="color: #f0f2f4; text-decoration: none; font-weight: bold; border: 2px solid #488bcf; border-radius: 6px; padding: 6px 14px; display: inline-flex; align-items: center;">
+      <i class="fa fa-home" style="margin-right: 8px;"></i>Back to Home</a>
     
   </div>
   <script src="script.js"></script>

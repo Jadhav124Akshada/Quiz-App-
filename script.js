@@ -1,4 +1,50 @@
-// HTML Questions
+//Functionality of  floating particles
+      function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Resize and randomness particle properties animantions 
+        const size = Math.random() * 10 + 2;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const animationDuration = Math.random() * 20 + 10;
+        const animationDelay = Math.random() * 5;
+        const hue = Math.floor(Math.random() * 40) + 180;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.animationDuration = `${animationDuration}s`;
+        particle.style.animationDelay = `${animationDelay}s`;
+        particle.style.backgroundColor = `hsl(${hue}, 70%, 60%)`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    //particles and other effects
+      document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      
+      // hover effect to quiz boxes
+      const cards = document.querySelectorAll('.quiz-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0)';
+        });
+      });
+    });
+    
+    // HTML Questions
 const htmlQuestions = [
   { question: "What does HTML stand for?",
      options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
@@ -309,6 +355,7 @@ const checkAnswer = (questions, index) => {
   } else {
     resultContainer.textContent = `Wrong! The correct answer is: ${questions[index].answer}`;
     resultContainer.style.color = "red";
+    resultContainer.style.marginLeft = "20px";
     return false;
   }
 };
@@ -328,7 +375,7 @@ const calculateTotalScore = (questions) => {
   // Display the total score
   const totalScoreContainer = document.getElementById("total-score");
   totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
-  totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
+  totalScoreContainer.style.color = score === questions.length ? "green" : "white";
 };
 
 // Dynamically render questions based on the page
