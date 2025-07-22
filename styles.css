@@ -20,8 +20,22 @@ body {
   
   h2 {
     color: #333;
-    font-size: 24px;
+    font-size: 36px;
+    font-weight: bold;
   }
+  h1{
+    font-size: 32px;
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    
+  }
+  
   
   .question-container {
     margin-bottom: 15px;
@@ -76,3 +90,71 @@ body {
     background-color: #45a049;
   }
   
+  ul{
+    display: grid;
+    gap:15px;
+    list-style: none;
+    padding: 0;
+    margin-top:20px;
+  }
+  /* Arranges quiz items vertically with spacing */
+  .q-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  }
+/* Styles each quiz item block */
+.q-item {
+  display: flex;/* Aligns quiz name and button side by side */
+  justify-content: space-between;
+  text-decoration: none;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #e2e0e0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.q-item span {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+
+  color: #333;
+}
+
+.q-item a button {
+  background-color: #4CAF50;
+  width: 100px;
+  height:40px;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.q-item a button:hover {
+  background-color: #45a049;
+}
+
+.q-item a.quiz-button {
+  background-color: #4CAF50;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.q-item a.quiz-button:hover {
+  background-color: #45a049;
+}
