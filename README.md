@@ -1,19 +1,35 @@
-Quiz-App
-A simple and interactive quiz application to test knowledge of web development technologies like HTML, CSS, and JavaScript.
+# Quiz App 🧠
 
-Key Features & Recent Changes
-    Revamped UI: The entire application has been redesigned with a modern, dark theme for a better user experience.
+A simple, interactive web-based quiz application built using **HTML**, **CSS**, and **JavaScript**.
 
-    Dynamic Quiz Interface: Replaced static pages with a single, powerful quiz page (quiz.html) that loads questions dynamically.
+---
 
-    Interactive Question Slider: Questions are now presented one at a time in a smooth, horizontal slider, improving focus.
+## 📖 Description
 
-    Live Progress Tracking: A progress bar at the top of the quiz page provides real-time feedback on the user's progress.
+This project allows users to answer a set of multiple-choice questions. After completing the quiz, users receive their final score. It’s a great beginner project to understand DOM manipulation, events, and logic building in JavaScript.
 
-    Flexible Answer Modes: Users can choose to see the correct answer instantly after each question or view all results at the end of the quiz.
+---
 
-    Detailed Quiz Report: At the end of the quiz, a comprehensive report is generated in a modal, showing a summary and a detailed breakdown of correct, incorrect, and skipped questions.
+## 💡 Features
 
-    Centralized Question Bank: All quiz questions are neatly organized in a separate questions.js file, making them easy to manage and update.
+- Dynamic question loading
+- Score tracking
+- Quiz restart option
+- Clean UI and interactive flow
 
-    Responsive Design: Added padding and responsive styles to ensure the application looks great and is fully functional on all devices, including mobile phones.
+---
+
+## 🔧 Technologies Used
+
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla)
+
+---
+
+## 🏁 Getting Started
+
+1. Fork this repo
+2. Clone it to your local system:
+   ```bash
+   git clone https://github.com/Jadhav124Akshada/Quiz-App-.git
