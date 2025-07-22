@@ -4,21 +4,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz: HTML, CSS, JavaScript</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .background-blur {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 30% 30%, #ff6ec4 0%, transparent 40%), 
+                  radial-gradient(circle at 70% 70%, #7873f5 0%, transparent 40%);
+      filter: blur(100px);
+      z-index: 1;
+    }
+
+    .quiz-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      z-index: 2;
+      max-width: 90%;
+    }
+
+    .quiz-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-container p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quiz-links li {
+      margin: 1rem 0;
+    }
+
+    .quiz-btn {
+      background: #ff6ec4;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .quiz-btn:hover {
+      background: #ff4fb0;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #ff6ec4;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-container {
+        padding: 1.5rem 2rem;
+      }
+
+      .quiz-btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+      }
+
+      .quiz-container h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="background-blur"></div>
+
   <div class="quiz-container">
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p>Choose a topic to start:</p>
-    <ul>
-      <li><a href="html-quiz.html">HTML Quiz</a></li>
-      <li><a href="css-quiz.html">CSS Quiz</a></li>
-      <li><a href="js-quiz.html">JavaScript Quiz</a></li>
+    <h1>🧠 Web Dev Quiz Zone</h1>
+    <p>Choose a topic to begin your journey:</p>
+    <ul class="quiz-links">
+      <li><a href="html-quiz.html" class="quiz-btn">HTML Quiz</a></li>
+      <li><a href="css-quiz.html" class="quiz-btn">CSS Quiz</a></li>
+      <li><a href="js-quiz.html" class="quiz-btn">JavaScript Quiz</a></li>
     </ul>
   </div>
-  
-  <script src="script.js"></script> 
+
+  <script>
+    console.log("Quiz App Ready!");
+  </script>
 </body>
 </html>
-
-
