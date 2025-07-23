@@ -1,18 +1,19 @@
 // HTML Questions
 const htmlQuestions = [
-  { question: "What does HTML stand for?",
-     options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
-     answer: "HyperText Markup Language" 
-     },
-  
-  { 
-    question: "What attribute is used to define the destination of a link in HTML?", 
-    options: ["href", "src", "action", "destination"], 
-    answer: "href" 
+  {
+    question: "What does HTML stand for?",
+    options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
+    answer: "HyperText Markup Language"
+  },
+
+  {
+    question: "What attribute is used to define the destination of a link in HTML?",
+    options: ["href", "src", "action", "destination"],
+    answer: "href"
   },
   {
     question: "What is the purpose of the <head> element in an HTML document?",
-    options: ["To define the main content of the page.","To provide metadata and links to external resources.","To display headings on the page.","To create the body of the page."],
+    options: ["To define the main content of the page.", "To provide metadata and links to external resources.", "To display headings on the page.", "To create the body of the page."],
     answer: "To provide metadata and links to external resources."
   },
   {
@@ -25,135 +26,203 @@ const htmlQuestions = [
     options: ["required", "placeholder", "value", "mandatory"],
     answer: "required"
   },
-  { 
-    question: "What is the purpose of the alt attribute in an image tag?", 
-    options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"], 
-    answer: "Provides a textual description of the image" },
-  { 
-    question: "What does the <head> element in HTML contain?", 
-    options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"], 
-    answer: "Metadata about the page"
-   },
-  { 
-    question: "Which HTML element is used to define a paragraph?",
-     options: ["p", "text", "div", "span"],
-      answer: "p"
-     },
-  { 
-    question: "What is the correct HTML for inserting an audio file?", 
-    options: ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"], 
-    answer: "<audio src='audio.mp3'></audio>" 
+  {
+    question: "What is the purpose of the alt attribute in an image tag?",
+    options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"],
+    answer: "Provides a textual description of the image"
   },
-  { 
-    question: "Which HTML element is used to define an ordered list?", 
-    options: ["ul", "li", "ol", "ol-list"], 
+  {
+    question: "What does the <head> element in HTML contain?",
+    options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"],
+    answer: "Metadata about the page"
+  },
+  {
+    question: "Which HTML element is used to define a paragraph?",
+    options: ["p", "text", "div", "span"],
+    answer: "p"
+  },
+  {
+    question: "What is the correct HTML for inserting an audio file?",
+    options: ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"],
+    answer: "<audio src='audio.mp3'></audio>"
+  },
+  {
+    question: "Which HTML element is used to define an ordered list?",
+    options: ["ul", "li", "ol", "ol-list"],
     answer: "ol"
-   },
+  },
 ];
 
 // CSS Questions
 const cssQuestions = [
-  { 
-    question: "Which of the following is the correct CSS syntax for selecting an element with the class name 'example'?", 
-    options: [".example { color: red; }", "example { color: red; }", "#example { color: red; }", "*example { color: red; }"], 
-    answer: ".example { color: red; }" 
-  },
-  { 
-    question: "What does the CSS display property control?", 
-    options: ["The visibility of an element", "The layout behavior of an element", "The background color of an element", "The size of an element"], 
-    answer: "The layout behavior of an element" 
-  },
-  { 
-    question: "Which CSS property is used to change the background color of an element?", 
-    options: ["color", "bgcolor", "background-color", "background"], 
-    answer: "background-color" 
+  {
+    question: "Which of the following is the correct CSS syntax for selecting an element with the class name 'example'?",
+    options: [".example { color: red; }", "example { color: red; }", "#example { color: red; }", "*example { color: red; }"],
+    answer: ".example { color: red; }"
   },
   {
-     question: "Which CSS property is used to change the font size of an element?", 
-     options: ["font-style", "font-size", "text-size", "size"], 
-     answer: "font-size"
+    question: "What does the CSS display property control?",
+    options: ["The visibility of an element", "The layout behavior of an element", "The background color of an element", "The size of an element"],
+    answer: "The layout behavior of an element"
   },
-  { 
-    question: "How do you apply a background image in CSS?", 
-    options: ["background: url('image.jpg');", "background-image: 'image.jpg';", "background-image: url('image.jpg');", "image-background: url('image.jpg');"], 
-    answer: "background-image: url('image.jpg');" 
+  {
+    question: "Which CSS property is used to change the background color of an element?",
+    options: ["color", "bgcolor", "background-color", "background"],
+    answer: "background-color"
   },
-  { 
-    question: "Which CSS property controls the space between words?", 
-    options: ["letter-spacing", "word-spacing", "text-spacing", "line-height"], 
+  {
+    question: "Which CSS property is used to change the font size of an element?",
+    options: ["font-style", "font-size", "text-size", "size"],
+    answer: "font-size"
+  },
+  {
+    question: "How do you apply a background image in CSS?",
+    options: ["background: url('image.jpg');", "background-image: 'image.jpg';", "background-image: url('image.jpg');", "image-background: url('image.jpg');"],
+    answer: "background-image: url('image.jpg');"
+  },
+  {
+    question: "Which CSS property controls the space between words?",
+    options: ["letter-spacing", "word-spacing", "text-spacing", "line-height"],
     answer: "word-spacing"
-   },
-  { 
-    question: "Which property is used to change the color of text in CSS?", 
-    options: ["color", "text-color", "font-color", "background-color"], 
-    answer: "color" 
-  },
-  { 
-    question: "How do you select an element with the id 'header' in CSS?", 
-    options: ["#header", ".header", "header", "[id='header']"], 
-    answer: "#header"
-   },
-  { 
-    question: "What is the default value of the position property in CSS?", 
-    options: ["static", "relative", "absolute", "fixed"], 
-    answer: "static" 
   },
   {
-     question: "Which CSS property is used to add space between an element's border and its content?", 
-     options: ["padding", "margin", "border-spacing", "gap"], 
-     answer: "padding" 
-    }
+    question: "Which property is used to change the color of text in CSS?",
+    options: ["color", "text-color", "font-color", "background-color"],
+    answer: "color"
+  },
+  {
+    question: "How do you select an element with the id 'header' in CSS?",
+    options: ["#header", ".header", "header", "[id='header']"],
+    answer: "#header"
+  },
+  {
+    question: "What is the default value of the position property in CSS?",
+    options: ["static", "relative", "absolute", "fixed"],
+    answer: "static"
+  },
+  {
+    question: "Which CSS property is used to add space between an element's border and its content?",
+    options: ["padding", "margin", "border-spacing", "gap"],
+    answer: "padding"
+  }
 ];
-
+//Cpp Questions
+const cppQuestions = [
+  {
+    question: "Which of the following is the correct way to declare a variable in C++?",
+    options: ["int x;", "x int;", "int x = 0;", "int x: 0;"],
+    answer: "int x;"  
+  } ,
+  {
+  question: "Which of these is NOT a valid way to allocate memory dynamically in C++?",
+  options: ["int* p = new int;", "int p = new int;", "int* p = new int[10];", "delete p;"],
+  answer: "int p = new int;"
+  },
+  {
+  question: "What feature of C++ allows a function or an operator to have different meanings based on context?",
+  options: ["Polymorphism", "Encapsulation", "Abstraction", "Inheritance"],
+  answer: "Polymorphism"
+  },
+  {
+  question: "What does the 'mutable' keyword do in C++?",
+  options: ["Allows a member of a const object to be modified",
+    "Makes a variable thread-safe",
+    "Declares a variable as global",
+    "Defines a virtual function"],
+  answer: "Allows a member of a const object to be modified"
+  },
+  {
+  question: "What happens if you don't provide a destructor in a class with dynamically allocated memory?",
+  options: [
+    "Nothing, the compiler handles it automatically",
+    "Memory leak",
+    "Compile-time error",
+    "Runtime exception"
+  ],
+  answer: "Memory leak"
+  },
+  {
+  question: "Which C++11 feature allows you to initialize variables directly inside the class definition?",
+  options: ["In-class member initializers", "Delegating constructors", "Auto keyword", "Lambda expressions"],
+  answer: "In-class member initializers"
+  },
+  {
+  question: "What is the main difference between 'struct' and 'class' in C++?",
+  options: [
+    "struct members are public by default; class members are private",
+    "structs can't have functions; classes can",
+    "No difference",
+    "Classes can't inherit; structs can"
+  ],
+  answer: "struct members are public by default; class members are private"
+  },
+  {
+    question: "What is the correct syntax for a single-line comment in C++?",   
+    options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"],
+    answer: "// This is a comment"
+  },
+  {
+    question: "Which of the following is used to include a standard library in C++?",
+    options: ["#include <iostream>", "#include iostream", "import iostream", "#include <iostream.h>"],
+    answer: "#include <iostream>" 
+  },
+  {
+    question: "What is the output of the following code: `std::cout << 5 + 3;`?",
+    options: ["8", "53", "Error", "5 + 3"],     
+    answer: "8"
+  }
+];
 // JavaScript Questions
 const jsQuestions = [
-  { question: "Which of the following is the correct way to define a function in JavaScript?", 
-    options: ["function myFunction() { }", "def myFunction() { }", "function: myFunction() { }", "func myFunction() { }"], 
-    answer: "function myFunction() { }" 
+  {
+    question: "Which of the following is the correct way to define a function in JavaScript?",
+    options: ["function myFunction() { }", "def myFunction() { }", "function: myFunction() { }", "func myFunction() { }"],
+    answer: "function myFunction() { }"
   },
   {
-     question: "How do you declare a variable in JavaScript?", 
-     options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"], 
-     answer: "All of the above" 
-    },
+    question: "How do you declare a variable in JavaScript?",
+    options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"],
+    answer: "All of the above"
+  },
   {
-     question: "Which of the following is used to add an item to the end of an array in JavaScript?", 
-     options: ["array.push(item);", "array.add(item);", "array.append(item);", "array.insert(item);"], 
-     answer: "array.push(item);" 
-    },
-  { 
-    question: "Which method is used to convert a string to lowercase in JavaScript?", 
-    options: ["toLowerCase()", "lowercase()", "toLower()", "convertLower()"], 
-    answer: "toLowerCase()" 
+    question: "Which of the following is used to add an item to the end of an array in JavaScript?",
+    options: ["array.push(item);", "array.add(item);", "array.append(item);", "array.insert(item);"],
+    answer: "array.push(item);"
   },
-  { 
-    question: "Which operator is used to assign a value to a variable in JavaScript?", 
-    options: ["=", "==", "===", ":="], answer: "=" 
+  {
+    question: "Which method is used to convert a string to lowercase in JavaScript?",
+    options: ["toLowerCase()", "lowercase()", "toLower()", "convertLower()"],
+    answer: "toLowerCase()"
   },
-  { question: "What is the output of 5 + '5' in JavaScript?", 
-    options: ["55", "10", "error", "undefined"], 
+  {
+    question: "Which operator is used to assign a value to a variable in JavaScript?",
+    options: ["=", "==", "===", ":="], answer: "="
+  },
+  {
+    question: "What is the output of 5 + '5' in JavaScript?",
+    options: ["55", "10", "error", "undefined"],
     answer: "55"
-   },
-  { 
-    question: "Which method is used to remove the last element from an array in JavaScript?",
-     options: ["pop()", "remove()", "shift()", "slice()"], 
-     answer: "pop()" 
-    },
-  { 
-    question: "Which statement is used to stop a loop in JavaScript?", 
-    options: ["break", "exit", "stop", "return"], 
-    answer: "break"
-   },
-  { 
-    question: "How do you create an object in JavaScript?", 
-    options: ["let obj = {};","let obj = [];","let obj = new Object();","Both A and C"], 
-    answer: "Both A and C"
-   },
+  },
   {
-     question: "What does the 'this' keyword refer to in JavaScript?", 
-     options: ["The current function", "The global object", "The object it belongs to", "The previous variable"], 
-     answer: "The object it belongs to" 
-    }
+    question: "Which method is used to remove the last element from an array in JavaScript?",
+    options: ["pop()", "remove()", "shift()", "slice()"],
+    answer: "pop()"
+  },
+  {
+    question: "Which statement is used to stop a loop in JavaScript?",
+    options: ["break", "exit", "stop", "return"],
+    answer: "break"
+  },
+  {
+    question: "How do you create an object in JavaScript?",
+    options: ["let obj = {};", "let obj = [];", "let obj = new Object();", "Both A and C"],
+    answer: "Both A and C"
+  },
+  {
+    question: "What does the 'this' keyword refer to in JavaScript?",
+    options: ["The current function", "The global object", "The object it belongs to", "The previous variable"],
+    answer: "The object it belongs to"
+  }
 ];
 
 // --- NEW QUESTION SETS ADDED BELOW ---
@@ -203,12 +272,12 @@ const gitQuestions = [
 // Python Questions
 const pythonQuestions = [
   { question: "Which keyword is used to define a function in Python?", options: ["function", "def", "func", "define"], answer: "def" },
-  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"], answer: "# This is a comment" },
+  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", " \ \ This is a comment "], answer: "# This is a comment" },
   { question: "Which data type is used to store a sequence of items, is changeable, and allows duplicate values?", options: ["tuple", "dictionary", "set", "list"], answer: "list" },
   { question: "What is the correct way to get the length of a list named `my_list`?", options: ["len(my_list)", "my_list.length()", "size(my_list)", "length(my_list)"], answer: "len(my_list)" },
   { question: "In Python, how is a block of code (like in a loop or function) indicated?", options: ["Using curly braces {}", "Using parentheses ()", "Using indentation", "Using the `begin` and `end` keywords"], answer: "Using indentation" },
   { question: "Which operator is used for exponentiation (e.g., 5 to the power of 2)?", options: ["^", "*", "**", "pow"], answer: "**" },
-  { question: "What will `print(type('Hello'))` output?", options: ["<class 'string'>", "<class 'str'>", "<type 'string'>", "<type 'str'>"], answer: "<class 'str'>" },
+  { question: "What will `print(type('Hello'))` output?", options: ["&lt;class 'string'&gt;", "&lt;class 'str'&gt;", "&lt;type 'str'&gt;", "&lt;class 'string'&gt;"], answer: "&lt;class 'str'&gt;" },
   { question: "Which method is used to add an item to the end of a list?", options: [".add()", ".push()", ".insert()", ".append()"], answer: ".append()" },
   { question: "How do you access the value associated with the key 'name' in a dictionary `d`?", options: ["d.name", "d('name')", "d.get('name')", "d['name']"], answer: "d['name']" },
   { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
@@ -242,35 +311,205 @@ const djangoQuestions = [
   { question: "In a Django template, how do you correctly output the value of a variable `my_variable`?", options: ["{{ my_variable }}", "{% my_variable %}", "[[ my_variable ]]", "(( my_variable ))"], answer: "{{ my_variable }}" }
 ];
 
+// dsa questions starts here
+const dsaQuestions = [
+  {
+    question: " What is the time complexity of binary search?",
+    options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+    answer: "O(log n)"
+  },
+  {
+    question: " Which data structure uses FIFO?",
+    options: ["Stack", "Queue", "Tree", "Graph"],
+    answer: "Queue"
+  },
+  {
+    question: " What does 'push' do in a stack?",
+    options: ["Removes an element", "Sorts elements", "Adds an element", "Finds middle"],
+    answer: "Adds an element"
+  },
+  {
+    question: " Which is not a linear data structure?",
+    options: ["Array", "Linked List", "Stack", "Tree"],
+    answer: "Tree"
+  },
+  {
+    question: " What is the default base of recursion?",
+    options: ["While loop", "Loop counter", "Base case", "Tail call"],
+    answer: "Base case"
+  },
+  {
+    question: " What is the time complexity of linear search?",
+    options: ["O(log n)", "O(n)", "O(1)", "O(n^2)"],
+    answer: "O(n)"
+  },
+  {
+    question: " Which data structure uses LIFO?",
+    options: ["Queue", "Graph", "Stack", "Linked List"],
+    answer: "Stack"
+  },
+  {
+    question: " What is the full form of DSA?",
+    options: ["Data Save Algorithm", "Data Structure Algorithm", "Data Structure and Algorithms", "Data Sync Application"],
+    answer: "Data Structure and Algorithms"
+  },
+  {
+    question: " Which traversal method uses recursion most naturally in trees?",
+    options: ["Level Order", "Preorder", "Breadth First", "Level First"],
+    answer:"Preorder"
+  },
+  {question: " Which of the following is not used in graph representation?",
+    options: ["Adjacency Matrix", "Adjacency List", "Hash Table", "Edge List"],
+    answer: "Hash Table"
+  }
+];
+
+// dsa questions end here
+
+
+
+let actualtime = 60;
+let timeleft = 60;
+let timeinterval;
+const timerElement = document.getElementById('timer');
+const scoreElement = document.getElementById('scoree');
+
+
+
+
+function updateTimerDisplay() {
+  timerElement.textContent = timeleft.toString();
+}
+function updateGlobleScore() {
+  if (scoreElement) {
+    globalscore += actualtime - timeleft;
+    scoreElement.innerHTML = globalscore.toString();
+  }
+}
+function initializeTimer() {
+  timeleft = 60;
+  timerElement.textContent = timeleft.toString();
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.disabled = false;
+  });
+
+  document.querySelectorAll('.check-answer-btn').forEach(btn => {
+    btn.disabled = false;
+  })
+  stop();
+}
+
+function stop() {
+  clearInterval(timeinterval);
+}
+
+function start() {
+  if (timeinterval) {
+    clearInterval(timeinterval);
+  }
+  actualtime = 60;         
+  timeleft = actualtime; 
+  timerElement.textContent = timeleft.toString();
+
+  timeinterval = setInterval(() => {
+    timeleft--;
+
+    timerElement.innerText = timeleft.toString();
+
+    if (timeleft <= 0) {
+      clearInterval(timeinterval);
+      handleTimeUp(currentQuestions);
+    }
+  }, 1000);
+}
+
+function handleTimeUp(questions) {
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.disabled = true;
+  });
+
+  document.querySelectorAll('.check-answer-btn').forEach(btn => {
+    btn.disabled = true;
+  })
+
+  const response = document.getElementById('result');
+  response.textContent = "Time`s up";
+
+  calculateTotalScore(questions);
+}
+
+
+const startBtn = document.getElementById('start-btn');
+const restartBtn = document.getElementById('restart-btn');
+
+
+if (startBtn) {
+  startBtn.addEventListener('click', () => {
+    initializeTimer();
+    start();
+  });
+}
+
+
+if (restartBtn) {
+  restartBtn.addEventListener('click', () => {
+    initializeTimer();
+  });
+}
 
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
-
+  
   if (!sectionContainer) return;
 
   const questionElem = document.createElement("div");
   questionElem.classList.add("question-container");
-  questionElem.innerHTML = `
-    <p>${index + 1}. ${question.question}</p>
-    <ul class="option-container">
-      ${question.options
-        .map(
-          (option) => `
-        <li>
-          <label>
-            <input type="radio" name="question-${index}" value="${option}"> ${option}
-          </label>
-        </li>
-      `
-        )
-        .join("")}
-    </ul>
-    <button class="check-answer-btn" data-index="${index}">Check Answer</button>
-    <div class="result" id="result-${index}"></div>
-  `;
+
+  // Add question text
+  const questionText = document.createElement("p");
+  questionText.textContent = `${index + 1}. ${question.question}`;
+  questionElem.appendChild(questionText);
+
+  // Create options
+  const ul = document.createElement("ul");
+  ul.className = "option-container";
+
+  question.options.forEach((option) => {
+    const li = document.createElement("li");
+    const label = document.createElement("label");
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `question-${index}`;
+    input.value = option;
+
+    const textNode = document.createTextNode(" " + option);
+
+    label.appendChild(input);
+    label.appendChild(textNode);
+    li.appendChild(label);
+    ul.appendChild(li);
+  });
+
+  questionElem.appendChild(ul);
+
+  // Add Check Answer button
+  const checkBtn = document.createElement("button");
+  checkBtn.className = "check-answer-btn";
+  checkBtn.dataset.index = index;
+  checkBtn.textContent = "Check Answer";
+  questionElem.appendChild(checkBtn);
+
+  // Add result div
+  const resultDiv = document.createElement("div");
+  resultDiv.className = "result";
+  resultDiv.id = `result-${index}`;
+  questionElem.appendChild(resultDiv);
+
   sectionContainer.appendChild(questionElem);
 };
+
 
 // Function to render all questions
 const renderQuestions = (questions, sectionId) => {
@@ -292,6 +531,7 @@ const renderQuestions = (questions, sectionId) => {
 
   sectionContainer.appendChild(scoreElem);
 };
+
 
 // Function to check the answer for a specific question
 const checkAnswer = (questions, index) => {
@@ -316,7 +556,7 @@ const checkAnswer = (questions, index) => {
     return false;
   }
 };
-
+let globalscore;
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
   let score = 0;
@@ -327,7 +567,10 @@ const calculateTotalScore = (questions) => {
     if (selectedOption && selectedOption.value === q.answer) {
       score++;
     }
+    globalscore = score;
   });
+
+  updateGlobleScore();
 
   // Display the total score
   const totalScoreContainer = document.getElementById("total-score");
@@ -336,6 +579,8 @@ const calculateTotalScore = (questions) => {
 };
 
 // Dynamically render questions based on the page
+let currentQuestions = [];
+
 document.addEventListener("DOMContentLoaded", () => {
   let questions = [];
   let sectionId = "";
@@ -347,7 +592,10 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("css-questions")) {
     questions = cssQuestions;
     sectionId = "css-questions";
-  } else if (document.getElementById("js-questions")) {
+  }else if (document.getElementById("cpp-questions")) {
+    questions = cppQuestions;
+    sectionId = "cpp-questions";
+  }  else if (document.getElementById("js-questions")) {
     questions = jsQuestions;
     sectionId = "js-questions";
   } else if (document.getElementById("react-questions")) {
@@ -368,10 +616,14 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("django-questions")) {
     questions = djangoQuestions;
     sectionId = "django-questions";
+  }else if(document.getElementById("dsa-questions")){
+    questions = dsaQuestions;
+     sectionId = "dsa-questions";
   }
 
   // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
+    currentQuestions = questions;
     renderQuestions(questions, sectionId);
 
     // Attach event listeners to "Check Answer" buttons
@@ -382,19 +634,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // ✅ Attach both event listeners right after injecting HTML
-  document.getElementById("calculate-score-btn")
-  .addEventListener("click", () => calculateTotalScore(questions));
+document.getElementById("calculate-score-btn").addEventListener("click", () => {
+  initializeTimer();
 
-  document.getElementById("feedback-btn")
-  .addEventListener("click", () => {
-    window.location.href = "contact-us.html";
-  });
-
-      
-  }
-
+  calculateTotalScore(questions);
 });
+
+document.getElementById("feedback-btn").addEventListener("click", () => {
+  window.location.href = "contact-us.html";
+});
+
+  }
 // Function to toggle Feedback and Issue sections based on selected reason
 document.addEventListener("DOMContentLoaded", function () {
     const reasonSelect = document.getElementById("reason");
@@ -497,3 +747,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+// Added "Restart Quiz" Feature
+function restartQuiz() {
+  if (confirm('Are you sure you want to restart the quiz? All progress will be lost.')) {
+    window.location.reload();
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const restartBtn = document.getElementById('restartQuizBtn');
+  if (restartBtn) {
+    restartBtn.addEventListener('click', restartQuiz);
+  }
+});
+
