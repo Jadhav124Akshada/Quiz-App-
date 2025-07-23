@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What does the SQL statement 'SELECT DISTINCT' do?",
+    "options": [
+      "Selects all rows from a table",
+      "Selects only unique (different) values",
+      "Selects rows that are similar",
+      "Selects rows based on condition"
+    ],
+    "answer": "Selects only unique (different) values"
+  },
+  {
+    "question": "Which SQL clause is used to group rows that have the same values in specified columns into summary rows?",
+    "options": ["ORDER BY", "GROUP BY", "HAVING", "WHERE"],
+    "answer": "GROUP BY"
+  },
+  {
+    "question": "What will the following query return? SELECT COUNT(*) FROM employees WHERE department IS NULL;",
+    "options": [
+      "Total number of employees",
+      "All employees in any department",
+      "Employees without a department",
+      "Syntax error"
+    ],
+    "answer": "Employees without a department"
+  },
+  {
+    "question": "Which of the following SQL statements will return the second highest salary from an 'employees' table?",
+    "options": [
+      "SELECT MAX(salary) FROM employees;",
+      "SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);",
+      "SELECT salary FROM employees ORDER BY salary ASC LIMIT 2;",
+      "SELECT TOP 2 salary FROM employees ORDER BY salary DESC;"
+    ],
+    "answer": "SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);"
+  },
+  {
+    "question": "Which command is used to remove a table and all its data from the database?",
+    "options": ["DROP TABLE", "DELETE TABLE", "REMOVE TABLE", "TRUNCATE TABLE"],
+    "answer": "DROP TABLE"
+  },
+  {
+    "question": "What is the difference between WHERE and HAVING clauses in SQL?",
+    "options": [
+      "WHERE is used for columns, HAVING is for rows",
+      "HAVING is used to filter groups, WHERE is used to filter rows",
+      "WHERE is used only in INSERT queries",
+      "They are interchangeable"
+    ],
+    "answer": "HAVING is used to filter groups, WHERE is used to filter rows"
+  },
+  {
+    "question": "Which of these SQL joins returns all records from the left table and the matched records from the right table?",
+    "options": ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL JOIN"],
+    "answer": "LEFT JOIN"
+  },
+  {
+    "question": "Which SQL keyword is used to fetch records between a range of values?",
+    "options": ["IN", "BETWEEN", "RANGE", "WITHIN"],
+    "answer": "BETWEEN"
+  },
+  {
+    "question": "Which command is used to permanently remove all rows from a table, without logging individual row deletions?",
+    "options": ["DELETE", "REMOVE", "TRUNCATE", "DROP"],
+    "answer": "TRUNCATE"
+  },
+  {
+    "question": "What does a foreign key do in a database?",
+    "options": [
+      "Uniquely identifies each record in a table",
+      "Establishes a relationship between tables",
+      "Sorts data in descending order",
+      "Stores encrypted passwords"
+    ],
+    "answer": "Establishes a relationship between tables"
+  }
+]
