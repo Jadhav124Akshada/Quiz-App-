@@ -242,6 +242,14 @@ const djangoQuestions = [
   { question: "In a Django template, how do you correctly output the value of a variable `my_variable`?", options: ["{{ my_variable }}", "{% my_variable %}", "[[ my_variable ]]", "(( my_variable ))"], answer: "{{ my_variable }}" }
 ];
 
+// Track attempted questions using localStorage
+let attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+// Structure: { sectionId: { index: "option" } }
+
+function saveAttemptedQuestions() {
+  localStorage.setItem('attemptedQuestions', JSON.stringify(attemptedQuestions));
+}
+
 
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
@@ -293,8 +301,19 @@ const renderQuestions = (questions, sectionId) => {
   sectionContainer.appendChild(scoreElem);
 };
 
-// Function to check the answer for a specific question
-const checkAnswer = (questions, index) => {
+// *** updated ***Function to check the answer for a specific question
+const checkAnswer = (questions, index, sectionId) => {
+  // Initialize section if not present
+  if (!attemptedQuestions[sectionId]) attemptedQuestions[sectionId] = {};
+
+  // Prevent re-answering
+  if (attemptedQuestions[sectionId][index]) {
+    const resultContainer = document.getElementById(`result-${index}`);
+    resultContainer.textContent = "You have already answered this question.";
+    resultContainer.style.color = "gray";
+    return false;
+  }
+
   const selectedOption = document.querySelector(
     `input[name="question-${index}"]:checked`
   );
@@ -305,6 +324,10 @@ const checkAnswer = (questions, index) => {
     resultContainer.style.color = "orange";
     return false;
   }
+
+  // Mark as attempted
+  attemptedQuestions[sectionId][index] = selectedOption.value;
+  saveAttemptedQuestions();
 
   if (selectedOption.value === questions[index].answer) {
     resultContainer.textContent = "Correct!";
@@ -374,13 +397,32 @@ document.addEventListener("DOMContentLoaded", () => {
   if (sectionId) {
     renderQuestions(questions, sectionId);
 
+  // ***Disable already attempted questions and show message
+  if (attemptedQuestions[sectionId]) {
+  Object.keys(attemptedQuestions[sectionId]).forEach(idx => {
+    const inputs = document.querySelectorAll(`input[name="question-${idx}"]`);
+    inputs.forEach(input => {
+      input.disabled = true;
+      if (input.value === attemptedQuestions[sectionId][idx]) {
+        input.checked = true;
+      }
+    });
+    const resultContainer = document.getElementById(`result-${idx}`);
+    if (resultContainer) {
+      resultContainer.textContent = "You have already answered this question.";
+      resultContainer.style.color = "gray";
+    }
+  });
+}
+
     // Attach event listeners to "Check Answer" buttons
     document.querySelectorAll(".check-answer-btn").forEach((button) => {
       button.addEventListener("click", (event) => {
         const index = parseInt(event.target.getAttribute("data-index"));
-        checkAnswer(questions, index);
+        checkAnswer(questions, index,sectionId);
       });
     });
+
 
     // ✅ Attach both event listeners right after injecting HTML
   document.getElementById("calculate-score-btn")
@@ -393,8 +435,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
   }
-
 });
+
 // Function to toggle Feedback and Issue sections based on selected reason
 document.addEventListener("DOMContentLoaded", function () {
     const reasonSelect = document.getElementById("reason");
@@ -496,4 +538,5 @@ document.addEventListener("DOMContentLoaded", function () {
             sessionStorage.removeItem('formSubmissionSuccess'); // Clear the message after displaying
         }
     }
+  
 });
