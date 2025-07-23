@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Next.js Quiz</title>
   <link rel="stylesheet" href="styles.css">
-</head> 
-<style>
-  /* Style added to position the link */
-  .quiz-container a {
-    float: right; 
-  }
-  
-  /* Style added for the icon's size and spacing */
-  .back-button-icon {
-    width: 32px;
-    height: 32px;
-    margin: 10px 10px 0 0;
-  }
-</style>
+  <style>
+    /* Style added to position the link */
+    .quiz-container a {
+      float: right; 
+    }
+
+    /* Style added for the icon's size and spacing */
+    .back-button-icon {
+      width: 32px;
+      height: 32px;
+      margin: 10px 10px 0 0;
+    }
+  </style>
+</head>
+
 <body>
+  <div class="quiz-header">
+    <div class="timer-container">
+      <span>Time Left: </span>
+      <span id="timer">60</span>s
+    </div>
+    <div class="score-display">
+      <span>Score: </span>
+      <span id="scoree">0</span>
+    </div>
+  </div>
+
   <div class="quiz-container">
     <a href="index.html" class="back-button-icon" aria-label="Back to Home">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -30,11 +43,24 @@
 
     <div class="quiz-section">
       <h2>Next.js Quiz</h2>
+      <div class="btnclass">
+        <button id="start-btn">Start</button>
+        <button id="restart-btn">Restart</button>
+      </div>
       <div id="nextjs-questions"></div>
     </div>
-    
+
     <div id="result"></div>
+    <a href="index.html">Back to Home</a>
   </div>
+
+
+  <!-- Added "Restart Quiz" Button -->
+<div id="resultBox">
+  <button id="restartQuizBtn">Restart Quiz</button>
+</div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
