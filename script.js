@@ -6,9 +6,9 @@ const htmlQuestions = [
   { question: "Which attribute specifies that an input field must be filled out before submitting?", options: ["required", "placeholder", "value", "mandatory"], answer: "required" },
   { question: "What is the purpose of the alt attribute in an image tag?", options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"], answer: "Provides a textual description of the image" },
   { question: "What does the <head> element in HTML contain?", options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"], answer: "Metadata about the page" },
-  { question: "What does the 'download' attribute in the <a> tag do?", options: ["Opens a file in a new tab", "Forces the browser to download the linked file", "Uploads a file", "Links to an external site"], answer: "Forces the browser to download the linked file" },  
-  { question: "Which HTML element is used to define an ordered list?", options: ["ul", "li", "ol", "ol-list"], answer: "ol" },
-  { question: "What is the difference between relative and absolute URLs in HTML?", options: ["Relative URLs point to external sites, absolute URLs are local", "Relative URLs depend on the current page location, absolute URLs include the full path", "Relative URLs are always shorter", "There is no difference"], answer: "Relative URLs depend on the current page location, absolute URLs include the full path" }
+  { question: "Which HTML element is used to define a paragraph?", options: ["p", "text", "div", "span"], answer: "p" },
+  { question: "What is the correct HTML for inserting an audio file?", options: ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"], answer: "<audio src='audio.mp3'></audio>" },
+  { question: "Which HTML element is used to define an ordered list?", options: ["ul", "li", "ol", "ol-list"], answer: "ol" }
 ];
 
 const cssQuestions = [
@@ -35,6 +35,45 @@ const jsQuestions = [
   { question: "Which statement is used to stop a loop in JavaScript?", options: ["break", "exit", "stop", "return"], answer: "break" },
   { question: "How do you create an object in JavaScript?", options: ["let obj = {};", "let obj = [];", "let obj = new Object();", "Both A and C"], answer: "Both A and C" },
   { question: "What does the 'this' keyword refer to in JavaScript?", options: ["The current function", "The global object", "The object it belongs to", "The previous variable"], answer: "The object it belongs to" }
+];
+
+const dbmsQuestions = [
+  { question: "Which of the following is a type of DBMS?", options: ["Hierarchical", "Relational", "Network", "All of the above"], answer: "All of the above" },
+  { question: "What does SQL stand for?", options: ["Structured Query Language", "Simple Query Language", "Sequential Query Language", "Standard Query Language"], answer: "Structured Query Language" },
+  { question: "Which command is used to remove all rows from a table without logging the individual row deletions?", options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"], answer: "TRUNCATE" },
+  { question: "In ER diagrams, what does a diamond shape represent?", options: ["Entity", "Attribute", "Relationship", "Primary Key"], answer: "Relationship" },
+  { question: "Which of the following is not a property of a transaction?", options: ["Atomicity", "Consistency", "Compilation", "Isolation"], answer: "Compilation" },
+  { question: "Which SQL clause is used to filter records?", options: ["SELECT", "WHERE", "FROM", "ORDER BY"], answer: "WHERE" },
+  { question: "What is the main purpose of normalization in DBMS?", options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"], answer: "To eliminate data redundancy" },
+  { question: "Which normal form removes transitive dependency?", options: ["1NF", "2NF", "3NF", "BCNF"], answer: "3NF" },
+  { question: "Which key uniquely identifies a record in a table?", options: ["Foreign key", "Secondary key", "Primary key", "Candidate key"], answer: "Primary key" },
+  { question: "Which language is used to define the structure of a database schema?", options: ["DCL", "DML", "DDL", "TCL"], answer: "DDL" }
+];
+
+const cppQuestions = [
+  { question: "Which of the following is the correct way to declare a variable in C++?", options: ["int x;", "x int;", "int x = 0;", "int x: 0;"], answer: "int x;" },
+  { question: "Which of these is NOT a valid way to allocate memory dynamically in C++?", options: ["int* p = new int;", "int p = new int;", "int* p = new int[10];", "delete p;"], answer: "int p = new int;" },
+  { question: "What feature of C++ allows a function or an operator to have different meanings based on context?", options: ["Polymorphism", "Encapsulation", "Abstraction", "Inheritance"], answer: "Polymorphism" },
+  { question: "What does the 'mutable' keyword do in C++?", options: ["Allows a member of a const object to be modified", "Makes a variable thread-safe", "Declares a variable as global", "Defines a virtual function"], answer: "Allows a member of a const object to be modified" },
+  { question: "What happens if you don't provide a destructor in a class with dynamically allocated memory?", options: ["Nothing, the compiler handles it automatically", "Memory leak", "Compile-time error", "Runtime exception"], answer: "Memory leak" },
+  { question: "Which C++11 feature allows you to initialize variables directly inside the class definition?", options: ["In-class member initializers", "Delegating constructors", "Auto keyword", "Lambda expressions"], answer: "In-class member initializers" },
+  { question: "What is the main difference between 'struct' and 'class' in C++?", options: ["struct members are public by default; class members are private", "structs can't have functions; classes can", "No difference", "Classes can't inherit; structs can"], answer: "struct members are public by default; class members are private" },
+  { question: "What is the correct syntax for a single-line comment in C++?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"], answer: "// This is a comment" },
+  { question: "Which of the following is used to include a standard library in C++?", options: ["#include <iostream>", "#include iostream", "import iostream", "#include <iostream.h>"], answer: "#include <iostream>" },
+  { question: "What is the output of the following code: `std::cout << 5 + 3;`?", options: ["8", "53", "Error", "5 + 3"], answer: "8" }
+];
+
+const dsaQuestions = [
+  { question: "What is the time complexity of binary search?", options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"], answer: "O(log n)" },
+  { question: "Which data structure uses FIFO?", options: ["Stack", "Queue", "Tree", "Graph"], answer: "Queue" },
+  { question: "What does 'push' do in a stack?", options: ["Removes an element", "Sorts elements", "Adds an element", "Finds middle"], answer: "Adds an element" },
+  { question: "Which is not a linear data structure?", options: ["Array", "Linked List", "Stack", "Tree"], answer: "Tree" },
+  { question: "What is the default base of recursion?", options: ["While loop", "Loop counter", "Base case", "Tail call"], answer: "Base case" },
+  { question: "What is the time complexity of linear search?", options: ["O(log n)", "O(n)", "O(1)", "O(n^2)"], answer: "O(n)" },
+  { question: "Which data structure uses LIFO?", options: ["Queue", "Graph", "Stack", "Linked List"], answer: "Stack" },
+  { question: "What is the full form of DSA?", options: ["Data Save Algorithm", "Data Structure Algorithm", "Data Structure and Algorithms", "Data Sync Application"], answer: "Data Structure and Algorithms" },
+  { question: "Which traversal method uses recursion most naturally in trees?", options: ["Level Order", "Preorder", "Breadth First", "Level First"], answer: "Preorder" },
+  { question: "Which of the following is not used in graph representation?", options: ["Adjacency Matrix", "Adjacency List", "Hash Table", "Edge List"], answer: "Hash Table" }
 ];
 
 const reactQuestions = [
@@ -78,12 +117,12 @@ const gitQuestions = [
 
 const pythonQuestions = [
   { question: "Which keyword is used to define a function in Python?", options: ["function", "def", "func", "define"], answer: "def" },
-  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"], answer: "# This is a comment" },
+  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", " \ \ This is a comment "], answer: "# This is a comment" },
   { question: "Which data type is used to store a sequence of items, is changeable, and allows duplicate values?", options: ["tuple", "dictionary", "set", "list"], answer: "list" },
   { question: "What is the correct way to get the length of a list named `my_list`?", options: ["len(my_list)", "my_list.length()", "size(my_list)", "length(my_list)"], answer: "len(my_list)" },
   { question: "In Python, how is a block of code (like in a loop or function) indicated?", options: ["Using curly braces {}", "Using parentheses ()", "Using indentation", "Using the `begin` and `end` keywords"], answer: "Using indentation" },
   { question: "Which operator is used for exponentiation (e.g., 5 to the power of 2)?", options: ["^", "*", "**", "pow"], answer: "**" },
-  { question: "What will `print(type('Hello'))` output?", options: ["<class 'string'>", "<class 'str'>", "<type 'string'>", "<type 'str'>"], answer: "<class 'str'>" },
+  { question: "What will `print(type('Hello'))` output?", options: ["<class 'string'>", "<class 'str'>", "<type 'str'>", "<class 'string'>"], answer: "<class 'str'>" },
   { question: "Which method is used to add an item to the end of a list?", options: [".add()", ".push()", ".insert()", ".append()"], answer: ".append()" },
   { question: "How do you access the value associated with the key 'name' in a dictionary `d`?", options: ["d.name", "d('name')", "d.get('name')", "d['name']"], answer: "d['name']" },
   { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
@@ -115,11 +154,86 @@ const djangoQuestions = [
   { question: "In a Django template, how do you correctly output the value of a variable `my_variable`?", options: ["{{ my_variable }}", "{% my_variable %}", "[[ my_variable ]]", "(( my_variable ))"], answer: "{{ my_variable }}" }
 ];
 
-const quizTimeLimit = 600; // 10 minutes in seconds
+let globalscore = 0;
+let actualtime = 60;
+let timeleft = 60;
+let timeinterval;
+const timerElement = document.getElementById('timer');
+const scoreElement = document.getElementById('scoree');
 
-let userAnswers = [];
-let timerInterval;
-let timeLeft = quizTimeLimit;
+function updateTimerDisplay() {
+  timerElement.textContent = timeleft.toString();
+}
+
+function updateGlobleScore() {
+  if (scoreElement) {
+    globalscore += actualtime - timeleft;
+    scoreElement.innerHTML = globalscore.toString();
+  }
+}
+
+function initializeTimer() {
+  timeleft = 60;
+  timerElement.textContent = timeleft.toString();
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.disabled = false;
+  });
+  document.querySelectorAll('.check-answer-btn').forEach(btn => {
+    btn.disabled = false;
+  });
+  stop();
+}
+
+function stop() {
+  clearInterval(timeinterval);
+}
+
+function start() {
+  if (timeinterval) {
+    clearInterval(timeinterval);
+  }
+  actualtime = 60;
+  timeleft = actualtime;
+  timerElement.textContent = timeleft.toString();
+
+  timeinterval = setInterval(() => {
+    timeleft--;
+    timerElement.innerText = timeleft.toString();
+
+    if (timeleft <= 0) {
+      clearInterval(timeinterval);
+      handleTimeUp(currentQuestions);
+    }
+  }, 1000);
+}
+
+function handleTimeUp(questions) {
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.disabled = true;
+  });
+  document.querySelectorAll('.check-answer-btn').forEach(btn => {
+    btn.disabled = true;
+  });
+  const response = document.getElementById('result');
+  response.textContent = "Time's up";
+  calculateTotalScore(questions);
+}
+
+const startBtn = document.getElementById('start-btn');
+const restartBtn = document.getElementById('restart-btn');
+
+if (startBtn) {
+  startBtn.addEventListener('click', () => {
+    initializeTimer();
+    start();
+  });
+}
+
+if (restartBtn) {
+  restartBtn.addEventListener('click', () => {
+    initializeTimer();
+  });
+}
 
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
@@ -127,20 +241,44 @@ const renderQuestion = (question, index, sectionId) => {
 
   const questionElem = document.createElement("div");
   questionElem.classList.add("question-container");
-  questionElem.innerHTML = `
-    <p>${index + 1}. ${question.question}</p>
-    <ul class="option-container">
-      ${question.options.map((option) => `
-        <li>
-          <label>
-            <input type="radio" name="question-${index}" value="${option}" data-index="${index}"> ${option}
-          </label>
-        </li>
-      `).join("")}
-    </ul>
-    <button class="check-answer-btn" data-index="${index}">Check Answer</button>
-    <div class="result" id="result-${index}"></div>
-  `;
+
+  const questionText = document.createElement("p");
+  questionText.textContent = `${index + 1}. ${question.question}`;
+  questionElem.appendChild(questionText);
+
+  const ul = document.createElement("ul");
+  ul.className = "option-container";
+
+  question.options.forEach((option) => {
+    const li = document.createElement("li");
+    const label = document.createElement("label");
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `question-${index}`;
+    input.value = option;
+
+    const textNode = document.createTextNode(" " + option);
+
+    label.appendChild(input);
+    label.appendChild(textNode);
+    li.appendChild(label);
+    ul.appendChild(li);
+  });
+
+  questionElem.appendChild(ul);
+
+  const checkBtn = document.createElement("button");
+  checkBtn.className = "check-answer-btn";
+  checkBtn.dataset.index = index;
+  checkBtn.textContent = "Check Answer";
+  questionElem.appendChild(checkBtn);
+
+  const resultDiv = document.createElement("div");
+  resultDiv.className = "result";
+  resultDiv.id = `result-${index}`;
+  questionElem.appendChild(resultDiv);
+
   sectionContainer.appendChild(questionElem);
 };
 
@@ -152,27 +290,13 @@ const renderQuestions = (questions, sectionId) => {
   const scoreElem = document.createElement("div");
   scoreElem.classList.add("score-container");
   scoreElem.innerHTML = `
-    <button id="submit-quiz-btn">Submit Quiz</button>
+    <button id="calculate-score-btn">Calculate Score</button>
     <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
   `;
   sectionContainer.appendChild(scoreElem);
 };
 
-const startTimer = () => {
-  const timerDisplay = document.getElementById("timer");
-  if (!timerDisplay) return;
-
-  timerInterval = setInterval(() => {
-    timeLeft--;
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-    timerDisplay.textContent = `Time Left: ${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-      submitQuiz();
-    }
-  }, 1000);
-};
+let userAnswers = [];
 
 const checkAnswer = (questions, index) => {
   const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
@@ -203,27 +327,18 @@ const calculateTotalScore = (questions) => {
       score++;
     }
   });
-  return score;
-};
+  globalscore = score;
+  updateGlobleScore();
 
-const submitQuiz = () => {
-  clearInterval(timerInterval);
-  const quizType = getQuizType();
-  const questions = getQuestionsByType(quizType);
-  const score = calculateTotalScore(questions);
-  
-  localStorage.setItem("quizResults", JSON.stringify({
-    quizType,
-    userAnswers,
-    score,
-    total: questions.length
-  }));
-  window.location.href = "summary.html";
+  const totalScoreContainer = document.getElementById("total-score");
+  totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
+  totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
 };
 
 const getQuizType = () => {
   if (document.getElementById("html-questions")) return "html";
   if (document.getElementById("css-questions")) return "css";
+  if (document.getElementById("cpp-questions")) return "cpp";
   if (document.getElementById("js-questions")) return "js";
   if (document.getElementById("react-questions")) return "react";
   if (document.getElementById("nextjs-questions")) return "nextjs";
@@ -231,6 +346,8 @@ const getQuizType = () => {
   if (document.getElementById("python-questions")) return "python";
   if (document.getElementById("sql-questions")) return "sql";
   if (document.getElementById("django-questions")) return "django";
+  if (document.getElementById("dsa-questions")) return "dsa";
+  if (document.getElementById("dbms-questions")) return "dbms";
   return "";
 };
 
@@ -238,6 +355,7 @@ const getQuestionsByType = (quizType) => {
   switch (quizType) {
     case "html": return htmlQuestions;
     case "css": return cssQuestions;
+    case "cpp": return cppQuestions;
     case "js": return jsQuestions;
     case "react": return reactQuestions;
     case "nextjs": return nextjsQuestions;
@@ -245,9 +363,13 @@ const getQuestionsByType = (quizType) => {
     case "python": return pythonQuestions;
     case "sql": return sqlQuestions;
     case "django": return djangoQuestions;
+    case "dsa": return dsaQuestions;
+    case "dbms": return dbmsQuestions;
     default: return [];
   }
 };
+
+let currentQuestions = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   let questions = [];
@@ -260,25 +382,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (sectionId) {
-    const sectionContainer = document.getElementById(sectionId);
-    if (sectionContainer) {
-      const timerDiv = document.createElement("div");
-      timerDiv.id = "timer";
-      timerDiv.className = "timer";
-      timerDiv.textContent = `Time Left: 10:00`;
-      sectionContainer.insertBefore(timerDiv, sectionContainer.firstChild);
-      renderQuestions(questions, sectionId);
-      startTimer();
+    currentQuestions = questions;
+    renderQuestions(questions, sectionId);
 
-      document.querySelectorAll(".check-answer-btn").forEach((button) => {
-        button.addEventListener("click", (event) => {
-          const index = parseInt(event.target.getAttribute("data-index"));
-          checkAnswer(questions, index);
-        });
+    document.querySelectorAll(".check-answer-btn").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const index = parseInt(event.target.getAttribute("data-index"));
+        checkAnswer(questions, index);
       });
+    });
 
-      document.getElementById("submit-quiz-btn").addEventListener("click", submitQuiz);
-    }
+    document.getElementById("calculate-score-btn")?.addEventListener("click", () => {
+      initializeTimer();
+      calculateTotalScore(questions);
+    });
+
+    document.getElementById("feedback-btn")?.addEventListener("click", () => {
+      window.location.href = "contact-us.html";
+    });
+
+    const timerDiv = document.createElement("div");
+    timerDiv.id = "timer";
+    timerDiv.className = "timer";
+    timerDiv.textContent = "60";
+    document.getElementById(sectionId).insertBefore(timerDiv, document.getElementById(sectionId).firstChild);
+  }
+
+  const restartBtn = document.getElementById("restartQuizBtn");
+  if (restartBtn) {
+    restartBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to restart the quiz? All progress will be lost.")) {
+        window.location.reload();
+      }
+    });
   }
 
   const themeToggle = document.getElementById("theme-toggle");
@@ -291,6 +427,87 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
+    }
+  }
+
+  const reasonSelect = document.getElementById("reason");
+  const feedbackSection = document.getElementById("feedback-Section");
+  const issueSection = document.getElementById("issue-Section");
+  const contactForm = document.getElementById("contact-Form");
+  const contactResponseMessage = document.getElementById("responseMessage");
+
+  function toggleFormSections() {
+    if (!reasonSelect) return;
+
+    const selectedReason = reasonSelect.value;
+
+    feedbackSection.style.display = "none";
+    issueSection.style.display = "none";
+
+    setRequired(feedbackSection, false);
+    setRequired(issueSection, false);
+
+    if (selectedReason === "feedback") {
+      feedbackSection.style.display = "block";
+      setRequired(feedbackSection, true);
+    } else if (selectedReason === "issue") {
+      issueSection.style.display = "block";
+      setRequired(issueSection, true);
+    }
+  }
+
+  function setRequired(sectionElement, isRequired) {
+    const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select');
+    inputs.forEach((input) => {
+      input.required = isRequired;
+    });
+  }
+
+  if (contactForm) {
+    toggleFormSections();
+    reasonSelect.addEventListener("change", toggleFormSections);
+
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactResponseMessage.textContent = "Please fill out all required fields.";
+        contactResponseMessage.style.color = "red";
+        return;
+      }
+
+      const selectedReason = reasonSelect.value;
+      let successMessage = "";
+
+      if (selectedReason === "feedback") {
+        successMessage = "Thank you for your feedback! We appreciate it.";
+      } else if (selectedReason === "issue") {
+        successMessage = "Your issue has been reported. Thank you!";
+      } else {
+        successMessage = "Form submitted successfully!";
+      }
+
+      const formData = new FormData(contactForm);
+      const data = {};
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      console.log("Form Data Submitted:", data);
+
+      sessionStorage.setItem("formSubmissionSuccess", successMessage);
+      window.location.href = "index.html";
+    });
+  }
+
+  const submissionMessageDiv = document.getElementById("submission-message");
+  if (submissionMessageDiv) {
+    const message = sessionStorage.getItem("formSubmissionSuccess");
+    if (message) {
+      submissionMessageDiv.textContent = message;
+      submissionMessageDiv.style.color = "green";
+      submissionMessageDiv.style.fontWeight = "bold";
+      submissionMessageDiv.style.margin = "15px 0";
+      sessionStorage.removeItem("formSubmissionSuccess");
     }
   }
 

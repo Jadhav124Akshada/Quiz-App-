@@ -6,18 +6,23 @@
   <title>Quiz: Web Development</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="quiz-container">
+
+    <!-- ✅ Modern Hero Header -->
     <div class="header">
       <h1 class="hero-title">Master Web Development Quizzes</h1>
+      <p class="hero-subtitle">Test your skills in various web development topics!</p>
       <div class="theme-toggle-wrapper">
         <button id="theme-toggle" aria-label="Toggle dark/light mode">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
     </div>
-    <p class="hero-subtitle">Test your skills in various web development topics!</p>
+
+    <!-- ✅ Quiz Grid Layout -->
     <div class="quiz-grid">
       <a href="html-quiz.html" class="quiz-card">
         <h3>HTML Quiz</h3>
@@ -55,8 +60,40 @@
         <h3>Django Quiz</h3>
         <p>Test your Django framework expertise.</p>
       </a>
+      <a href="dsa-quiz.html" class="quiz-card">
+        <h3>DSA Quiz</h3>
+        <p>Sharpen your data structures & algorithms knowledge.</p>
+      </a>
+      <a href="dbms-quiz.html" class="quiz-card">
+        <h3>DBMS Quiz</h3>
+        <p>Learn about database management systems.</p>
+      </a>
+      <a href="cpp-quiz.html" class="quiz-card">
+        <h3>C++ Quiz</h3>
+        <p>Brush up on your C++ programming skills.</p>
+      </a>
     </div>
+
+    <!-- ✅ Footer Section -->
+    <footer class="myfooter">
+      <div class="footer-container">
+        <p>&#9679; &nbsp; &nbsp; &copy; <strong>Quiz Game</strong> - Built with 
+          <i class="fas fa-heart" style="color: red;"></i> by Akshada Jadhav
+        </p>
+        <a id="contact-us" href="./contact-us.html">Contact Us</a>
+        <div class="footer-links">
+          <a class="link" href="https://github.com/Jadhav124Akshada" target="_blank">
+            <i class="fab fa-github icon"></i> Github
+          </a>
+          <a class="link" href="https://www.linkedin.com/in/akshada-jadhav-4b72062b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+            <i class="fab fa-linkedin icon"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
