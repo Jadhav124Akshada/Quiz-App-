@@ -51,6 +51,86 @@ const htmlQuestions = [
    },
 ];
 
+//C++ Questions
+const cppQuestions = [
+  {
+    question: "Which of the following is the correct way to declare a pointer in C++?",
+    options: ["int *ptr;", "ptr int*;", "*int ptr;", "int ptr*;"],
+    answer: "int *ptr;"
+  },
+  {
+    question: "What is the default access specifier for class members in C++?",
+    options: ["private", "public", "protected", "static"],
+    answer: "private"
+  },
+  {
+    question: "Which keyword is used to define a constant in C++?",
+    options: ["const", "constant", "#define", "immutable"],
+    answer: "const"
+  },
+  {
+    question: "Which of the following is a correct syntax for a class constructor?",
+    options: ["void Constructor() {}", "ClassName() {}", "constructor ClassName() {}", "new ClassName()"],
+    answer: "ClassName() {}"
+  },
+  {
+    question: "Which operator is used to allocate memory dynamically in C++?",
+    options: ["malloc", "alloc", "new", "create"],
+    answer: "new"
+  },
+  {
+    question: "Which of the following is NOT a valid loop in C++?",
+    options: ["for", "foreach", "while", "do-while"],
+    answer: "foreach"
+  },
+  {
+    question: "How do you declare a reference variable in C++?",
+    options: ["int &ref = var;", "int ref = &var;", "int *ref = var;", "int ref = var&;"],
+    answer: "int &ref = var;"
+  },
+  {
+    question: "Which of the following features is not available in C but available in C++?",
+    options: ["Pointers", "Object-Oriented Programming", "Structures", "Functions"],
+    answer: "Object-Oriented Programming"
+  },
+  {
+    question: "Which symbol is used to declare a destructor?",
+    options: ["~", "!", "@", "^"],
+    answer: "~"
+  },
+  {
+    question: "What is the size of a `bool` in C++?",
+    options: ["1 byte", "2 bytes", "4 bytes", "Depends on the system"],
+    answer: "1 byte"
+  },
+  {
+    question: "Which STL container stores key-value pairs?",
+    options: ["vector", "map", "stack", "queue"],
+    answer: "map"
+  },
+  {
+    question: "Which function is used to read a full line of input in C++?",
+    options: ["cin", "getline()", "readline()", "input()"],
+    answer: "getline()"
+  },
+  {
+    question: "Which of the following is used to overload functions?",
+    options: ["overload", "function", "operator", "None of these"],
+    answer: "operator"
+  },
+  {
+    question: "What is the correct way to define a template function?",
+    options: ["template <class T>", "define template<T>", "template function<T>", "template() <T>"],
+    answer: "template <class T>"
+  },
+  {
+    question: "Which header file is used for using `std::vector`?",
+    options: ["<vector>", "<list>", "<array>", "<map>"],
+    answer: "<vector>"
+  }
+];
+
+
 // CSS Questions
 const cssQuestions = [
   { 
@@ -372,7 +452,12 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("css-questions")) {
     questions = cssQuestions;
     sectionId = "css-questions";
-  } else if (document.getElementById("js-questions")) {
+  } else if (document.getElementById("cpp-questions")) {
+  questions = cppQuestions;
+    sectionId = "cpp-questions";
+   }
+
+  else if (document.getElementById("js-questions")) {
     questions = jsQuestions;
     sectionId = "js-questions";
   } else if (document.getElementById("react-questions")) {
