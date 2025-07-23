@@ -41,21 +41,25 @@ h2 {
 }
 
 .quiz-link {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #007BFF;
+   display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 10px;
     width: 100%;
     max-width: 300px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     font-size: 1rem;
     text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .quiz-link:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
 .question-container {
@@ -89,20 +93,25 @@ input[type="radio"] {
 }
 
 button {
-    background-color: #4CAF50;
+    background: linear-gradient(to right, #43e97b, #38f9d7);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     margin-top: 20px;
     display: block;
     width: 30%;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* ----------------- Responsive Styling ----------------- */
