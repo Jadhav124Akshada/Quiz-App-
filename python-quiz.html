@@ -20,7 +20,6 @@
     }
   </style>
 </head>
-
 <body>
   <div class="quiz-header">
     <div class="timer-container">
@@ -33,41 +32,55 @@
     </div>
   </div>
 
+  
   <div class="quiz-container">
-    <a href="index.html" class="back-button-icon" aria-label="Back to Home">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-      </svg>
-    </a>
-
+    <!-- Progress header -->
+    <div class="progress-header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="margin: 0; color: #333; font-size: 24px;">Python Quiz</h2>
+        <a href="index.html" class="back-button-icon" aria-label="Back to Home">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- Progress bar -->
+      <div class="progress-container">
+        <div class="progress-info">
+          <span id="progress-text">Progress: 0 / 10</span>
+          <span id="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+    
     <div class="quiz-section">
-      <h2>Python Quiz</h2>
+      <!-- Start and Restart buttons -->
+
       <div class="btnclass">
         <button id="start-btn">Start</button>
         <button id="restart-btn">Restart</button>
       </div>
-      <div id="python-questions"></div>
+      
+      <!-- Scrollable container to hold the questions -->
+      <div class="questions-scroll-container">
+        <div id="python-questions"></div>
+      </div>
+
     </div>
 
     <div id="result"></div>
     <a href="index.html">Back to Home</a>
   </div>
 
-
-  <!-- Added "Restart Quiz" Button -->
-<div id="resultBox">
-  <button id="restartQuizBtn">Restart Quiz</button>
-</div>
-
+  <!-- "Restart Quiz" Button -->
+  <div id="resultBox">
+    <button id="restartQuizBtn">Restart Quiz</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
