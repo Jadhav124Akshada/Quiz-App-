@@ -100,24 +100,40 @@
 </head>
 
 <body>
-  <div class="quiz-header">
+  <header class="quiz-header">
     <div class="timer-container">
       <span>Time Left: </span>
       <span id="timer">60</span>s
     </div>
-    <div class="score-display">
-      <span>Score: </span>
-      <span id="scoree">0</span>
+    <a href="index.html">
+      <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
+    </a>
+  </header>
+
+  <div class="quiz-border">
+    <div class="quiz-section">
+      <h2>HTML Quiz</h2>
+      <div class="btnclass">
+        <button id="start-btn">Start</button>
+        <button id="restart-btn">Restart</button>
+      </div>
     </div>
+    <div id="quiz-container"></div>
+  </div>
+  <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+  <div id="resultBox">
+    <button id="restartQuizBtn">Restart Quiz</button>
   </div>
 
+  <script src="script.js"></script>
+</body>
+</html>
+
+ 
+ <!--
   <div class="quiz-container">
-    <a href="index.html" class="back-button-icon" aria-label="Back to Home">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-      </svg>
+    <a href="index.html">
+      <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
     </a>
 
     <div class="quiz-section">
@@ -131,15 +147,4 @@
 
     <div id="result"></div>
   </div>
-
-
-  <!-- Added "Restart Quiz" Button -->
-<div id="resultBox">
-  <button id="restartQuizBtn">Restart Quiz</button>
-</div>
-
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+  Added "Restart Quiz" Button -->
