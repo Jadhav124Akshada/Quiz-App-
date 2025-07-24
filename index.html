@@ -13,30 +13,138 @@
   <div class="navbar-container">
     <strong>Quiz Game </strong>
     <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
+      <a class="link" href="index.html">Home</a>
+      <a class="link" href="profile.html">Profile</a>
+      <a class="link" href="scoreboard.html">Scoreboard</a>
+      <a class="link" href="logout.html">Logout</a>
     </nav>
   </div>
 </header>
   <div class="quiz-container">
     <div id="submission-message"></div>
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p class="description">Choose a topic to start:</p>
-    <ul class="quiz-list">
-      <li><a href="html-quiz.html"class="quiz-link">HTML Quiz</a></li>
-      <li><a href="css-quiz.html"class="quiz-link">CSS Quiz</a></li>
-      <li><a href="js-quiz.html"class="quiz-link">JavaScript Quiz</a></li>
-      <li><a href="cpp-quiz.html"class="quiz-link">C++ Quiz</a></li>
-      <li><a href="react-quiz.html" class="quiz-link">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html" class="quiz-link">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html" class="quiz-link">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html" class="quiz-link">Python Quiz</a></li>
-      <li><a href="django-quiz.html" class="quiz-link">Django Quiz</a></li>
-      <li><a href="dsa-quiz.html" class="quiz-link">DSA Quiz</a></li>
-      <li><a href="dbms-quiz.html" class="quiz-link">DBMS Quiz</a></li>
-    </ul>
+    
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1><i class="fas fa-brain"></i> Welcome to the Quiz App</h1>
+      <p class="hero-description">Test your knowledge across multiple programming languages and technologies. Challenge yourself with our comprehensive quiz collection!</p>
+      
+      <!-- Quick Stats -->
+      <div class="quick-stats" id="quick-stats">
+        <!-- Stats will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Quiz Categories -->
+    <div class="quiz-categories">
+      <h2><i class="fas fa-th-large"></i> Choose Your Quiz Category</h2>
+      <p class="description">Select a topic to start your learning journey:</p>
+      
+      <div class="quiz-grid">
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fab fa-html5"></i></div>
+          <h3>HTML</h3>
+          <p>Learn the fundamentals of web markup</p>
+          <a href="html-quiz.html" class="quiz-link">Start HTML Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fab fa-css3-alt"></i></div>
+          <h3>CSS</h3>
+          <p>Master web styling and design</p>
+          <a href="css-quiz.html" class="quiz-link">Start CSS Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fab fa-js-square"></i></div>
+          <h3>JavaScript</h3>
+          <p>Explore dynamic web programming</p>
+          <a href="js-quiz.html" class="quiz-link">Start JavaScript Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fas fa-code"></i></div>
+          <h3>C++</h3>
+          <p>Learn object-oriented programming</p>
+          <a href="cpp-quiz.html" class="quiz-link">Start C++ Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fab fa-react"></i></div>
+          <h3>React</h3>
+          <p>Master modern UI development</p>
+          <a href="react-quiz.html" class="quiz-link">Start React Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fas fa-server"></i></div>
+          <h3>Next.js</h3>
+          <p>Learn full-stack React framework</p>
+          <a href="nextjs-quiz.html" class="quiz-link">Start Next.js Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fab fa-git-alt"></i></div>
+          <h3>Git & GitHub</h3>
+          <p>Master version control systems</p>
+          <a href="git-quiz.html" class="quiz-link">Start Git Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fab fa-python"></i></div>
+          <h3>Python</h3>
+          <p>Learn versatile programming</p>
+          <a href="python-quiz.html" class="quiz-link">Start Python Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Django</h3>
+          <p>Master Python web framework</p>
+          <a href="django-quiz.html" class="quiz-link">Start Django Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fas fa-sitemap"></i></div>
+          <h3>DSA</h3>
+          <p>Learn data structures & algorithms</p>
+          <a href="dsa-quiz.html" class="quiz-link">Start DSA Quiz</a>
+        </div>
+        
+        <div class="quiz-card">
+          <div class="quiz-icon"><i class="fas fa-database"></i></div>
+          <h3>DBMS</h3>
+          <p>Master database management</p>
+          <a href="dbms-quiz.html" class="quiz-link">Start DBMS Quiz</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+      <h2><i class="fas fa-star"></i> Why Choose Our Quiz App?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-clock"></i>
+          <h3>Timed Challenges</h3>
+          <p>Test your knowledge under pressure with our timed quiz system</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Progress Tracking</h3>
+          <p>Monitor your improvement with detailed statistics and progress bars</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-trophy"></i>
+          <h3>Achievements</h3>
+          <p>Earn badges and achievements as you complete quizzes</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobile Friendly</h3>
+          <p>Take quizzes anywhere with our responsive design</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 

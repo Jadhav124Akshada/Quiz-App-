@@ -120,8 +120,7 @@ const dbmsQuestions = [
     options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
 
     answer: "Compilation",
-=======
-    answer: "Compilation"
+
 
   },
   {
@@ -129,8 +128,7 @@ const dbmsQuestions = [
     options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
 
     answer: "WHERE",
-=======
-    answer: "WHERE"
+
 
   },
   {
@@ -138,8 +136,7 @@ const dbmsQuestions = [
     options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
 
     answer: "To eliminate data redundancy",
-=======
-    answer: "To eliminate data redundancy"
+
 
   },
   {
@@ -274,8 +271,7 @@ const cssQuestions = [
     options: ["#header", ".header", "header", "[id='header']"],
 
     answer: "#header",
-=======
-    answer: "#header"
+
 
   },
   {
@@ -1173,9 +1169,6 @@ const checkAnswer = (questions, index) => {
 
 }
 
-
-};
-
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
   let score = 0
@@ -1184,20 +1177,145 @@ const calculateTotalScore = (questions) => {
     if (selectedOption && selectedOption.value === q.answer) {
       score++
     }
-
-    globalscore = score
   })
 
+  globalscore = score
   updateGlobalScore()
 
-
-  updateGlobleScore();
-
-  // Display the total score
+  // Get quiz name from current page
+  const quizName = getCurrentQuizName()
+  
+  // Save score to localStorage
+  saveScoreToLocalStorage(quizName, score, timeleft)
+  
+  // Display the total score with enhanced styling
   const totalScoreContainer = document.getElementById("total-score")
-  totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`
-  totalScoreContainer.style.color = score === questions.length ? "green" : "blue"
+  const percentage = Math.round((score / questions.length) * 100)
+  
+  let scoreMessage = `Your total score is: ${score} out of ${questions.length} (${percentage}%)`
+  let scoreColor = "blue"
+  
+  if (percentage >= 90) {
+    scoreMessage += " 🏆 Excellent!"
+    scoreColor = "#28a745"
+  } else if (percentage >= 70) {
+    scoreMessage += " 👍 Good job!"
+    scoreColor = "#17a2b8"
+  } else if (percentage >= 50) {
+    scoreMessage += " 😊 Not bad!"
+    scoreColor = "#ffc107"
+  } else {
+    scoreMessage += " 💪 Keep practicing!"
+    scoreColor = "#dc3545"
+  }
+  
+  totalScoreContainer.innerHTML = `
+    <div style="padding: 15px; border-radius: 8px; background-color: ${scoreColor}15; border: 2px solid ${scoreColor}; margin: 10px 0;">
+      <h3 style="margin: 0 0 10px 0; color: ${scoreColor};">${scoreMessage}</h3>
+      <p style="margin: 0; font-size: 14px; color: #666;">
+        Time remaining: ${timeleft} seconds | 
+        <a href="scoreboard.html" style="color: ${scoreColor}; text-decoration: none; font-weight: bold;">
+          View Scoreboard
+        </a>
+      </p>
+    </div>
+  `
 }
+
+// Function to get current quiz name
+function getCurrentQuizName() {
+  const path = window.location.pathname
+  const filename = path.split('/').pop()
+  
+  const quizMap = {
+    'html-quiz.html': 'HTML Quiz',
+    'css-quiz.html': 'CSS Quiz',
+    'js-quiz.html': 'JavaScript Quiz',
+    'react-quiz.html': 'React Quiz',
+    'nextjs-quiz.html': 'Next.js Quiz',
+    'cpp-quiz.html': 'C++ Quiz',
+    'python-quiz.html': 'Python Quiz',
+    'django-quiz.html': 'Django Quiz',
+    'dsa-quiz.html': 'DSA Quiz',
+    'dbms-quiz.html': 'DBMS Quiz',
+    'git-quiz.html': 'Git Quiz'
+  }
+  
+  return quizMap[filename] || 'Unknown Quiz'
+}
+
+// Function to save score to localStorage
+function saveScoreToLocalStorage(quizName, score, timeLeft) {
+  const scores = JSON.parse(localStorage.getItem('quizScores') || '[]')
+  
+  const newScore = {
+    id: Date.now(),
+    quizName,
+    score,
+    timeLeft,
+    playerName: 'Anonymous', // Can be enhanced with user system
+    date: new Date().toISOString(),
+    percentage: Math.round((score / 10) * 100)
+  }
+  
+  scores.push(newScore)
+  localStorage.setItem('quizScores', JSON.stringify(scores))
+  
+  // Show success message
+  showNotification('Score saved successfully!', 'success')
+}
+
+// Function to show notifications
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div')
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    z-index: 10000;
+    animation: slideIn 0.3s ease-out;
+    max-width: 300px;
+  `
+  
+  const colors = {
+    success: '#28a745',
+    error: '#dc3545',
+    warning: '#ffc107',
+    info: '#17a2b8'
+  }
+  
+  notification.style.backgroundColor = colors[type] || colors.info
+  notification.textContent = message
+  
+  document.body.appendChild(notification)
+  
+  setTimeout(() => {
+    notification.style.animation = 'slideOut 0.3s ease-in'
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.parentNode.removeChild(notification)
+      }
+    }, 300)
+  }, 3000)
+}
+
+// Add CSS animations for notifications
+const style = document.createElement('style')
+style.textContent = `
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+  }
+`
+document.head.appendChild(style)
 
 // Dynamically render questions based on the page
 
@@ -1353,6 +1471,65 @@ document.addEventListener("DOMContentLoaded", () => {
       submissionMessageDiv.style.fontWeight = "bold"
       submissionMessageDiv.style.margin = "15px 0"
       sessionStorage.removeItem("formSubmissionSuccess")
+    }
+  }
+
+  // Initialize quick stats on index page
+  const quickStatsDiv = document.getElementById("quick-stats")
+  if (quickStatsDiv) {
+    const scores = JSON.parse(localStorage.getItem('quizScores') || '[]')
+    
+    if (scores.length === 0) {
+      quickStatsDiv.innerHTML = `
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Quizzes Taken</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0%</div>
+          <div class="stat-label">Average Score</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Achievements</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0m</div>
+          <div class="stat-label">Total Time</div>
+        </div>
+      `
+    } else {
+      const totalQuizzes = scores.length
+      const averageScore = Math.round(scores.reduce((sum, score) => sum + score.percentage, 0) / totalQuizzes)
+      const bestScore = Math.max(...scores.map(score => score.percentage))
+      const totalTime = Math.round(scores.reduce((sum, score) => sum + score.timeLeft, 0) / 60)
+      
+      // Calculate achievements
+      let achievements = 0
+      if (totalQuizzes >= 1) achievements++
+      if (totalQuizzes >= 5) achievements++
+      if (totalQuizzes >= 10) achievements++
+      if (bestScore >= 90) achievements++
+      if (averageScore >= 80) achievements++
+      
+      quickStatsDiv.innerHTML = `
+        <div class="stat-item">
+          <div class="stat-number">${totalQuizzes}</div>
+          <div class="stat-label">Quizzes Taken</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">${averageScore}%</div>
+          <div class="stat-label">Average Score</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">${achievements}</div>
+          <div class="stat-label">Achievements</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">${totalTime}m</div>
+          <div class="stat-label">Total Time</div>
+        </div>
+      `
     }
   }
 })

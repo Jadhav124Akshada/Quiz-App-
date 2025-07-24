@@ -2,45 +2,649 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Quiz App</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .profile-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    
+    .profile-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .profile-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 3rem;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .profile-name {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .profile-email {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #667eea;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .profile-sections {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    .profile-section {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .achievement-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #f8f9fa;
+      transition: background-color 0.3s ease;
+    }
+    
+    .achievement-item:hover {
+      background: #e9ecef;
+    }
+    
+    .achievement-icon {
+      font-size: 1.5rem;
+      color: #ffc107;
+    }
+    
+    .achievement-info h4 {
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+    
+    .achievement-info p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .quiz-history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .quiz-history-item:last-child {
+      border-bottom: none;
+    }
+    
+    .quiz-info h4 {
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+    
+    .quiz-info p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .quiz-score {
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .score-excellent {
+      background: #d4edda;
+      color: #155724;
+    }
+    
+    .score-good {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+    
+    .score-average {
+      background: #fff3cd;
+      color: #856404;
+    }
+    
+    .score-poor {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    
+    .settings-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .form-group label {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group select {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    
+    .save-btn {
+      background: #667eea;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .save-btn:hover {
+      background: #5a6fd8;
+    }
+    
+    .no-data {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+    
+    .no-data i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+    
+    @media (max-width: 768px) {
+      .profile-sections {
+        grid-template-columns: 1fr;
+      }
+      
+      .profile-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .profile-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .profile-header {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <!-- Navbar -->
-   <header class="mynavbar">
-  <div class="navbar-container">
-    <strong>Quiz Game </strong>
-    <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
-    </nav>
-  </div>
-</header>
+  <header class="mynavbar">
+    <div class="navbar-container">
+      <strong>Quiz Game</strong>
+      <nav class="nav-links">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="profile.html">Profile</a>
+        <a class="link" href="scoreboard.html">Scoreboard</a>
+        <a class="link" href="logout.html">Logout</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Profile Message -->
-  <main style="padding: 4rem 2rem; text-align: center;">
-    <h2 style="font-size: 2rem; color: #444;">No profile page available.</h2>
-    <p style="margin-top: 1rem; font-size: 1.1rem; color: #777;">
-      We're working on building your profile experience. Check back later!
-    </p>
-  </main>
+  <!-- Profile Content -->
+  <div class="profile-container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <i class="fas fa-user"></i>
+      </div>
+      <h1 class="profile-name" id="profile-name">Anonymous User</h1>
+      <p class="profile-email" id="profile-email">user@example.com</p>
+    </div>
 
+    <!-- Profile Statistics -->
+    <div class="profile-stats" id="profile-stats">
+      <!-- Stats will be populated by JavaScript -->
+    </div>
 
-  <!-- Footer (optional) -->
-  <footer class="myfooter">
-    <div class="footer-container">
-      <p>&#9679; &nbsp; &nbsp; &copy; <strong>Quiz Game - </strong> Built with <i class="fas fa-heart" style="color: red;"> </i> by Akshada Jadhav</p>
-      <a id="contact us" href="./contact-us.html">Contact Us</a>
-      <div class="footer-links">
-        <a class="link" href="https://github.com/Jadhav124Akshada" target="_blank"><i class="fa-brands fa-github icon"></i>Github</a>
-        <a class="link" href="https://www.linkedin.com/in/akshada-jadhav-4b72062b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin icon"></i>LinkedIn</a>
+    <!-- Profile Sections -->
+    <div class="profile-sections">
+      <!-- Achievements Section -->
+      <div class="profile-section">
+        <h2 class="section-title">
+          <i class="fas fa-trophy"></i>
+          Achievements
+        </h2>
+        <div id="achievements-list">
+          <!-- Achievements will be populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Recent Quiz History -->
+      <div class="profile-section">
+        <h2 class="section-title">
+          <i class="fas fa-history"></i>
+          Recent Quizzes
+        </h2>
+        <div id="quiz-history">
+          <!-- Quiz history will be populated by JavaScript -->
+        </div>
       </div>
     </div>
-  </footer>
 
+    <!-- Settings Section -->
+    <div class="profile-section" style="margin-top: 30px;">
+      <h2 class="section-title">
+        <i class="fas fa-cog"></i>
+        Profile Settings
+      </h2>
+      <form class="settings-form" id="profile-settings">
+        <div class="form-group">
+          <label for="display-name">Display Name</label>
+          <input type="text" id="display-name" name="displayName" placeholder="Enter your display name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="theme">Theme Preference</label>
+          <select id="theme" name="theme">
+            <option value="light">Light Theme</option>
+            <option value="dark">Dark Theme</option>
+            <option value="auto">Auto (System)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="notifications">Notifications</label>
+          <select id="notifications" name="notifications">
+            <option value="all">All Notifications</option>
+            <option value="important">Important Only</option>
+            <option value="none">No Notifications</option>
+          </select>
+        </div>
+        <button type="submit" class="save-btn">
+          <i class="fas fa-save"></i> Save Settings
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    class UserProfile {
+      constructor() {
+        this.scores = this.loadScores();
+        this.settings = this.loadSettings();
+        this.init();
+      }
+      
+      loadScores() {
+        const stored = localStorage.getItem('quizScores');
+        return stored ? JSON.parse(stored) : [];
+      }
+      
+      loadSettings() {
+        const stored = localStorage.getItem('userSettings');
+        return stored ? JSON.parse(stored) : {
+          displayName: 'Anonymous User',
+          email: 'user@example.com',
+          theme: 'light',
+          notifications: 'all'
+        };
+      }
+      
+      saveSettings(settings) {
+        this.settings = { ...this.settings, ...settings };
+        localStorage.setItem('userSettings', JSON.stringify(this.settings));
+      }
+      
+      calculateStats() {
+        if (this.scores.length === 0) return null;
+        
+        const totalQuizzes = this.scores.length;
+        const averageScore = Math.round(this.scores.reduce((sum, score) => sum + score.percentage, 0) / totalQuizzes);
+        const bestScore = Math.max(...this.scores.map(score => score.percentage));
+        const totalTime = this.scores.reduce((sum, score) => sum + score.timeLeft, 0);
+        
+        return {
+          totalQuizzes,
+          averageScore,
+          bestScore,
+          totalTime
+        };
+      }
+      
+      getAchievements() {
+        const stats = this.calculateStats();
+        if (!stats) return [];
+        
+        const achievements = [];
+        
+        // Quiz completion achievements
+        if (stats.totalQuizzes >= 1) {
+          achievements.push({
+            icon: 'fas fa-star',
+            title: 'First Quiz',
+            description: 'Completed your first quiz'
+          });
+        }
+        
+        if (stats.totalQuizzes >= 5) {
+          achievements.push({
+            icon: 'fas fa-medal',
+            title: 'Quiz Enthusiast',
+            description: 'Completed 5 quizzes'
+          });
+        }
+        
+        if (stats.totalQuizzes >= 10) {
+          achievements.push({
+            icon: 'fas fa-crown',
+            title: 'Quiz Master',
+            description: 'Completed 10 quizzes'
+          });
+        }
+        
+        // Score achievements
+        if (stats.bestScore >= 90) {
+          achievements.push({
+            icon: 'fas fa-trophy',
+            title: 'Perfect Score',
+            description: 'Achieved 90% or higher'
+          });
+        }
+        
+        if (stats.averageScore >= 80) {
+          achievements.push({
+            icon: 'fas fa-award',
+            title: 'Consistent Performer',
+            description: 'Maintained 80% average'
+          });
+        }
+        
+        return achievements;
+      }
+      
+      getScoreClass(percentage) {
+        if (percentage >= 90) return 'score-excellent';
+        if (percentage >= 70) return 'score-good';
+        if (percentage >= 50) return 'score-average';
+        return 'score-poor';
+      }
+      
+      renderStats() {
+        const stats = this.calculateStats();
+        const container = document.getElementById('profile-stats');
+        
+        if (!stats) {
+          container.innerHTML = `
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-chart-bar"></i></div>
+              <div class="stat-number">0</div>
+              <div class="stat-label">No quizzes taken yet</div>
+            </div>
+          `;
+          return;
+        }
+        
+        container.innerHTML = `
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-list-check"></i></div>
+            <div class="stat-number">${stats.totalQuizzes}</div>
+            <div class="stat-label">Quizzes Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="stat-number">${stats.averageScore}%</div>
+            <div class="stat-label">Average Score</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+            <div class="stat-number">${stats.bestScore}%</div>
+            <div class="stat-label">Best Score</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-number">${Math.round(stats.totalTime / 60)}m</div>
+            <div class="stat-label">Total Time</div>
+          </div>
+        `;
+      }
+      
+      renderAchievements() {
+        const achievements = this.getAchievements();
+        const container = document.getElementById('achievements-list');
+        
+        if (achievements.length === 0) {
+          container.innerHTML = `
+            <div class="no-data">
+              <i class="fas fa-trophy"></i>
+              <p>No achievements yet. Take some quizzes to earn achievements!</p>
+            </div>
+          `;
+          return;
+        }
+        
+        container.innerHTML = achievements.map(achievement => `
+          <div class="achievement-item">
+            <div class="achievement-icon">
+              <i class="${achievement.icon}"></i>
+            </div>
+            <div class="achievement-info">
+              <h4>${achievement.title}</h4>
+              <p>${achievement.description}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+      
+      renderQuizHistory() {
+        const recentScores = this.scores.slice(-5).reverse(); // Last 5 scores
+        const container = document.getElementById('quiz-history');
+        
+        if (recentScores.length === 0) {
+          container.innerHTML = `
+            <div class="no-data">
+              <i class="fas fa-history"></i>
+              <p>No quiz history yet. Start taking quizzes!</p>
+            </div>
+          `;
+          return;
+        }
+        
+        container.innerHTML = recentScores.map(score => {
+          const date = new Date(score.date).toLocaleDateString();
+          const scoreClass = this.getScoreClass(score.percentage);
+          
+          return `
+            <div class="quiz-history-item">
+              <div class="quiz-info">
+                <h4>${score.quizName}</h4>
+                <p>${date} • ${score.timeLeft}s remaining</p>
+              </div>
+              <div class="quiz-score ${scoreClass}">
+                ${score.score}/10
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+      
+      renderSettings() {
+        document.getElementById('display-name').value = this.settings.displayName;
+        document.getElementById('email').value = this.settings.email;
+        document.getElementById('theme').value = this.settings.theme;
+        document.getElementById('notifications').value = this.settings.notifications;
+        
+        // Update profile header
+        document.getElementById('profile-name').textContent = this.settings.displayName;
+        document.getElementById('profile-email').textContent = this.settings.email;
+      }
+      
+      init() {
+        this.renderStats();
+        this.renderAchievements();
+        this.renderQuizHistory();
+        this.renderSettings();
+        
+        // Add form submit handler
+        document.getElementById('profile-settings').addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          const formData = new FormData(e.target);
+          const settings = {
+            displayName: formData.get('displayName'),
+            email: formData.get('email'),
+            theme: formData.get('theme'),
+            notifications: formData.get('notifications')
+          };
+          
+          this.saveSettings(settings);
+          this.renderSettings();
+          
+          // Show success message
+          this.showNotification('Settings saved successfully!', 'success');
+        });
+      }
+      
+      showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 15px 20px;
+          border-radius: 8px;
+          color: white;
+          font-weight: bold;
+          z-index: 10000;
+          animation: slideIn 0.3s ease-out;
+          max-width: 300px;
+        `;
+        
+        const colors = {
+          success: '#28a745',
+          error: '#dc3545',
+          warning: '#ffc107',
+          info: '#17a2b8'
+        };
+        
+        notification.style.backgroundColor = colors[type] || colors.info;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.style.animation = 'slideOut 0.3s ease-in';
+          setTimeout(() => {
+            if (notification.parentNode) {
+              notification.parentNode.removeChild(notification);
+            }
+          }, 300);
+        }, 3000);
+      }
+    }
+    
+    // Initialize profile
+    const userProfile = new UserProfile();
+    
+    // Add CSS animations for notifications
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
 </body>
 </html>

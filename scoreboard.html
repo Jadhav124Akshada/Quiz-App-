@@ -2,45 +2,412 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Scoreboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoreboard - Quiz App</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .scoreboard-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .filter-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .filter-controls select {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: white;
+    }
+    
+    .clear-scores-btn {
+      background-color: #dc3545;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .clear-scores-btn:hover {
+      background-color: #c82333;
+    }
+    
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .no-scores {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+    
+    .no-scores i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+    
+    .score-row {
+      transition: background-color 0.2s;
+    }
+    
+    .score-row:hover {
+      background-color: #f8f9fa;
+    }
+    
+    .score-badge {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    
+    .score-excellent {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    
+    .score-good {
+      background-color: #d1ecf1;
+      color: #0c5460;
+    }
+    
+    .score-average {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+    
+    .score-poor {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    
+    @media (max-width: 768px) {
+      .scoreboard-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .filter-controls {
+        justify-content: center;
+      }
+      
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <!-- Navbar -->
   <header class="mynavbar">
-  <div class="navbar-container">
-    <strong>Quiz Game </strong>
-    <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
-    </nav>
-  </div>
-</header>
+    <div class="navbar-container">
+      <strong>Quiz Game</strong>
+      <nav class="nav-links">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="profile.html">Profile</a>
+        <a class="link" href="scoreboard.html">Scoreboard</a>
+        <a class="link" href="logout.html">Logout</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- Main Scoreboard Content -->
   <main class="scoreboard-main">
     <div class="scoreboard-card">
-      <h2>Scoreboard</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Score</th>
-            <th>Time</th>
-            <th>Player</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody id="scoreboard-data">
-          <!-- JS will populate data here -->
-        </tbody>
-      </table>
-      <a href="index.html" class="back-button">Back to Quiz</a>
+      <h2><i class="fas fa-trophy"></i> Scoreboard</h2>
+      
+      <!-- Statistics Cards -->
+      <div class="stats-container" id="stats-container">
+        <!-- Stats will be populated by JavaScript -->
+      </div>
+      
+      <!-- Controls -->
+      <div class="scoreboard-controls">
+        <div class="filter-controls">
+          <select id="quiz-filter">
+            <option value="">All Quizzes</option>
+            <option value="HTML">HTML Quiz</option>
+            <option value="CSS">CSS Quiz</option>
+            <option value="JavaScript">JavaScript Quiz</option>
+            <option value="React">React Quiz</option>
+            <option value="Next.js">Next.js Quiz</option>
+            <option value="C++">C++ Quiz</option>
+            <option value="Python">Python Quiz</option>
+            <option value="Django">Django Quiz</option>
+            <option value="DSA">DSA Quiz</option>
+            <option value="DBMS">DBMS Quiz</option>
+            <option value="Git">Git Quiz</option>
+          </select>
+          <select id="sort-filter">
+            <option value="date-desc">Date (Newest)</option>
+            <option value="date-asc">Date (Oldest)</option>
+            <option value="score-desc">Score (High to Low)</option>
+            <option value="score-asc">Score (Low to High)</option>
+            <option value="time-asc">Time (Fastest)</option>
+            <option value="time-desc">Time (Slowest)</option>
+          </select>
+        </div>
+        <button class="clear-scores-btn" onclick="clearAllScores()">
+          <i class="fas fa-trash"></i> Clear All Scores
+        </button>
+      </div>
+      
+      <!-- Scoreboard Table -->
+      <div id="scoreboard-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Quiz</th>
+              <th>Score</th>
+              <th>Time</th>
+              <th>Player</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="scoreboard-data">
+            <!-- JS will populate data here -->
+          </tbody>
+        </table>
+      </div>
+      
+      <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Quiz
+      </a>
     </div>
   </main>
 
+  <script>
+    // Scoreboard functionality
+    class Scoreboard {
+      constructor() {
+        this.scores = this.loadScores();
+        this.init();
+      }
+      
+      loadScores() {
+        const stored = localStorage.getItem('quizScores');
+        return stored ? JSON.parse(stored) : [];
+      }
+      
+      saveScores() {
+        localStorage.setItem('quizScores', JSON.stringify(this.scores));
+      }
+      
+      addScore(quizName, score, timeLeft, playerName = 'Anonymous') {
+        const newScore = {
+          id: Date.now(),
+          quizName,
+          score,
+          timeLeft,
+          playerName,
+          date: new Date().toISOString(),
+          percentage: Math.round((score / 10) * 100)
+        };
+        
+        this.scores.push(newScore);
+        this.saveScores();
+        this.render();
+      }
+      
+      clearScores() {
+        this.scores = [];
+        this.saveScores();
+        this.render();
+      }
+      
+      getScoreBadge(percentage) {
+        if (percentage >= 90) return 'score-excellent';
+        if (percentage >= 70) return 'score-good';
+        if (percentage >= 50) return 'score-average';
+        return 'score-poor';
+      }
+      
+      getScoreText(percentage) {
+        if (percentage >= 90) return 'Excellent';
+        if (percentage >= 70) return 'Good';
+        if (percentage >= 50) return 'Average';
+        return 'Poor';
+      }
+      
+      calculateStats() {
+        if (this.scores.length === 0) return null;
+        
+        const totalQuizzes = this.scores.length;
+        const averageScore = Math.round(this.scores.reduce((sum, score) => sum + score.percentage, 0) / totalQuizzes);
+        const bestScore = Math.max(...this.scores.map(score => score.percentage));
+        const totalTime = this.scores.reduce((sum, score) => sum + score.timeLeft, 0);
+        
+        return {
+          totalQuizzes,
+          averageScore,
+          bestScore,
+          totalTime
+        };
+      }
+      
+      renderStats() {
+        const stats = this.calculateStats();
+        const container = document.getElementById('stats-container');
+        
+        if (!stats) {
+          container.innerHTML = '<div class="stat-card"><div class="stat-number">0</div><div class="stat-label">No scores yet</div></div>';
+          return;
+        }
+        
+        container.innerHTML = `
+          <div class="stat-card">
+            <div class="stat-number">${stats.totalQuizzes}</div>
+            <div class="stat-label">Total Quizzes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">${stats.averageScore}%</div>
+            <div class="stat-label">Average Score</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">${stats.bestScore}%</div>
+            <div class="stat-label">Best Score</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">${Math.round(stats.totalTime / 60)}m</div>
+            <div class="stat-label">Total Time</div>
+          </div>
+        `;
+      }
+      
+      render() {
+        this.renderStats();
+        
+        const quizFilter = document.getElementById('quiz-filter').value;
+        const sortFilter = document.getElementById('sort-filter').value;
+        
+        let filteredScores = [...this.scores];
+        
+        // Apply quiz filter
+        if (quizFilter) {
+          filteredScores = filteredScores.filter(score => score.quizName === quizFilter);
+        }
+        
+        // Apply sorting
+        filteredScores.sort((a, b) => {
+          switch (sortFilter) {
+            case 'date-desc':
+              return new Date(b.date) - new Date(a.date);
+            case 'date-asc':
+              return new Date(a.date) - new Date(b.date);
+            case 'score-desc':
+              return b.percentage - a.percentage;
+            case 'score-asc':
+              return a.percentage - b.percentage;
+            case 'time-asc':
+              return a.timeLeft - b.timeLeft;
+            case 'time-desc':
+              return b.timeLeft - a.timeLeft;
+            default:
+              return new Date(b.date) - new Date(a.date);
+          }
+        });
+        
+        const tbody = document.getElementById('scoreboard-data');
+        
+        if (filteredScores.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="6" class="no-scores">
+                <i class="fas fa-inbox"></i>
+                <p>No scores found. Take some quizzes to see your results here!</p>
+              </td>
+            </tr>
+          `;
+          return;
+        }
+        
+        tbody.innerHTML = filteredScores.map((score, index) => {
+          const badgeClass = this.getScoreBadge(score.percentage);
+          const badgeText = this.getScoreText(score.percentage);
+          const date = new Date(score.date).toLocaleDateString();
+          const time = new Date(score.date).toLocaleTimeString();
+          
+          return `
+            <tr class="score-row">
+              <td>${index + 1}</td>
+              <td><strong>${score.quizName}</strong></td>
+              <td>
+                <span class="score-badge ${badgeClass}">
+                  ${score.score}/10 (${score.percentage}%)
+                </span>
+                <br><small>${badgeText}</small>
+              </td>
+              <td>${score.timeLeft}s left</td>
+              <td>${score.playerName}</td>
+              <td>${date}<br><small>${time}</small></td>
+            </tr>
+          `;
+        }).join('');
+      }
+      
+      init() {
+        this.render();
+        
+        // Add event listeners
+        document.getElementById('quiz-filter').addEventListener('change', () => this.render());
+        document.getElementById('sort-filter').addEventListener('change', () => this.render());
+        
+        // Add some sample data if no scores exist
+        if (this.scores.length === 0) {
+          this.addScore('HTML Quiz', 8, 45, 'John Doe');
+          this.addScore('CSS Quiz', 9, 52, 'Jane Smith');
+          this.addScore('JavaScript Quiz', 7, 38, 'Mike Johnson');
+        }
+      }
+    }
+    
+    // Initialize scoreboard
+    const scoreboard = new Scoreboard();
+    
+    // Global function for clearing scores
+    function clearAllScores() {
+      if (confirm('Are you sure you want to clear all scores? This action cannot be undone.')) {
+        scoreboard.clearScores();
+      }
+    }
+  </script>
 </body>
 </html>
