@@ -1,0 +1,264 @@
+/* =====================
+   Global Styles
+===================== */
+:root {
+  --primary: #7c3aed;       /* Purple Theme */
+  --primary-dark: #6b21a8;
+  --accent: #9333ea;
+  --text-dark: #1e1e1e;
+  --text-light: #ffffff;
+  --bg-light: #f9f9ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* =====================
+   Links
+===================== */
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* =====================
+   Navbar
+===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--text-light);
+  padding: 1em 2em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links a {
+  margin: 0 1em;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: white;
+    margin-top: 1em;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* =====================
+   Hero Section
+===================== */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  text-align: center;
+  padding: 5em 2em;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding: 0.75em 2em;
+  background-color: white;
+  color: var(--primary);
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.cta-btn:hover {
+  background-color: #f3e8ff;
+}
+
+/* =====================
+   Why Section
+===================== */
+.why-section {
+  padding: 4em 2em;
+  text-align: center;
+}
+
+.why-section h2 {
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
+
+.why-card {
+  background: white;
+  padding: 2em;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+.why-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1em;
+}
+
+/* =====================
+   Quiz Grid Section
+===================== */
+.quiz-grid {
+  padding: 4em 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+}
+
+.quiz-card {
+  background: white;
+  padding: 2em;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-card .icon {
+  font-size: 2.5em;
+  margin-bottom: 0.75em;
+  transition: color 0.3s ease;
+  color: var(--primary-dark);
+}
+
+.quiz-card:hover .icon {
+  color: var(--accent);
+}
+
+.quiz-card h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
+}
+
+.quiz-btn {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em 1.5em;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-btn:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* =====================
+   FAQ Section
+===================== */
+.faq-section {
+  background: #f3f4f6;
+  padding: 4em 2em;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+.faq-item {
+  background: white;
+  padding: 1.5em;
+  margin-bottom: 1em;
+  border-left: 5px solid var(--primary);
+  border-radius: 10px;
+}
+
+.faq-question {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+/* =====================
+   Footer
+===================== */
+.footer {
+  background-color: #1f1f1f;
+  color: #ccc;
+  padding: 2em;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--primary);
+  margin: 0 0.5em;
+  font-size: 1.3em;
+}
+
+.footer a:hover {
+  color: white;
+}

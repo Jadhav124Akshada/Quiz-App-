@@ -1,59 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: HTML, CSS, JavaScript</title>
-  <link rel="stylesheet" href="styles.css">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Game | Learn with Fun</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles/styles-home.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 </head>
 <body>
-  <header class="mynavbar">
-  <div class="navbar-container">
-    <strong>Quiz Game </strong>
-    <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
-    </nav>
-  </div>
-</header>
-  <div class="quiz-container">
-    <div id="submission-message"></div>
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p class="description">Choose a topic to start:</p>
-    <ul class="quiz-list">
-      <li><a href="html-quiz.html"class="quiz-link">HTML Quiz</a></li>
-      <li><a href="css-quiz.html"class="quiz-link">CSS Quiz</a></li>
-      <li><a href="js-quiz.html"class="quiz-link">JavaScript Quiz</a></li>
-      <li><a href="cpp-quiz.html"class="quiz-link">C++ Quiz</a></li>
-      <li><a href="react-quiz.html" class="quiz-link">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html" class="quiz-link">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html" class="quiz-link">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html" class="quiz-link">Python Quiz</a></li>
-      <li><a href="django-quiz.html" class="quiz-link">Django Quiz</a></li>
-      <li><a href="dsa-quiz.html" class="quiz-link">DSA Quiz</a></li>
-      <li><a href="dbms-quiz.html" class="quiz-link">DBMS Quiz</a></li>
-    </ul>
-  </div>
 
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Quiz Game</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#">Home</a>
+      <a href="#quiz-section">Quizzes</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <footer class="myfooter">
-    <div class="footer-container">
-      <p>&#9679; &nbsp; &nbsp; &copy; <strong>Quiz Game - </strong> Built with <i class="fas fa-heart" style="color: red;"> </i> by Akshada Jadhav </p>
-       <a id="contact us" href="./contact-us.html">Contact Us</a>
-      <div class="footer-links">
-        <a class="link" href="https://github.com/Jadhav124Akshada" target="_blank"><i class="fa-brands fa-github icon"></i>Github</a>
-        <a class="link" href="https://www.linkedin.com/in/akshada-jadhav-4b72062b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin icon"></i>LinkedIn</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to the Quiz Zone</h1>
+    <p>Boost your knowledge with interactive quizzes on coding, tech, and more!</p>
+    <a href="#quiz-section" class="cta-btn">Start Learning</a>
+  </section>
+
+  <!-- Why Practice Section -->
+  <section class="why-section" id="about">
+    <h2>Why Practice with Quizzes?</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <img src="images/illustration/quiz_zvhe.svg" alt="Quiz Illustration">
+        <h3>Sharpen Your Mind</h3>
+        <p>Challenge your thinking and enhance logical skills.</p>
+      </div>
+      <div class="why-card">
+        <img src="images/illustration/correct-answer_vjt7.svg" alt="Correct Answer">
+        <h3>Instant Feedback</h3>
+        <p>Get answers and insights immediately after every question.</p>
+      </div>
+      <div class="why-card">
+        <img src="images/illustration/questions_g2px.svg" alt="Questions">
+        <h3>Track Your Growth</h3>
+        <p>Measure your improvement over time and stay motivated.</p>
       </div>
     </div>
-  </footer>
-  
+  </section>
 
-  <script src="script.js"></script> 
+  <!-- Quiz Grid Section -->
+  <section id="quiz-section" class="quiz-grid">
+    <!-- Each quiz card includes icon, title, description, and a button -->
+    <div class="quiz-card">
+      <i class="fab fa-html5 icon html"></i>
+      <h3>HTML</h3>
+      <p>Test your HTML fundamentals and semantics.</p>
+      <a href="html-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fab fa-css3-alt icon css"></i>
+      <h3>CSS</h3>
+      <p>Show your design and layout mastery.</p>
+      <a href="css-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fab fa-js icon js"></i>
+      <h3>JavaScript</h3>
+      <p>Master scripting with JS challenges.</p>
+      <a href="js-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fas fa-code icon cpp"></i>
+      <h3>C++</h3>
+      <p>Practice object-oriented and competitive logic.</p>
+      <a href="cpp-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fab fa-react icon react"></i>
+      <h3>React</h3>
+      <p>Explore components, hooks, and JSX.</p>
+      <a href="react-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fas fa-layer-group icon nextjs"></i>
+      <h3>Next.js</h3>
+      <p>Test SSR and routing knowledge.</p>
+      <a href="nextjs-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fab fa-git-alt icon git"></i>
+      <h3>Git & GitHub</h3>
+      <p>Version control and collaboration skills.</p>
+      <a href="git-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fab fa-python icon python"></i>
+      <h3>Python</h3>
+      <p>From basics to data handling in Python.</p>
+      <a href="python-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fas fa-server icon django"></i>
+      <h3>Django</h3>
+      <p>Backend logic with the Django framework.</p>
+      <a href="django-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fas fa-sitemap icon dsa"></i>
+      <h3>DSA</h3>
+      <p>Challenge yourself with data structures & algorithms.</p>
+      <a href="dsa-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+
+    <div class="quiz-card">
+      <i class="fas fa-database icon dbms"></i>
+      <h3>DBMS</h3>
+      <p>Master databases, SQL, and relational models.</p>
+      <a href="dbms-quiz.html" class="quiz-btn">Start Quiz</a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">What topics are covered in the quizzes?</div>
+      <div class="faq-answer">We cover a wide range including HTML, CSS, JS, Python, React, and more!</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Are the quizzes free to use?</div>
+      <div class="faq-answer">Absolutely! Every quiz is free and open for all learners.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">Can I track my progress?</div>
+      <div class="faq-answer">We’re working on user profiles for tracking—coming soon!</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <p>Quiz Game - Built with  by Akshada Jadhav</p>
+      <a href="https://github.com/Jadhav124Akshada"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/akshada-jadhav-4b72062b5"><i class="fab fa-linkedin"></i></a>
+      <p>&copy; 2025 Quiz Game. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for menu and FAQ toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+
+    function toggleFAQ(element) {
+      const faqItem = element.parentElement;
+      faqItem.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
-
-
