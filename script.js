@@ -742,69 +742,7 @@ const pythonQuestions = [
 ]
 
 
-// SQL Questions
-const sqlQuestions = [
-  {
-    question: "Which SQL statement is used to extract data from a database?",
-    options: ["GET", "OPEN", "EXTRACT", "SELECT"],
-    answer: "SELECT",
-  },
-  {
-    question: "Which SQL clause is used to filter records?",
-    options: ["FILTER BY", "WHERE", "SEARCH", "FROM"],
-    answer: "WHERE",
-  },
-  {
-    question: "Which SQL statement is used to update data in a database?",
-    options: ["MODIFY", "UPDATE", "SAVE", "CHANGE"],
-    answer: "UPDATE",
-  },
-  {
-    question: "Which SQL statement is used to insert new data into a database?",
-    options: ["ADD NEW", "INSERT INTO", "ADD RECORD", "INSERT NEW"],
-    answer: "INSERT INTO",
-  },
-  {
-    question: "Which SQL keyword is used to sort the result-set?",
-    options: ["SORT BY", "ORDER BY", "ARRANGE BY", "SORT"],
-    answer: "ORDER BY",
-  },
-  {
-    question: "Which type of JOIN returns records that have matching values in both tables?",
-    options: ["OUTER JOIN", "FULL JOIN", "LEFT JOIN", "INNER JOIN"],
-    answer: "INNER JOIN",
-  },
-  {
-    question: "What does the `COUNT()` function in SQL do?",
-    options: [
-      "Counts the number of columns",
-      "Counts the total value of a numeric column",
-      "Returns the number of rows that matches a specified criterion",
-      "Counts the number of tables",
-    ],
-    answer: "Returns the number of rows that matches a specified criterion",
-  },
-  {
-    question: "Which SQL statement is used to delete data from a database?",
-    options: ["DELETE", "REMOVE", "COLLAPSE", "ERASE"],
-    answer: "DELETE",
-  },
-  {
-    question: "What does the `AS` keyword do in a query?",
-    options: [
-      "It is used to compare two values",
-      "It is a wildcard character",
-      "It creates an alias for a column or table name",
-      "It is used for aggregation",
-    ],
-    answer: "It creates an alias for a column or table name",
-  },
-  {
-    question: "Which SQL statement is used to create a new table?",
-    options: ["CREATE TABLE", "NEW TABLE", "MAKE TABLE", "BUILD TABLE"],
-    answer: "CREATE TABLE",
-  },
-]
+
 
 // Django Questions
 const djangoQuestions = [
@@ -1204,9 +1142,9 @@ const calculateTotalScore = (questions) => {
 let currentQuestions = []
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  let questions = []
-  let sectionId = ""
+document.addEventListener("DOMContentLoaded", async() => {
+  let questions = [];
+  let sectionId = "";
 
   // Determine the quiz type
   if (document.getElementById("html-questions")) {
@@ -1233,11 +1171,17 @@ document.addEventListener("DOMContentLoaded", () => {
     questions = gitQuestions
     sectionId = "git-questions"
   } else if (document.getElementById("python-questions")) {
-    questions = pythonQuestions
-    sectionId = "python-questions"
-  } else if (document.getElementById("sql-questions")) {
-    questions = sqlQuestions
-    sectionId = "sql-questions"
+    questions = pythonQuestions;
+    sectionId = "python-questions";
+  }else if (document.getElementById("sql-questions")) {
+  sectionId = "sql-questions";
+  try {
+    const response = await fetch("sql.json");
+    questions = await response.json();
+  } catch (error) {
+    console.error("Failed to load SQL questions:", error);
+    questions = [];
+  }
   } else if (document.getElementById("django-questions")) {
 
     questions = djangoQuestions
@@ -1355,5 +1299,4 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.removeItem("formSubmissionSuccess")
     }
   }
-})
-
+});
