@@ -1142,7 +1142,7 @@ const calculateTotalScore = (questions) => {
 let currentQuestions = []
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
   let questions = [];
   let sectionId = "";
 
@@ -1173,9 +1173,15 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("python-questions")) {
     questions = pythonQuestions;
     sectionId = "python-questions";
-  } else if (document.getElementById("sql-questions")) {
-    questions = sqlQuestions;
-    sectionId = "sql-questions";
+  }else if (document.getElementById("sql-questions")) {
+  sectionId = "sql-questions";
+  try {
+    const response = await fetch("sql.json");
+    questions = await response.json();
+  } catch (error) {
+    console.error("Failed to load SQL questions:", error);
+    questions = [];
+  }
   } else if (document.getElementById("django-questions")) {
 
     questions = djangoQuestions
