@@ -1008,54 +1008,17 @@ function initializeTimer() {
 function stop() {
   clearInterval(timeinterval)
 
+
+// Track attempted questions using localStorage
+let attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '{}');
+// Structure: { sectionId: { index: "option" } }
+
+function saveAttemptedQuestions() {
+  localStorage.setItem('attemptedQuestions', JSON.stringify(attemptedQuestions));
 }
 
-function start() {
-  if (timeinterval) {
 
-    clearInterval(timeinterval)
-  }
-  actualtime = 60
-  timeleft = actualtime
-  timerElement.textContent = timeleft.toString()
-  timeinterval = setInterval(() => {
-    timeleft--
-    timerElement.innerText = timeleft.toString()
-    if (timeleft <= 0) {
-      clearInterval(timeinterval)
-      handleTimeUp(currentQuestions)
-    }
-  }, 1000)
-}
 
-function handleTimeUp(questions) {
-  document.querySelectorAll('input[type="radio"]').forEach((input) => {
-    input.disabled = true
-  })
-  document.querySelectorAll(".check-answer-btn").forEach((btn) => {
-    btn.disabled = true
-  })
-  const response = document.getElementById("result")
-  response.textContent = "Time's up"
-  calculateTotalScore(questions)
-}
-
-const startBtn = document.getElementById("start-btn")
-const restartBtn = document.getElementById("restart-btn")
-
-if (startBtn) {
-  startBtn.addEventListener("click", () => {
-    initializeTimer()
-    start()
-  })
-}
-
-if (restartBtn) {
-  restartBtn.addEventListener("click", () => {
-    initializeTimer()
-  })
-
-}
 
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
@@ -1135,6 +1098,25 @@ const renderQuestions = (questions, sectionId) => {
 }
 
 
+
+// *** updated ***Function to check the answer for a specific question
+const checkAnswer = (questions, index, sectionId) => {
+  // Initialize section if not present
+  if (!attemptedQuestions[sectionId]) attemptedQuestions[sectionId] = {};
+
+  // Prevent re-answering
+  if (attemptedQuestions[sectionId][index]) {
+    const resultContainer = document.getElementById(`result-${index}`);
+    resultContainer.textContent = "You have already answered this question.";
+    resultContainer.style.color = "gray";
+    return false;
+  }
+
+  const selectedOption = document.querySelector(
+    `input[name="question-${index}"]:checked`
+  );
+  const resultContainer = document.getElementById(`result-${index}`);
+
 // Function to check the answer for a specific question
 const checkAnswer = (questions, index) => {
   const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`)
@@ -1142,18 +1124,17 @@ const checkAnswer = (questions, index) => {
   const questionContainer = document.querySelector(`[data-question-index="${index}"]`)
   const button = document.querySelector(`[data-index="${index}"]`)
 
+
   if (!selectedOption) {
     resultContainer.textContent = "Please select an answer."
     resultContainer.style.color = "orange"
     return false
   }
 
-  // Mark question as answered and update UI
-  answeredQuestions.add(index)
-  questionContainer.classList.add("answered")
-  button.classList.add("answered")
-  button.textContent = "✓ Answered"
-  button.disabled = true
+  // Mark as attempted
+  attemptedQuestions[sectionId][index] = selectedOption.value;
+  saveAttemptedQuestions();
+
 
   if (selectedOption.value === questions[index].answer) {
     resultContainer.textContent = "✅ Correct!"
@@ -1249,20 +1230,46 @@ document.addEventListener("DOMContentLoaded", () => {
     questions = dbmsQuestions
     sectionId = "dbms-questions"
   }
+  
+
 
   if (sectionId) {
     currentQuestions = questions
     renderQuestions(questions, sectionId)
 
 
+
+  // ***Disable already attempted questions and show message
+  if (attemptedQuestions[sectionId]) {
+  Object.keys(attemptedQuestions[sectionId]).forEach(idx => {
+    const inputs = document.querySelectorAll(`input[name="question-${idx}"]`);
+    inputs.forEach(input => {
+      input.disabled = true;
+      if (input.value === attemptedQuestions[sectionId][idx]) {
+        input.checked = true;
+      }
+    });
+    const resultContainer = document.getElementById(`result-${idx}`);
+    if (resultContainer) {
+      resultContainer.textContent = "You have already answered this question.";
+      resultContainer.style.color = "gray";
+    }
+  });
+}
+
+    // Attach event listeners to "Check Answer" buttons
     document.querySelectorAll(".check-answer-btn").forEach((button) => {
       button.addEventListener("click", (event) => {
-        const index = Number.parseInt(event.target.getAttribute("data-index"))
-        checkAnswer(questions, index)
-      })
-    })
+        const index = parseInt(event.target.getAttribute("data-index"));
+        checkAnswer(questions, index,sectionId);
+      });
+    });
 
-    document.getElementById("calculate-score-btn")?.addEventListener("click", () => {
+
+    // ✅ Attach both event listeners right after injecting HTML
+  document.getElementById("calculate-score-btn")
+  .addEventListener("click", () => calculateTotalScore(questions));
+
 
       initializeTimer()
       calculateTotalScore(questions)
@@ -1273,15 +1280,38 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Restart quiz handler
-  const restartBtn = document.getElementById("restartQuizBtn")
-  if (restartBtn) {
-    restartBtn.addEventListener("click", () => {
-      if (confirm("Are you sure you want to restart the quiz? All progress will be lost.")) {
-        window.location.reload()
-      }
-    })
-  }
+});
+
+// Function to toggle Feedback and Issue sections based on selected reason
+document.addEventListener("DOMContentLoaded", function () {
+    const reasonSelect = document.getElementById("reason");
+    const feedbackSection = document.getElementById("feedback-Section");
+    const issueSection = document.getElementById("issue-Section");
+    const contactForm = document.getElementById("contact-Form");
+    const contactResponseMessage = document.getElementById("responseMessage"); // For messages on the contact form page
+
+    // --- Function to show/hide sections and manage 'required' attributes ---
+    function toggleFormSections() {
+        if (!reasonSelect) return; // Exit if not on the contact form page
+
+        const selectedReason = reasonSelect.value;
+
+        // Hide both sections initially
+        feedbackSection.style.display = 'none';
+        issueSection.style.display = 'none';
+
+        // Set 'required' for elements within each section based on selection
+        setRequired(feedbackSection, false); // Unset all required first
+        setRequired(issueSection, false); // Unset all required first
+
+        if (selectedReason === 'feedback') {
+            feedbackSection.style.display = 'block';
+            setRequired(feedbackSection, true);
+        } else if (selectedReason === 'issue') {
+            issueSection.style.display = 'block';
+            setRequired(issueSection, true);
+        }
+    }
 
   // Contact form logic
   const reasonSelect = document.getElementById("reason")
@@ -1354,6 +1384,6 @@ document.addEventListener("DOMContentLoaded", () => {
       submissionMessageDiv.style.margin = "15px 0"
       sessionStorage.removeItem("formSubmissionSuccess")
     }
-  }
-})
 
+  
+});
