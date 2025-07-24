@@ -119,8 +119,6 @@ const dbmsQuestions = [
     question: "Which of the following is not a property of a transaction?",
     options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
 
-    answer: "Compilation",
-=======
     answer: "Compilation"
 
   },
@@ -128,20 +126,16 @@ const dbmsQuestions = [
     question: "Which SQL clause is used to filter records?",
     options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
 
-    answer: "WHERE",
-=======
-    answer: "WHERE"
+    answer: "WHERE" 
 
   },
   {
     question: "What is the main purpose of normalization in DBMS?",
     options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
 
-    answer: "To eliminate data redundancy",
-=======
     answer: "To eliminate data redundancy"
 
-  },
+   },
   {
     question: "Which normal form removes transitive dependency?",
     options: ["1NF", "2NF", "3NF", "BCNF"],
@@ -273,8 +267,6 @@ const cssQuestions = [
     question: "How do you select an element with the id 'header' in CSS?",
     options: ["#header", ".header", "header", "[id='header']"],
 
-    answer: "#header",
-=======
     answer: "#header"
 
   },
@@ -938,6 +930,110 @@ const dsaQuestions = [
     answer: "Hash Table",
   },
 ]
+// AI/ML Questions
+const aimlQuestions = [
+  {
+    question: "Who coined the term 'Artificial Intelligence'?",
+    options: [
+      "Alan Turing",
+      "John McCarthy",
+      "Geoffrey Hinton",
+      "Elon Musk"
+    ],
+    answer: "John McCarthy"
+  },
+  {
+    question: "Which of the following is a type of unsupervised learning?",
+    options: [
+      "Logistic Regression",
+      "Decision Tree",
+      "K-Means Clustering",
+      "Linear Regression"
+    ],
+    answer: "K-Means Clustering"
+  },
+  {
+    question: "What is the main purpose of reinforcement learning?",
+    options: [
+      "To learn from labeled data",
+      "To optimize decisions through rewards and punishments",
+      "To reduce dimensionality",
+      "To classify text"
+    ],
+    answer: "To optimize decisions through rewards and punishments"
+  },
+  {
+    question: "Which algorithm is best suited for spam detection?",
+    options: [
+      "K-Means",
+      "Naive Bayes",
+      "Apriori",
+      "KNN"
+    ],
+    answer: "Naive Bayes"
+  },
+  {
+    question: "Which of these is a popular library for Machine Learning in Python?",
+    options: [
+      "Django",
+      "NumPy",
+      "Scikit-learn",
+      "React"
+    ],
+    answer: "Scikit-learn"
+  },
+  {
+    question: "What does 'overfitting' mean in machine learning?",
+    options: [
+      "The model is too simple to capture data patterns",
+      "The model performs well on training data but poorly on unseen data",
+      "The model generalizes well",
+      "The model has no bias"
+    ],
+    answer: "The model performs well on training data but poorly on unseen data"
+  },
+  {
+    question: "Which is a popular technique for reducing the number of input variables?",
+    options: [
+      "Gradient Descent",
+      "PCA (Principal Component Analysis)",
+      "SVM",
+      "CNN"
+    ],
+    answer: "PCA (Principal Component Analysis)"
+  },
+  {
+    question: "Which neural network is best suited for image recognition?",
+    options: [
+      "RNN",
+      "LSTM",
+      "CNN",
+      "GAN"
+    ],
+    answer: "CNN"
+  },
+  {
+    question: "What is the purpose of a cost function in ML?",
+    options: [
+      "To update features",
+      "To track accuracy",
+      "To evaluate the performance of a model",
+      "To normalize data"
+    ],
+    answer: "To evaluate the performance of a model"
+  },
+  {
+    question: "Which machine learning technique is commonly used in recommendation systems?",
+    options: [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Collaborative Filtering",
+      "Clustering"
+    ],
+    answer: "Collaborative Filtering"
+  }
+];
+
 
 // Added auto-scroll and progress tracking variables
 const answeredQuestions = new Set()
@@ -1174,7 +1270,6 @@ const checkAnswer = (questions, index) => {
 }
 
 
-};
 
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
@@ -1249,6 +1344,10 @@ document.addEventListener("DOMContentLoaded", () => {
     questions = dbmsQuestions
     sectionId = "dbms-questions"
   }
+  else if (document.getElementById("aiml-questions")) {
+    questions = aimlQuestions
+    sectionId = "aiml-questions"
+  } 
 
   if (sectionId) {
     currentQuestions = questions
