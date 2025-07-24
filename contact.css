@@ -1,0 +1,116 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #b1cde2, #9ab4b5);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* Contact Container */
+#contact-container {
+  background-color: #ffffff;
+  padding: 40px 35px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+#contact-container:hover {
+  transform: scale(1.01);
+}
+
+/* Heading */
+#contact-container h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+  margin-top: 18px;
+}
+
+/* Inputs, Select, Textarea */
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="file"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #3498db;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+/* Textarea Specific */
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Submit Button */
+form button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: background 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #219150, #27ae60);
+}
+
+/* File Input Styling (optional enhancement) */
+input[type="file"] {
+  padding: 8px;
+  background-color: #f7f7f7;
+}
+
+/* Optional Responsive Adjustments */
+@media screen and (max-width: 600px) {
+  #contact-container {
+    padding: 30px 20px;
+  }
+
+  #contact-container h1 {
+    font-size: 22px;
+  }
+}
