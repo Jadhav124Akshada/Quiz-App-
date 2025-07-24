@@ -392,6 +392,8 @@ document.addEventListener("DOMContentLoaded", () => {
     questions = djangoQuestions;
     sectionId = "django-questions";
   }
+  
+
 
   // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
