@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout - Quiz App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .logout-container {
+      max-width: 600px;
+      margin: 100px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .logout-icon {
+      font-size: 4rem;
+      color: #ff6b6b;
+      margin-bottom: 20px;
+    }
+    
+    .logout-title {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .logout-message {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    .logout-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-login {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-login:hover {
+      background-color: #0056b3;
+    }
+    
+    .btn-home {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-home:hover {
+      background-color: #218838;
+    }
+    
+    @media (max-width: 600px) {
+      .logout-container {
+        margin: 50px 20px;
+        padding: 30px 20px;
+      }
+      
+      .logout-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="mynavbar">
+    <div class="navbar-container">
+      <strong>Quiz Game</strong>
+      <nav class="nav-links">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="profile.html">Profile</a>
+        <a class="link" href="scoreboard.html">Scoreboard</a>
+        <a class="link" href="logout.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Logout Content -->
+  <div class="logout-container">
+    <div class="logout-icon">
+      <i class="fas fa-sign-out-alt"></i>
+    </div>
+    <h1 class="logout-title">Successfully Logged Out</h1>
+    <p class="logout-message">
+      You have been successfully logged out of your account. 
+      Thank you for using our Quiz App! Your session has been cleared and your data is secure.
+    </p>
+    <div class="logout-buttons">
+      <a href="index.html" class="btn-home">
+        <i class="fas fa-home"></i> Back to Home
+      </a>
+      <a href="#" class="btn-login" onclick="simulateLogin()">
+        <i class="fas fa-sign-in-alt"></i> Login Again
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="myfooter">
+    <div class="footer-container">
+      <p>&#9679; &nbsp; &nbsp; &copy; <strong>Quiz Game - </strong> Built with <i class="fas fa-heart" style="color: red;"></i> by Akshada Jadhav</p>
+      <a id="contact us" href="./contact-us.html">Contact Us</a>
+      <div class="footer-links">
+        <a class="link" href="https://github.com/Jadhav124Akshada" target="_blank">
+          <i class="fa-brands fa-github icon"></i>Github
+        </a>
+        <a class="link" href="https://www.linkedin.com/in/akshada-jadhav-4b72062b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+          <i class="fa-brands fa-linkedin icon"></i>LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function simulateLogin() {
+      alert('Login functionality will be implemented in future updates. For now, please use the "Back to Home" button to continue using the app.');
+    }
+    
+    // Clear any stored session data
+    sessionStorage.clear();
+    localStorage.removeItem('quizScores');
+    localStorage.removeItem('userPreferences');
+  </script>
+</body>
+</html> 
