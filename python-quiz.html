@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Quiz</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     .quiz-container a {
       display: block;
@@ -96,6 +96,36 @@
         color: #b71c1c;
       }
     }
+
+    .progress-header {
+      margin-top: 80px;
+      padding: 10px;
+    }
+
+    .progress-container {
+      margin-top: 10px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #4caf50;
+      transition: width 0.3s ease;
+    }
+
+    .questions-scroll-container {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-top: 15px;
+    }
   </style>
 </head>
 
@@ -105,26 +135,54 @@
       <span>Time Left: </span>
       <span id="timer">60</span>s
     </div>
-    <a href="index.html">
-      <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
-    </a>
+    <div class="score-display">
+      <span>Score: </span>
+      <span id="scoree">0</span>
+    </div>
   </header>
 
-  <div class="quiz-border">
+  <div class="quiz-container">
+    <!-- Progress header -->
+    <div class="progress-header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="margin: 0; color: #333; font-size: 24px;">Python Quiz</h2>
+        <a href="index.html" class="back-button-icon" aria-label="Back to Home">
+          <img src="home.png" alt="Back to Home" class="back-button-icon" />
+        </a>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-container">
+        <div class="progress-info" style="display: flex; justify-content: space-between;">
+          <span id="progress-text">Progress: 0 / 10</span>
+          <span id="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="quiz-section">
-      <h2>Python Quiz</h2>
       <div class="btnclass">
         <button id="start-btn">Start</button>
         <button id="restart-btn">Restart</button>
       </div>
+
+      <!-- Scrollable container to hold the questions -->
+      <div class="questions-scroll-container">
+        <div id="python-questions"></div>
+      </div>
     </div>
+
     <div id="quiz-container"></div>
-  </div>
-  <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-  <div id="resultBox">
-    <button id="restartQuizBtn">Restart Quiz</button>
+    <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="resultBox">
+      <button id="restartQuizBtn">Restart Quiz</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
