@@ -1,11 +1,8 @@
-/* Base Styling */
 body {
-
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-
 }
 
 .quiz-container {
@@ -124,7 +121,6 @@ button:hover {
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
   font-size: 1rem;
   border-top: 0.055rem solid white;
-
 }
 
 .footer-container p {
@@ -175,32 +171,26 @@ button:hover {
   top: 0;
   left: 0;
   right: 0;
-  background-color: white;
-  z-index: 1000;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 10px;
   background-color: #f5f5f5;
+  z-index: 1000;
+  padding: 5px 10px;
   border-radius: 8px;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .btnclass {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-
 }
 
 .timer-container,
 .score-display {
-
   display: flex;
   align-items: center;
   gap: 8px;
@@ -209,25 +199,20 @@ button:hover {
 }
 
 .timer-container {
-  color: #d32f2f; /* Red color for timer to stand out */
+  color: #d32f2f;
   background-color: #ffebee;
   padding: 8px 12px;
   border-radius: 20px;
 }
 
 .score-display {
-  color: #2e7d32; /* Green color for score */
+  color: #2e7d32;
   background-color: #e8f5e9;
   padding: 8px 12px;
   border-radius: 20px;
 }
 
-#timer {
-  font-weight: bold;
-  min-width: 25px;
-  text-align: center;
-}
-
+#timer,
 #score {
   font-weight: bold;
   min-width: 25px;
@@ -253,7 +238,7 @@ button:hover {
   color: green;
 }
 
-/* Added sticky progress header */
+/* Sticky progress header */
 .progress-header {
   position: sticky;
   top: 0;
@@ -292,23 +277,12 @@ button:hover {
   border-radius: 4px;
 }
 
-/* Enhanced question styling for better visibility */
-.question-container {
-  margin-bottom: 30px !important;
-  padding: 20px;
-  border: 2px solid #e0e0e0 !important;
-  border-radius: 8px;
-  background: white;
-  transition: all 0.3s ease;
-}
-
 /* Highlight answered questions */
 .question-container.answered {
   background-color: #f0f8f0;
   border-color: #4caf50 !important;
 }
 
-/* Enhanced button styling */
 button.answered {
   background-color: #4caf50 !important;
   cursor: not-allowed;
@@ -318,8 +292,7 @@ button.answered:hover {
   background-color: #45a049 !important;
 }
 
-/* ----------------- Responsive Styling ----------------- */
-/* Mobile First */
+/* Responsive Styling - Mobile First */
 @media (max-width: 600px) {
   .quiz-container {
     padding: 15px;
@@ -348,7 +321,6 @@ button.answered:hover {
     flex-wrap: wrap;
     justify-content: center;
   }
-  /* Responsive progress header */
   .progress-header {
     padding: 10px 15px;
     margin: -15px -15px 15px -15px;
@@ -368,13 +340,73 @@ button.answered:hover {
   }
 }
 
-/* Desktop (Already Well Styled) */
+/* Desktop */
 @media (min-width: 1025px) {
   .quiz-container {
     width: 50%;
   }
 }
 
+/* === Total Score Page Styles === */
+.score-summary {
+  margin: 20px 0;
+}
+
+.score-card {
+  padding: 15px;
+  background-color: #f0f8ff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.perfect {
+  color: green;
+  font-weight: bold;
+}
+
+.partial {
+  color: blue;
+}
+
+.back-link,
+.clear-btn {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-link:hover,
+.clear-btn:hover {
+  background-color: #45a049;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: #4CAF50;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+/* Contact Form */
 #contact-container {
   max-width: 800px;
   margin: 0 auto;
@@ -388,20 +420,18 @@ button.answered:hover {
   display: block;
   margin-top: 15px;
   font-weight: bold;
-
 }
-/*navbar*/
+
+/* Navbar */
 .mynavbar {
- background: linear-gradient(135deg, #4f8cff, #8f94fb, #c3cfe2);
+  background: linear-gradient(135deg, #4f8cff, #8f94fb, #c3cfe2);
   padding: 2.2rem 2rem;
   font-family: Arial, sans-serif;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
-    font-weight: 500;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
-    font-size: 1rem;
-    border-top: 0.055rem solid white;
-   
+  font-weight: 500;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+  font-size: 1rem;
+  border-top: 0.055rem solid white;
 }
 
 .navbar-container {
@@ -431,7 +461,8 @@ button.answered:hover {
   text-decoration: underline;
   color: #333;
 }
-/*Scoreboard*/
+
+/* Scoreboard */
 .scoreboard-main {
   display: flex;
   justify-content: center;
@@ -477,4 +508,3 @@ th, td {
 .back-button:hover {
   background-color: #0056b3;
 }
-

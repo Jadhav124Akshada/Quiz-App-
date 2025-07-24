@@ -11,22 +11,18 @@
       display: block;
       text-align: right;
       margin-right: 0;
-      float: right;
     }
 
-    
-    /* Added style just for the icon's size and spacing */
+    /* Back button icon style */
     .back-button-icon {
-      width: 32px; /* Sets the size of the icon */
+      width: 32px;
       height: 32px;
-      margin: 10px 10px 0 0; /* Adds a little space from the top/right edges */
+      margin: 10px 10px 0 0;
     }
-    
-    /* UNCHANGED */
+
     .question-container {
       margin-bottom: 20px;
     }
-    
 
     .result {
       margin-top: 10px;
@@ -47,14 +43,12 @@
     </div>
   </div>
 
-  
   <div class="quiz-container">
     <!-- Progress header -->
     <div class="progress-header">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <h2 style="margin: 0; color: #333; font-size: 24px;">JavaScript Quiz</h2>
-        <!-- The new back button with an SVG icon is placed here. -->
-        <!-- The `float: right` from your CSS will position it correctly. -->
+        <!-- Back button -->
         <a href="index.html" class="back-button-icon" aria-label="Back to Home">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -62,7 +56,7 @@
           </svg>
         </a>
       </div>
-      
+
       <!-- Progress bar -->
       <div class="progress-container">
         <div class="progress-info">
@@ -74,21 +68,18 @@
         </div>
       </div>
     </div>
-    
+
     <div class="quiz-section">
       <!-- Start and Restart buttons -->
-
       <div class="btnclass">
         <button id="start-btn">Start</button>
         <button id="restart-btn">Restart</button>
       </div>
 
-      
       <!-- Scrollable container to hold the questions -->
       <div class="questions-scroll-container">
         <div id="js-questions"></div>
       </div>
-
     </div>
 
     <div id="result"></div>
