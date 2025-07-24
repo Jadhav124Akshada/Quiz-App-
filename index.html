@@ -1,59 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: HTML, CSS, JavaScript</title>
-  <link rel="stylesheet" href="styles.css">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Hub - Test Your Knowledge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <header class="mynavbar">
-  <div class="navbar-container">
-    <strong>Quiz Game </strong>
-    <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">QuizHub ✨</a>
+            <div class="nav-links">
+                <a href="index.html" class="link">Home</a>
+                <a href="contact.html" class="link">Contact</a>
+                <button id="theme-toggle-btn" class="theme-toggle-btn">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
     </nav>
-  </div>
-</header>
-  <div class="quiz-container">
-    <div id="submission-message"></div>
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p class="description">Choose a topic to start:</p>
-    <ul class="quiz-list">
-      <li><a href="html-quiz.html"class="quiz-link">HTML Quiz</a></li>
-      <li><a href="css-quiz.html"class="quiz-link">CSS Quiz</a></li>
-      <li><a href="js-quiz.html"class="quiz-link">JavaScript Quiz</a></li>
-      <li><a href="cpp-quiz.html"class="quiz-link">C++ Quiz</a></li>
-      <li><a href="react-quiz.html" class="quiz-link">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html" class="quiz-link">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html" class="quiz-link">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html" class="quiz-link">Python Quiz</a></li>
-      <li><a href="django-quiz.html" class="quiz-link">Django Quiz</a></li>
-      <li><a href="dsa-quiz.html" class="quiz-link">DSA Quiz</a></li>
-      <li><a href="dbms-quiz.html" class="quiz-link">DBMS Quiz</a></li>
-    </ul>
-  </div>
 
+    <main>
+        <div class="main-container">
+            <div id="submission-message"></div>
+            <h1>Welcome to QuizHub</h1>
+            <p class="description">Select a topic below to start a quiz and test your skills!</p>
 
-  <footer class="myfooter">
-    <div class="footer-container">
-      <p>&#9679; &nbsp; &nbsp; &copy; <strong>Quiz Game - </strong> Built with <i class="fas fa-heart" style="color: red;"> </i> by Akshada Jadhav </p>
-       <a id="contact us" href="./contact-us.html">Contact Us</a>
-      <div class="footer-links">
-        <a class="link" href="https://github.com/Jadhav124Akshada" target="_blank"><i class="fa-brands fa-github icon"></i>Github</a>
-        <a class="link" href="https://www.linkedin.com/in/akshada-jadhav-4b72062b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin icon"></i>LinkedIn</a>
-      </div>
-    </div>
-  </footer>
-  
+            <div class="quiz-section-grid">
+                <div class="quiz-category-card">
+                    <h2>Web Foundations</h2>
+                    <ul class="quiz-list">
+                        <li><a href="quiz.html?topic=html" class="quiz-link">HTML</a></li>
+                        <li><a href="quiz.html?topic=css" class="quiz-link">CSS</a></li>
+                    </ul>
+                </div>
+                <div class="quiz-category-card">
+                    <h2>JavaScript Ecosystem</h2>
+                     <ul class="quiz-list">
+                        <li><a href="quiz.html?topic=js" class="quiz-link">JavaScript</a></li>
+                        <li><a href="quiz.html?topic=react" class="quiz-link">React</a></li>
+                        <li><a href="quiz.html?topic=nextjs" class="quiz-link">Next.js</a></li>
+                    </ul>
+                </div>
+                 <div class="quiz-category-card">
+                    <h2>Backend & Data</h2>
+                     <ul class="quiz-list">
+                        <li><a href="quiz.html?topic=python" class="quiz-link">Python</a></li>
+                        <li><a href="quiz.html?topic=django" class="quiz-link">Django</a></li>
+                        <li><a href="quiz.html?topic=sql" class="quiz-link">SQL</a></li>
+                        <li><a href="quiz.html?topic=dbms" class="quiz-link">DBMS</a></li>
+                    </ul>
+                </div>
+                <div class="quiz-category-card">
+                    <h2>Computer Science & Tools</h2>
+                    <ul class="quiz-list">
+                        <li><a href="quiz.html?topic=cpp" class="quiz-link">C++</a></li>
+                        <li><a href="quiz.html?topic=dsa" class="quiz-link">DSA</a></li>
+                        <li><a href="quiz.html?topic=git" class="quiz-link">Git & GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
 
-  <script src="script.js"></script> 
+    <footer class="footer-container">
+        <p>&copy; 2025 QuizHub. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="contact.html" class="link">Report an Issue</a>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
-
-

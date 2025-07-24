@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - QuizHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">QuizHub ✨</a>
+            <div class="nav-links">
+                <a href="index.html" class="link">Home</a>
+                <a href="contact.html" class="link">Contact</a>
+                <button id="theme-toggle-btn" class="theme-toggle-btn">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main-container" id="contact-container">
+            <h1>Contact Us or Report an Issue</h1>
+            <p>We'd love to hear from you. Please let us know if you have feedback or have found an issue with a question.</p>
+            
+            <form id="contact-Form" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="reason">Reason for Contact:</label>
+                <select id="reason" name="reason" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="feedback">General Feedback</option>
+                    <option value="issue">Report an Issue with a Question</option>
+                </select>
+
+                <div id="feedback-Section" class="form-section">
+                    <label for="feedback-message">Your Feedback:</label>
+                    <textarea id="feedback-message" name="feedback_message" rows="5"></textarea>
+                </div>
+
+                <div id="issue-Section" class="form-section">
+                    <label for="issue-quiz">Which quiz has the issue?</label>
+                    <input type="text" id="issue-quiz" name="issue_quiz" placeholder="e.g., JavaScript Quiz">
+                    
+                    <label for="issue-question">Which question has the issue?</label>
+                    <textarea id="issue-question" name="issue_question" rows="3" placeholder="Please describe the question"></textarea>
+
+                    <label for="issue-description">What is the issue?</label>
+                    <textarea id="issue-description" name="issue_description" rows="5"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+             <div id="responseMessage"></div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <p>&copy; 2025 QuizHub. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

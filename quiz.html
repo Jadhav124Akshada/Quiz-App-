@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz in Progress...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="quiz-header sticky-top">
+        <div class="header-content">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Quizzes</a>
+            <div class="quiz-stats">
+                 <div class="timer-container">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Time: <span id="timer">60</span>s</span>
+                </div>
+                <div class="score-display">
+                    <i class="fas fa-star"></i>
+                    <span>Score: <span id="scoree">0</span></span>
+                </div>
+            </div>
+             <button id="restartQuizBtn" class="restart-btn"><i class="fas fa-redo"></i> Restart</button>
+        </div>
+        <div class="progress-header">
+            <div class="progress-info">
+                <span id="progress-text">Progress: 0 / 10</span>
+                <span id="progress-percentage">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="quiz-main-container">
+        <h1 id="quiz-title">Loading Quiz...</h1>
+        <div id="quiz-section" class="quiz-section"></div>
+    </main>
+
+    <footer class="footer-container">
+        <p>&copy; 2025 QuizHub. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="contact.html" class="link">Report an Issue</a>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
