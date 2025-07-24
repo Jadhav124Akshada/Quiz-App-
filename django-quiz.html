@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Django Quiz</title>
+  <title>HTML Quiz</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .quiz-container a {
@@ -96,37 +96,6 @@
         color: #b71c1c;
       }
     }
-
-    .progress-header {
-      margin-top: 80px;
-      margin-bottom: 20px;
-    }
-
-    .progress-container {
-      margin-top: 10px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      background-color: #ddd;
-      height: 8px;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background-color: #4caf50;
-      width: 0%;
-      transition: width 0.3s ease-in-out;
-    }
-
-    .progress-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: #555;
-    }
   </style>
 </head>
 
@@ -136,52 +105,24 @@
       <span>Time Left: </span>
       <span id="timer">60</span>s
     </div>
-    <div class="score-display">
-      <span>Score: </span>
-      <span id="scoree">0</span>
-    </div>
+    <a href="index.html">
+      <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
+    </a>
   </header>
 
-  <div class="quiz-container">
-    <!-- Progress header -->
-    <div class="progress-header">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin: 0; color: #333; font-size: 24px;">Django Quiz</h2>
-        <a href="index.html" class="back-button-icon" aria-label="Back to Home">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
-        </a>
-      </div>
-
-      <div class="progress-container">
-        <div class="progress-info">
-          <span id="progress-text">Progress: 0 / 10</span>
-          <span id="progress-percentage">0%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
-      </div>
-    </div>
-
+  <div class="quiz-border">
     <div class="quiz-section">
+      <h2>Django Quiz</h2>
       <div class="btnclass">
         <button id="start-btn">Start</button>
         <button id="restart-btn">Restart</button>
       </div>
-
-      <div class="questions-scroll-container">
-        <div id="django-questions"></div>
-      </div>
     </div>
-
-    <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-    <div id="resultBox">
-      <button id="restartQuizBtn">Restart Quiz</button>
-    </div>
+    <div id="quiz-container"></div>
+  </div>
+  <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+  <div id="resultBox">
+    <button id="restartQuizBtn">Restart Quiz</button>
   </div>
 
   <script src="script.js"></script>

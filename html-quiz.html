@@ -96,98 +96,35 @@
         color: #b71c1c;
       }
     }
-
-    .progress-container {
-      margin-top: 10px;
-    }
-
-    .progress-bar {
-      height: 10px;
-      background: #ddd;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: #4caf50;
-      width: 0%;
-      transition: width 0.3s ease;
-    }
-
-    .progress-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .questions-scroll-container {
-      max-height: 500px;
-      overflow-y: auto;
-    }
   </style>
 </head>
 
 <body>
-  <!-- Header with timer and home icon -->
   <header class="quiz-header">
     <div class="timer-container">
       <span>Time Left: </span>
       <span id="timer">60</span>s
     </div>
-    <div class="score-display">
-      <span>Score: </span>
-      <span id="score">0</span>
-    </div>
     <a href="index.html">
-      <img src="home.png" alt="Back to Home" class="back-button-icon">
+      <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
     </a>
   </header>
 
-  <div class="quiz-container">
-    <!-- Progress header -->
-    <div class="progress-header" style="margin-top: 80px;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin: 0; color: #333; font-size: 24px;">HTML Quiz</h2>
-      </div>
-
-      <!-- Progress bar -->
-      <div class="progress-container">
-        <div class="progress-info">
-          <span id="progress-text">Progress: 0 / 10</span>
-          <span id="progress-percentage">0%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
-      </div>
-    </div>
-
+  <div class="quiz-border">
     <div class="quiz-section">
-      <!-- Start and Restart buttons -->
+      <h2>HTML Quiz</h2>
       <div class="btnclass">
         <button id="start-btn">Start</button>
         <button id="restart-btn">Restart</button>
       </div>
-
-      <!-- Questions container -->
-      <div class="questions-scroll-container">
-        <div id="html-questions"></div>
-      </div>
     </div>
-
-    <!-- Submit + Result section -->
-    <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-    <div id="result"></div>
-
-    <!-- Restart Quiz at bottom -->
-    <div id="resultBox">
-      <button id="restartQuizBtn">Restart Quiz</button>
-    </div>
+    <div id="quiz-container"></div>
+  </div>
+  <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+  <div id="resultBox">
+    <button id="restartQuizBtn">Restart Quiz</button>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>

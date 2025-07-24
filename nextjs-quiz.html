@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Next.js Quiz</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Quiz</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     .quiz-container a {
       display: block;
@@ -96,33 +96,6 @@
         color: #b71c1c;
       }
     }
-
-    .progress-container {
-      margin-top: 10px;
-      background-color: #e0e0e0;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 8px;
-      width: 0%;
-      background-color: #3f51b5;
-      transition: width 0.3s ease;
-    }
-
-    .progress-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .questions-scroll-container {
-      max-height: 400px;
-      overflow-y: auto;
-      margin-top: 1rem;
-    }
   </style>
 </head>
 
@@ -132,59 +105,26 @@
       <span>Time Left: </span>
       <span id="timer">60</span>s
     </div>
-    <div class="score-display">
-      <span>Score: </span>
-      <span id="scoree">0</span>
-    </div>
+    <a href="index.html">
+      <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
+    </a>
   </header>
 
-  <div class="quiz-container">
-    <!-- Progress header -->
-    <div class="progress-header">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin: 0; color: #333; font-size: 24px;">Next.js Quiz</h2>
-        <a href="index.html" class="back-button-icon" aria-label="Back to Home">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Progress bar -->
-      <div class="progress-container">
-        <div class="progress-info">
-          <span id="progress-text">Progress: 0 / 10</span>
-          <span id="progress-percentage">0%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
-      </div>
-    </div>
-
+  <div class="quiz-border">
     <div class="quiz-section">
+      <h2>Next.js Quiz</h2>
       <div class="btnclass">
         <button id="start-btn">Start</button>
         <button id="restart-btn">Restart</button>
       </div>
-
-      <div class="questions-scroll-container">
-        <div id="nextjs-questions"></div>
-      </div>
     </div>
-
     <div id="quiz-container"></div>
   </div>
-
   <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-
   <div id="resultBox">
     <button id="restartQuizBtn">Restart Quiz</button>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
