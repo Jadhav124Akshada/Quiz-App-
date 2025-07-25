@@ -120,7 +120,6 @@ const dbmsQuestions = [
     options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
 
     answer: "Compilation",
-=======
     answer: "Compilation"
 
   },
@@ -129,7 +128,6 @@ const dbmsQuestions = [
     options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
 
     answer: "WHERE",
-=======
     answer: "WHERE"
 
   },
@@ -138,7 +136,7 @@ const dbmsQuestions = [
     options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
 
     answer: "To eliminate data redundancy",
-=======
+
     answer: "To eliminate data redundancy"
 
   },
@@ -274,7 +272,7 @@ const cssQuestions = [
     options: ["#header", ".header", "header", "[id='header']"],
 
     answer: "#header",
-=======
+
     answer: "#header"
 
   },
@@ -993,17 +991,23 @@ function updateGlobalScore() {
   }
 }
 
-function initializeTimer() {
-  timeleft = 60
-  timerElement.textContent = timeleft.toString()
+ function initializeTimer() {
+  timeleft = 60;
+  timerElement.textContent = timeleft.toString();
+  answeredQuestions.clear(); // ✅ Reset progress
+  updateProgressBar();       // ✅ Reset UI
+
   document.querySelectorAll('input[type="radio"]').forEach((input) => {
-    input.disabled = false
-  })
+    input.disabled = false;
+  });
   document.querySelectorAll(".check-answer-btn").forEach((btn) => {
-    btn.disabled = false
-  })
-  stop()
+    btn.disabled = false;
+    btn.textContent = "Check Answer";
+    btn.classList.remove("answered");
+  });
+  stop();
 }
+
 
 function stop() {
   clearInterval(timeinterval)
@@ -1011,21 +1015,20 @@ function stop() {
 }
 
 function start() {
-  if (timeinterval) {
-
-    clearInterval(timeinterval)
+ if (timeinterval) {
+    clearInterval(timeinterval);
   }
-  actualtime = 60
-  timeleft = actualtime
-  timerElement.textContent = timeleft.toString()
+  actualtime = 60;
+  timeleft = actualtime;
+  timerElement.textContent = timeleft.toString();
   timeinterval = setInterval(() => {
-    timeleft--
-    timerElement.innerText = timeleft.toString()
+    timeleft--;
+    timerElement.innerText = timeleft.toString();
     if (timeleft <= 0) {
-      clearInterval(timeinterval)
-      handleTimeUp(currentQuestions)
+      clearInterval(timeinterval);
+      handleTimeUp(currentQuestions);
     }
-  }, 1000)
+  }, 1000);
 }
 
 function handleTimeUp(questions) {
@@ -1043,12 +1046,61 @@ function handleTimeUp(questions) {
 const startBtn = document.getElementById("start-btn")
 const restartBtn = document.getElementById("restart-btn")
 
+function detectSectionId() {
+  const sectionIds = [
+    "html-questions", "css-questions", "cpp-questions",
+    "js-questions", "react-questions", "nextjs-questions",
+    "git-questions", "python-questions", "sql-questions",
+    "django-questions", "dsa-questions", "dbms-questions"
+  ];
+  for (const id of sectionIds) {
+    if (document.getElementById(id)) return id;
+  }
+  return null;
+}
+
+function getQuestionsBySection(sectionId) {
+  switch (sectionId) {
+    case "html-questions": return htmlQuestions;
+    case "css-questions": return cssQuestions;
+    case "cpp-questions": return cppQuestions;
+    case "js-questions": return jsQuestions;
+    case "react-questions": return reactQuestions;
+    case "nextjs-questions": return nextjsQuestions;
+    case "git-questions": return gitQuestions;
+    case "python-questions": return pythonQuestions;
+    case "sql-questions": return sqlQuestions;
+    case "django-questions": return djangoQuestions;
+    case "dsa-questions": return dsaQuestions;
+    case "dbms-questions": return dbmsQuestions;
+    default: return [];
+  }
+}
+
+
 if (startBtn) {
   startBtn.addEventListener("click", () => {
-    initializeTimer()
-    start()
-  })
+    // ✅ Ensure questions are rendered first
+    const sectionId = detectSectionId(); // We'll define this below
+    if (!sectionId) return;
+
+    currentQuestions = getQuestionsBySection(sectionId);
+    renderQuestions(currentQuestions, sectionId);
+
+    // ✅ Add check answer listeners after rendering
+    document.querySelectorAll(".check-answer-btn").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const index = Number.parseInt(event.target.getAttribute("data-index"))
+        checkAnswer(currentQuestions, index)
+      })
+    });
+
+    // ✅ Now it's safe to start timer
+    initializeTimer();
+    start();
+  });
 }
+
 
 if (restartBtn) {
   restartBtn.addEventListener("click", () => {
@@ -1173,8 +1225,6 @@ const checkAnswer = (questions, index) => {
 
 }
 
-
-};
 
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
@@ -1355,5 +1405,5 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.removeItem("formSubmissionSuccess")
     }
   }
-})
-
+}
+)
