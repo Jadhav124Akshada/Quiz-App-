@@ -62,7 +62,7 @@ const htmlQuestions = [
 
   },
   
-  },
+
   {
     question: "Which HTML element is used to define a paragraph?",
     options: ["p", "text", "div", "span"],
@@ -1379,7 +1379,7 @@ const checkAnswer = (questions, index) => {
 }
 
 
-};
+
 
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
