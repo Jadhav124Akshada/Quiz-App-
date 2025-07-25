@@ -1634,3 +1634,11 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+document.getElementById('quizSearch').addEventListener('input', function() {
+  const filter = this.value.toLowerCase();
+  document.querySelectorAll('.quiz-list li').forEach(li => {
+    const text = li.textContent.toLowerCase();
+    li.style.display = text.includes(filter) ? '' : 'none';
+  });
+});
+

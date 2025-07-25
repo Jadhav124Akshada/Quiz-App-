@@ -558,3 +558,26 @@ th, td {
   background-color: #0056b3;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  gap: 8px;
+}
+.search-bar input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #b2bec3;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.search-bar input:focus {
+  border: 1.5px solid #0984e3;
+}
+.search-bar i {
+  color: #636e72;
+  font-size: 1.1rem;
+}
+
