@@ -5,57 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Quiz</title>
   <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-  .quiz-container a {
-    display: block; /* Ensures proper layout behavior */
-    text-align: right; /* Aligns text content, such as the link, to the right */
-    margin-right: 0; /* Optional if extra spacing is needed on the right */
-    float: right; /* Ensures button stays visually aligned correctly */
-  }
+  <style>
+    .quiz-container a {
+      display: block;
+      text-align: right;
+      margin-right: 0;
+      float: right;
+    }
 
-.question-container {
+    .back-button-icon {
+      width: 32px;
+      height: 32px;
+      margin: 10px 10px 0 0;
+    }
+
+    .question-container {
       margin-bottom: 20px;
     }
+
+    .quiz-container a {
+      display: block; /* Ensures proper layout behavior */
+      text-align: right; /* Aligns text content, such as the link, to the right */
+      margin-right: 0; /* Optional if extra spacing is needed on the right */
+      float: right; /* Ensures button stays visually aligned correctly */
+    }
+
+    .question-container {
+          margin-bottom: 20px;
+        }
+
     .result {
       margin-top: 10px;
       font-weight: bold;
     }
 
-     .instruction{
-    gap: 2rem;
-    background-color:#f1eaea;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 15px 0px;
-  }
-  .instruction ul{
-    padding: 15px;
-    margin: 0px;
-  }
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .btnclass {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .timer-container,
+    .score-display {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .timer-container {
+      color: #d32f2f;
+      background-color: #ffebee;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+
+    .score-display {
+      color: #2e7d32;
+      background-color: #e8f5e9;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+
+    #timer,
+    #score {
+      font-weight: bold;
+      min-width: 25px;
+      text-align: center;
+    }
+
+    .timer-warning {
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.1);
+        color: #b71c1c;
+      }
+    }
+
+    .instruction{
+      gap: 2rem;
+      background-color:#f1eaea;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 15px 0px;
+      margin-top: 60px;
+    }
+    .instruction ul{
+      padding: 15px;
+      margin: 0px;
+    }
   
-  .instruction h3 {
-  margin-top: 0;
-  font-size: 20px;
-  color: #0b0d10;
-}
+    .instruction h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0b0d10;
+    }
   </style>
+</head>
 <body>
-  <div class="quiz-container">
+  <header class="quiz-header">
+    <div class="timer-container">
+      <span>Time Left: </span>
+      <span id="timer">60</span>s
+    </div>
+    <a href="index.html">
+      <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
+    </a>
+  </header>
+  <div class="instruction">
+      <h3>Instructions</h3>
+      <ul>
+          <li>This quiz contains multiple-choice questions.</li>
+          <li>Each question has only one correct answer.</li>
+          <li>Select the best answer from the given options.</li>
+          <li>Your score will be displayed at the end.</li>
+          <li>Click “Back to Home” to return to the main page.</li>
+      </ul>
+  </div>
+
+  <div class="quiz-border">
     <div class="quiz-section">
       <h2>HTML Quiz</h2>
-      <div class="instruction">
-        <h3>Instructions</h3>
-        <ul>
-            <li>This quiz contains multiple-choice questions.</li>
-            <li>Each question has only one correct answer.</li>
-            <li>Select the best answer from the given options.</li>
-            <li>Your score will be displayed at the end.</li>
-            <li>Click “Back to Home” to return to the main page.</li>
-        </ul>
+      <div class="btnclass">
+        <button id="start-btn">Start</button>
+        <button id="restart-btn">Restart</button>
+      </div>
     </div>
-    <div id="html-questions"></div>
-    </div>
+    <div id="quiz-container"></div>
+  </div>
+  <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+  <div id="resultBox">
+    <button id="restartQuizBtn">Restart Quiz</button>
+  </div>
     <div id="result"></div>
     <a href="index.html">Back to Home</a>
   </div>
