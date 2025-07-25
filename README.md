@@ -38,4 +38,8 @@ This project allows users to answer a set of multiple-choice questions. After co
 
 ## 📁 Project Folder Structure
 
-<pre> QUIZ-APP/ ├── 📁 asserts/ ├── 📁 pages/ │ ├── contact-us.html │ ├── profile.html │ └── scoreboard.html ├── 📁 quiz-data/ │ ├── cpp.json │ ├── css.json │ ├── dbms.json │ ├── django.json │ ├── dsa.json │ ├── git.json │ ├── html.json │ ├── js.json │ ├── nextjs.json │ ├── python.json │ └── sql.json ├── 📁 quiz-files/ │ ├── cpp-quiz.html │ ├── css-quiz.html │ ├── dbms-quiz.html │ ├── django-quiz.html │ ├── dsa-quiz.html │ ├── git-quiz.html │ ├── html-quiz.html │ ├── js-quiz.html │ ├── nextjs-quiz.html │ ├── python-quiz.html │ └── react-quiz.html ├── Code_of_conduct.md ├── index.html ├── LICENSE ├── README.md ├── script.js └── styles.css </pre>
+<pre> QUIZ-APP/ ├── 📁 asserts/ 
+   ├── 📁 pages/ 
+   │ ├── contact-us.html 
+   │ ├── profile.html 
+   │ └── scoreboard.html ├── 📁 quiz-data/ │ ├── cpp.json │ ├── css.json │ ├── dbms.json │ ├── django.json │ ├── dsa.json │ ├── git.json │ ├── html.json │ ├── js.json │ ├── nextjs.json │ ├── python.json │ └── sql.json ├── 📁 quiz-files/ │ ├── cpp-quiz.html │ ├── css-quiz.html │ ├── dbms-quiz.html │ ├── django-quiz.html │ ├── dsa-quiz.html │ ├── git-quiz.html │ ├── html-quiz.html │ ├── js-quiz.html │ ├── nextjs-quiz.html │ ├── python-quiz.html │ └── react-quiz.html ├── Code_of_conduct.md ├── index.html ├── LICENSE ├── README.md ├── script.js └── styles.css </pre>
