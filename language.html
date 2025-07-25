@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Language</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>button:active { 
+     transform: scale(0.95);
+     box-shadow: 0 2px 4px;
+     color: rgb(7, 7, 6);
+
+}
+
+button{
+    background-color: rgb(171, 222, 135);
+    color: rgb(1, 15, 28);
+    font-weight: bold;
+    font-family:roboto;
+    padding:4px;
+    border-radius: 10px; 
+    border-style: ridge;
+
+}</style>
+<body>
+  <h1>SELECT YOUR LANGUAGE</h1>
+  <button onclick="selectLanguage('en')">English</button>
+  <button onclick="selectLanguage('hi')">Hindi</button>
+  
+  <script>
+    function selectLanguage(lang) {
+      if (lang === 'en') {
+        window.location.href = "index.html"; 
+      } else if (lang === 'hi') {
+        window.location.href = "index-hi.html"; // Create this for Hindi version
+      }
+    }
+  </script>
+</body>
+</html>
