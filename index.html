@@ -25,21 +25,19 @@
     <h1>Welcome to the Web Development Quiz</h1>
     <p class="description">Choose a topic to start:</p>
     <ul class="quiz-list">
-      <li><a href="html-quiz.html"class="quiz-link">HTML Quiz</a></li>
-      <li><a href="css-quiz.html"class="quiz-link">CSS Quiz</a></li>
-      <li><a href="js-quiz.html"class="quiz-link">JavaScript Quiz</a></li>
-      <li><a href="cpp-quiz.html"class="quiz-link">C++ Quiz</a></li>
-      <li><a href="react-quiz.html" class="quiz-link">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html" class="quiz-link">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html" class="quiz-link">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html" class="quiz-link">Python Quiz</a></li>
-      <li><a href="django-quiz.html" class="quiz-link">Django Quiz</a></li>
-      <li><a href="dsa-quiz.html" class="quiz-link">DSA Quiz</a></li>
-      <li><a href="dbms-quiz.html" class="quiz-link">DBMS Quiz</a></li>
+      <li><a href="html-quiz.html"class="quiz-link" onclick="loadQuiz('html')">HTML Quiz</a></li>
+      <li><a href="css-quiz.html"class="quiz-link" onclick="loadQuiz('css')">CSS Quiz</a></li>
+      <li><a href="js-quiz.html"class="quiz-link" onclick="loadQuiz('js')">JavaScript Quiz</a></li>
+      <li><a href="cpp-quiz.html"class="quiz-link" onclick="loadQuiz('cpp')">C++ Quiz</a></li>
+      <li><a href="react-quiz.html" class="quiz-link" onclick="loadQuiz('react')">React Quiz</a></li>
+      <li><a href="nextjs-quiz.html" class="quiz-link" onclick="loadQuiz('nextjs')">Next.js Quiz</a></li>
+      <li><a href="git-quiz.html" class="quiz-link" onclick="loadQuiz('git')">Git & GitHub Quiz</a></li>
+      <li><a href="python-quiz.html" class="quiz-link" onclick="loadQuiz('python')">Python Quiz</a></li>
+      <li><a href="django-quiz.html" class="quiz-link" onclick="loadQuiz('django')">Django Quiz</a></li>
+      <li><a href="dsa-quiz.html" class="quiz-link" onclick="loadQuiz('dsa')">DSA Quiz</a></li>
+      <li><a href="dbms-quiz.html" class="quiz-link" onclick="loadQuiz('dbms')">DBMS Quiz</a></li>
     </ul>
   </div>
-
-
   <footer class="myfooter">
     <div class="footer-container">
       <p>&#9679; &nbsp; &nbsp; &copy; <strong>Quiz Game - </strong> Built with <i class="fas fa-heart" style="color: red;"> </i> by Akshada Jadhav </p>

@@ -64,19 +64,15 @@ const htmlQuestions = [
   },
   {
     question: "What is the correct HTML for inserting an audio file?",
-    options: [
-      "<audio src='audio.mp3'></audio>",
-      "<audio file='audio.mp3'></audio>",
-      "<audio url='audio.mp3'></audio>",
-      "<music src='audio.mp3'></music>",
-    ],
-    answer: "<audio src='audio.mp3'></audio>",
-
+    options: [ "&lt;audio src='audio.mp3'&gt;&lt;/audio&gt;",
+    "&lt;audio file='audio.mp3'&gt;&lt;/audio&gt;",
+    "&lt;audio url='audio.mp3'&gt;&lt;/audio&gt;",
+    "&lt;music src='audio.mp3'&gt;&lt;/music&gt;"],
+    answer: "&lt;audio src='audio.mp3'&gt;&lt;/audio&gt;"
   },
   {
     question: "Which HTML element is used to define an ordered list?",
     options: ["ul", "li", "ol", "ol-list"],
-
     answer: "ol",
   },
 ]
@@ -120,27 +116,18 @@ const dbmsQuestions = [
     options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
 
     answer: "Compilation",
-=======
-    answer: "Compilation"
-
   },
   {
     question: "Which SQL clause is used to filter records?",
     options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
 
     answer: "WHERE",
-=======
-    answer: "WHERE"
-
   },
   {
     question: "What is the main purpose of normalization in DBMS?",
     options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
 
     answer: "To eliminate data redundancy",
-=======
-    answer: "To eliminate data redundancy"
-
   },
   {
     question: "Which normal form removes transitive dependency?",
@@ -274,9 +261,6 @@ const cssQuestions = [
     options: ["#header", ".header", "header", "[id='header']"],
 
     answer: "#header",
-=======
-    answer: "#header"
-
   },
   {
     question: "What is the default value of the position property in CSS?",
@@ -348,10 +332,10 @@ const cppQuestions = [
     answer: "struct members are public by default; class members are private",
   },
   {
-    question: "What is the correct syntax for a single-line comment in C++?",
-    options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"],
-    answer: "// This is a comment",
 
+    question: "What is the correct syntax for a single-line comment in C++?",   
+    options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "&lt;!-- This is a comment --&gt;"],
+    answer: "// This is a comment"
   },
   {
     question: "Which of the following is used to include a standard library in C++?",
@@ -520,87 +504,17 @@ const reactQuestions = [
 
 // Next.js Questions
 const nextjsQuestions = [
-  {
-    question: "How is routing primarily handled in Next.js?",
-    options: [
-      "Using a routing library like React Router",
-      "Through a configuration file",
-      "Based on the file system in the `pages` directory",
-      "Manually in the server file",
-    ],
-    answer: "Based on the file system in the `pages` directory",
-  },
-  {
-    question: "Which rendering method pre-renders a page at build time?",
-    options: [
-      "Server-Side Rendering (SSR)",
-      "Client-Side Rendering (CSR)",
-      "Static Site Generation (SSG)",
-      "Incremental Static Regeneration (ISR)",
-    ],
-    answer: "Static Site Generation (SSG)",
-  },
-  {
-    question: "What is the purpose of the `/pages/api` directory in Next.js?",
-    options: [
-      "To store static assets",
-      "To create serverless API endpoints",
-      "To define page routes",
-      "To manage global styles",
-    ],
-    answer: "To create serverless API endpoints",
-  },
-  {
-    question: "Which component is used for optimized, client-side navigation between pages?",
-    options: ["<a>", "<Route>", "<Navigate>", "<Link>"],
-    answer: "<Link>",
-  },
-  {
-    question: "What is `getStaticProps` used for?",
-    options: [
-      "To fetch data for client-side rendering",
-      "To fetch data at build time for pre-rendering",
-      "To handle API requests",
-      "To define dynamic routes",
-    ],
-    answer: "To fetch data at build time for pre-rendering",
-  },
-  {
-    question: "How do you create a dynamic route in Next.js, for example for a blog post?",
-    options: ["/pages/blog/[id].js", "/pages/blog/{id}.js", "/pages/blog/dynamic.js", "/pages/blog?id=[id].js"],
-    answer: "/pages/blog/[id].js",
-  },
-  {
-    question: "What is Server-Side Rendering (SSR)?",
-    options: [
-      "The page is rendered by the browser",
-      "The page is rendered on the server for each request",
-      "The page is rendered at build time",
-      "The page is not rendered at all",
-    ],
-    answer: "The page is rendered on the server for each request",
-  },
-  {
-    question: "Which function is used to fetch data on every request for SSR?",
-    options: ["getStaticProps", "getServerSideProps", "getInitialProps", "useEffect"],
-    answer: "getServerSideProps",
-  },
-  {
-    question: "What is the main benefit of Image Optimization in Next.js?",
-    options: [
-      "It automatically converts images to CSS backgrounds",
-      "It serves images in modern formats like WebP and resizes them",
-      "It applies Instagram-like filters",
-      "It stores images in a database",
-    ],
-    answer: "It serves images in modern formats like WebP and resizes them",
-  },
-  {
-    question: "What command do you use to build a Next.js application for production?",
-    options: ["npm start", "next dev", "npm run build", "next produce"],
-    answer: "npm run build",
-  },
-]
+  { question: "How is routing primarily handled in Next.js?", options: ["Using a routing library like React Router", "Through a configuration file", "Based on the file system in the `pages` directory", "Manually in the server file"], answer: "Based on the file system in the `pages` directory" },
+  { question: "Which rendering method pre-renders a page at build time?", options: ["Server-Side Rendering (SSR)", "Client-Side Rendering (CSR)", "Static Site Generation (SSG)", "Incremental Static Regeneration (ISR)"], answer: "Static Site Generation (SSG)" },
+  { question: "What is the purpose of the `/pages/api` directory in Next.js?", options: ["To store static assets", "To create serverless API endpoints", "To define page routes", "To manage global styles"], answer: "To create serverless API endpoints" },
+  { question: "Which component is used for optimized, client-side navigation between pages?", options: ["&lt;a&gt;", "&lt;Route&gt;", "&lt;Navigate&gt;", "&lt;Link&gt;"], answer: "&lt;Link&gt;" },
+  { question: "What is `getStaticProps` used for?", options: ["To fetch data for client-side rendering", "To fetch data at build time for pre-rendering", "To handle API requests", "To define dynamic routes"], answer: "To fetch data at build time for pre-rendering" },
+  { question: "How do you create a dynamic route in Next.js, for example for a blog post?", options: ["/pages/blog/[id].js", "/pages/blog/{id}.js", "/pages/blog/dynamic.js", "/pages/blog?id=[id].js"], answer: "/pages/blog/[id].js" },
+  { question: "What is Server-Side Rendering (SSR)?", options: ["The page is rendered by the browser", "The page is rendered on the server for each request", "The page is rendered at build time", "The page is not rendered at all"], answer: "The page is rendered on the server for each request" },
+  { question: "Which function is used to fetch data on every request for SSR?", options: ["getStaticProps", "getServerSideProps", "getInitialProps", "useEffect"], answer: "getServerSideProps" },
+  { question: "What is the main benefit of Image Optimization in Next.js?", options: ["It automatically converts images to CSS backgrounds", "It serves images in modern formats like WebP and resizes them", "It applies Instagram-like filters", "It stores images in a database"], answer: "It serves images in modern formats like WebP and resizes them" },
+  { question: "What command do you use to build a Next.js application for production?", options: ["npm start", "next dev", "npm run build", "next produce"], answer: "npm run build" }
+];
 
 // Git & GitHub Questions
 const gitQuestions = [
@@ -1092,6 +1006,7 @@ const renderQuestion = (question, index, sectionId) => {
   questionElem.appendChild(ul)
 
   // Add Check Answer button
+
   const checkBtn = document.createElement("button")
   checkBtn.className = "check-answer-btn"
   checkBtn.dataset.index = index
@@ -1355,5 +1270,140 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.removeItem("formSubmissionSuccess")
     }
   }
+});
+
+
+
+// Dynamic Quiz Handling Based on Page Topic
+
+function loadQuiz(topic) {
+  let questions;
+  if (topic === 'html') questions = htmlQuestions;
+  else if (topic === 'css') questions = cssQuestions;
+  else if (topic === 'js') questions = jsQuestions;
+  else if (topic === 'cpp') questions = cppQuestions;
+  else if (topic === 'react') questions = reactQuestions;
+  else if (topic === 'nextjs') questions = nextjsQuestions;
+  else if (topic === 'git') questions = gitQuestions;
+  else if (topic === 'python') questions = pythonQuestions;
+  else if (topic === 'django') questions = djangoQuestions;
+  else if (topic === 'dsa') questions = dsaQuestions;
+  else if (topic === 'dbms') questions = dbmsQuestions;
+  renderQuiz(questions);
+}
+
+let currQuestions=[];
+function renderQuiz(questions) {
+  currQuestions=questions;
+  const container = document.getElementById("quiz-container");
+  container.innerHTML = "";
+
+  questions.forEach((q, index) => {
+    const qDiv = document.createElement("div");
+    qDiv.className = "question-block";
+    qDiv.innerHTML = `
+      <p><strong>Q${index + 1}:</strong> ${q.question}</p>
+      ${q.options.map(opt => `
+        <label>
+          <input type="radio" name="q${index}" value="${opt}">
+          ${opt}
+        </label><br>
+      `).join("")}
+    `;
+    container.appendChild(qDiv);
+  });
+}
+window.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname;
+
+  if (document.getElementById("quiz-container")) {
+    if (currentPage.includes("css-quiz.html")) {
+      renderQuiz(cssQuestions);
+    }
+    if (currentPage.includes("js-quiz.html")) {
+      renderQuiz(jsQuestions);
+    } 
+    if (currentPage.includes("html-quiz.html")) {
+      renderQuiz(htmlQuestions);  
+    }
+    if (currentPage.includes("cpp-quiz.html")) {
+      renderQuiz(cppQuestions);  
+    }
+    if (currentPage.includes("react-quiz.html")) {
+      renderQuiz(reactQuestions);  
+    }
+    if (currentPage.includes("nextjs-quiz.html")) {
+      renderQuiz(nextjsQuestions);  
+    }
+    if (currentPage.includes("git-quiz.html")) {
+      renderQuiz(gitQuestions);  
+    }
+    if (currentPage.includes("python-quiz.html")) {
+      renderQuiz(pythonQuestions);  
+    }
+    if (currentPage.includes("django-quiz.html")) {
+      renderQuiz(djangoQuestions);  
+    }
+    if (currentPage.includes("dsa-quiz.html")) {
+      renderQuiz(dsaQuestions);  
+    }
+    if (currentPage.includes("dbms-quiz.html")) {
+      renderQuiz(dbmsQuestions);  
+    }
+  }
+});
+
+function submitQuiz() {
+  console.log("submitQuiz called"); 
+  const answers = {};
+  currQuestions.forEach((q, index) => {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    answers[index] = selected ? selected.value : null;
+  });
+
+  let score = 0;
+  currQuestions.forEach((q, i) => {
+    if (answers[i] === q.answer) score++;
+  });
+  showResultModal(score, answers);
+}
+
+function showResultModal(score, answers) {
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.innerHTML = `
+    <div class="modal-content">
+      <h2>Quiz Submitted!</h2>
+      <p>Your score is: ${score}/${currQuestions.length}</p>
+      <button id="view-answers-btn" onclick="showDetailedResults(${score})">Show Answers</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Save answers globally
+  window.savedAnswers = answers;
+}
+
+function showDetailedResults(score) {
+  document.querySelector(".modal").remove(); // Remove modal
+  const container = document.getElementById("quiz-container");
+  container.innerHTML = `<h2 style="text-align:center;" "margin-bottom: 20px;">Your Score: ${score}/${currQuestions.length}</h2>`;
+
+  currQuestions.forEach((q, i) => {
+    const userAnswer = savedAnswers[i];
+    const isCorrect = userAnswer === q.answer;
+    const colorClass = isCorrect ? "correct" : "wrong";
+
+    let qDiv = document.createElement("div");
+    qDiv.className = `question-block ${colorClass}`;
+    qDiv.innerHTML = `
+      <p><strong>Q${i + 1}:</strong> ${q.question}</p>
+      <p>Your Answer: ${userAnswer || "No Answer"}</p>
+      ${!isCorrect ? `<p style="color:green;">Correct Answer: ${q.answer}</p>` : ""}
+    `;
+    container.appendChild(qDiv);
+  });
+}
 })
+
 
