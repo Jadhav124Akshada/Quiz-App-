@@ -33,29 +33,34 @@ h2 {
 }
 
 .quiz-list {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 1.5rem;
-}
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.quiz-list li {
-  margin-bottom: 1rem;
-}
+  .quiz-list li {
+    margin-bottom: 1rem;
+    width: 300px;
+  }
 
-.quiz-link {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  width: 100%;
-  max-width: 300px;
-  transition: background-color 0.3s;
-  font-size: 1rem;
-  text-align: center;
-}
+  .quiz-link {
+    display: block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%; 
+    box-sizing
 
+  }
+  
 .quiz-link:hover {
   background-color: #0056b3;
 }
