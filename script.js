@@ -5,9 +5,9 @@ const htmlQuestions = [
     options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
     answer: "HyperText Markup Language"
   },
-
   {
-    question: "What attribute is used to define the destination of a link in HTML?",
+    question:
+      "What attribute is used to define the destination of a link in HTML?",
     options: ["href", "src", "action", "destination"],
     answer: "href"
   },
@@ -34,7 +34,7 @@ const htmlQuestions = [
   {
     question: "What does the <head> element in HTML contain?",
     options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"],
-    answer: "Metadata about the page"
+    answer: "Metadata about the page"  
   },
   {
     question: "Which HTML element is used to define a paragraph?",
@@ -93,6 +93,7 @@ const dbmsQuestions = [
     options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
     answer: "To eliminate data redundancy"
   },
+
   {
     question: "Which normal form removes transitive dependency?",
     options: ["1NF", "2NF", "3NF", "BCNF"],
@@ -134,8 +135,6 @@ const dbmsQuestions = [
     answer: "FULL OUTER JOIN"
   }
 ];
-
-
 
 
 // CSS Questions
@@ -191,6 +190,8 @@ const cssQuestions = [
     answer: "padding"
   }
 ];
+
+
 //Cpp Questions
 const cppQuestions = [
   {
@@ -257,6 +258,8 @@ const cppQuestions = [
     answer: "8"
   }
 ];
+
+
 // JavaScript Questions
 const jsQuestions = [
   {
@@ -281,7 +284,8 @@ const jsQuestions = [
   },
   {
     question: "Which operator is used to assign a value to a variable in JavaScript?",
-    options: ["=", "==", "===", ":="], answer: "="
+    options: ["=", "==", "===", ":="], 
+    answer: "="
   },
   {
     question: "What is the output of 5 + '5' in JavaScript?",
@@ -443,12 +447,12 @@ const dsaQuestions = [
     options: ["Level Order", "Preorder", "Breadth First", "Level First"],
     answer:"Preorder"
   },
-  {question: " Which of the following is not used in graph representation?",
+  {
+    question: " Which of the following is not used in graph representation?",
     options: ["Adjacency Matrix", "Adjacency List", "Hash Table", "Edge List"],
     answer: "Hash Table"
   }
 ];
-
 // dsa questions end here
 
 
@@ -458,9 +462,6 @@ let timeleft = 60;
 let timeinterval;
 const timerElement = document.getElementById('timer');
 const scoreElement = document.getElementById('scoree');
-
-
-
 
 function updateTimerDisplay() {
   timerElement.textContent = timeleft.toString();
@@ -523,10 +524,8 @@ function handleTimeUp(questions) {
   calculateTotalScore(questions);
 }
 
-
 const startBtn = document.getElementById('start-btn');
 const restartBtn = document.getElementById('restart-btn');
-
 
 if (startBtn) {
   startBtn.addEventListener('click', () => {
@@ -534,7 +533,6 @@ if (startBtn) {
     start();
   });
 }
-
 
 if (restartBtn) {
   restartBtn.addEventListener('click', () => {
@@ -545,7 +543,6 @@ if (restartBtn) {
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
-  
   if (!sectionContainer) return;
 
   const questionElem = document.createElement("div");
@@ -559,18 +556,14 @@ const renderQuestion = (question, index, sectionId) => {
   // Create options
   const ul = document.createElement("ul");
   ul.className = "option-container";
-
   question.options.forEach((option) => {
     const li = document.createElement("li");
     const label = document.createElement("label");
-
     const input = document.createElement("input");
     input.type = "radio";
     input.name = `question-${index}`;
     input.value = option;
-
     const textNode = document.createTextNode(" " + option);
-
     label.appendChild(input);
     label.appendChild(textNode);
     li.appendChild(label);
@@ -578,13 +571,6 @@ const renderQuestion = (question, index, sectionId) => {
   });
 
   questionElem.appendChild(ul);
-
-  // Add Check Answer button
-  // const checkBtn = document.createElement("button");
-  // checkBtn.className = "check-answer-btn";
-  // checkBtn.dataset.index = index;
-  // checkBtn.textContent = "Check Answer";
-  // questionElem.appendChild(checkBtn);
 
   // Add result div
   const resultDiv = document.createElement("div");
@@ -594,7 +580,6 @@ const renderQuestion = (question, index, sectionId) => {
 
   sectionContainer.appendChild(questionElem);
 };
-
 
 // Function to render all questions
 const renderQuestions = (questions, sectionId) => {
@@ -606,17 +591,15 @@ const renderQuestions = (questions, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
   const scoreElem = document.createElement("div");
   scoreElem.classList.add("score-container");
- scoreElem.innerHTML = `
+  scoreElem.innerHTML = `
   <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
     <button id="calculate-score-btn" style="width: 180px; padding: 10px; font-size: 16px;">Calculate Total Score</button>
     <button id="feedback-btn" style="width: 180px; padding: 10px; font-size: 16px;">Feedback / Report</button>
   </div>
   <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
 `;
-
   sectionContainer.appendChild(scoreElem);
 };
-
 
 // Function to check the answer for a specific question
 const checkAnswer = (questions, index) => {
@@ -662,7 +645,6 @@ const calculateTotalScore = (questions) => {
   totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
   totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
 };
-
 // Dynamically render questions based on the page
 let currentQuestions = [];
 
@@ -823,11 +805,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
-
-
-
-// Dynamic Quiz Handling Based on Page Topic
 
 function loadQuiz(topic) {
   let questions;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +22,17 @@
     .question-container {
       margin-bottom: 20px;
     }
+
+    .quiz-container a {
+      display: block; /* Ensures proper layout behavior */
+      text-align: right; /* Aligns text content, such as the link, to the right */
+      margin-right: 0; /* Optional if extra spacing is needed on the right */
+      float: right; /* Ensures button stays visually aligned correctly */
+    }
+
+    .question-container {
+          margin-bottom: 20px;
+        }
 
     .result {
       margin-top: 10px;
@@ -96,9 +106,27 @@
         color: #b71c1c;
       }
     }
+
+    .instruction{
+      gap: 2rem;
+      background-color:#f1eaea;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 15px 0px;
+      margin-top: 60px;
+    }
+    .instruction ul{
+      padding: 15px;
+      margin: 0px;
+    }
+  
+    .instruction h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0b0d10;
+    }
   </style>
 </head>
-
 <body>
   <header class="quiz-header">
     <div class="timer-container">
@@ -109,6 +137,16 @@
       <img src="home.png" alt="Back to Home" class="back-button-icon" width="32" height="32">
     </a>
   </header>
+  <div class="instruction">
+      <h3>Instructions</h3>
+      <ul>
+          <li>This quiz contains multiple-choice questions.</li>
+          <li>Each question has only one correct answer.</li>
+          <li>Select the best answer from the given options.</li>
+          <li>Your score will be displayed at the end.</li>
+          <li>Click “Back to Home” to return to the main page.</li>
+      </ul>
+  </div>
 
   <div class="quiz-border">
     <div class="quiz-section">
@@ -124,7 +162,9 @@
   <div id="resultBox">
     <button id="restartQuizBtn">Restart Quiz</button>
   </div>
-
+    <div id="result"></div>
+    <a href="index.html">Back to Home</a>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

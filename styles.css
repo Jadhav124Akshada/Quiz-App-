@@ -6,6 +6,72 @@ body {
     margin: 0;
     padding: 0;
 }
+/* ==== Navbar Styling ==== */
+.mynavbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #4f46e5, #3b82f6); /* Blue gradient */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mynavbar strong {
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-links .link {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.nav-links .link:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links .link {
+    width: 100%;
+    text-align: left;
+  }
+}
 
 .quiz-container {
     max-width: 800px;
@@ -143,7 +209,7 @@ input[type="radio"] {
 
 
 /* responsive-footer */
-  .footer-container{
+.footer-container{
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -171,6 +237,16 @@ input[type="radio"] {
     align-items: center;
     margin-right: 7rem;
     gap: 1rem;
+}
+
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
 
 .link {
@@ -301,6 +377,30 @@ input[type="radio"] {
     animation: pulse 1s infinite alternate;
 }
 
+/* Focus Style for Keyboard Navigation
+   Visually highlights the currently focused quiz item 
+   when navigating with arrow keys */
+
+.quiz-item:focus {
+  outline: none;
+  background-color: #f0f8ff;
+  border: 2px solid #007BFF;
+  color: #000;
+  box-shadow: 0 0 10px #007BFF;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.quiz-option:focus {
+  outline: none;
+  background-color: #e0f7fa; /* light blue highlight */
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px #00bcd4; /* teal outline */
+  transition: all 0.2s ease-in-out;
+}
+
+
 @keyframes pulse {
     from {
         transform: scale(1);
@@ -356,6 +456,16 @@ input[type="radio"] {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 10px; /* Ensures space on mobile if zoomed in */
+}
+
+
+/*Scoreboard*/
+.scoreboard-main {
   display: flex;
   align-items: center;
   justify-content: center;
