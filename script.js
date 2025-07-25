@@ -25,16 +25,30 @@ const htmlQuestions = [
     options: ["required", "placeholder", "value", "mandatory"],
     answer: "required"
   },
-  { 
-    question: "What is the purpose of the alt attribute in an image tag?", 
-    options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"], 
-    answer: "Provides a textual description of the image" },
-  { 
-    question: "What does the <head> element in HTML contain?", 
-    options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"], 
-    answer: "Metadata about the page"
-   },
-  { 
+  {
+    question: "What is the purpose of the alt attribute in an image tag?",
+    options: [
+      "Specifies the title of the image",
+      "Provides a textual description of the image",
+      "Specifies the location of the image",
+      "Defines the image's resolution",
+    ],
+    answer: "Provides a textual description of the image",
+  },
+  {
+    question: "What does the <head> element in HTML contain?",
+    options: [
+      "Metadata about the page",
+      "Visible content of the page",
+      "Footer information",
+      "Navigation links",
+    ],
+    answer: "Metadata about the page",
+
+  },
+  
+
+  {
     question: "Which HTML element is used to define a paragraph?",
      options: ["p", "text", "div", "span"],
       answer: "p"
