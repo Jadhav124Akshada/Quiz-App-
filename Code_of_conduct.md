@@ -1,3 +1,4 @@
+
 # ✨ Code of Conduct — GSSoC’25 ✨
 
 ## 🌟 Our Commitment

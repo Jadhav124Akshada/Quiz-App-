@@ -470,7 +470,11 @@ const checkAnswer = (questions, index) => {
     resultContainer.style.color = "red";
     return false;
   }
-};
+
+
+
+
+
 
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
