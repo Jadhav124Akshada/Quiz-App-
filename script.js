@@ -471,7 +471,7 @@ const checkAnswer = (questions, index) => {
     return false;
   }
 
-
+};
 
 
 
