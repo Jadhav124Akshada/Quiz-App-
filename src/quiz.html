@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-link">← Home</a>
+    <h1 id="quiz-title">Quiz</h1>
+    <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+  </header>
+  <main class="quiz-main-layout">
+    <div class="quiz-content">
+      <div class="quiz-header"></div>
+      <div id="question-area"></div>
+      <div class="quiz-action-row">
+        <button id="save-next-btn" class="action-btn green">Save & Next</button>
+        <button id="clear-btn" class="action-btn">Clear</button>
+        <button id="save-mark-btn" class="action-btn orange">Save & Mark for Review</button>
+        <button id="mark-next-btn" class="action-btn purple">Mark for Review & Next</button>
+      </div>
+      <div class="quiz-nav-row">
+        <button id="back-btn" class="nav-btn">&lt;&lt; Back</button>
+        <button id="next-btn" class="nav-btn">Next &gt;&gt;</button>
+        <button id="submit-btn" class="action-btn green">Submit</button>
+      </div>
+      <div class="result" id="result"></div>
+      <div id="review-area" style="display:none;"></div>
+      <button id="exit-btn" class="action-btn green" style="display:none; margin: 2rem auto 0 auto; display: block;">Exit to Main Menu</button>
+    </div>
+    <aside class="side-panel-right">
+      <div class="legend">
+        <div><span class="legend-box not-visited"></span> Not Visited</div>
+        <div><span class="legend-box not-answered"></span> Not Answered</div>
+        <div><span class="legend-box answered"></span> Answered</div>
+        <div><span class="legend-box marked"></span> Marked for Review</div>
+        <div><span class="legend-box answered-marked"></span> Answered & Marked for Review</div>
+      </div>
+      <div class="question-grid" id="question-grid"></div>
+    </aside>
+    <div id="submit-modal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <h2>Confirm Final Submission</h2>
+        <div id="submit-summary"></div>
+        <p>Are you sure you want to submit? You cannot change your answers after this.</p>
+        <div class="modal-actions">
+          <button id="final-submit-btn" class="action-btn green">Final Submit</button>
+          <button id="cancel-submit-btn" class="action-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Quiz App. All rights reserved.</p>
+  </footer>
+  <script src="theme.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html> 

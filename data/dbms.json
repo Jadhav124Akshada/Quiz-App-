@@ -1,0 +1,17 @@
+[
+  {"question": "Which of the following is a type of DBMS?","options": ["Hierarchical", "Relational", "Network", "All of the above"],"answer": "All of the above"},
+  {"question": "What does SQL stand for?","options": ["Structured Query Language", "Simple Query Language", "Sequential Query Language", "Standard Query Language"],"answer": "Structured Query Language"},
+  {"question": "Which command is used to remove all rows from a table without logging the individual row deletions?","options": ["DELETE", "DROP", "TRUNCATE", "REMOVE"],"answer": "TRUNCATE"},
+  {"question": "In ER diagrams, what does a diamond shape represent?","options": ["Entity", "Attribute", "Relationship", "Primary Key"],"answer": "Relationship"},
+  {"question": "Which of the following is not a property of a transaction?","options": ["Atomicity", "Consistency", "Compilation", "Isolation"],"answer": "Compilation"},
+  {"question": "Which SQL clause is used to filter records?","options": ["SELECT", "WHERE", "FROM", "ORDER BY"],"answer": "WHERE"},
+  {"question": "What is the main purpose of normalization in DBMS?","options": ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],"answer": "To eliminate data redundancy"},
+  {"question": "Which normal form removes transitive dependency?","options": ["1NF", "2NF", "3NF", "BCNF"],"answer": "3NF"},
+  {"question": "Which key uniquely identifies a record in a table?","options": ["Foreign key", "Secondary key", "Primary key", "Candidate key"],"answer": "Primary key"},
+  {"question": "Which language is used to define the structure of a database schema?","options": ["DCL", "DML", "DDL", "TCL"],"answer": "DDL"},
+  {"question": "Which of the following is not a DML command?","options": ["SELECT", "INSERT", "UPDATE", "DROP"],"answer": "DROP"},
+  {"question": "Which index allows faster search of records?","options": ["Hash index", "B-tree index", "Both", "None"],"answer": "Both"},
+  {"question": "Which command is used to delete a table from a database?","options": ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "ERASE TABLE"],"answer": "DROP TABLE"},
+  {"question": "Which of these is a correct foreign key definition?","options": ["foreign key (emp_id) references employees(emp_id);", "foreignkey(emp_id) refers employees(emp_id);", "foreign emp_id key employees(emp_id);", "foreign_key emp_id on employees;"],"answer": "foreign key (emp_id) references employees(emp_id);"},
+  {"question": "Which join returns all records from both tables when there is a match?","options": ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"],"answer": "FULL OUTER JOIN"}
+] 

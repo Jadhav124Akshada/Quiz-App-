@@ -1,0 +1,12 @@
+[
+  {"question": "What does HTML stand for?","options": ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],"answer": "HyperText Markup Language"},
+  {"question": "What attribute is used to define the destination of a link in HTML?","options": ["href", "src", "action", "destination"],"answer": "href"},
+  {"question": "What is the purpose of the <head> element in an HTML document?","options": ["To define the main content of the page.", "To provide metadata and links to external resources.", "To display headings on the page.", "To create the body of the page."],"answer": "To provide metadata and links to external resources."},
+  {"question": "Which attribute is used to specify an alternate text for an image if the image cannot be displayed?","options": ["title", "src", "alt", "description"],"answer": "alt"},
+  {"question": "Which attribute specifies that an input field must be filled out before submitting?","options": ["required", "placeholder", "value", "mandatory"],"answer": "required"},
+  {"question": "What is the purpose of the alt attribute in an image tag?","options": ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"],"answer": "Provides a textual description of the image"},
+  {"question": "What does the <head> element in HTML contain?","options": ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"],"answer": "Metadata about the page"},
+  {"question": "Which HTML element is used to define a paragraph?","options": ["p", "text", "div", "span"],"answer": "p"},
+  {"question": "What is the correct HTML for inserting an audio file?","options": ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"],"answer": "<audio src='audio.mp3'></audio>"},
+  {"question": "Which HTML element is used to define an ordered list?","options": ["ul", "li", "ol", "ol-list"],"answer": "ol"}
+] 
