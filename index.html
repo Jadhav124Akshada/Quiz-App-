@@ -5,35 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz: HTML, CSS, JavaScript</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- <--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">--> -->
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <header class="mynavbar">
-  <div class="navbar-container">
-    <strong>Quiz Game </strong>
-    <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
-    </nav>
-  </div>
-</header>
+    <div class="navbar-container">
+      <strong>Quiz Game </strong>
+      <nav class="nav-links">
+        <a class="link" href="index.html" target="_blank">Home</a>
+        <a class="link" href="profile.html" target="_blank">Profile</a>
+        <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
+        <a class="link" href="logout.html" target="_blank">Logout</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="quiz-container">
     <div id="submission-message"></div>
     <h1>Welcome to the Web Development Quiz</h1>
     <p class="description">Choose a topic to start:</p>
     <ul class="quiz-list">
-
-      <li><a href="html-quiz.html"class="quiz-link quiz-item" tabindex="0">HTML Quiz</a></li>
-      <li><a href="css-quiz.html"class="quiz-link quiz-item" tabindex="0">CSS Quiz</a></li>
-      <li><a href="js-quiz.html"class="quiz-link quiz-item" tabindex="0">JavaScript Quiz</a></li>
+      <li><a href="html-quiz.html" class="quiz-link quiz-item" tabindex="0">HTML Quiz</a></li>
+      <li><a href="css-quiz.html" class="quiz-link quiz-item" tabindex="0">CSS Quiz</a></li>
+      <li><a href="js-quiz.html" class="quiz-link quiz-item" tabindex="0">JavaScript Quiz</a></li>
       <li><a href="cpp-quiz.html" class="quiz-link quiz-item" tabindex="0">C++ Quiz</a></li>
       <li><a href="react-quiz.html" class="quiz-link quiz-item" tabindex="0">React Quiz</a></li>
       <li><a href="nextjs-quiz.html" class="quiz-link quiz-item" tabindex="0">Next.js Quiz</a></li>
@@ -42,46 +39,32 @@
       <li><a href="django-quiz.html" class="quiz-link quiz-item" tabindex="0">Django Quiz</a></li>
       <li><a href="dsa-quiz.html" class="quiz-link quiz-item" tabindex="0">DSA Quiz</a></li>
       <li><a href="dbms-quiz.html" class="quiz-link quiz-item" tabindex="0">DBMS Quiz</a></li>
-
-
     </ul>
   </div>
-<footer>
-  <div class="footer-left">
-    <span>© <strong>Quiz Game</strong> - Built with ❤️ by Akshada Jadhav</span>
+
+  <footer class="myfooter">
+    <div class="footer-container">
+      <p>© <strong>Quiz Game</strong> - Built with <i class="fas fa-heart" style="color: red;"></i> by Akshada Jadhav </p>
+      <a id="contact-us" href="./contact-us.html" class="contactUs">Contact Us</a>
+      <div class="footer-links">
+        <a class="link" href="https://github.com/Jadhav124Akshada" target="_blank"><i class="fa-brands fa-github icon"></i> Github</a>
+        <a class="link" href="https://www.linkedin.com/in/akshada-jadhav-4b72062b5" target="_blank"><i class="fa-brands fa-linkedin icon"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="chatButton" onclick="toggleChatbot()">💬</div>
+  <div id="chatModal">
+      <span id="closeChatbot" onclick="toggleChatbot()" title="Close">×</span>
+      <iframe src="chatbot/chatbot.html"></iframe>
   </div>
-  <div class="footer-center">
-    <a href="contact.html">Contact Us</a>
-  </div>
-  <div class="footer-right">
-    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-  </div>
-</footer>
 
-
-  
-  
-
-<div id="chatButton" onclick="toggleChatbot()">💬</div>
-<div id="chatModal">
-    <span id="closeChatbot" onclick="toggleChatbot()" title="Close">×</span>
-    <iframe src="chatbot/chatbot.html"></iframe>
-</div>
-
-
-
-<script>
-  function toggleChatbot() {
-    const modal = document.getElementById("chatModal");
-    modal.style.display = modal.style.display === "block" ? "none" : "block";
-  }
-</script>
+  <script>
+    function toggleChatbot() {
+      const modal = document.getElementById("chatModal");
+      modal.style.display = modal.style.display === "block" ? "none" : "block";
+    }
+  </script>
+  <script src="script.js"></script> 
 </body>
 </html>
-
-

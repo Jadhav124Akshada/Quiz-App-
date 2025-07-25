@@ -7,6 +7,7 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
+
 /* ==== Navbar Styling ==== */
 .mynavbar {
   position: sticky;
@@ -175,7 +176,6 @@ button:hover {
   background-color: #45a049;
 }
 
-
 /* Responsive footer */
 footer {
   background: linear-gradient(to right, #1e3a8a, #2563eb); /* Darker blue gradient */
@@ -235,8 +235,6 @@ footer {
   }
 }
 
-
-
 .link {
   text-decoration: none;
   color: black;
@@ -287,18 +285,15 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .btnclass {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-
 }
 
 .timer-container,
 .score-display {
-
   display: flex;
   align-items: center;
   gap: 8px;
@@ -336,10 +331,7 @@ footer {
   animation: pulse 1s infinite alternate;
 }
 
-/* Focus Style for Keyboard Navigation
-   Visually highlights the currently focused quiz item 
-   when navigating with arrow keys */
-
+/* Focus Style for Keyboard Navigation */
 .quiz-item:focus {
   outline: none;
   background-color: #f0f8ff;
@@ -352,13 +344,12 @@ footer {
 
 .quiz-option:focus {
   outline: none;
-  background-color: #e0f7fa; /* light blue highlight */
+  background-color: #e0f7fa;
   padding: 8px 12px;
   border-radius: 6px;
-  box-shadow: 0 0 0 2px #00bcd4; /* teal outline */
+  box-shadow: 0 0 0 2px #00bcd4;
   transition: all 0.2s ease-in-out;
 }
-
 
 @keyframes pulse {
   from {
@@ -510,11 +501,9 @@ button.answered:hover {
   display: block;
   margin-top: 15px;
   font-weight: bold;
-
 }
 
-
-/*Scoreboard*/
+/* Scoreboard */
 .scoreboard-main {
   display: flex;
   justify-content: center;
@@ -561,8 +550,6 @@ th, td {
   background-color: #0056b3;
 }
 
-
-
 #chatButton {
   position: fixed;
   bottom: 20px;
@@ -578,7 +565,7 @@ th, td {
 }
 
 #chatModal {
-  display: none; /* hidden initially */
+  display: none;
   position: fixed;
   bottom: 80px;
   right: 20px;
@@ -619,7 +606,7 @@ th, td {
   right: 10px;
   font-size: 24px;
   font-weight: 600;
-  color: #333; /* dark gray for light mode */
+  color: #333;
   cursor: pointer;
   z-index: 1001;
   transition: color 0.3s ease;
@@ -630,12 +617,3 @@ th, td {
 #closeChatbot:hover {
   color: #ff4d4d;
 }
-
-
-
-
-
-
-
-
-
