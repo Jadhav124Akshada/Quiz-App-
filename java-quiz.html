@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .quiz-container a {
+      display: block;
+      text-align: right;
+      margin-right: 0;
+      float: right;
+    }
+
+    .question-container {
+      margin-bottom: 20px;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .instruction {
+      gap: 2rem;
+      background-color: #f1eaea;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 15px 0px;
+    }
+
+    .instruction ul {
+      padding: 15px;
+      margin: 0px;
+    }
+
+    .instruction h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0b0d10;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-section">
+      <h2>Java Quiz</h2>
+      <div class="instruction">
+        <h3>Instructions</h3>
+        <ul>
+          <li>This quiz contains multiple-choice questions.</li>
+          <li>Each question has only one correct answer.</li>
+          <li>Select the best answer from the given options.</li>
+          <li>Your score will be displayed at the end.</li>
+          <li>Click “Back to Home” to return to the main page.</li>
+        </ul>
+      </div>
+      <div id="java-questions"></div>
+    </div>
+    
+    <div id="result"></div>
+    <a href="index.html">Back to Home</a>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
