@@ -402,6 +402,82 @@ const dbmsQuestions = [
 ];
 
 
+
+// Java Quiz Questions
+const javaQuestions = [
+  {
+    question: "Which of the following is not a primitive data type in Java?",
+    options: ["int", "float", "boolean", "String"],
+    answer: "String"
+  },
+  {
+    question: "What is the default value of a boolean variable in Java?",
+    options: ["true", "false", "0", "null"],
+    answer: "false"
+  },
+  {
+    question: "Which keyword is used to inherit a class in Java?",
+    options: ["implement", "extends", "inherits", "interface"],
+    answer: "extends"
+  },
+  {
+    question: "What is method overloading?",
+    options: [
+      "Using different methods for the same task",
+      "Defining multiple methods with the same name but different parameters",
+      "Overriding a method in a subclass",
+      "Using multiple interfaces in a class"
+    ],
+    answer: "Defining multiple methods with the same name but different parameters"
+  },
+  {
+    question: "Which exception is thrown when dividing by zero in Java?",
+    options: [
+      "IllegalArgumentException",
+      "NullPointerException",
+      "ArithmeticException",
+      "NumberFormatException"
+    ],
+    answer: "ArithmeticException"
+  },
+  {
+    question: "What is the purpose of the final keyword in Java?",
+    options: [
+      "To define a constant value",
+      "To prevent inheritance",
+      "To prevent method overriding",
+      "All of the above"
+    ],
+    answer: "All of the above"
+  },
+  {
+    question: "Which of these is not part of Java’s access modifiers?",
+    options: ["protected", "public", "private", "secure"],
+    answer: "secure"
+  },
+  {
+    question: "What is the output of 'System.out.println(3 + 4 + \"Hello\")'?",
+    options: ["34Hello", "Hello34", "7Hello", "Hello7"],
+    answer: "7Hello"
+  },
+  {
+    question: "What does JVM stand for?",
+    options: ["Java Virtual Memory", "Java Volatile Machine", "Java Virtual Machine", "Java Variable Model"],
+    answer: "Java Virtual Machine"
+  },
+  {
+    question: "What is the use of the 'this' keyword in Java?",
+    options: [
+      "It refers to the current class",
+      "It refers to the current object",
+      "It refers to the parent class",
+      "It refers to a static method"
+    ],
+    answer: "It refers to the current object"
+  }
+];
+
+
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
@@ -532,6 +608,9 @@ if (document.getElementById("html-questions")) {
 } else if (document.getElementById("dsa-questions")) {
   questions = dsaQuestions;
   sectionId = "dsa-questions";
+} else if (document.getElementById("java-questions")) {
+  questions = javaQuestions;
+  sectionId = "java-questions";
 }
 
   // Render questions and attach event listeners only if a valid section is found
