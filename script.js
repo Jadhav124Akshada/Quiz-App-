@@ -1,4 +1,4 @@
-// HTML Questions
+ // HTML Questions
 const htmlQuestions = [
   {
     question: "What does HTML stand for?",
@@ -80,9 +80,7 @@ const htmlQuestions = [
     answer: "ol",
   },
 ]
-
 // DBMS questions
-
 const dbmsQuestions = [
   {
     question: "Which of the following is a type of DBMS?",
@@ -113,14 +111,13 @@ const dbmsQuestions = [
     options: ["Entity", "Attribute", "Relationship", "Primary Key"],
 
     answer: "Relationship",
-
   },
   {
     question: "Which of the following is not a property of a transaction?",
     options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
 
     answer: "Compilation",
-=======
+
     answer: "Compilation"
 
   },
@@ -129,7 +126,7 @@ const dbmsQuestions = [
     options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
 
     answer: "WHERE",
-=======
+
     answer: "WHERE"
 
   },
@@ -138,7 +135,7 @@ const dbmsQuestions = [
     options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
 
     answer: "To eliminate data redundancy",
-=======
+
     answer: "To eliminate data redundancy"
 
   },
@@ -147,13 +144,11 @@ const dbmsQuestions = [
     options: ["1NF", "2NF", "3NF", "BCNF"],
 
     answer: "3NF",
-
-
   },
   {
     question: "Which key uniquely identifies a record in a table?",
     options: ["Foreign key", "Secondary key", "Primary key", "Candidate key"],
-   answer: "Primary key",
+    answer: "Primary key",
 
   },
   {
@@ -168,7 +163,6 @@ const dbmsQuestions = [
     options: ["SELECT", "INSERT", "UPDATE", "DROP"],
 
     answer: "DROP",
-
   },
   {
     question: "Which index allows faster search of records?",
@@ -201,10 +195,6 @@ const dbmsQuestions = [
     answer: "FULL OUTER JOIN",
   },
 ]
-
-
-
-
 
 // CSS Questions
 const cssQuestions = [
@@ -274,7 +264,7 @@ const cssQuestions = [
     options: ["#header", ".header", "header", "[id='header']"],
 
     answer: "#header",
-=======
+
     answer: "#header"
 
   },
@@ -938,8 +928,6 @@ const dsaQuestions = [
     answer: "Hash Table",
   },
 ]
-
-// Added auto-scroll and progress tracking variables
 const answeredQuestions = new Set()
 let totalQuestions = 0
 
@@ -975,87 +963,113 @@ function autoScrollToNext(currentIndex) {
 }
 
 // Timer and scoring functionality
-let actualtime = 60
-let timeleft = 60
-let timeinterval
-let globalscore = 0
-const timerElement = document.getElementById("timer")
+// let actualtime = 60
+// let timeleft = 60
+// let timeinterval
+// let globalscore = 0
+// const timerElement = document.getElementById("timer")
 const scoreElement = document.getElementById("scoree")
 
-function updateTimerDisplay() {
-  timerElement.textContent = timeleft.toString()
-}
+// function updateTimerDisplay() {
+//   timerElement.textContent = timeleft.toString()
+// }
+// function updateTimerDisplay() {
+//   const timerElement = document.getElementById("timer")
+//   if (timerElement) timerElement.textContent = timeleft.toString()
+// }
 
-function updateGlobalScore() {
-  if (scoreElement) {
-    globalscore += actualtime - timeleft
-    scoreElement.innerHTML = globalscore.toString()
-  }
-}
+// function updateGlobalScore() {
+//   if (scoreElement) {
+//     globalscore += actualtime - timeleft
+//     scoreElement.innerHTML = globalscore.toString()
+//   }
+// }
 
-function initializeTimer() {
-  timeleft = 60
-  timerElement.textContent = timeleft.toString()
-  document.querySelectorAll('input[type="radio"]').forEach((input) => {
-    input.disabled = false
-  })
-  document.querySelectorAll(".check-answer-btn").forEach((btn) => {
-    btn.disabled = false
-  })
-  stop()
-}
+// function updateGlobalScore() {
+//   const scoreElement = document.getElementById("scoree")
+//   if (scoreElement) {
+//     globalscore += actualtime - timeleft
+//     scoreElement.innerHTML = globalscore.toString()
+//   }
+// }
+// function initializeTimer() {
+//   timeleft = 60
+//   timerElement.textContent = timeleft.toString()
+//   document.querySelectorAll('input[type="radio"]').forEach((input) => {
+//     input.disabled = false
+//   })
+//   document.querySelectorAll(".check-answer-btn").forEach((btn) => {
+//     btn.disabled = false
+//   })
+//   stop()
+// }
 
-function stop() {
-  clearInterval(timeinterval)
+// function initializeTimer() {
+//   timeleft = 60
+//   const timerElement = document.getElementById("timer")
+//   if (timerElement) timerElement.textContent = timeleft.toString()
 
-}
+//   document.querySelectorAll('input[type="radio"]').forEach((input) => {
+//     input.disabled = false
+//   })
+//   document.querySelectorAll(".check-answer-btn").forEach((btn) => {
+//     btn.disabled = false
+//   })
+//   stop()
+// }
 
-function start() {
-  if (timeinterval) {
 
-    clearInterval(timeinterval)
-  }
-  actualtime = 60
-  timeleft = actualtime
-  timerElement.textContent = timeleft.toString()
-  timeinterval = setInterval(() => {
-    timeleft--
-    timerElement.innerText = timeleft.toString()
-    if (timeleft <= 0) {
-      clearInterval(timeinterval)
-      handleTimeUp(currentQuestions)
-    }
-  }, 1000)
-}
+// function stop() {
+//   clearInterval(timeinterval)
 
-function handleTimeUp(questions) {
-  document.querySelectorAll('input[type="radio"]').forEach((input) => {
-    input.disabled = true
-  })
-  document.querySelectorAll(".check-answer-btn").forEach((btn) => {
-    btn.disabled = true
-  })
-  const response = document.getElementById("result")
-  response.textContent = "Time's up"
-  calculateTotalScore(questions)
-}
+// }
 
-const startBtn = document.getElementById("start-btn")
-const restartBtn = document.getElementById("restart-btn")
+// function start() {
+//   if (timeinterval) {
 
-if (startBtn) {
-  startBtn.addEventListener("click", () => {
-    initializeTimer()
-    start()
-  })
-}
+//     clearInterval(timeinterval)
+//   }
+//   actualtime = 60
+//   timeleft = actualtime
+//   timerElement.textContent = timeleft.toString()
+//   timeinterval = setInterval(() => {
+//     timeleft--
+//     timerElement.innerText = timeleft.toString()
+//     if (timeleft <= 0) {
+//       clearInterval(timeinterval)
+//       handleTimeUp(currentQuestions)
+//     }
+//   }, 1000)
+// }
 
-if (restartBtn) {
-  restartBtn.addEventListener("click", () => {
-    initializeTimer()
-  })
+// function handleTimeUp(questions) {
+//   document.querySelectorAll('input[type="radio"]').forEach((input) => {
+//     input.disabled = true
+//   })
+//   document.querySelectorAll(".check-answer-btn").forEach((btn) => {
+//     btn.disabled = true
+//   })
+//   const response = document.getElementById("result")
+//   response.textContent = "Time's up"
+//   calculateTotalScore(questions)
+// }
 
-}
+// const startBtn = document.getElementById("start-btn")
+// const restartBtn = document.getElementById("restart-btn")
+
+// if (startBtn) {
+//   startBtn.addEventListener("click", () => {
+//     // initializeTimer()
+//     start()
+//   })
+// }
+
+// if (restartBtn) {
+//   restartBtn.addEventListener("click", () => {
+//     initializeTimer()
+//   })
+
+// }
 
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
@@ -1170,13 +1184,33 @@ const checkAnswer = (questions, index) => {
     autoScrollToNext(index)
     return false
   }
-
 }
 
 
-};
+// };
 
 // Function to calculate the total score
+// const calculateTotalScore = (questions) => {
+//   let score = 0
+//   questions.forEach((q, index) => {
+//     const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`)
+//     if (selectedOption && selectedOption.value === q.answer) {
+//       score++
+//     }
+
+//     globalscore = score
+//   })
+
+//   updateGlobalScore()
+
+//   // Display the total score
+//   const totalScoreContainer = document.getElementById("total-score")
+//   if (totalScoreContainer) {
+//     totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`
+//     totalScoreContainer.style.color = score === questions.length ? "green" : "blue"
+//   }
+// }
+
 const calculateTotalScore = (questions) => {
   let score = 0
   questions.forEach((q, index) => {
@@ -1184,19 +1218,14 @@ const calculateTotalScore = (questions) => {
     if (selectedOption && selectedOption.value === q.answer) {
       score++
     }
-
-    globalscore = score
   })
-
-  updateGlobalScore()
-
-
-  updateGlobleScore();
 
   // Display the total score
   const totalScoreContainer = document.getElementById("total-score")
-  totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`
-  totalScoreContainer.style.color = score === questions.length ? "green" : "blue"
+  if (totalScoreContainer) {
+    totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`
+    totalScoreContainer.style.color = score === questions.length ? "green" : "blue"
+  }
 }
 
 // Dynamically render questions based on the page
@@ -1264,7 +1293,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("calculate-score-btn")?.addEventListener("click", () => {
 
-      initializeTimer()
+      // initializeTimer()
       calculateTotalScore(questions)
     })
 
@@ -1355,5 +1384,5 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.removeItem("formSubmissionSuccess")
     }
   }
-})
+}) 
 

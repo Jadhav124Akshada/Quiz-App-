@@ -1,6 +1,5 @@
-/* Base Styling */
-body {
 
+body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -107,7 +106,7 @@ button:hover {
   background-color: #45a049;
 }
 
-/* Responsive footer */
+
 .footer-container {
   display: flex;
   align-items: center;
@@ -169,7 +168,7 @@ button:hover {
   opacity: 1;
 }
 
-/* Quiz Header (fixed top bar) */
+
 .quiz-header {
   position: fixed;
   top: 0;
@@ -209,14 +208,14 @@ button:hover {
 }
 
 .timer-container {
-  color: #d32f2f; /* Red color for timer to stand out */
+  color: #d32f2f; 
   background-color: #ffebee;
   padding: 8px 12px;
   border-radius: 20px;
 }
 
 .score-display {
-  color: #2e7d32; /* Green color for score */
+  color: #2e7d32; 
   background-color: #e8f5e9;
   padding: 8px 12px;
   border-radius: 20px;
@@ -253,7 +252,6 @@ button:hover {
   color: green;
 }
 
-/* Added sticky progress header */
 .progress-header {
   position: sticky;
   top: 0;
@@ -264,7 +262,7 @@ button:hover {
   margin: -20px -20px 20px -20px;
 }
 
-/* Progress bar styling */
+
 .progress-container {
   margin-top: 10px;
 }
@@ -292,7 +290,7 @@ button:hover {
   border-radius: 4px;
 }
 
-/* Enhanced question styling for better visibility */
+
 .question-container {
   margin-bottom: 30px !important;
   padding: 20px;
@@ -302,13 +300,13 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-/* Highlight answered questions */
+
 .question-container.answered {
   background-color: #f0f8f0;
   border-color: #4caf50 !important;
 }
 
-/* Enhanced button styling */
+
 button.answered {
   background-color: #4caf50 !important;
   cursor: not-allowed;
@@ -318,8 +316,15 @@ button.answered:hover {
   background-color: #45a049 !important;
 }
 
-/* ----------------- Responsive Styling ----------------- */
-/* Mobile First */
+label {
+  display: block;
+  padding:  8px 12px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
 @media (max-width: 600px) {
   .quiz-container {
     padding: 15px;
@@ -348,7 +353,7 @@ button.answered:hover {
     flex-wrap: wrap;
     justify-content: center;
   }
-  /* Responsive progress header */
+
   .progress-header {
     padding: 10px 15px;
     margin: -15px -15px 15px -15px;
@@ -358,7 +363,7 @@ button.answered:hover {
   }
 }
 
-/* Tablet */
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .quiz-container {
     width: 80%;
@@ -368,7 +373,7 @@ button.answered:hover {
   }
 }
 
-/* Desktop (Already Well Styled) */
+
 @media (min-width: 1025px) {
   .quiz-container {
     width: 50%;
@@ -390,7 +395,6 @@ button.answered:hover {
   font-weight: bold;
 
 }
-/*navbar*/
 .mynavbar {
  background: linear-gradient(135deg, #4f8cff, #8f94fb, #c3cfe2);
   padding: 2.2rem 2rem;
@@ -431,7 +435,7 @@ button.answered:hover {
   text-decoration: underline;
   color: #333;
 }
-/*Scoreboard*/
+
 .scoreboard-main {
   display: flex;
   justify-content: center;
@@ -478,3 +482,5 @@ th, td {
   background-color: #0056b3;
 }
 
+
+ 
