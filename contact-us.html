@@ -4,9 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact / Feedback</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <!-- <link rel="stylesheet" href="./styles.css" /> -->
+     <style>
+      /* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Contact Container */
+#contact-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+#contact-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* Form Styling */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit Button */
+form button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive File Input */
+input[type="file"] {
+  padding: 8px;
+}
+
+/* Section Headers (Optional Styling) */
+#feedback-Section,
+#issue-Section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ecf0f1;
+}
+
+     </style>
   </head>
   <body>
+    
     <div id="contact-container">
       <h1>Contact / Feedback</h1>
 
