@@ -93,10 +93,21 @@ function updateStatus(idx, action) {
 }
 
 function loadQuestions() {
-  fetch(`../data/${topic}.json`)
-    .then(res => res.json())
+  // Show loading state
+  questionArea.innerHTML = '<div style="text-align: center; padding: 2rem;">Loading questions...</div>';
+  
+  fetch(`./data/${topic}.json`)  // Updated path to correctly point to data directory
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`Failed to load questions (${res.status} ${res.statusText})`);
+      }
+      return res.json();
+    })
     .then(data => {
-      questions = data;
+      if (!data || !data.questions || !Array.isArray(data.questions)) {
+        throw new Error('Invalid question data format');
+      }
+      questions = data.questions;
       current = 0;
       userAnswers = Array(questions.length).fill(null);
       questionStatus = Array(questions.length).fill('not-visited');
@@ -105,12 +116,19 @@ function loadQuestions() {
       reviewArea.style.display = 'none';
       renderQuestionGrid();
     })
-    .catch(() => {
-      questionArea.innerHTML = '<p>Could not load questions for this topic.</p>';
+    .catch((error) => {
+      console.error('Error loading questions:', error);
+      questionArea.innerHTML = `
+        <div style="text-align: center; padding: 2rem;">
+          <p style="color: #f44336; margin-bottom: 1rem;">Could not load questions for this topic.</p>
+          <p style="color: #666; margin-bottom: 1rem;">Error: ${error.message}</p>
+          <button onclick="window.location.href='index.html'" class="action-btn">Back to Topics</button>
+        </div>`;
     });
 }
 
 function showQuestion() {
+  if (!questions.length) return;  // Added check
   if (current >= questions.length) {
     showReview();
     document.getElementById('question-area').style.display = 'none';
@@ -122,7 +140,10 @@ function showQuestion() {
   updateStatus(current, 'visit');
   const q = questions[current];
   questionArea.innerHTML = `
-    <div class="question">Question ${current + 1}:</div>
+    <div class="question">
+      <h3>Question ${current + 1}:</h3>
+      <p>${q.question}</p>
+    </div>
     <div class="options">
       ${q.options.map((opt, i) => {
         const isCode = /[<>]/.test(opt) ? 'data-code="true"' : '';
@@ -246,34 +267,102 @@ cancelSubmitBtn.onclick = function() {
   submitModal.style.display = 'none';
 };
 
-function showReview() {
-  let correctCount = 0;
-  let html = `<h2>Quiz Completed!</h2><div class="score" style="font-size:2rem;margin-bottom:1.5rem;">Your Score: ${userAnswers.filter((ans, i) => ans === questions[i].options.indexOf(questions[i].answer)).length} / ${questions.length}</div>`;
-  html += '<div class="review-list">';
-  questions.forEach((q, i) => {
-    const userIdx = userAnswers[i];
-    const correctIdx = q.options.indexOf(q.answer);
-    const isCorrect = userIdx === correctIdx;
-    html += `<div class="review-question">
-      <div class="question">Q${i + 1}. ${q.question}</div>
-      <div class="review-answer">
-        Your answer: <span class="${isCorrect ? 'review-correct' : 'review-wrong'}">${userIdx !== null ? q.options[userIdx] : 'No answer'}</span><br>
-        Correct answer: <span class="review-correct">${q.answer}</span>
+// Add this function to improve score display
+function showScore(correctCount, totalQuestions) {
+  const reviewArea = document.getElementById('review-area');
+  const percentage = Math.round((correctCount / totalQuestions) * 100);
+  let performanceMessage = '';
+  
+  // Determine performance level
+  if (percentage >= 90) {
+    performanceMessage = 'Excellent! Outstanding performance! 🏆';
+  } else if (percentage >= 75) {
+    performanceMessage = 'Great job! Well done! 🌟';
+  } else if (percentage >= 60) {
+    performanceMessage = 'Good effort! Keep practicing! 👍';
+  } else {
+    performanceMessage = 'Keep learning! You can do better! 💪';
+  }
+
+  const scoreHtml = `
+    <div class="score-card">
+      <h2 class="score-title">Quiz Completed!</h2>
+      <div class="score-value">${correctCount} / ${totalQuestions}</div>
+      <div class="performance-message">${performanceMessage}</div>
+      <div class="score-details">
+        <div class="score-detail-item">
+          <div class="detail-label">Correct Answers</div>
+          <div class="detail-value" style="color: #4caf50;">${correctCount}</div>
+        </div>
+        <div class="score-detail-item">
+          <div class="detail-label">Incorrect Answers</div>
+          <div class="detail-value" style="color: #f44336;">${totalQuestions - correctCount}</div>
+        </div>
+        <div class="score-detail-item">
+          <div class="detail-label">Score Percentage</div>
+          <div class="detail-value" style="color: #2196f3;">${percentage}%</div>
+        </div>
+        <div class="score-detail-item">
+          <div class="detail-label">Total Questions</div>
+          <div class="detail-value">${totalQuestions}</div>
+        </div>
+      </div>
+    </div>
+    <div class="score-actions">
+      <button onclick="window.location.href='index.html'" class="action-btn green">Back to Topics</button>
+      <button onclick="window.location.reload()" class="action-btn orange">Retry Quiz</button>
+    </div>
+    <div class="review-section">
+      <h3>Detailed Review</h3>
+      <div class="review-list">
+        ${questions.map((q, i) => {
+          const userIdx = userAnswers[i];
+          const correctIdx = q.options.indexOf(q.answer);
+          const isCorrect = userIdx === correctIdx;
+          return `
+            <div class="review-question ${isCorrect ? 'correct' : 'incorrect'}">
+              <div class="question">
+                <span class="question-number">Q${i + 1}.</span>
+                <span class="question-text">${q.question}</span>
+                <span class="question-status ${isCorrect ? 'correct' : 'incorrect'}">
+                  ${isCorrect ? '✓' : '✗'}
+                </span>
+              </div>
+              <div class="review-answer">
+                <div class="user-answer">
+                  Your answer: 
+                  <span class="${isCorrect ? 'review-correct' : 'review-wrong'}">
+                    ${userIdx !== null ? q.options[userIdx] : 'No answer'}
+                  </span>
+                </div>
+                <div class="correct-answer">
+                  Correct answer: 
+                  <span class="review-correct">${q.answer}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('')}
       </div>
     </div>`;
-    if (isCorrect) correctCount++;
-  });
-  html += '</div>';
-  reviewArea.innerHTML = html;
+  
+  reviewArea.innerHTML = scoreHtml;
   reviewArea.style.display = 'block';
-  questionArea.innerHTML = '';
-  resultEl.textContent = '';
-  document.getElementById('mark-review-btn').style.display = 'none';
-  renderSidePanel();
-  // After review is shown, ensure only exit button is visible
+  document.getElementById('question-area').style.display = 'none';
+  document.querySelector('.quiz-action-row').style.display = 'none';
+  document.querySelector('.quiz-nav-row').style.display = 'none';
+  
   if (quizSubmitted) {
-    exitBtn.style.display = 'block';
+    document.getElementById('exit-btn').style.display = 'none'; // Hide the exit button since we have new action buttons
   }
+}
+
+// Update the showReview function to use the new showScore function
+function showReview() {
+  const correctCount = userAnswers.filter((ans, i) => 
+    ans === questions[i].options.indexOf(questions[i].answer)).length;
+  showScore(correctCount, questions.length);
+  renderQuestionGrid();
 }
 
 setQuizTitle();

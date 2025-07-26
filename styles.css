@@ -2,21 +2,26 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  background-color: #2D4B73;
+  background-color: #e3e9ef;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: background-image 2s ease-in-out;
+    background: linear-gradient(45deg, var(--start-color, #000), var(--end-color, #333));
 }
+
 /* ==== Navbar Styling ==== */
 .mynavbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(to right, #4f46e5, #3b82f6); /* Blue gradient */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  border: 2px solid #c5b4ff;
+
 }
 
 .navbar-container {
@@ -78,10 +83,12 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 40px auto;
-  background-color: #3863ae;
+background: linear-gradient(to right, #1f1c2c, #928dab);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #c5b4ff;
+
 }
 
 .quiz-section {
@@ -178,7 +185,7 @@ button:hover {
 
 /* Responsive footer */
 footer {
-  background: linear-gradient(to right, #1e3a8a, #2563eb); /* Darker blue gradient */
+background: linear-gradient(to right, #1f1c2c, #928dab);
   color: #ffffff;
   padding: 20px 30px;
   display: flex;
@@ -189,6 +196,8 @@ footer {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #c5b4ff;
+
 }
 
 .footer-left {
@@ -522,12 +531,13 @@ button.answered:hover {
 }
 
 .scoreboard-card {
-  background-color: #fff;
-  padding: 2rem;
+background: linear-gradient(to right, #1f1c2c, #928dab);  padding: 2rem;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   width: 100%;
+    border: 2px solid #c5b4ff;
+
 }
 
 .scoreboard-card h2 {
@@ -567,7 +577,7 @@ th, td {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #007bff;
+  background: #D89FDA;
   color: white;
   font-size: 24px;
   padding: 14px;
@@ -575,7 +585,12 @@ th, td {
   cursor: pointer;
   z-index: 999;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+ text-shadow: 0 0 5px #D89FDA, 0 0 10px #D89FDA, 0 0 15px #D89FDA;
+   border: 2px solid #c9bdea;
+
 }
+
+
 
 #chatModal {
   display: none; /* hidden initially */

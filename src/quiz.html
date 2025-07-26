@@ -3,60 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
+  <title>Quiz App</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <a href="index.html" class="back-link">← Home</a>
     <h1 id="quiz-title">Quiz</h1>
     <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
   </header>
   <main class="quiz-main-layout">
-    <div class="quiz-content">
-      <div class="quiz-header"></div>
+    <div class="quiz-container">
       <div id="question-area"></div>
+      <div id="result"></div>
+      <div id="review-area" style="display: none;"></div>
       <div class="quiz-action-row">
+        <button id="clear-btn" class="action-btn orange">Clear Response</button>
+        <button id="save-mark-btn" class="action-btn purple">Save & Mark for Review</button>
+        <button id="mark-next-btn" class="action-btn purple">Mark & Next</button>
         <button id="save-next-btn" class="action-btn green">Save & Next</button>
-        <button id="clear-btn" class="action-btn">Clear</button>
-        <button id="save-mark-btn" class="action-btn orange">Save & Mark for Review</button>
-        <button id="mark-next-btn" class="action-btn purple">Mark for Review & Next</button>
       </div>
       <div class="quiz-nav-row">
-        <button id="back-btn" class="nav-btn">&lt;&lt; Back</button>
-        <button id="next-btn" class="nav-btn">Next &gt;&gt;</button>
-        <button id="submit-btn" class="action-btn green">Submit</button>
+        <button id="back-btn" class="nav-btn">← Back</button>
+        <button id="submit-btn" class="nav-btn">Submit Quiz</button>
+        <button id="next-btn" class="nav-btn">Next →</button>
       </div>
-      <div class="result" id="result"></div>
-      <div id="review-area" style="display:none;"></div>
-      <button id="exit-btn" class="action-btn green" style="display:none; margin: 2rem auto 0 auto; display: block;">Exit to Main Menu</button>
     </div>
-    <aside class="side-panel-right">
+    <div class="side-panel-right">
       <div class="legend">
-        <div><span class="legend-box not-visited"></span> Not Visited</div>
-        <div><span class="legend-box not-answered"></span> Not Answered</div>
-        <div><span class="legend-box answered"></span> Answered</div>
-        <div><span class="legend-box marked"></span> Marked for Review</div>
-        <div><span class="legend-box answered-marked"></span> Answered & Marked for Review</div>
-      </div>
-      <div class="question-grid" id="question-grid"></div>
-    </aside>
-    <div id="submit-modal" class="modal" style="display:none;">
-      <div class="modal-content">
-        <h2>Confirm Final Submission</h2>
-        <div id="submit-summary"></div>
-        <p>Are you sure you want to submit? You cannot change your answers after this.</p>
-        <div class="modal-actions">
-          <button id="final-submit-btn" class="action-btn green">Final Submit</button>
-          <button id="cancel-submit-btn" class="action-btn">Cancel</button>
+        <div>
+          <span class="legend-box not-visited"></span>
+          Not Visited
+        </div>
+        <div>
+          <span class="legend-box not-answered"></span>
+          Not Answered
+        </div>
+        <div>
+          <span class="legend-box answered"></span>
+          Answered
+        </div>
+        <div>
+          <span class="legend-box marked"></span>
+          Marked for Review
+        </div>
+        <div>
+          <span class="legend-box answered-marked"></span>
+          Answered & Marked
         </div>
       </div>
+      <div id="question-grid" class="question-grid"></div>
     </div>
   </main>
-  <footer>
-    <p>&copy; 2024 Quiz App. All rights reserved.</p>
-  </footer>
+
+  <!-- Submit Modal -->
+  <div id="submit-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3>Submit Quiz?</h3>
+      <div id="submit-summary"></div>
+      <div class="modal-actions">
+        <button id="final-submit-btn" class="action-btn green">Yes, Submit</button>
+        <button id="cancel-submit-btn" class="nav-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="exit-btn" class="big-btn" style="display: none;">Exit to Main Menu</button>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot-widget">
+    <button class="chat-toggle" id="chatToggle">💬</button>
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <h3 class="chat-title">Quiz Assistant</h3>
+        <button class="chat-close" id="chatClose">×</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message bot">
+          Hello! 👋 I'm your Quiz Assistant. Need help with the quiz?
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+        <button class="chat-send" id="chatSend">Send</button>
+      </div>
+    </div>
+  </div>
+
   <script src="theme.js"></script>
   <script src="quiz.js"></script>
+  <script>
+    // Chatbot functionality
+    const chatToggle = document.getElementById('chatToggle');
+    const chatClose = document.getElementById('chatClose');
+    const chatContainer = document.getElementById('chatContainer');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const chatMessages = document.getElementById('chatMessages');
+
+    function toggleChat() {
+      chatContainer.classList.toggle('open');
+    }
+
+    function addMessage(message, isBot = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chat-message ${isBot ? 'bot' : 'user'}`;
+      messageDiv.textContent = message;
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function handleUserMessage(message) {
+      addMessage(message, false);
+      
+      // Quiz-specific response logic
+      let response = '';
+      const lowerMessage = message.toLowerCase();
+      
+      if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+        response = 'Hello! How can I help you with the quiz?';
+      } else if (lowerMessage.includes('mark') || lowerMessage.includes('review')) {
+        response = 'You can use "Mark for Review" to flag questions you want to revisit later. These will be highlighted in purple in the question grid.';
+      } else if (lowerMessage.includes('submit')) {
+        response = 'When you submit the quiz, you\'ll see your final score and a detailed review of all questions. Make sure to check all your answers before submitting!';
+      } else if (lowerMessage.includes('clear')) {
+        response = 'The "Clear Response" button will remove your current answer. You can then select a different option.';
+      } else if (lowerMessage.includes('navigate') || lowerMessage.includes('move')) {
+        response = 'Use the question grid on the right to jump to any question, or use the Back/Next buttons to move sequentially.';
+      } else if (lowerMessage.includes('thank')) {
+        response = "You're welcome! Good luck with your quiz!";
+      } else {
+        response = "I can help you with navigation, marking questions for review, or submitting your quiz. What would you like to know?";
+      }
+      
+      setTimeout(() => addMessage(response, true), 500);
+    }
+
+    chatToggle.addEventListener('click', toggleChat);
+    chatClose.addEventListener('click', toggleChat);
+    
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && chatInput.value.trim()) {
+        handleUserMessage(chatInput.value.trim());
+        chatInput.value = '';
+      }
+    });
+
+    chatSend.addEventListener('click', () => {
+      if (chatInput.value.trim()) {
+        handleUserMessage(chatInput.value.trim());
+        chatInput.value = '';
+      }
+    });
+  </script>
 </body>
 </html> 
