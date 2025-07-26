@@ -5,69 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz: HTML, CSS, JavaScript</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- <--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">--> -->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
   <header class="mynavbar">
-  <div class="navbar-container">
-    <strong>Quiz Game </strong>
-    <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
-      
-    </nav>
-  </div>
-</header>
-  <div class="quiz-container">
-    <div id="submission-message"></div>
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p class="description">Choose a topic to start:</p>
-    <div class="search-bar">
-  <input type="text" id="quizSearch" placeholder="Search quizzes..." />
-  <i class="fas fa-search"></i>
-</div>
-    <ul class="quiz-list">
-      <li><a href="html-quiz.html"class="quiz-link quiz-item" tabindex="0">HTML Quiz</a></li>
-      <li><a href="css-quiz.html"class="quiz-link quiz-item" tabindex="0">CSS Quiz</a></li>
-      <li><a href="js-quiz.html"class="quiz-link quiz-item" tabindex="0">JavaScript Quiz</a></li>
-      <li><a href="cpp-quiz.html" class="quiz-link quiz-item" tabindex="0">C++ Quiz</a></li>
-      <li><a href="react-quiz.html" class="quiz-link quiz-item" tabindex="0">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html" class="quiz-link quiz-item" tabindex="0">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html" class="quiz-link quiz-item" tabindex="0">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html" class="quiz-link quiz-item" tabindex="0">Python Quiz</a></li>
-      <li><a href="django-quiz.html" class="quiz-link quiz-item" tabindex="0">Django Quiz</a></li>
-      <li><a href="dsa-quiz.html" class="quiz-link quiz-item" tabindex="0">DSA Quiz</a></li>
-      <li><a href="dbms-quiz.html" class="quiz-link quiz-item" tabindex="0">DBMS Quiz</a></li>
-
-    </ul>
-  </div>
-<footer>
-  <div class="footer-left">
-    <span>© <strong>Quiz Game</strong> - Built with ❤️ by Akshada Jadhav</span>
-  </div>
-  <div class="footer-center">
-    <a href="contact.html">Contact Us</a>
-  </div>
-  <div class="footer-right">
-    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-  </div>
-</footer>
-
-
-  
-  
-
-  <script src="script.js"></script> 
+    <div class="navbar-container">
+      <strong class="navbar-title">Quiz Game</strong>
+      <nav class="nav-links">
+        <a class="link" href="index.html" target="_blank">Home</a>
+        <a class="link" href="profile.html" target="_blank">Profile</a>
+        <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
+        <a class="link" href="logout.html" target="_blank">Logout</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="quiz-container">
+      <div id="submission-message"></div>
+      <h1>Welcome to the Web Development Quiz</h1>
+      <p class="description">Choose a topic to start:</p>
+      <div class="search-bar">
+        <input type="text" id="quizSearch" placeholder="Search quizes..." />
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="quiz-card-list">
+        <div class="quiz-card">
+          <a href="html-quiz.html" class="quiz-link-card">
+            <h3>HTML Quiz</h3>
+            <p class="quiz-desc">Test your knowledge of the markup language that structures web pages.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="css-quiz.html" class="quiz-link-card">
+            <h3>CSS Quiz</h3>
+            <p class="quiz-desc">Challenge yourself on styling, layouts, and responsive design with CSS.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="js-quiz.html" class="quiz-link-card">
+            <h3>JavaScript Quiz</h3>
+            <p class="quiz-desc">Assess your skills in the scripting language powering interactive web apps.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="cpp-quiz.html" class="quiz-link-card">
+            <h3>C++ Quiz</h3>
+            <p class="quiz-desc">Explore concepts in one of the most powerful programming languages for systems and apps.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="react-quiz.html" class="quiz-link-card">
+            <h3>React Quiz</h3>
+            <p class="quiz-desc">Test your understanding of the popular JavaScript library for building UIs.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="nextjs-quiz.html" class="quiz-link-card">
+            <h3>Next.js Quiz</h3>
+            <p class="quiz-desc">Check your knowledge of React-based framework for server-side rendering and static sites.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="git-quiz.html" class="quiz-link-card">
+            <h3>Git & GitHub Quiz</h3>
+            <p class="quiz-desc">Test your version control skills and GitHub workflow expertise.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="python-quiz.html" class="quiz-link-card">
+            <h3>Python Quiz</h3>
+            <p class="quiz-desc">Challenge yourself on syntax, data structures, and Pythonic concepts.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="django-quiz.html" class="quiz-link-card">
+            <h3>Django Quiz</h3>
+            <p class="quiz-desc">Test your skills in the high-level Python web framework for rapid development.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="dsa-quiz.html" class="quiz-link-card">
+            <h3>DSA Quiz</h3>
+            <p class="quiz-desc">Assess your grasp of Data Structures and Algorithms for coding interviews.</p>
+          </a>
+        </div>
+        <div class="quiz-card">
+          <a href="dbms-quiz.html" class="quiz-link-card">
+            <h3>DBMS Quiz</h3>
+            <p class="quiz-desc">Test your database management system concepts and SQL skills.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-left">
+      <span>© <strong>Quiz Game</strong> - Built with <span aria-label="love">❤️</span> by Akshada Jadhav</span>
+    </div>
+    <div class="footer-center">
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-right">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
