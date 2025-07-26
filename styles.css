@@ -335,7 +335,7 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
   text-align: center;
 }
 
-#score {
+.score {
   font-weight: bold;
   min-width: 25px;
   text-align: center;
@@ -645,6 +645,7 @@ th, td {
 #closeChatbot:hover {
   color: #ff4d4d;
 }
+
 
 
 
