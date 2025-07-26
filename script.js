@@ -552,3 +552,48 @@ if (document.getElementById("html-questions")) {
       .addEventListener("click", () => calculateTotalScore(questions));
   }
 });
+
+
+// Modal logic
+const suggestBtn = document.getElementById("suggest-btn");
+const modal = document.getElementById("suggest-modal");
+const closeBtn = document.querySelector(".close");
+const suggestForm = document.getElementById("suggest-form");
+const thankYouMsg = document.getElementById("thank-you-msg");
+
+suggestBtn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  suggestForm.reset();
+  thankYouMsg.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+    suggestForm.reset();
+    thankYouMsg.style.display = "none";
+  }
+});
+
+suggestForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Simulate a successful submission
+  thankYouMsg.style.display = "block";
+
+  // Reset form after 2 seconds
+  setTimeout(() => {
+    suggestForm.reset();
+    thankYouMsg.style.display = "none";
+    modal.style.display = "none";
+  }, 2000);
+});
+
+// Scroll to Suggest Section
+document.getElementById("suggest-btn").addEventListener("click", function () {
+  document.getElementById("suggest-section").scrollIntoView({ behavior: "smooth" });
+});
