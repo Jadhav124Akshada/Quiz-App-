@@ -10,6 +10,8 @@ An interactive quiz application with multiple programming topics, real-time feed
 4. Use the chatbot (💬) if you need help
 5. Submit when done to see your score
 
+For a detailed learning path, curated resources, and study tips, check out the [LEARN.md](LEARN.md) file.
+
 ## ✨ Features
 
 ### 📝 Available Quiz Topics
