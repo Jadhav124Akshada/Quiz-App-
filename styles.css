@@ -185,7 +185,7 @@ button:hover {
 
 /* Responsive footer */
 footer {
-background: linear-gradient(to right, #1f1c2c, #928dab);
+  background: linear-gradient(to right, #1f1c2c, #928dab);
   color: #ffffff;
   padding: 20px 30px;
   display: flex;
@@ -201,21 +201,11 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
 }
 
 .footer-left {
+  font-size:1rem;
   display: flex;
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
-}
-
-.footer-center a {
-  color: #fff;
-  text-decoration: underline;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.footer-center a:hover {
-  color: #ffeb3b;
 }
 
 .footer-right {
@@ -226,7 +216,7 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
 .footer-right a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1rem;
   transition: transform 0.3s, color 0.3s;
 }
 
@@ -243,7 +233,6 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
     text-align: center;
   }
 }
-
 
 
 .link {
