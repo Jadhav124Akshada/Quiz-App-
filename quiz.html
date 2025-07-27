@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <div class="quiz-header">
+        <div class="quiz-info">
+            <h2 id="quizTitle"></h2>
+            <span id="userName"></span>
+        </div>
+        <div class="quiz-controls">
+            <div class="timer-container">
+                <span>Time: </span>
+                <span id="timer">--:--</span>
+                <button id="timerToggle" onclick="toggleTimer()">Disable Timer</button>
+            </div>
+            <div class="score-display">
+                Score: <span id="currentScore">0</span>/<span id="totalQuestions">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question-section">
+            <div class="question-header">
+                <span id="questionNumber"></span>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div id="questionContainer" class="question-container">
+                <h3 id="questionText"></h3>
+                <div id="optionsContainer" class="options-container"></div>
+            </div>
+
+            <div class="question-actions">
+                <button id="prevBtn" onclick="previousQuestion()" disabled>Previous</button>
+                <button id="nextBtn" onclick="nextQuestion()">Next</button>
+                <button id="submitBtn" onclick="submitQuiz()" style="display: none;">Submit Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content results-content">
+            <h2>Quiz Results</h2>
+            <div id="resultsContent"></div>
+            <div class="results-actions">
+                <button onclick="showDetailedResults()" class="btn-primary">View Detailed Results</button>
+                <button onclick="goToDashboard()" class="btn-secondary">Back to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Results Modal -->
+    <div id="detailedResultsModal" class="modal">
+        <div class="modal-content detailed-results">
+            <span class="close" onclick="closeDetailedResults()">&times;</span>
+            <h2>Detailed Results</h2>
+            <div id="detailedResultsContent"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
