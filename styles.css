@@ -80,16 +80,54 @@ body {
 }
 
 .quiz-container {
+  position: relative;
   text-align: center;
   max-width: 800px;
   margin: 40px auto;
-background: linear-gradient(to right, #1f1c2c, #928dab);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid #c5b4ff;
-
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  color: #ffffff;
+  animation: ambientPulse 5s ease-in-out infinite alternate;
 }
+
+.quiz-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+  animation: rotateLight 20s linear infinite;
+  z-index: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(0, 255, 255, 0.2),
+    0 0 40px rgba(138, 43, 226, 0.2);
+}
+
+.quiz-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-container:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 20px rgba(173, 216, 230, 0.6),
+    0 0 30px rgba(138, 43, 226, 0.5);
+}
+
+
+
 
 .quiz-section {
   margin-bottom: 1000px;
@@ -117,23 +155,36 @@ h2 {
 }
 
 .quiz-link {
-  align-items: center;
   display: inline-block;
   padding: 12px 24px;
-  background-color: #88B6F2;
-  color: #022954;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 10px;
   width: 100%;
   max-width: 300px;
-  transition: background-color 0.3s;
   font-size: 1rem;
   text-align: center;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(173, 216, 230, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
+
 .quiz-link:hover {
-  background-color: #1a589a;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 0 12px rgba(173, 216, 230, 0.4),
+    0 0 20px rgba(0, 140, 255, 0.2),
+    0 0 28px rgba(138, 43, 226, 0.2);
+  color: #000;
 }
+
 
 .question-container {
   margin-bottom: 15px;
