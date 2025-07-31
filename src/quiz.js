@@ -15,7 +15,7 @@ const cancelSubmitBtn = document.getElementById('cancel-submit-btn');
 const exitBtn = document.getElementById('exit-btn');
 
 const topicNames = {
-  html: 'HTML', css: 'CSS', js: 'JavaScript', python: 'Python', cpp: 'C++', dbms: 'DBMS',
+  html: 'HTML', css: 'CSS', js: 'JavaScript', python: 'Python',  java: 'Java' , cpp: 'C++', dbms: 'DBMS',
   react: 'React', nextjs: 'Next.js', git: 'Git & GitHub', dsa: 'DSA', django: 'Django',  cprogramming: "C(programming)"
 };
 
