@@ -381,3 +381,15 @@ if (topic) {
   // Optional: auto-redirect after 3 seconds
   // setTimeout(() => { window.location.href = 'index.html'; }, 3000);
 } 
+
+
+//code for confetti
+function confetti() {
+  confetti(
+    {
+      particlecount: 100,
+      spread: 70,
+      origin: {y: 0.6}
+    }
+  );
+}
