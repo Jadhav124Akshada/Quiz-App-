@@ -2,15 +2,12 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  background-color: #e3e9ef;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   transition: background-image 2s ease-in-out;
-    background: linear-gradient(45deg, var(--start-color, #000), var(--end-color, #333));
-}
-
-
+  background: linear-gradient(45deg, var(--start-color, #000), var(--end-color, #333));
+}  
 /* header (navbar) part */ 
 :root {
       --primary: #4361ee;
@@ -19,8 +16,7 @@ body {
       --light: #f8f9fa;
       --dark: #212529;
       --success: #4cc9f0;
-        }
-        
+        }        
     * {
         margin: 0;
         padding: 0;
@@ -151,7 +147,90 @@ body {
     max-width: 300px;
   }
 }
+/* end */
 
+
+/* new UI */
+  .hero {
+      text-align: center;
+      padding: 5rem 5% 3rem;
+  }
+  
+  .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  }
+  
+  .hero p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+  }
+  
+  .topics-container {
+      padding: 2rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+  }
+  
+  .topic-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eee;
+  }
+  
+  .topic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
+  }
+  
+  .topic-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+  }
+  
+  .topic-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+  }
+  
+  .topic-card p {
+      color: #666;
+      font-size: 0.9rem;
+  }
+  
+  .start-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+  
+  .start-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+  }    
 
 .quiz-container {
   text-align: center;
