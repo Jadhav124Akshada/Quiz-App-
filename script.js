@@ -1,3 +1,4 @@
+
 // HTML Questions
 const htmlQuestions = [
   { question: "What does HTML stand for?",
@@ -490,6 +491,108 @@ const dbmsQuestions = [
     answer: "TRUNCATE"
   }
 ];
+const aimlQuestions = [
+  {
+    question: "Who coined the term 'Artificial Intelligence'?",
+    options: [
+      "Alan Turing",
+      "John McCarthy",
+      "Geoffrey Hinton",
+      "Elon Musk"
+    ],
+    answer: "John McCarthy"
+  },
+  {
+    question: "Which of the following is a type of unsupervised learning?",
+    options: [
+      "Logistic Regression",
+      "Decision Tree",
+      "K-Means Clustering",
+      "Linear Regression"
+    ],
+    answer: "K-Means Clustering"
+  },
+  {
+    question: "What is the main purpose of reinforcement learning?",
+    options: [
+      "To learn from labeled data",
+      "To optimize decisions through rewards and punishments",
+      "To reduce dimensionality",
+      "To classify text"
+    ],
+    answer: "To optimize decisions through rewards and punishments"
+  },
+  {
+    question: "Which algorithm is best suited for spam detection?",
+    options: [
+      "K-Means",
+      "Naive Bayes",
+      "Apriori",
+      "KNN"
+    ],
+    answer: "Naive Bayes"
+  },
+  {
+    question: "Which of these is a popular library for Machine Learning in Python?",
+    options: [
+      "Django",
+      "NumPy",
+      "Scikit-learn",
+      "React"
+    ],
+    answer: "Scikit-learn"
+  },
+  {
+    question: "What does 'overfitting' mean in machine learning?",
+    options: [
+      "The model is too simple to capture data patterns",
+      "The model performs well on training data but poorly on unseen data",
+      "The model generalizes well",
+      "The model has no bias"
+    ],
+    answer: "The model performs well on training data but poorly on unseen data"
+  },
+  {
+    question: "Which is a popular technique for reducing the number of input variables?",
+    options: [
+      "Gradient Descent",
+      "PCA (Principal Component Analysis)",
+      "SVM",
+      "CNN"
+    ],
+    answer: "PCA (Principal Component Analysis)"
+  },
+  {
+    question: "Which neural network is best suited for image recognition?",
+    options: [
+      "RNN",
+      "LSTM",
+      "CNN",
+      "GAN"
+    ],
+    answer: "CNN"
+  },
+  {
+    question: "What is the purpose of a cost function in ML?",
+    options: [
+      "To update features",
+      "To track accuracy",
+      "To evaluate the performance of a model",
+      "To normalize data"
+    ],
+    answer: "To evaluate the performance of a model"
+  },
+  {
+    question: "Which machine learning technique is commonly used in recommendation systems?",
+    options: [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Collaborative Filtering",
+      "Clustering"
+    ],
+    answer: "Collaborative Filtering"
+  }
+];
 
 
 // Function to render a single question
@@ -626,7 +729,10 @@ if (document.getElementById("html-questions")) {
   questions = dsaQuestions;
   sectionId = "dsa-questions";
 }
-
+else if (document.getElementById("aiml-questions")) {
+    questions = aimlQuestions
+    sectionId = "aiml-questions"
+  } 
   // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
     renderQuestions(questions, sectionId);
@@ -645,3 +751,4 @@ if (document.getElementById("html-questions")) {
       .addEventListener("click", () => calculateTotalScore(questions));
   }
 });
+
