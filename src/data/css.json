@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What does CSS stand for?",
+            "options": [
+                "Cascading Style Sheets",
+                "Computer Style Sheets",
+                "Creative Style Sheets",
+                "Colorful Style Sheets"
+            ],
+            "answer": "Cascading Style Sheets"
+        },
+        {
+            "question": "Which property is used to change the background color?",
+            "options": [
+                "background-color",
+                "bgcolor",
+                "color",
+                "background"
+            ],
+            "answer": "background-color"
+        },
+        {
+            "question": "How do you select an element with id 'demo'?",
+            "options": [
+                "#demo",
+                ".demo",
+                "*demo",
+                "demo"
+            ],
+            "answer": "#demo"
+        },
+        {
+            "question": "Which CSS property controls the text size?",
+            "options": [
+                "font-size",
+                "text-size",
+                "font-style",
+                "text-style"
+            ],
+            "answer": "font-size"
+        },
+        {
+            "question": "What is the correct CSS syntax for making all the <p> elements bold?",
+            "options": [
+                "p {font-weight: bold;}",
+                "p {text-size: bold;}",
+                "<p style='font-size: bold;'>",
+                "p {text-weight: bold;}"
+            ],
+            "answer": "p {font-weight: bold;}"
+        }
+    ]
+} 

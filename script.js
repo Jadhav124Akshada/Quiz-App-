@@ -266,7 +266,97 @@ const pythonQuestions = [
   { question: "How do you access the value associated with the key 'name' in a dictionary `d`?", options: ["d.name", "d('name')", "d.get('name')", "d['name']"], answer: "d['name']" },
   { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
 ];
-
+// JAVA Questions
+const javaQuestions = [
+{
+  "questions": [
+    {
+      "question": "What is the default value of a boolean variable in Java?",
+      "options": ["true", "false", "0", "null"],
+      "answer": "false"
+    },
+    {
+      "question": "What does the 'public static void main(String[] args)' method represent?",
+      "options": [
+        "The entry point of Java application",
+        "The garbage collection method",
+        "The default constructor",
+        "A method to define variables"
+      ],
+      "answer": "The entry point of Java application"
+    },
+    {
+      "question": "Which principle of OOP is being used when a subclass provides a specific implementation of a method already defined in its superclass?",
+      "options": ["Inheritance", "Polymorphism", "Encapsulation", "Abstraction"],
+      "answer": "Polymorphism"
+    },
+    {
+      "question": "Which of the following correctly implements an interface in Java?",
+      "options": [
+        "class MyClass implements MyInterface {}",
+        "class MyClass inherits MyInterface {}",
+        "class MyClass extends MyInterface {}",
+        "class MyClass uses MyInterface {}"
+      ],
+      "answer": "class MyClass implements MyInterface {}"
+    },
+    {
+      "question": "What is the difference between '=='' and '.equals()' in Java?",
+      "options": [
+        "'==' compares object references, '.equals()' compares object values",
+        "Both check for value equality",
+        "'==' checks for null and '.equals()' does not",
+        "'.equals()' compares references and '==' compares content"
+      ],
+      "answer": "'==' compares object references, '.equals()' compares object values"
+    },
+    {
+      "question": "Which collection guarantees order and does not allow duplicates?",
+      "options": ["List", "Set", "HashSet", "LinkedHashSet"],
+      "answer": "LinkedHashSet"
+    },
+    {
+      "question": "What is multithreading in Java?",
+      "options": [
+        "Running multiple processes in parallel",
+        "Running multiple threads to perform tasks concurrently",
+        "Sharing memory between different Java applications",
+        "Using recursion in Java methods"
+      ],
+      "answer": "Running multiple threads to perform tasks concurrently"
+    },
+    {
+      "question": "What is the role of the 'synchronized' keyword in multithreading?",
+      "options": [
+        "It prevents method overriding",
+        "It restricts access to critical sections in concurrent code",
+        "It defines immutable variables",
+        "It pauses all threads temporarily"
+      ],
+      "answer": "It restricts access to critical sections in concurrent code"
+    },
+    {
+      "question": "What is the difference between 'throw' and 'throws' in Java?",
+      "options": [
+        "'throw' is used to manually raise an exception; 'throws' declares exceptions",
+        "Both are used to catch exceptions",
+        "'throw' is used only in try block; 'throws' is used in catch block",
+        "'throws' is used to suppress warnings"
+      ],
+      "answer": "'throw' is used to manually raise an exception; 'throws' declares exceptions"
+    },
+    {
+      "question": "How does the JVM handle garbage collection?",
+      "options": [
+        "It automatically frees memory for objects no longer referenced",
+        "It requires manual cleanup using delete keyword",
+        "It uses reference counting exclusively",
+        "It never frees memory once used"
+      ],
+      "answer": "It automatically frees memory for objects no longer referenced"
+    }
+  ]
+}];
 // SQL Questions
 const sqlQuestions = [
   { question: "Which SQL statement is used to extract data from a database?", options: ["GET", "OPEN", "EXTRACT", "SELECT"], answer: "SELECT" },
@@ -517,6 +607,9 @@ if (document.getElementById("html-questions")) {
 } else if (document.getElementById("python-questions")) {
   questions = pythonQuestions;
   sectionId = "python-questions";
+} else if (document.getElementById("java-questions")) {
+  questions = javaQuestions;
+  sectionId = "java-questions";
 } else if (document.getElementById("sql-questions")) {
   questions = sqlQuestions;
   sectionId = "sql-questions";

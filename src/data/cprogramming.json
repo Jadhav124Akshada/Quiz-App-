@@ -1,0 +1,129 @@
+{
+  "questions": [
+    {
+      "question": "Which is not a storage class keyword in C?",
+      "options": ["Auto", "static", "const", "extern"],
+      "answer": "const"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(){\nprintf(\"%d\\n\", count(17243));\nreturn 0;\n}\n\nint count(int n){\nif(n==0) return 0;\nreturn 1 + count(n/10);\n}</pre>What is the output for this question?",
+      "options": ["5", "3", "6", "8"],
+      "answer": "5"
+    },
+    {
+      "question": "In C language, how many bytes are used for an int data type?",
+      "options": ["2", "4", "both a & b", "depends on compiler"],
+      "answer": "depends on compiler"
+    },
+    {
+      "question": "What is the use of format specifier in C language?",
+      "options": ["For reading the element", "For printing the element", "both a and b", "none of above"],
+      "answer": "both a and b"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(void){\nint a=5;\na = a+++a;\nprintf(\"%d\\n\", a);\nreturn 0;\n}</pre>What is the value of a?",
+      "options": ["10", "11", "12", "13"],
+      "answer": "10"
+    },
+    {
+      "question": "In C language, if a local variable is not initialized, what value does it hold?",
+      "options": ["0", "1", "NULL value", "garbage value"],
+      "answer": "garbage value"
+    },
+    {
+      "question": "What is a recursive function?",
+      "options": ["inbuilt function", "function calling itself", "pre-defined function", "user defined function"],
+      "answer": "function calling itself"
+    },
+    {
+      "question": "Why is an array called an internal pointer in C?",
+      "options": ["Because its indexing starts with zero", "It holds the base address of memory block", "Because it can increase/decrease its size dynamically", "Because it contains same data type elements"],
+      "answer": "It holds the base address of memory block"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(){\nint a=15,b=13,c=16,x,y;\nx = a - 3%2 + c*2/4%2 + b/4;\ny = a = b + 5 - b + 9/3;\nprintf(\"%d %d\\n\", x,y);\nreturn 0;\n}</pre>What is the output of the following code?",
+      "options": ["(17,8)", "(16,4)", "(17,6)", "(16,8)"],
+      "answer": "(17,8)"
+    },
+    {
+      "question": "Which string function is used to find the first occurrence of a substring within a larger string?",
+      "options": ["strlen", "strcpy", "strstr()", "strcmp()"],
+      "answer": "strstr()"
+    },
+    {
+      "question": "Which format specifier is generally used for printing addresses?",
+      "options": ["%d", "%u", "%.2f", "%s"],
+      "answer": "%u"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(){\nint a=10;\nint *p = &a;\nprintf(\"%d %d\\n\", p+1, *(p+1));\nreturn 0;\n}</pre>(Assume p = 2456052) What is the output?",
+      "options": ["(2456053, 11)", "(2456056, garbage value)", "(10, 2456056)", "(11, garbage value)"],
+      "answer": "2456056 , garbagevalue"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(){\nint x, arr[8]={11,22,33,44,55,66,77,88};\nint x = (arr + 4)[3];\nprintf(\"%d\\n\", x);\nreturn 0;\n}</pre>What is the output?",
+      "options": ["88", "48", "44", "66"],
+      "answer": "88"
+    },
+    {
+      "question": "What is the thread used for?",
+      "options": ["Concurrency", "Better CPU utilization", "Faster program execution", "All of the above"],
+      "answer": "All of the above"
+    },
+    {
+      "question": "How many arguments does pthread_connect take?",
+      "options": ["2", "4", "3", "5"],
+      "answer": "4"
+    },
+    {
+      "question": "What is the purpose of the function pthread_exit?",
+      "options": ["Exit the loop", "Terminate the calling thread", "Waits for a thread to finish", "Makes a thread detach"],
+      "answer": "Terminate the calling thread"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(){\nint x, arr[8]={11,22,33,44,55,66,77,88};\nint x = (arr + 4)[3];\nprintf(\"%d\\n\", x);\nreturn 0;\n}</pre>Output?",
+      "options": ["88", "48", "44", "66"],
+      "answer": "88"
+    },
+    {
+      "question": "Which thread function is used to check pthread_id?",
+      "options": ["pthread_self", "pthread_exit", "pthread_join", "pthread_detach"],
+      "answer": "pthread_self"
+    },
+    {
+      "question": "In C language, which function is used to generate a random number?",
+      "options": ["rand()", "srand()", "gets()", "puts()"],
+      "answer": "rand()"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(){\nint i,j;\nfor(j = i + 1, i = 1, i &lt;= 5, j++, i++)\nprintf(\"%d %d\\n\", i, j);\nreturn 0;\n}</pre>What is the output?",
+      "options": ["(4,5)", "(5,5)", "Syntax error", "(4,9)"],
+      "answer": "Syntax error"
+    },
+    {
+      "question": "For accessing a member of a structure variable, which operator do we use?",
+      "options": [".", "=", "==", "*"],
+      "answer": "."
+    },
+    {
+      "question": "What is the correct way to declare the main function?",
+      "options": ["int main()", "int main(void)", "int main(int argc, char* argv[])", "void main()"],
+      "answer": "int main(int argc,char *argv[])"
+    },
+    {
+      "question": "Which is not a standard C library?",
+      "options": ["<sys/socket.h>", "<arpa/inet.h>", "<unistd.h>", "<confr.h>"],
+      "answer": "<confr.h>"
+    },
+    {
+      "question": "<pre>#include &lt;stdio.h&gt;\nint main(){\nchar* ptr;\nptr = \"My name is %s and age is %d\\n\";\nprintf(ptr,\"Mayank\" , 20);\nreturn 0;\n}</pre>What is the output?",
+      "options": ["My name is Mayank and age is 20", "garbage value", "My age is 20 and name is Mayank", "All are incorrect"],
+      "answer": "My name is Mayank and age is 20"
+    },
+    {
+      "question": "Which function is used to increase/decrease the size of an array?",
+      "options": ["malloc()", "free()", "calloc()", "realloc()"],
+      "answer": "realloc()"
+    }
+  ]
+}
