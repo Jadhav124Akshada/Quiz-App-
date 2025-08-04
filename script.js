@@ -472,23 +472,31 @@ const checkAnswer = (questions, index) => {
   }
 };
 
-// Function to calculate the total score
+//Updated to inlcude negative marking for wrong answers(-0.25 for each)
 const calculateTotalScore = (questions) => {
   let score = 0;
+
   questions.forEach((q, index) => {
     const selectedOption = document.querySelector(
       `input[name="question-${index}"]:checked`
     );
-    if (selectedOption && selectedOption.value === q.answer) {
-      score++;
+
+    if (selectedOption) {
+      if (selectedOption.value === q.answer) {
+        score += 1; // correct answer
+      } else {
+        score -= 0.25; // negative marking for wrong answer
+      }
     }
+    // No selection = 0 score, no penalty
   });
 
   // Display the total score
   const totalScoreContainer = document.getElementById("total-score");
-  totalScoreContainer.textContent = `Your total score is: ${score} out of ${questions.length}`;
+  totalScoreContainer.textContent = `Your total score is: ${score.toFixed(2)} out of ${questions.length}`;//updated to display score corrected to two decimal places
   totalScoreContainer.style.color = score === questions.length ? "green" : "blue";
 };
+
 
 // Dynamically render questions based on the page
 document.addEventListener("DOMContentLoaded", () => {
