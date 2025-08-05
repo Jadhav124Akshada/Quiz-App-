@@ -181,6 +181,22 @@ button {
 button:hover {
   background-color: #45a049;
 }
+/*feedback*/
+ #Feedback {
+background: linear-gradient(to right, #1f1c2c, #928dab);
+  color: #ffffff;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #c5b4ff;
+
+}
 
 
 /* Responsive footer */
