@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What does HTML stand for?",
+            "options": [
+                "Hyper Text Markup Language",
+                "High Tech Modern Language",
+                "Hyperlinks and Text Markup Language",
+                "Home Tool Markup Language"
+            ],
+            "answer": "Hyper Text Markup Language"
+        },
+        {
+            "question": "Which tag is used to define an unordered list?",
+            "options": [
+                "<ol>",
+                "<ul>",
+                "<li>",
+                "<list>"
+            ],
+            "answer": "<ul>"
+        },
+        {
+            "question": "Which HTML element is used to define important text?",
+            "options": [
+                "<important>",
+                "<strong>",
+                "<b>",
+                "<emp>"
+            ],
+            "answer": "<strong>"
+        },
+        {
+            "question": "What is the correct HTML element for inserting a line break?",
+            "options": [
+                "<break>",
+                "<lb>",
+                "<br>",
+                "<newline>"
+            ],
+            "answer": "<br>"
+        },
+        {
+            "question": "Choose the correct HTML element for the largest heading:",
+            "options": [
+                "<heading>",
+                "<h6>",
+                "<head>",
+                "<h1>"
+            ],
+            "answer": "<h1>"
+        }
+    ]
+} 
