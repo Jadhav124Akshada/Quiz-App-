@@ -400,7 +400,59 @@ const dbmsQuestions = [
     answer: "TRUNCATE"
   }
 ];
-
+//rust questions
+const rustQuestions = [
+  {
+    question: " Which keyword is used to define a variable that cannot be modified?",
+    options: ["mut", "let", "const", "var"],
+    answer: "const"
+  },
+  {
+    question: "How do you define a function in Rust?",
+    options: ["func", "def", "function", "fn"],
+    answer: "fn"
+  },
+  {
+    question: "What symbol is used to denote ownership transfer in Rust?",
+    options: ["&", "->", "=", "*"],
+    answer: "="
+  },
+  {
+    question: "What is the term for variables stored on the heap?",
+    options: ["static", "dynamic", "block", "inline"],
+    answer: "block"
+  },
+  {
+    question: "Which type of loop will continue until a specific condition becomes false?",
+    options: ["for", "while", "repeat", "do while"],
+    answer: "while"
+  },
+  {
+    question: "How can you access the third element of a vector v?",
+    options: ["v(2)", "v[2]", "v.get(2)", "Both b and c"],
+    answer: "Both b and c"
+  },
+  {
+    question: "Which of the following is a unique feature of Rust?",
+    options: ["Memory safety", "Dynamic typing", "Garbage collection", "Multiple inheritance"],
+    answer: "Memory safety"
+  },
+  {
+    question: "Rust was created by which company?",
+    options: ["Google", "Mozilla", "Microsoft", "Apple"],
+    answer: "Mozilla"
+  },
+  {
+    question: "Which of the following is not a Rust data type?",
+    options: ["Integer", "Float", "String", "Character"],
+    answer: "Character"
+  },
+  {
+    question: "What is the Rust crate registry called?",
+    options: ["Maven", "Cargo", "npm", "PyPI"],
+    answer: "Cargo"
+  }
+];
 
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
@@ -532,6 +584,9 @@ if (document.getElementById("html-questions")) {
 } else if (document.getElementById("dsa-questions")) {
   questions = dsaQuestions;
   sectionId = "dsa-questions";
+}else if (document.getElementById("rust-questions")) {
+  questions = rustQuestions;
+  sectionId = "rust-questions";
 }
 
   // Render questions and attach event listeners only if a valid section is found
