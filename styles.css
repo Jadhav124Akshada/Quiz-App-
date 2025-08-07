@@ -1,13 +1,12 @@
 /* Base Styling */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
-  background-color: #e3e9ef;
+  background-color:#0d0d0d;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   transition: background-image 2s ease-in-out;
-    background: linear-gradient(45deg, var(--start-color, #000), var(--end-color, #333));
 }
 
 /* ==== Navbar Styling ==== */
@@ -15,12 +14,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(to right, #1f1c2c, #928dab);
- box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color:#5a146c;
+  box-shadow: 0 2px 8px #cccccc;
   padding: 10px 0;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  border: 2px solid #c5b4ff;
+  border: 2px solid #cccccc;
 
 }
 
@@ -35,8 +34,9 @@ body {
 }
 
 .mynavbar strong {
-  font-size: 22px;
-  color: #ffffff;
+  font-size: 30px;
+  font-family: cursive;
+  color: #cccccc;
   letter-spacing: 1px;
 }
 
@@ -46,18 +46,18 @@ body {
 }
 
 .nav-links .link {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.15);
+  color: #cccccc;
   padding: 8px 16px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   transition: background 0.3s ease, transform 0.2s;
 }
 
 .nav-links .link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.183);
   transform: translateY(-2px);
+  color:#cccccc;
 }
 
 /* Responsive Navbar */
@@ -83,11 +83,11 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 40px auto;
-background: linear-gradient(to right, #1f1c2c, #928dab);
+  background-color:#5a146c;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid #c5b4ff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #cccccc;
+  border: 1px solid #cccccc;
 
 }
 
@@ -100,10 +100,15 @@ h2 {
   font-size: 24px;
 }
 
+.heading{
+  color:#cccccc;
+  font-size: 2.5rem;
+}
+
 .description {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
-  color: #0f0404;
+  font-size: 1.6rem;
+  color: #cccccc;
 }
 
 .quiz-list {
@@ -120,8 +125,8 @@ h2 {
   align-items: center;
   display: inline-block;
   padding: 12px 24px;
-  background-color: #88B6F2;
-  color: #022954;
+  background-color: #cccccc;
+  color: #5a146c;
   text-decoration: none;
   border-radius: 6px;
   width: 100%;
@@ -132,7 +137,8 @@ h2 {
 }
 
 .quiz-link:hover {
-  background-color: #1a589a;
+  background-color: #cccccc68;
+  color:white;
 }
 
 .question-container {
@@ -185,8 +191,8 @@ button:hover {
 
 /* Responsive footer */
 footer {
-background: linear-gradient(to right, #1f1c2c, #928dab);
-  color: #ffffff;
+background-color: #5a146c;
+  color: #cccccc;
   padding: 20px 30px;
   display: flex;
   justify-content: space-between;
@@ -195,8 +201,8 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
   font-size: 14px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-  border: 2px solid #c5b4ff;
+  box-shadow: 0 -4px 8px #cccccc;
+  border: 2px solid #cccccc;
 
 }
 
@@ -205,33 +211,36 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
+  font-size: 1.2rem;
 }
 
 .footer-center a {
-  color: #fff;
-  text-decoration: underline;
+  color: #cccccc;
+  text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-size: 1.2rem;
 }
 
 .footer-center a:hover {
-  color: #ffeb3b;
+  color: black;
 }
 
 .footer-right {
   display: flex;
   gap: 15px;
+  font-size: 1.2rem;
 }
 
 .footer-right a {
-  color: #fff;
+  color: #cccccc;
   text-decoration: none;
   font-size: 18px;
   transition: transform 0.3s, color 0.3s;
 }
 
 .footer-right a:hover {
-  color: #ffeb3b;
+  color: black;
   transform: translateY(-2px);
 }
 
@@ -250,8 +259,9 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
   text-decoration: none;
   color: black;
   font-weight: 500;
+  font-size: 1.2rem;
   margin-right: 1rem;
-  opacity: 0.75;
+  opacity: 0.90;
   display: flex;
   align-items: center;
 }
