@@ -207,7 +207,24 @@ const cppQuestions = [
     question: "What does 'this' pointer point to?",
     options: ["Global object", "Current object", "Next object", "Previous object"],
     answer: "Current object"
-  }
+  },
+  {
+     question: "Which of the following is used to open a file for writing in C++?",
+     options: ["ifstream", "ofstream", "fstream", "fileopen"],
+     answer: "ofstream"
+  },
+  {
+    question:"What is the purpose of the 'template' keyword in C++?",
+    options: ["To define constants", "To define generic functions or classes", "To create macros", "To create objects"],
+    answer: "To define generic functions or classes"
+
+  },
+  {
+    question:"Which operator cannot be overloaded in C++?",
+    options: ["+", "=", "::", "[]"],
+     answer: "::"
+  },
+
 ];
 
 
@@ -345,7 +362,17 @@ const dsaQuestions = [
     question: "Which data structure is used in BFS traversal?",
     options: ["Stack", "Queue", "Heap", "Tree"],
     answer: "Queue"
-  }
+  },
+  {
+    question:"Which of the following trees is always balanced?",
+    options: ["Binary Tree", "BST", "AVL Tree", "N-ary Tree"],
+     answer: "AVL Tree"
+  },
+  {
+    question:" Which of the following algorithms is not a comparison-based sorting algorithm?",
+    options: ["Merge Sort", "Quick Sort", "Counting Sort", "Bubble Sort"],
+    answer: "Counting Sort"
+  },
 ];
 //DBMS Questions
 const dbmsQuestions = [
