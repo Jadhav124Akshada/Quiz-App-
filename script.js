@@ -49,6 +49,16 @@ const htmlQuestions = [
     options: ["ul", "li", "ol", "ol-list"], 
     answer: "ol"
    },
+  {
+    question : "What is the purpose of the <meta> tag in HTML?",
+    options: ["To provide metadata about the HTML document", "To link external CSS files", "To define the character set", "All of the above"],
+    answer: "All of the above"
+  },
+  {
+    question: "Which HTML element is used to create a hyperlink?",
+    options: ["<link>", "<a>", "<hyperlink>", "<url>"],
+    answer: "<a>"
+  },
 ];
 
 // CSS Questions
@@ -102,7 +112,17 @@ const cssQuestions = [
      question: "Which CSS property is used to add space between an element's border and its content?", 
      options: ["padding", "margin", "border-spacing", "gap"], 
      answer: "padding" 
-    }
+  },
+  {
+    question: "What is the purpose of the CSS box model?",
+    options: ["To define the layout of a webpage", "To control the size and spacing of elements", "To style text", "To create animations"],
+    answer: "To control the size and spacing of elements"
+  },
+  {
+    question: "Which CSS property is used to change the font family of an element?",
+    options: ["font-family", "font-type", "text-font", "font-style"],
+    answer: "font-family"
+  },
 ];
 
 // JavaScript Questions
