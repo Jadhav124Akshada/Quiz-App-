@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following is used to uniquely identify a record in a table?",
+      "options": ["Foreign Key", "Composite Key", "Primary Key", "Unique Constraint"],
+      "answer": "Primary Key"
+    },
+    {
+      "question": "Which SQL clause is used to filter the result set based on a condition?",
+      "options": ["GROUP BY", "ORDER BY", "WHERE", "HAVING"],
+      "answer": "WHERE"
+    },
+    {
+      "question": "What does the ACID property in DBMS stand for?",
+      "options": [
+        "Atomicity, Consistency, Isolation, Durability",
+        "Accuracy, Consistency, Isolation, Durability",
+        "Atomicity, Concurrency, Isolation, Dependency",
+        "Accuracy, Concurrency, Integration, Durability"
+      ],
+      "answer": "Atomicity, Consistency, Isolation, Durability"
+    },
+    {
+      "question": "Which of the following is a type of JOIN in SQL?",
+      "options": ["FULL OUTER JOIN", "PARTIAL JOIN", "UNION JOIN", "EXTENDED JOIN"],
+      "answer": "FULL OUTER JOIN"
+    },
+    {
+      "question": "Which command is used to remove all rows from a table without logging individual row deletions?",
+      "options": ["DELETE", "DROP", "TRUNCATE", "CLEAR"],
+      "answer": "TRUNCATE"
+    },
+    {
+      "question": "Which normal form eliminates transitive dependency?",
+      "options": ["First Normal Form", "Second Normal Form", "Third Normal Form", "Boyce-Codd Normal Form"],
+      "answer": "Third Normal Form"
+    },
+    {
+      "question": "What is the role of an index in a database?",
+      "options": [
+        "It sorts the records automatically",
+        "It increases the size of the database",
+        "It speeds up data retrieval",
+        "It ensures data consistency"
+      ],
+      "answer": "It speeds up data retrieval"
+    },
+    {
+      "question": "Which key is used to link two tables together?",
+      "options": ["Candidate Key", "Foreign Key", "Super Key", "Secondary Key"],
+      "answer": "Foreign Key"
+    },
+    {
+      "question": "Which operation is used to combine data from two or more tables based on a related column?",
+      "options": ["UNION", "JOIN", "INTERSECT", "SELECT"],
+      "answer": "JOIN"
+    },
+    {
+      "question": "What does the term 'schema' refer to in DBMS?",
+      "options": [
+        "A query that modifies data",
+        "The structure that defines the organization of data",
+        "A specific instance of data",
+        "An optimization technique"
+      ],
+      "answer": "The structure that defines the organization of data"
+    },
+    {
+      "question": "Which SQL statement is used to extract data from a database?",
+      "options": ["GET", "SELECT", "EXTRACT", "OPEN"],
+      "answer": "SELECT"
+    },
+    {
+      "question": "Which of the following ensures the referential integrity of data in one table to match values in another?",
+      "options": ["Primary Key", "Foreign Key", "Unique Key", "Check"],
+      "answer": "Foreign Key"
+    },
+    {
+      "question": "Which of the following is a DDL command?",
+      "options": ["SELECT", "INSERT", "DROP", "UPDATE"],
+      "answer": "DROP"
+    },
+    {
+      "question": "Which command is used to change the structure of an existing table?",
+      "options": ["MODIFY", "CHANGE", "UPDATE", "ALTER"],
+      "answer": "ALTER"
+    },
+    {
+      "question": "Which type of key can have NULL values and still be used to identify records uniquely?",
+      "options": ["Primary Key", "Unique Key", "Foreign Key", "Candidate Key"],
+      "answer": "Unique Key"
+    }
+  ]
+}

@@ -398,8 +398,39 @@ const dbmsQuestions = [
     question: "Which command is used to delete all rows from a table without logging?",
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
     answer: "TRUNCATE"
+  },
+  {
+    question: "What does the term 'data independence' mean?",
+    options: [
+      "Data can be accessed from anywhere",
+      "Data and programs are independent",
+      "Changes in data do not affect application",
+      "Data is stored in files"
+    ],
+    answer: "Changes in data do not affect application"
+  },
+  {
+    question: "Which index allows quick access to data in a database?",
+    options: ["Clustered index", "Foreign key", "Primary key", "Check constraint"],
+    answer: "Clustered index"
+  },
+  {
+    question: "Which command is used to remove a table structure permanently?",
+    options: ["REMOVE", "ERASE", "DELETE", "DROP"],
+    answer: "DROP"
+  },
+  {
+    question: "Which normal form removes partial dependency?",
+    options: ["1NF", "2NF", "3NF", "BCNF"],
+    answer: "2NF"
+  },
+  {
+    question: "Which keyword is used in SQL to prevent duplication?",
+    options: ["DISTINCT", "UNIQUE", "NO DUPLICATE", "EXCLUDE"],
+    answer: "DISTINCT"
   }
 ];
+
 
 
 // Function to render a single question
