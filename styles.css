@@ -1,13 +1,13 @@
 /* Base Styling */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: 700;
-  background-color: #e3e9ef;
+  background-color: hsl(120, 16%, 96%);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   transition: background-image 2s ease-in-out;
-    background: linear-gradient(45deg, var(--start-color, #000), var(--end-color, #333));
+  background: linear-gradient(45deg, var(--start-color, #6a11cb), var(--end-color, #2575fc));
 }
 
 /* ==== Navbar Styling ==== */
@@ -16,22 +16,27 @@ body {
   top: 0;
   z-index: 1000;
   background: linear-gradient(to right, #1f1c2c, #928dab);
- box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 2px solid #c5b4ff;
+  text-shadow: 2px 2px 5px black;
 
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 50px;
 }
 
 .mynavbar strong {
@@ -81,18 +86,18 @@ body {
 
 .quiz-container {
   text-align: center;
-  max-width: 800px;
-  margin: 40px auto;
-background: linear-gradient(to right, #1f1c2c, #928dab);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid #c5b4ff;
+  max-width: 600px;
+  margin: 50px auto;
+  background: linear-gradient(to right, #3a0ca3, #4361ee);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
 }
 
 .quiz-section {
-  margin-bottom: 1000px;
+  margin-bottom: 80px;
 }
 
 h2 {
@@ -425,17 +430,23 @@ background: linear-gradient(to right, #1f1c2c, #928dab);
 
 /* Enhanced question styling for better visibility */
 .question-container {
+  
+  font-weight: 700;
   margin-bottom: 30px !important;
-  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  line-height: 1.4;
+  padding: 25px 30px;
   border: 2px solid #e0e0e0 !important;
-  border-radius: 8px;
+  border-radius: 12px;
   background: white;
   transition: all 0.3s ease;
 }
 
 /* Highlight answered questions */
 .question-container.answered {
-  background-color: #f0f8f0;
+  background-color: linear-gradient(90deg, #2575fc, #6a11cb);
   border-color: #4caf50 !important;
 }
 
