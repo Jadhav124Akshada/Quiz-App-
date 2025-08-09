@@ -21,7 +21,7 @@
       <a class="link" href="index.html" target="_blank">Home</a>
       <a class="link" href="profile.html" target="_blank">Profile</a>
       <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
+      <a class="link" href="login.html" target="_blank">Logout</a> 
     </nav>
   </div>
 </header>
@@ -77,10 +77,43 @@
 
 
 <script>
-  function toggleChatbot() {
-    const modal = document.getElementById("chatModal");
-    modal.style.display = modal.style.display === "block" ? "none" : "block";
+   
+    function toggleChatbot() {
+      const modal = document.getElementById("chatModal");
+      modal.style.display = modal.style.display === "block" ? "none" : "block";
+    }
+
+    // --- Navbar auth state handler ---
+    const nav = document.getElementById("nav-links");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+     if (!isLoggedIn) {
+    window.location.href = "login.html";
   }
+    if (isLoggedIn) {
+      const logoutLink = document.createElement("a");
+      logoutLink.className = "link";
+      logoutLink.href = "#";
+      logoutLink.innerText = "Logout";
+      logoutLink.onclick = () => {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "login.html";
+      };
+      nav.appendChild(logoutLink);
+    } else {
+      const loginLink = document.createElement("a");
+      loginLink.className = "link";
+      loginLink.href = "login.html";
+      loginLink.innerText = "Login";
+
+      const signupLink = document.createElement("a");
+      signupLink.className = "link";
+      signupLink.href = "signup.html";
+      signupLink.innerText = "Signup";
+
+      nav.appendChild(loginLink);
+      nav.appendChild(signupLink);
+    }
+
 </script>
 </body>
 </html>
