@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Admin Panel</h1>
+            <button onclick="logout()" class="btn-danger">Logout</button>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-tabs">
+            <button class="tab-btn active" onclick="showTab('topics')">Manage Topics</button>
+            <button class="tab-btn" onclick="showTab('questions')">Manage Questions</button>
+            <button class="tab-btn" onclick="showTab('settings')">Quiz Settings</button>
+        </div>
+
+        <!-- Topics Management -->
+        <div id="topicsTab" class="tab-content active">
+            <h2>Manage Quiz Topics</h2>
+            <div class="add-topic-form">
+                <input type="text" id="newTopicName" placeholder="Topic Name">
+                <input type="text" id="newTopicCode" placeholder="Topic Code">
+                <button onclick="addTopic()" class="btn-primary">Add Topic</button>
+            </div>
+            <div id="topicsList" class="topics-list"></div>
+        </div>
+
+        <!-- Questions Management -->
+        <div id="questionsTab" class="tab-content">
+            <h2>Manage Questions</h2>
+            <div class="question-controls">
+                <select id="topicSelect" onchange="loadQuestions()">
+                    <option value="">Select Topic</option>
+                </select>
+                <button onclick="showAddQuestionForm()" class="btn-primary">Add Question</button>
+            </div>
+            
+            <!-- Add Question Form -->
+            <div id="addQuestionForm" class="question-form" style="display: none;">
+                <h3>Add New Question</h3>
+                <textarea id="questionText" placeholder="Question text" rows="3"></textarea>
+                <div class="options-inputs">
+                    <input type="text" id="option1" placeholder="Option 1">
+                    <input type="text" id="option2" placeholder="Option 2">
+                    <input type="text" id="option3" placeholder="Option 3">
+                    <input type="text" id="option4" placeholder="Option 4">
+                </div>
+                <select id="correctAnswer">
+                    <option value="">Select correct answer</option>
+                    <option value="0">Option 1</option>
+                    <option value="1">Option 2</option>
+                    <option value="2">Option 3</option>
+                    <option value="3">Option 4</option>
+                </select>
+                <textarea id="explanation" placeholder="Explanation for the answer" rows="2"></textarea>
+                <div class="form-actions">
+                    <button onclick="saveQuestion()" class="btn-primary">Save Question</button>
+                    <button onclick="cancelAddQuestion()" class="btn-secondary">Cancel</button>
+                </div>
+            </div>
+
+            <div id="questionsList" class="questions-list"></div>
+        </div>
+
+        <!-- Settings -->
+        <div id="settingsTab" class="tab-content">
+            <h2>Quiz Settings</h2>
+            <div class="settings-form">
+                <div class="setting-group">
+                    <label>Default Timer (minutes):</label>
+                    <input type="number" id="defaultTimer" min="1" max="60" value="10">
+                </div>
+                <div class="setting-group">
+                    <label>Questions per Quiz:</label>
+                    <input type="number" id="questionsPerQuiz" min="5" max="50" value="10">
+                </div>
+                <div class="setting-group">
+                    <label>Passing Score (%):</label>
+                    <input type="number" id="passingScore" min="0" max="100" value="60">
+                </div>
+                <button onclick="saveSettings()" class="btn-primary">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Quiz Dashboard</h1>
+            <div class="user-info">
+                <span id="welcomeUser"></span>
+                <button onclick="showLeaderboard()" class="btn-secondary">Leaderboard</button>
+                <button onclick="logout()" class="btn-danger">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="quiz-topics">
+            <h2>Select a Quiz Topic</h2>
+            <div id="topicsList" class="topics-grid"></div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboardModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLeaderboard()">&times;</span>
+            <h2>Leaderboard</h2>
+            <div id="leaderboardContent"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
