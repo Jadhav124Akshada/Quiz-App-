@@ -583,3 +583,15 @@ if (document.getElementById("html-questions")) {
       .addEventListener("click", () => calculateTotalScore(questions));
   }
 });
+
+
+//timer 
+let timeLeft = 60;
+const timer = setInterval(() => {
+  timeLeft--;
+  document.getElementById("timer").innerText = `${timeLeft} sec`;
+  if (timeLeft <= 0) {
+    clearInterval(timer);
+    submitQuiz();
+  }
+}, 1000);
