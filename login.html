@@ -1,0 +1,112 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Quiz Game</title>
+   <style>
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .auth-container {
+      background: rgba(102, 51, 153, 0.2); /* semi-transparent purple like homepage */
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(153, 102, 255, 0.4);
+      width: 320px;
+      border: 1px solid rgba(153, 102, 255, 0.3);
+      text-align: center;
+    }
+
+    h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      background-color: #2e2e2e;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #66b3ff; /* matches quiz buttons */
+      border: none;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    button:hover {
+      background-color: #99ccff;
+    }
+
+    p {
+      margin-top: 15px;
+      color: #ccc;
+    }
+
+    a {
+      color: #66b3ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" class="input-field" placeholder="Email" required><br>
+      <input type="password" id="password" class="input-field" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Basic simulated login (in real apps, you'd check a server)
+      const savedEmail = localStorage.getItem("userEmail");
+      const savedPassword = localStorage.getItem("userPassword");
+
+      if (email === savedEmail && password === savedPassword) {
+        localStorage.setItem("isLoggedIn", "true");
+        alert("Login successful!");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid email or password");
+      }
+    });
+  </script>
+</body>
+</html>
