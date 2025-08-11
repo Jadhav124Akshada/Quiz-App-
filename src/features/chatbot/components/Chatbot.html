@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Assistant</title>
+    <link rel="stylesheet" href="../styles/chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <img src="../../../assets/images/chatbot-avatar.jpg" alt="Quiz Assistant" class="chatbot-avatar">
+                <div>
+                    <h3>Quiz Assistant</h3>
+                    <span class="status online">Online</span>
+                </div>
+            </div>
+            <button class="minimize-btn" aria-label="Minimize chat">
+                <span class="minimize-icon">−</span>
+            </button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    Hello! 👋 I'm your Quiz Assistant. How can I help you today?
+                </div>
+                <time class="message-time">Just now</time>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <div class="input-wrapper">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Type your message..." 
+                    rows="1"
+                    aria-label="Message input"
+                ></textarea>
+                <button class="send-btn" id="sendMessage" aria-label="Send message">
+                    <span class="send-icon">↗️</span>
+                </button>
+            </div>
+            <div class="suggestion-chips">
+                <button class="chip">How does scoring work?</button>
+                <button class="chip">Quiz topics</button>
+                <button class="chip">Need help</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/chatbot.js"></script>
+</body>
+</html> 

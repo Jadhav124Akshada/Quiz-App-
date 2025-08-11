@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What is Python?",
+            "options": [
+                "A high-level programming language",
+                "A snake species",
+                "A database management system",
+                "A web browser"
+            ],
+            "answer": "A high-level programming language"
+        },
+        {
+            "question": "Which of the following is the correct way to declare a list in Python?",
+            "options": [
+                "list = []",
+                "list = {}",
+                "list = ()",
+                "list = ''"
+            ],
+            "answer": "list = []"
+        },
+        {
+            "question": "What is the output of: print(type(5.0))?",
+            "options": [
+                "<class 'float'>",
+                "<class 'int'>",
+                "<class 'str'>",
+                "<class 'number'>"
+            ],
+            "answer": "<class 'float'>"
+        },
+        {
+            "question": "Which of these is NOT a valid Python data type?",
+            "options": [
+                "char",
+                "int",
+                "float",
+                "bool"
+            ],
+            "answer": "char"
+        },
+        {
+            "question": "What does the len() function do in Python?",
+            "options": [
+                "Returns the length of an object",
+                "Returns the last element",
+                "Returns the first element",
+                "Returns the data type"
+            ],
+            "answer": "Returns the length of an object"
+        }
+    ]
+} 

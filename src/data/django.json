@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What is Django?",
+            "options": [
+                "A high-level Python web framework",
+                "A JavaScript library",
+                "A database system",
+                "A programming language"
+            ],
+            "answer": "A high-level Python web framework"
+        },
+        {
+            "question": "Which command is used to create a new Django project?",
+            "options": [
+                "django-admin startproject",
+                "python manage.py createproject",
+                "django create project",
+                "django new project"
+            ],
+            "answer": "django-admin startproject"
+        },
+        {
+            "question": "What is a Django model?",
+            "options": [
+                "A Python class that represents a database table",
+                "A template file",
+                "A URL pattern",
+                "A view function"
+            ],
+            "answer": "A Python class that represents a database table"
+        },
+        {
+            "question": "Which command is used to apply database migrations in Django?",
+            "options": [
+                "python manage.py migrate",
+                "python manage.py makemigrations",
+                "python manage.py update",
+                "python manage.py syncdb"
+            ],
+            "answer": "python manage.py migrate"
+        },
+        {
+            "question": "What is the purpose of Django's MTV architecture?",
+            "options": [
+                "Model Template View - separates the logic of an application",
+                "Model Test View - handles testing in Django",
+                "Main Template View - manages the main application flow",
+                "Model Type View - defines data types in Django"
+            ],
+            "answer": "Model Template View - separates the logic of an application"
+        }
+    ]
+} 

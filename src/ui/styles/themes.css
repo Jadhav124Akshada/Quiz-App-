@@ -1,0 +1,120 @@
+/* Light Theme (default) */
+:root[data-theme="light"] {
+    --background-color: var(--background-light);
+    --text-color: var(--text-light);
+    --card-background: var(--card-light);
+    --border-color: var(--border-light);
+    
+    /* Component-specific colors */
+    --header-bg: var(--primary-color);
+    --header-text: white;
+    --footer-bg: var(--card-light);
+    --footer-text: var(--text-light);
+    
+    /* Quiz-specific colors */
+    --question-bg: white;
+    --option-bg: var(--card-light);
+    --option-border: var(--border-light);
+    --option-hover: var(--primary-color);
+    --option-hover-text: white;
+    
+    /* Navigation colors */
+    --nav-bg: var(--card-light);
+    --nav-text: var(--text-light);
+    --nav-hover: var(--primary-color);
+    --nav-hover-text: white;
+    
+    /* Modal colors */
+    --modal-bg: white;
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+    --background-color: var(--background-dark);
+    --text-color: var(--text-dark);
+    --card-background: var(--card-dark);
+    --border-color: var(--border-dark);
+    
+    /* Component-specific colors */
+    --header-bg: var(--card-dark);
+    --header-text: var(--text-dark);
+    --footer-bg: var(--card-dark);
+    --footer-text: var(--text-dark);
+    
+    /* Quiz-specific colors */
+    --question-bg: var(--card-dark);
+    --option-bg: var(--background-dark);
+    --option-border: var(--border-dark);
+    --option-hover: var(--primary-color);
+    --option-hover-text: var(--text-dark);
+    
+    /* Navigation colors */
+    --nav-bg: var(--card-dark);
+    --nav-text: var(--text-dark);
+    --nav-hover: var(--primary-color);
+    --nav-hover-text: var(--text-dark);
+    
+    /* Modal colors */
+    --modal-bg: var(--card-dark);
+    --modal-overlay: rgba(0, 0, 0, 0.75);
+}
+
+/* Theme Transition */
+body {
+    transition: background-color var(--transition-base),
+                color var(--transition-base);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-full);
+    color: var(--header-text);
+    transition: background-color var(--transition-base);
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme-specific Component Styles */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.modal {
+    background-color: var(--modal-bg);
+    color: var(--text-color);
+}
+
+.modal-overlay {
+    background-color: var(--modal-overlay);
+}
+
+/* Theme-specific Quiz Styles */
+.quiz-option {
+    background-color: var(--option-bg);
+    border: 1px solid var(--option-border);
+    color: var(--text-color);
+}
+
+.quiz-option:hover {
+    background-color: var(--option-hover);
+    color: var(--option-hover-text);
+}
+
+/* Theme-specific Navigation Styles */
+.nav-link {
+    color: var(--nav-text);
+}
+
+.nav-link:hover {
+    color: var(--nav-hover-text);
+    background-color: var(--nav-hover);
+} 

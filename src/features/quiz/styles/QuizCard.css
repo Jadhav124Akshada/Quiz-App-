@@ -1,0 +1,92 @@
+.quiz-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.quiz-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.quiz-card-header {
+    padding: var(--spacing-lg);
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.quiz-icon {
+    font-size: var(--font-size-xxlarge);
+}
+
+.quiz-title {
+    margin: 0;
+    font-size: var(--font-size-large);
+    font-weight: 600;
+}
+
+.quiz-card-body {
+    padding: var(--spacing-lg);
+}
+
+.quiz-description {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: var(--font-size-small);
+}
+
+.quiz-card-footer {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.start-quiz {
+    flex: 2;
+}
+
+.view-details {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quiz-card-footer {
+        flex-direction: column;
+    }
+
+    .start-quiz,
+    .view-details {
+        width: 100%;
+    }
+}
+
+/* Animation */
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quiz-card {
+    animation: cardEnter 0.3s ease-out;
+} 
