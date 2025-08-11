@@ -346,6 +346,26 @@ const dsaQuestions = [
     options: ["Stack", "Queue", "Heap", "Tree"],
     answer: "Queue"
   }
+  {
+    question: "Which technique does Dynamic Programming use to avoid recomputation?",
+    options: ["Brute force", "Divide and Conquer", "Memoization", "Greedy method"],
+    answer: "Memoization"
+  }
+  {
+    question: "In a max heap, the largest element is always at:",
+    options: ["Last node", "Left child of root", "Right child of root", "Root node"],
+    answer: "Root node"
+  }
+   {
+    question: "Average case time complexity for searching in a hash table is:",
+    options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+    answer: "O(1)"
+  }
+  {
+    question: "Which algorithm is used to find the shortest path in a weighted graph with non-negative weights?",
+    options: ["BFS", "DFS", "Dijkstra's Algorithm", "Prim's Algorithm"],
+    answer: "Dijkstra's Algorithm"
+  }
 ];
 //DBMS Questions
 const dbmsQuestions = [
