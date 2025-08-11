@@ -1,3 +1,4 @@
+
 // HTML Questions
 const htmlQuestions = [
   { question: "What does HTML stand for?",
@@ -264,7 +265,12 @@ const pythonQuestions = [
   { question: "What will `print(type('Hello'))` output?", options: ["class 'string'", "class 'str'", "type 'string'", "type 'str'"], answer: "class 'str'" },
   { question: "Which method is used to add an item to the end of a list?", options: [".add()", ".push()", ".insert()", ".append()"], answer: ".append()" },
   { question: "How do you access the value associated with the key 'name' in a dictionary `d`?", options: ["d.name", "d('name')", "d.get('name')", "d['name']"], answer: "d['name']" },
-  { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
+  { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" },
+  { question: "What is the output of `print(2 + 3 * 4)`?", options: ["14", "20", "12", "10"], answer: "14" },
+  { question: "which of these types is mutable in python?", options: ["list", "tuple", "set", "dictionary"], answer: "list" },
+  { question: "which method adds an element to the end of a list?", options: [".add()", ".push()", ".insert()", ".append()"], answer: ".append()" },
+  { question: "which method removes an element from a list?", options: [".remove()", ".delete()", ".pop()", ".discard()"], answer: ".remove()" },
+  { question: "which function is used to convert a string to lowercase in Python?", options: ["lower()", "toLower()", "str.lower()", "string.lower()"], answer: "lower()" },
 ];
 
 // SQL Questions
@@ -398,39 +404,8 @@ const dbmsQuestions = [
     question: "Which command is used to delete all rows from a table without logging?",
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
     answer: "TRUNCATE"
-  },
-  {
-    question: "What does the term 'data independence' mean?",
-    options: [
-      "Data can be accessed from anywhere",
-      "Data and programs are independent",
-      "Changes in data do not affect application",
-      "Data is stored in files"
-    ],
-    answer: "Changes in data do not affect application"
-  },
-  {
-    question: "Which index allows quick access to data in a database?",
-    options: ["Clustered index", "Foreign key", "Primary key", "Check constraint"],
-    answer: "Clustered index"
-  },
-  {
-    question: "Which command is used to remove a table structure permanently?",
-    options: ["REMOVE", "ERASE", "DELETE", "DROP"],
-    answer: "DROP"
-  },
-  {
-    question: "Which normal form removes partial dependency?",
-    options: ["1NF", "2NF", "3NF", "BCNF"],
-    answer: "2NF"
-  },
-  {
-    question: "Which keyword is used in SQL to prevent duplication?",
-    options: ["DISTINCT", "UNIQUE", "NO DUPLICATE", "EXCLUDE"],
-    answer: "DISTINCT"
   }
 ];
-
 
 
 // Function to render a single question
