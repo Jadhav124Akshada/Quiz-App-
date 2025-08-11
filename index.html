@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Game</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- <--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">--> -->
+  <!-- <--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">-->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <body>
   <header class="mynavbar">
@@ -25,28 +25,192 @@
     </nav>
   </div>
 </header>
-  <div class="quiz-container">
-    <div id="submission-message"></div>
-    <h1>Welcome to the Web Development Quiz</h1>
-    <p class="description">Choose a topic to start:</p>
-    <ul class="quiz-list">
+  <main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-bold">Coding Quiz</h1>      
+        <p>
+          <a href="#" class="btn btn-primary my-2">Log in</a>
+          <a href="#" class="btn btn-secondary my-2">Sign up</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-     
-      <li><a href="html-quiz.html"class="quiz-link quiz-item" tabindex="0">HTML Quiz</a></li>
-      <li><a href="css-quiz.html"class="quiz-link quiz-item" tabindex="0">CSS Quiz</a></li>
-      <li><a href="js-quiz.html"class="quiz-link quiz-item" tabindex="0">JavaScript Quiz</a></li>
-      <li><a href="cpp-quiz.html" class="quiz-link quiz-item" tabindex="0">C++ Quiz</a></li>
-      <li><a href="react-quiz.html" class="quiz-link quiz-item" tabindex="0">React Quiz</a></li>
-      <li><a href="nextjs-quiz.html" class="quiz-link quiz-item" tabindex="0">Next.js Quiz</a></li>
-      <li><a href="git-quiz.html" class="quiz-link quiz-item" tabindex="0">Git & GitHub Quiz</a></li>
-      <li><a href="python-quiz.html" class="quiz-link quiz-item" tabindex="0">Python Quiz</a></li>
-      <li><a href="django-quiz.html" class="quiz-link quiz-item" tabindex="0">Django Quiz</a></li>
-      <li><a href="dsa-quiz.html" class="quiz-link quiz-item" tabindex="0">DSA Quiz</a></li>
-      <li><a href="dbms-quiz.html" class="quiz-link quiz-item" tabindex="0">DBMS Quiz</a></li>
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="card-img-top" src="./html.jpg" alt="HTML-Quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+                HTML-Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="html-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="card-img-top" src="./css.jpg" alt="CSS-Quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+                CSS-Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="css-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    </ul>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="card-img-top" src="./js.jpg" alt="JavaScript-Quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+                JavaScript-Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="js-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="card-img-top" src="./cpp.jpg" alt="cpp-quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+                C++ -Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="cpp-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="./njs.jpg" alt="Node.js-Quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+                NEXT.js -Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="njs-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="./git.jpg" alt="Git-Quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+               Git-Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="git-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg"  height="250" fill="currentColor" class="bi bi-filetype-py" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2H7v-1h5a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM0 11.85h1.6q.434 0 .732.179.302.175.46.477t.158.677-.16.677q-.158.299-.464.474a1.45 1.45 0 0 1-.732.173H.79v1.342H0zm2.06 1.714a.8.8 0 0 0 .085-.381q0-.34-.185-.521-.185-.182-.513-.182H.788v1.406h.66a.8.8 0 0 0 .374-.082.57.57 0 0 0 .238-.24m2.963.75v1.535H4.23v-1.52L2.89 11.85h.876l.853 1.696h.032l.856-1.696h.855z"/>
+</svg>
+            <div class="card-body">
+              <p class="card-text">
+                Python Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="python-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="./django.jpg" alt="Django Quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+                Django Quiz
+              </p>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="django-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="./dbms.jpg" alt="DBMS Quiz" height="250">
+            <div class="card-body">
+              <p class="card-text">
+                DBMS Quiz
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="dbms-quiz.html" class="btn btn-sm btn-outline-secondary">
+                    Attempt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
+</main>
 <footer>
   <div class="footer-left">
     <span>© <strong>Quiz Game</strong> - Built with ❤️ by Akshada Jadhav</span>

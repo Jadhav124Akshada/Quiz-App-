@@ -16,7 +16,7 @@ body {
   top: 0;
   z-index: 1000;
   background: linear-gradient(to right, #1f1c2c, #928dab);
- box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -33,6 +33,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+
 
 .mynavbar strong {
   font-size: 22px;
@@ -83,7 +84,7 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 40px auto;
-background: linear-gradient(to right, #1f1c2c, #928dab);
+  background: linear-gradient(to right, #1f1c2c, #928dab);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -645,8 +646,19 @@ th, td {
 #closeChatbot:hover {
   color: #ff4d4d;
 }
-
-
+.fw-bold {
+  color:white;
+}
+p.lead.text-body-secondary {
+  color: #ffffff;
+}
+.card-img-top{
+  width: 100px;           /* or any preferred width */
+  height: 140px;          /* or any preferred height */
+  object-fit: contain;    /* keeps aspect ratio, no stretching */
+  display: block;
+  margin: 55px auto;  
+}
 
 
 
