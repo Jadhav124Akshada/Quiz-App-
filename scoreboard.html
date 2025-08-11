@@ -6,6 +6,47 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+<script>
+  // Example format: [{ score: 85, time: "01:20", player: "Alice", date: "2025-08-09" }]
+  let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+
+  const scoreboardBody = document.getElementById("scoreboard-data");
+
+  if (scores.length === 0) {
+    scoreboardBody.innerHTML = "<tr><td colspan='4'>No scores yet!</td></tr>";
+  } else {
+    scores
+      .sort((a, b) => b.score - a.score) // highest score first
+      .forEach(scoreObj => {
+        let row = `<tr>
+          <td>${scoreObj.score}</td>
+          <td>${scoreObj.time}</td>
+          <td>${scoreObj.player}</td>
+          <td>${scoreObj.date}</td>
+        </tr>`;
+        scoreboardBody.innerHTML += row;
+      });
+  }
+
+
+  let points = localStorage.getItem('quizPoints') || 0;
+let badges = [];
+
+if (points >= 300) badges.push("🏆 Champion");
+if (streak >= 5) badges.push("🔥 Hot Streak");
+
+document.querySelector('#scoreboard-data').innerHTML = `
+  <tr>
+    <td>${points}</td>
+    <td>${streak} days</td>
+    <td>You</td>
+    <td>${new Date().toLocaleDateString()}</td>
+    <td>${badges.join(" ")}</td>
+  </tr>
+`;
+
+</script>
+
 <body>
 
   <!-- Navbar -->
@@ -41,6 +82,7 @@
       <a href="index.html" class="back-button">Back to Quiz</a>
     </div>
   </main>
+  <th>Badges</th>
 
 </body>
 </html>

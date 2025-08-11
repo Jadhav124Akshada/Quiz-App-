@@ -552,3 +552,39 @@ if (document.getElementById("html-questions")) {
       .addEventListener("click", () => calculateTotalScore(questions));
   }
 });
+
+
+
+function saveScore(name, score) {
+  let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
+  scores.push({ name, score });
+  localStorage.setItem("quizScores", JSON.stringify(scores));
+}
+
+// // Example after quiz ends:
+// let playerName = prompt("Enter your name:");
+// let playerScore = 8; // Replace with actual score
+// saveScore(playerName, playerScore);
+// window.location.href = "scoreboard.html"; // Redirect to leaderboard
+
+
+// // Daily Streak & Bonus
+// let streak = localStorage.getItem('quizStreak') || 0;
+// let lastPlayed = localStorage.getItem('lastPlayedDate');
+// let today = new Date().toDateString();
+
+// if (lastPlayed !== today) {
+//     streak++;
+//     localStorage.setItem('quizStreak', streak);
+//     localStorage.setItem('lastPlayedDate', today);
+
+//     // Give bonus points for daily visit
+//     let bonusPoints = 10;
+//     let totalPoints = parseInt(localStorage.getItem('quizPoints') || 0);
+//     totalPoints += bonusPoints;
+//     localStorage.setItem('quizPoints', totalPoints);
+
+//     alert(`🎉 Daily Bonus! +${bonusPoints} points. Streak: ${streak} days`);
+// }
+
+// document.getElementById('streak-message').textContent = `🔥 Streak: ${streak} days`;
