@@ -1,3 +1,4 @@
+added-quiz-que
 // HTML Questions
 const htmlQuestions = [
   { question: "What does HTML stand for?",
@@ -399,38 +400,24 @@ const dbmsQuestions = [
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
     answer: "TRUNCATE"
   },
-  {
-    question: "What does the term 'data independence' mean?",
-    options: [
-      "Data can be accessed from anywhere",
-      "Data and programs are independent",
-      "Changes in data do not affect application",
-      "Data is stored in files"
-    ],
-    answer: "Changes in data do not affect application"
-  },
-  {
-    question: "Which index allows quick access to data in a database?",
-    options: ["Clustered index", "Foreign key", "Primary key", "Check constraint"],
-    answer: "Clustered index"
-  },
-  {
-    question: "Which command is used to remove a table structure permanently?",
-    options: ["REMOVE", "ERASE", "DELETE", "DROP"],
-    answer: "DROP"
-  },
-  {
-    question: "Which normal form removes partial dependency?",
-    options: ["1NF", "2NF", "3NF", "BCNF"],
-    answer: "2NF"
-  },
-  {
-    question: "Which keyword is used in SQL to prevent duplication?",
-    options: ["DISTINCT", "UNIQUE", "NO DUPLICATE", "EXCLUDE"],
-    answer: "DISTINCT"
-  }
-];
+{
+  question: "DBMS stands for?",
+  options: ["Database Management System", "Data Basic Management Setup", "Data Base Machine System", "Database Managing Service"],
+  answer: "Database Management System"
+},
+{
+  question: "Which key links two tables?",
+  options: ["Primary Key", "Foreign Key", "Super Key", "Candidate Key"],
+  answer: "Foreign Key"
+},
+{
+  question: "Which language is used to insert data?",
+  options: ["DDL", "DML", "DCL", "TCL"],
+  answer: "DML"
+},
 
+
+];
 
 
 // Function to render a single question
