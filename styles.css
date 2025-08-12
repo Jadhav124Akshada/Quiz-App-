@@ -2,82 +2,235 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  background-color: #e3e9ef;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   transition: background-image 2s ease-in-out;
-    background: linear-gradient(45deg, var(--start-color, #000), var(--end-color, #333));
-}
+  background: linear-gradient(45deg, var(--start-color, #000), var(--end-color, #333));
+}  
+/* header (navbar) part */ 
+:root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4cc9f0;
+        }        
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+        background-color: #030a28;
+        color: var(--dark);
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -20px;
+        padding: 30px;
+        padding-left: 100px;
+        font-size: 26px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white; 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-/* ==== Navbar Styling ==== */
-.mynavbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: linear-gradient(to right, #1f1c2c, #928dab);
- box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border: 2px solid #c5b4ff;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo i {
+        margin-right: 10px;
+        font-size: 2rem;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+    }
+    
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .auth-buttons {
+        display: flex;
+        gap: 1rem;
+    }
 
-}
-
-.navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.mynavbar strong {
-  font-size: 22px;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 12px;
-}
-
-.nav-links .link {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.15);
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s;
-}
-
-.nav-links .link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
+    .btn {
+        border-radius: 25px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding-left: 36px;
+    }
+    
+    .btn-outline {
+        background: transparent;
+        border: 3px solid white;
+        color: white;
+        padding-right: 100px;
+    } 
+    
+    .btn-outline:hover {
+        background: white;
+        color: var(--primary); 
+    }
+    
+    .btn-primary {
+        background: white;
+        color: var(--primary);
+        padding-right: 100px;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        background-color: var(--primary);
+        color: var(--light);
+    }
+    
 /* Responsive Navbar */
 @media (max-width: 768px) {
-  .navbar-container {
+  .navbar {
+    padding-left: 20px;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    row-gap: 10px;
+    align-items: center; 
   }
 
   .nav-links {
-    flex-direction: column;
+    display: flex;
+    font-size: 16px;
+    flex-direction: row; 
+    justify-content: center;
+    gap: 10px;
     width: 100%;
+    padding: 0 1rem;
+    margin-top: 10px;
   }
 
   .nav-links .link {
-    width: 100%;
-    text-align: left;
+    text-align: center;
+    flex: 1 1 auto; 
+    min-width: 100px; 
   }
 }
+@media (max-width: 768px) {
+  .btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    width: 80%;
+    max-width: 300px;
+  }
+}
+/* end */
+
+
+/* new UI */
+  .hero {
+      text-align: center;
+      padding: 5rem 5% 3rem;
+  }
+  
+  .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  }
+  
+  .hero p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+  }
+  
+  .topics-container {
+      padding: 2rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+  }
+  
+  .topic-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eee;
+  }
+  
+  .topic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
+  }
+  
+  .topic-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+  }
+  
+  .topic-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+  }
+  
+  .topic-card p {
+      color: #666;
+      font-size: 0.9rem;
+  }
+  
+  .start-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+  
+  .start-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+  }    
 
 .quiz-container {
   text-align: center;
