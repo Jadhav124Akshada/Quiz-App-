@@ -1,3 +1,4 @@
+
 // HTML Questions
 const htmlQuestions = [
   { question: "What does HTML stand for?",
@@ -207,6 +208,26 @@ const cppQuestions = [
     question: "What does 'this' pointer point to?",
     options: ["Global object", "Current object", "Next object", "Previous object"],
     answer: "Current object"
+  },
+  {
+    question: "Which of the following is a feature of Object-Oriented Programming?",
+    options: ["Encapsulation", "Compilation", "Interpretation", "Execution"],
+    answer: "Encapsulation"
+  },
+  {
+    question: "Which of the following correctly declares a pure virtual function in C++?",
+    options: ["void func() = 0;", "virtual void func();", "void func() override;", "virtual void func() = 0;"],
+    answer: "virtual void func() = 0;"
+  },
+  {
+    question: "In C++, which type cast is safest for converting base class pointers to derived class pointers?",
+    options: ["static_cast", "dynamic_cast", "reinterpret_cast", "const_cast"],
+    answer: "dynamic_cast"
+  },
+  {
+    question: "Which of the following is true about explicit constructors?",
+    options: ["They can be called without an object", "They prevent implicit conversions", "They are declared with the 'explicit' keyword", "All of the above"],
+    answer: "All of the above"
   }
 ];
 
@@ -398,39 +419,8 @@ const dbmsQuestions = [
     question: "Which command is used to delete all rows from a table without logging?",
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
     answer: "TRUNCATE"
-  },
-  {
-    question: "What does the term 'data independence' mean?",
-    options: [
-      "Data can be accessed from anywhere",
-      "Data and programs are independent",
-      "Changes in data do not affect application",
-      "Data is stored in files"
-    ],
-    answer: "Changes in data do not affect application"
-  },
-  {
-    question: "Which index allows quick access to data in a database?",
-    options: ["Clustered index", "Foreign key", "Primary key", "Check constraint"],
-    answer: "Clustered index"
-  },
-  {
-    question: "Which command is used to remove a table structure permanently?",
-    options: ["REMOVE", "ERASE", "DELETE", "DROP"],
-    answer: "DROP"
-  },
-  {
-    question: "Which normal form removes partial dependency?",
-    options: ["1NF", "2NF", "3NF", "BCNF"],
-    answer: "2NF"
-  },
-  {
-    question: "Which keyword is used in SQL to prevent duplication?",
-    options: ["DISTINCT", "UNIQUE", "NO DUPLICATE", "EXCLUDE"],
-    answer: "DISTINCT"
   }
 ];
-
 
 
 // Function to render a single question
