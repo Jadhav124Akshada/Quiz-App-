@@ -1,3 +1,4 @@
+
 // HTML Questions
 const htmlQuestions = [
   { question: "What does HTML stand for?",
@@ -49,6 +50,16 @@ const htmlQuestions = [
     options: ["ul", "li", "ol", "ol-list"], 
     answer: "ol"
    },
+  {
+    question : "What is the purpose of the <meta> tag in HTML?",
+    options: ["To provide metadata about the HTML document", "To link external CSS files", "To define the character set", "All of the above"],
+    answer: "All of the above"
+  },
+  {
+    question: "Which HTML element is used to create a hyperlink?",
+    options: ["<link>", "<a>", "<hyperlink>", "<url>"],
+    answer: "<a>"
+  },
 ];
 
 // CSS Questions
@@ -102,7 +113,17 @@ const cssQuestions = [
      question: "Which CSS property is used to add space between an element's border and its content?", 
      options: ["padding", "margin", "border-spacing", "gap"], 
      answer: "padding" 
-    }
+  },
+  {
+    question: "What is the purpose of the CSS box model?",
+    options: ["To define the layout of a webpage", "To control the size and spacing of elements", "To style text", "To create animations"],
+    answer: "To control the size and spacing of elements"
+  },
+  {
+    question: "Which CSS property is used to change the font family of an element?",
+    options: ["font-family", "font-type", "text-font", "font-style"],
+    answer: "font-family"
+  },
 ];
 
 // JavaScript Questions
@@ -398,39 +419,8 @@ const dbmsQuestions = [
     question: "Which command is used to delete all rows from a table without logging?",
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
     answer: "TRUNCATE"
-  },
-  {
-    question: "What does the term 'data independence' mean?",
-    options: [
-      "Data can be accessed from anywhere",
-      "Data and programs are independent",
-      "Changes in data do not affect application",
-      "Data is stored in files"
-    ],
-    answer: "Changes in data do not affect application"
-  },
-  {
-    question: "Which index allows quick access to data in a database?",
-    options: ["Clustered index", "Foreign key", "Primary key", "Check constraint"],
-    answer: "Clustered index"
-  },
-  {
-    question: "Which command is used to remove a table structure permanently?",
-    options: ["REMOVE", "ERASE", "DELETE", "DROP"],
-    answer: "DROP"
-  },
-  {
-    question: "Which normal form removes partial dependency?",
-    options: ["1NF", "2NF", "3NF", "BCNF"],
-    answer: "2NF"
-  },
-  {
-    question: "Which keyword is used in SQL to prevent duplication?",
-    options: ["DISTINCT", "UNIQUE", "NO DUPLICATE", "EXCLUDE"],
-    answer: "DISTINCT"
   }
 ];
-
 
 
 // Function to render a single question
