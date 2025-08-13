@@ -1,3 +1,4 @@
+added-nodejsquiz
 // HTML Questions
 const htmlQuestions = [
   { question: "What does HTML stand for?",
@@ -399,38 +400,77 @@ const dbmsQuestions = [
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
     answer: "TRUNCATE"
   },
+{
+  question: "DBMS stands for?",
+  options: ["Database Management System", "Data Basic Management Setup", "Data Base Machine System", "Database Managing Service"],
+  answer: "Database Management System"
+},
+{
+  question: "Which key links two tables?",
+  options: ["Primary Key", "Foreign Key", "Super Key", "Candidate Key"],
+  answer: "Foreign Key"
+},
+{
+  question: "Which language is used to insert data?",
+  options: ["DDL", "DML", "DCL", "TCL"],
+  answer: "DML"
+},
+
+
+];
+//Node.js quiz
+const nodejsQuiz = [
   {
-    question: "What does the term 'data independence' mean?",
-    options: [
-      "Data can be accessed from anywhere",
-      "Data and programs are independent",
-      "Changes in data do not affect application",
-      "Data is stored in files"
-    ],
-    answer: "Changes in data do not affect application"
+    question: "What is Node.js primarily used for?",
+    options: ["Designing user interfaces", "Server-side JavaScript execution", "Database management", "Image editing"],
+    answer: "Server-side JavaScript execution"
   },
   {
-    question: "Which index allows quick access to data in a database?",
-    options: ["Clustered index", "Foreign key", "Primary key", "Check constraint"],
-    answer: "Clustered index"
+    question: "Which of the following is true about Node.js?",
+    options: ["It runs in the browser", "It is single-threaded", "It uses Python for execution", "It is compiled to machine code before running"],
+    answer: "It is single-threaded"
   },
   {
-    question: "Which command is used to remove a table structure permanently?",
-    options: ["REMOVE", "ERASE", "DELETE", "DROP"],
-    answer: "DROP"
+    question: "Which module is used to create a web server in Node.js?",
+    options: ["http", "fs", "url", "os"],
+    answer: "http"
   },
   {
-    question: "Which normal form removes partial dependency?",
-    options: ["1NF", "2NF", "3NF", "BCNF"],
-    answer: "2NF"
+    question: "What does npm stand for?",
+    options: ["Node Package Manager", "Node Program Module", "New Programming Method", "Network Package Manager"],
+    answer: "Node Package Manager"
   },
   {
-    question: "Which keyword is used in SQL to prevent duplication?",
-    options: ["DISTINCT", "UNIQUE", "NO DUPLICATE", "EXCLUDE"],
-    answer: "DISTINCT"
+    question: "Which command initializes a new Node.js project?",
+    options: ["node init", "npm init", "node new", "npm start"],
+    answer: "npm init"
+  },
+  {
+    question: "How do you import a module in Node.js using CommonJS syntax?",
+    options: ["import module from 'module'", "require('module')", "include('module')", "load('module')"],
+    answer: "require('module')"
+  },
+  {
+    question: "What is the default scope of variables in Node.js modules?",
+    options: ["Global", "Function scope", "Module scope", "Block scope"],
+    answer: "Module scope"
+  },
+  {
+    question: "Which method is used to read files asynchronously in Node.js?",
+    options: ["fs.readFileSync()", "fs.readFile()", "fs.open()", "fs.loadFile()"],
+    answer: "fs.readFile()"
+  },
+  {
+    question: "What is the event loop in Node.js?",
+    options: ["A function to repeat tasks", "A single-threaded loop that handles asynchronous callbacks", "A module for managing events", "A scheduler for cron jobs"],
+    answer: "A single-threaded loop that handles asynchronous callbacks"
+  },
+  {
+    question: "Which framework is most commonly used with Node.js for building web applications?",
+    options: ["Flask", "Django", "Express", "Laravel"],
+    answer: "Express"
   }
 ];
-
 
 
 // Function to render a single question
@@ -563,7 +603,10 @@ if (document.getElementById("html-questions")) {
 } else if (document.getElementById("dsa-questions")) {
   questions = dsaQuestions;
   sectionId = "dsa-questions";
-}
+}else if(document.getElementById('nodejs-questions')) {
+    questions = nodejsQuiz; // match your array name
+    sectionId = "nodejs-questions";
+};
 
   // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
