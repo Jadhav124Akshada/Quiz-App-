@@ -430,6 +430,60 @@ const dbmsQuestions = [
     answer: "DISTINCT"
   }
 ];
+//Flask Questions
+const flaskQuestions=[
+    {
+    question: "Flask is a ____ framework?",
+options: ["Frontend", "Backend", "Database", "Testing"],
+answer: "Backend"
+  },
+  {
+    question: "Which language is Flask built with?",
+    options: ["Python", "JavaScript", "Java", "C#"],
+    answer: "Python"
+  },
+  {
+    question: "Which template engine does Flask commonly use?",
+    options: ["EJS", "Jinja2", "Pug", "Handlebars"],
+    answer: "Jinja2"
+  },
+  {
+    question: "Flask follows which type of architecture?",
+    options: ["MVC", "MVVM", "MVP", "None"],
+    answer: "MVC"
+  },
+  {
+    question: "Which command is used to run a Flask application?",
+    options: ["python app.py", "flask run", "npm start", "node server.js"],
+    answer: "flask run"
+  },
+  {
+    question: "What file is typically used to define routes in a Flask app?",
+    options: ["routes.py", "app.py", "index.html", "server.js"],
+    answer: "app.py"
+  },
+  {
+    question: "Which method is used to handle form submission in Flask?",
+    options: ["GET", "POST", "FETCH", "PUT"],
+    answer: "POST"
+  },
+  {
+    question: "Which decorator is used to define a route in Flask?",
+    options: ["@route", "@app.route", "@get", "@flask.route"],
+    answer: "@app.route"
+  },
+  {
+    question: "How do you render an HTML template in Flask?",
+    options: ["render_template()", "show_html()", "display_page()", "render_page()"],
+    answer: "render_template()"
+  },
+  {
+    question: "Which object is used to get form data in Flask?",
+    options: ["request", "form", "data", "input"],
+    answer: "request"
+  }
+];
+
 
 
 
@@ -563,6 +617,10 @@ if (document.getElementById("html-questions")) {
 } else if (document.getElementById("dsa-questions")) {
   questions = dsaQuestions;
   sectionId = "dsa-questions";
+}
+ else if (document.getElementById("flask-questions")) {
+  questions = flaskQuestions;
+  sectionId = "flask-questions";
 }
 
   // Render questions and attach event listeners only if a valid section is found
