@@ -61,21 +61,24 @@ body {
 }
 
 /* Responsive Navbar */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;   /* ✅ Center items on small screens */
     gap: 10px;
   }
 
   .nav-links {
     flex-direction: column;
     width: 100%;
+    align-items: center;   /* ✅ Center nav-links */
   }
 
   .nav-links .link {
-    width: 100%;
-    text-align: left;
+    width: auto;           /* ✅ Prevents full-width stretched buttons */
+    text-align: center;    /* ✅ Centers text */
+    min-width: 150px;      /* ✅ Keeps a neat button-like size */
   }
 }
 
