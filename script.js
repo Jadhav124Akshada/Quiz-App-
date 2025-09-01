@@ -347,6 +347,59 @@ const dsaQuestions = [
     answer: "Queue"
   }
 ];
+//flask question
+const flaskQuestions = [
+  {
+    question: "Flask is a ____ framework for Python",
+    options: ["Full-stack", "Micro", "Enterprise", "Machine Learning"],
+    answer: "Micro"
+  },
+  {
+    question: "What is the default port on which a Flask app runs?",
+    options: ["3000", "5000", "8080", "3306"],
+    answer: "5000"
+  },
+  {
+    question: "Which command is used to run a Flask application (assuming the app file is app.py)",
+    options: ["python app.py", "flask run", "Both a and b", "flask start"],
+    answer: "Both a and b"
+  },
+  {
+    question: "In Flask, which decorator is used to define a route?",
+    options: ["@url", "@path", "@route", "@app.route"],
+    answer: "@app.route"
+  },
+  {
+    question: "Flask templates are usually written using which template engine?",
+    options: ["Jinja2", "Django templates", "Mako", "Mustache"],
+    answer: "Jinja2"
+  },
+    {
+    question: "In Flask, the folder used to store static files like CSS, JS, and images is usually named:",
+    options: ["assets", "public", "static", "resources"],
+    answer: "static"
+  },
+  {
+    question: "Which method is used in Flask to send a response back to the client?",
+    options: ["send()", "return", "response()", "reply()"],
+    answer: "return"
+  },
+  {
+    question: "In Flask, how do you enable debugging mode?",
+    options: ["app.run(debug=True)", "flask --debug start", "app.debug(on)", "app.run(mode=debug)"],
+    answer: "app.run(debug=True)"
+  },
+  {
+    question: "Which HTTP methods are supported by Flask routes by default?",
+    options: ["GET only", "POST only", "GET and POST", "GET, POST, PUT, DELETE"],
+    answer: "GET only"
+  },
+  {
+    question: "What is the purpose of render_template() in Flask?",
+    options: ["To render HTML files stored in the static/ folder", "To render Python files as HTML", "To render HTML templates from the templates/ folder", "To render CSS and JS files"],
+    answer: "To render HTML templates from the templates/ folder"
+  }
+];
 //DBMS Questions
 const dbmsQuestions = [
   {
@@ -563,6 +616,9 @@ if (document.getElementById("html-questions")) {
 } else if (document.getElementById("dsa-questions")) {
   questions = dsaQuestions;
   sectionId = "dsa-questions";
+} else if (document.getElementById("flask-questions")) { // <-- ADD THIS BLOCK
+  questions = flaskQuestions;
+  sectionId = "flask-questions";
 }
 
   // Render questions and attach event listeners only if a valid section is found

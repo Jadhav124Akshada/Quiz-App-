@@ -22,6 +22,7 @@ For a detailed learning path, curated resources, and study tips, check out the [
   - JavaScript - Programming fundamentals
   - React - Component-based UI
   - Next.js - React framework concepts
+  - Flask - Python web framework concepts
 
 - **Programming**
   - Python - General-purpose programming
@@ -135,6 +136,7 @@ src/
 │   ├── python.json    # Python questions
 │   ├── cpp.json       # C++ questions
 │   ├── dbms.json      # Database questions
+│   ├── flask.json     # Flask questions
 │   ├── react.json     # React questions
 │   ├── nextjs.json    # Next.js questions
 │   ├── git.json       # Git questions

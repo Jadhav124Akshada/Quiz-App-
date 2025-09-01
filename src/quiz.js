@@ -16,7 +16,7 @@ const exitBtn = document.getElementById('exit-btn');
 
 const topicNames = {
   html: 'HTML', css: 'CSS', js: 'JavaScript', python: 'Python', cpp: 'C++', dbms: 'DBMS',
-  react: 'React', nextjs: 'Next.js', git: 'Git & GitHub', dsa: 'DSA', django: 'Django',  cprogramming: "C(programming)"
+  react: 'React', nextjs: 'Next.js', git: 'Git & GitHub', dsa: 'DSA', flask: 'Flask', django: 'Django',  cprogramming: "C(programming)"
 };
 
 let questions = [];
