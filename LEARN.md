@@ -23,7 +23,7 @@ Follow this recommended sequence to build your skills step by step:
 
 * **Frontend Basics:** HTML ➜ CSS ➜ JavaScript
 * **Advanced Frontend:** React ➜ Next.js
-* **Backend and Databases:** Django ➜ DBMS
+* **Backend and Databases:** Django ➜ Flask ➜ DBMS
 * **Core Programming & DSA:** Python ➜ DSA ➜ Git
 * **Additional Fundamentals:** C++
 
@@ -65,6 +65,11 @@ Follow this recommended sequence to build your skills step by step:
 
 * **Topics Covered:** Git commands, branching, merging, workflows.
 * **Resources:** [Git Handbook](https://git-scm.com/book/en/v2)
+
+### **Flask Quiz**
+
+* **Topics Covered:** Request object, JSON responses, Error handling, Blueprints.
+* **Resources:** [Flask Documentation](https://flask.palletsprojects.com/en/stable/)
 
 ---
 
