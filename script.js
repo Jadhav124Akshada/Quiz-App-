@@ -345,7 +345,27 @@ const dsaQuestions = [
     question: "Which data structure is used in BFS traversal?",
     options: ["Stack", "Queue", "Heap", "Tree"],
     answer: "Queue"
-  }
+  },
+  {
+    question: "Which technique does Dynamic Programming use to avoid recomputation?",
+    options: ["Brute force", "Divide and Conquer", "Memoization", "Greedy method"],
+    answer: "Memoization"
+  },
+  {
+    question: "In a max heap, the largest element is always at:",
+    options: ["Last node", "Left child of root", "Right child of root", "Root node"],
+    answer: "Root node"
+  },
+   {
+    question: "Average case time complexity for searching in a hash table is:",
+    options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+    answer: "O(1)"
+  },
+  {
+    question: "Which algorithm is used to find the shortest path in a weighted graph with non-negative weights?",
+    options: ["BFS", "DFS", "Dijkstra's Algorithm", "Prim's Algorithm"],
+    answer: "Dijkstra's Algorithm"
+  },
 ];
 //DBMS Questions
 const dbmsQuestions = [
@@ -398,39 +418,8 @@ const dbmsQuestions = [
     question: "Which command is used to delete all rows from a table without logging?",
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
     answer: "TRUNCATE"
-  },
-  {
-    question: "What does the term 'data independence' mean?",
-    options: [
-      "Data can be accessed from anywhere",
-      "Data and programs are independent",
-      "Changes in data do not affect application",
-      "Data is stored in files"
-    ],
-    answer: "Changes in data do not affect application"
-  },
-  {
-    question: "Which index allows quick access to data in a database?",
-    options: ["Clustered index", "Foreign key", "Primary key", "Check constraint"],
-    answer: "Clustered index"
-  },
-  {
-    question: "Which command is used to remove a table structure permanently?",
-    options: ["REMOVE", "ERASE", "DELETE", "DROP"],
-    answer: "DROP"
-  },
-  {
-    question: "Which normal form removes partial dependency?",
-    options: ["1NF", "2NF", "3NF", "BCNF"],
-    answer: "2NF"
-  },
-  {
-    question: "Which keyword is used in SQL to prevent duplication?",
-    options: ["DISTINCT", "UNIQUE", "NO DUPLICATE", "EXCLUDE"],
-    answer: "DISTINCT"
   }
 ];
-
 
 
 // Function to render a single question
