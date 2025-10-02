@@ -14,15 +14,16 @@
 
 </head>
 <body>
-  <header class="mynavbar">
+ <header class="mynavbar">
   <div class="navbar-container">
-    <strong>Quiz Game </strong>
-    <nav class="nav-links">
-      <a class="link" href="index.html" target="_blank">Home</a>
-      <a class="link" href="profile.html" target="_blank">Profile</a>
-      <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
-      <a class="link" href="logout.html" target="_blank">Logout</a>
-    </nav>
+    <strong class="logo">Quiz Game</strong>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+<nav class="nav-links" id="navLinks">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="scoreboard.html">Scoreboard</a>
+  <a href="logout.html">Logout</a>
+</nav>
   </div>
 </header>
   <div class="quiz-container">
@@ -80,6 +81,11 @@
   function toggleChatbot() {
     const modal = document.getElementById("chatModal");
     modal.style.display = modal.style.display === "block" ? "none" : "block";
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
   }
 </script>
 </body>

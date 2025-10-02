@@ -35,50 +35,94 @@ body {
 }
 
 .mynavbar strong {
-  font-size: 22px;
+  font-size: 1.6rem;
   color: #ffffff;
   letter-spacing: 1px;
+  font-weight: 500;
 }
 
 .nav-links {
   display: flex;
-  gap: 12px;
+  gap: 20px;
 }
-
-.nav-links .link {
+.nav-links a {
   color: white;
   background-color: rgba(255, 255, 255, 0.15);
-  padding: 8px 16px;
-  border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s;
+  padding: 8px 16px;
+  border-radius: 6px;
+ transition: background 0.3s ease, transform 0.2s;
 }
 
-.nav-links .link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+.nav-links a:hover {
+  background-color: rgba(255,255,255,0.25);
   transform: translateY(-2px);
 }
 
-/* Responsive Navbar */
+.hamburger {
+  display: none;
+  
+  font-size: 24px;
+
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+
+}
+button.hamburger{
+    background-color:transparent;
+  }
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+/*RESPONSIVE NAVBAR*/
 @media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
   .nav-links {
+    display: none;
     flex-direction: column;
-    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(50, 50, 50, 0.9); 
+    border-radius: 10px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    width: auto;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  .nav-links .link {
-    width: 100%;
-    text-align: left;
+  .nav-links.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+ .nav-links a {
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+ .hamburger {
+    display: flex;
+    justify-content: right;
+    width: auto;           
+     display: inline-block;
+  }
+  button.hamburger:hover{
+      border:2px solid #c5b4ff;
   }
 }
-
 .quiz-container {
   text-align: center;
   max-width: 800px;
@@ -166,7 +210,7 @@ input[type="radio"] {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color:#4CAF50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -653,4 +697,65 @@ th, td {
 
 
 
+.hamburger {
+  display: none;
+  
+  font-size: 24px;
 
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+
+}
+button.hamburger{
+    background-color:transparent;
+  }
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(50, 50, 50, 0.9); 
+    border-radius: 10px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    width: auto;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  .nav-links.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+ .nav-links a {
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+ .hamburger {
+    display: flex;
+    justify-content: right;
+    width: auto;           
+     display: inline-block;
+  }
+  button.hamburger:hover{
+      border:2px solid #c5b4ff;
+  }
+}
