@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Hackshastra</title>
+    <link rel="stylesheet" href="styles8.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1>Quiz Login</h1>
+            <form>
+
+
+                <?php if (isset($error_message)) { ?>
+                    <div class="alert alert-danger"><?php echo $error_message; ?></div>
+                <?php } ?>
+                
+
+
+
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p class="register-link">Don't have an account? <a href="#">Register</a></p>
+            </form>
+        </div>
+
+        <!-- Illustration Section -->
+        <div class="illustration-section">
+            <img src="log (1).png" alt="Login Illustration">
+        </div>
+    </div>
+</body>
+</html>
