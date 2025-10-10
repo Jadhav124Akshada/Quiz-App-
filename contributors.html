@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial‑scale=1.0">
+    <title>Contributors | 100 Days of Web Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#88B6F2",
+                        accent: "#022954",
+                        darkbg: "#1f1c2c",
+                        lightbg: "#e3e9ef",
+                        textlight: "#ffffff",
+                        textdark: "#022954",
+                    },
+                    fontFamily: {
+                        sans: ["Roboto", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(45deg, var(--tw-colors-darkbg), var(--tw-colors-primary));
+            color: var(--tw-colors-textlight);
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+
+    <!-- Navbar -->
+    <header class="mynavbar">
+        <div class="navbar-container">
+            <strong>Quiz Game </strong>
+            <nav class="nav-links">
+                <a class="link" href="index.html" target="_blank">Home</a>
+                <a class="link" href="profile.html" target="_blank">Profile</a>
+                <a class="link" href="scoreboard.html" target="_blank">Scoreboard</a>
+                <a class="link" href="logout.html" target="_blank">Logout</a>
+                <a class="link" href="contributors.html" target="_blank">Contributors</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="pt-24 pb-16 px-4 max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-12 text-accent">Project Contributors</h1>
+        <div id="contributors" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <template id="skeleton">
+                <div class="h-64 rounded-xl glass animate-pulse"></div>
+            </template>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <span>© <strong>Quiz Game</strong> - Built with ❤️ by Akshada Jadhav</span>
+        </div>
+        <div class="footer-center">
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-right">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <!-- Contributors Fetch Script -->
+    <script>
+        const container = document.getElementById('contributors');
+        const skeletonTemplate = document.getElementById('skeleton');
+        const CACHE_KEY = 'github_contributors';
+        const CACHE_TIME = 1000 * 60 * 60; // 1 hour
+        const REPO_API = 'https://api.github.com/repos/Jadhav124Akshada/Quiz-App-/contributors';
+
+        function showSkeletons(count = 8) {
+            container.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                container.appendChild(skeletonTemplate.content.cloneNode(true));
+            }
+        }
+
+        function renderContributors(data) {
+            container.innerHTML = '';
+            data.forEach(user => {
+                const card = document.createElement('div');
+                card.className = 'glass p-6 rounded-xl text-center transition-all hover:scale-105 hover:shadow-xl duration-300 hover:bg-white/10';
+                card.innerHTML = `
+  <img src="${user.avatar_url}" alt="${user.login}" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-primary" loading="lazy"/>
+  <h3 class="text-xl font-bold text-primary">${user.login}</h3>
+  <p class="text-sm text-gray-400 mb-2">@${user.login}</p>
+  <p class="text-sm text-gray-400">💻 Contributions: ${user.contributions}</p>
+  <a href="${user.html_url}" target="_blank" class="inline-block mt-4 text-sm text-primary hover:underline">GitHub Profile</a>
+`;
+                container.appendChild(card);
+            });
+        }
+
+        function renderErrorUI() {
+            container.innerHTML = `
+<div class="glass p-6 rounded-xl text-center text-white animate-fade-in">
+  <h3 class="text-2xl font-bold text-primary mb-2">⚠️ Contributors Unavailable</h3>
+  <p class="text-white/80 mb-4">We couldn't load contributor data at this time. Please try again later.</p>
+  <a href="https://github.com/Jadhav124Akshada/Quiz-App-" target="_blank" class="text-primary underline">View Repo on GitHub</a>
+</div>
+`;
+        }
+
+        async function fetchContributors() {
+            showSkeletons();
+
+            // 1. Check LocalStorage cache
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                if (Date.now() - parsed.timestamp < CACHE_TIME) {
+                    renderContributors(parsed.data);
+                    return;
+                }
+            }
+
+            // 2. Fetch from GitHub REST API
+            try {
+                const response = await fetch(REPO_API);
+                if (!response.ok) throw new Error('GitHub API failed');
+                const contributors = await response.json();
+
+                // ✅ Save fresh data to localStorage
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    timestamp: Date.now(),
+                    data: contributors
+                }));
+
+                renderContributors(contributors);
+            } catch (err) {
+                console.warn('GitHub API fetch failed:', err);
+                renderErrorUI();
+            }
+        }
+
+        // 🚀 Start loading
+        fetchContributors();
+    </script>
+    <!-- Scroll-to-top & theme toggle logic -->
+    <script>
+        const scrollBtn = document.createElement('button');
+        scrollBtn.id = "scrollBtn";
+        scrollBtn.innerHTML = `<i class="fas fa-arrow-up"></i>`;
+        Object.assign(scrollBtn.style, { position: 'fixed', bottom: '1rem', right: '1rem', padding: '1rem', borderRadius: '50%', background: 'var(--tw-colors-primary)', color: '#fff', display: 'none', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' });
+        document.body.appendChild(scrollBtn);
+        scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.addEventListener('scroll', () => {
+            scrollBtn.style.display = window.scrollY > 100 ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>
