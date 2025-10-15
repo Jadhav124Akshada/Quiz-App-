@@ -120,7 +120,7 @@ h2 {
   align-items: center;
   display: inline-block;
   padding: 12px 24px;
-  background-color: #88B6F2;
+  background :linear-gradient(to right, #33225a 0%, #b589df 100%);
   color: #022954;
   text-decoration: none;
   border-radius: 6px;
@@ -132,7 +132,7 @@ h2 {
 }
 
 .quiz-link:hover {
-  background-color: #1a589a;
+  background:linear-gradient(to right, #291b49 25%, #9e8dda 45%,rgb(79, 68, 97) 90%);
 }
 
 .question-container {
