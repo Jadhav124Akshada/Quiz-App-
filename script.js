@@ -433,6 +433,26 @@ const dbmsQuestions = [
 
 
 
+// Global variables for quiz state
+let quizStarted = false;
+let timer = 60;
+let score = 0;
+let intervalId;
+let answeredQuestions = 0;
+let totalQuestions = 0;
+
+// Function to update progress bar
+const updateProgress = (answered, total) => {
+  const progressFill = document.getElementById('progress-fill');
+  const progressText = document.getElementById('progress-text');
+  const progressPercentage = document.getElementById('progress-percentage');
+
+  const percentage = Math.round((answered / total) * 100);
+  progressFill.style.width = `${percentage}%`;
+  progressText.textContent = `Progress: ${answered} / ${total}`;
+  progressPercentage.textContent = `${percentage}%`;
+};
+
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
@@ -479,6 +499,65 @@ const renderQuestions = (questions, sectionId) => {
   sectionContainer.appendChild(scoreElem);
 };
 
+// Function to start the quiz
+const startQuiz = () => {
+  quizStarted = true;
+  document.getElementById('start-btn').style.display = 'none';
+  document.getElementById('restart-btn').style.display = 'inline-block';
+
+  // Enable all radio buttons and check answer buttons
+  document.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = false);
+  document.querySelectorAll('.check-answer-btn').forEach(btn => btn.disabled = false);
+
+  // Start the timer
+  startTimer();
+};
+
+// Function to start the timer
+const startTimer = () => {
+  intervalId = setInterval(() => {
+    timer--;
+    document.getElementById('timer').textContent = timer;
+
+    if (timer <= 0) {
+      clearInterval(intervalId);
+      endQuiz();
+    }
+  }, 1000);
+};
+
+// Function to end the quiz when time runs out
+const endQuiz = () => {
+  quizStarted = false;
+  document.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = true);
+  document.querySelectorAll('.check-answer-btn').forEach(btn => btn.disabled = true);
+  alert('Time is up! Quiz ended.');
+};
+
+// Function to restart the quiz
+const restartQuiz = () => {
+  clearInterval(intervalId);
+  quizStarted = false;
+  timer = 60;
+  score = 0;
+  answeredQuestions = 0;
+  document.getElementById('timer').textContent = timer;
+  document.getElementById('scoree').textContent = score;
+  document.getElementById('start-btn').style.display = 'inline-block';
+  document.getElementById('restart-btn').style.display = 'none';
+
+  // Clear all selections and results
+  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.checked = false;
+    radio.disabled = true;
+  });
+  document.querySelectorAll('.check-answer-btn').forEach(btn => btn.disabled = true);
+  document.querySelectorAll('.result').forEach(result => result.textContent = '');
+
+  // Reset progress bar
+  updateProgress(0, 10); // Assuming 10 questions, adjust if needed
+};
+
 // Function to check the answer for a specific question
 const checkAnswer = (questions, index) => {
   const selectedOption = document.querySelector(
@@ -495,16 +574,28 @@ const checkAnswer = (questions, index) => {
   if (selectedOption.value === questions[index].answer) {
     resultContainer.textContent = "Correct!";
     resultContainer.style.color = "green";
+    score++;
+    document.getElementById('scoree').textContent = score;
+    answeredQuestions++;
+    updateProgress(answeredQuestions, totalQuestions);
     return true;
   } else {
     resultContainer.textContent = `Wrong! The correct answer is: ${questions[index].answer}`;
     resultContainer.style.color = "red";
+    answeredQuestions++;
+    updateProgress(answeredQuestions, totalQuestions);
     return false;
   }
 };
 
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
+  // Stop the timer and end the quiz
+  clearInterval(intervalId);
+  quizStarted = false;
+  document.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = true);
+  document.querySelectorAll('.check-answer-btn').forEach(btn => btn.disabled = true);
+
   let score = 0;
   questions.forEach((q, index) => {
     const selectedOption = document.querySelector(
@@ -565,6 +656,9 @@ if (document.getElementById("html-questions")) {
   sectionId = "dsa-questions";
 }
 
+  // Set totalQuestions
+  totalQuestions = questions.length;
+
   // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
     renderQuestions(questions, sectionId);
@@ -581,5 +675,9 @@ if (document.getElementById("html-questions")) {
     document
       .getElementById("calculate-score-btn")
       .addEventListener("click", () => calculateTotalScore(questions));
+
+    // Attach event listeners to start and restart buttons
+    document.getElementById('start-btn').addEventListener('click', startQuiz);
+    document.getElementById('restart-btn').addEventListener('click', restartQuiz);
   }
 });
